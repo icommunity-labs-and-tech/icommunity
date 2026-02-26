@@ -53,14 +53,14 @@ const Security = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+        <div className="grid md:grid-cols-3 gap-10">
           {layers.map((layer, i) => (
             <motion.div
               key={layer.title}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="bg-background p-8 flex flex-col"
+              className="border-l-2 border-primary/15 pl-6"
             >
               <div className="w-11 h-11 rounded-lg bg-accent flex items-center justify-center mb-5">
                 <layer.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
