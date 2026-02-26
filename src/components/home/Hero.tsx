@@ -10,9 +10,9 @@ const trustPoints = [
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="hero-mesh-bg" />
-      <div className="hero-mesh-overlay" />
+    <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="hero-overlay" />
+      <div className="hero-noise" />
 
       <div className="hero-content ic-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
