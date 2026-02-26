@@ -264,10 +264,10 @@ const HowItWorks = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4"
+            className="rounded-2xl bg-ic-navy overflow-hidden"
           >
             {/* Code block */}
-            <div className="rounded-2xl bg-ic-navy p-5 md:p-6 overflow-hidden">
+            <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-400/60" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
@@ -294,8 +294,11 @@ const HowItWorks = () => {
               </pre>
             </div>
 
+            {/* Divider */}
+            <div className="border-t border-primary-foreground/10" />
+
             {/* Evidence Receipt status */}
-            <div className="rounded-xl bg-ic-navy p-4 md:p-5 font-mono text-[13px]">
+            <div className="p-4 md:p-5 font-mono text-[13px]">
               <div className="flex items-center gap-2 mb-3">
                 <AnimatePresence mode="wait">
                   <motion.span
