@@ -53,8 +53,11 @@ const Hero = () => {
           {/* Right: Diagram */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            animate={{ opacity: 1, y: [0, -8, 0] }}
+            transition={{
+              opacity: { duration: 0.7, delay: 0.2, ease: "easeOut" },
+              y: { duration: 7.5, ease: "easeInOut", repeat: Infinity, delay: 0.9 },
+            }}
             className="hidden lg:block"
           >
             <HeroDiagram />
