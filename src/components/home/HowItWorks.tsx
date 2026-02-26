@@ -1,4 +1,4 @@
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Download, Lock, Search } from "lucide-react";
 
@@ -68,32 +68,55 @@ const receiptConfig: Record<ReceiptStatus, { label: string; color: string; dotCl
   verified: { label: "Verificación completa", color: "text-green-400", dotClass: "bg-green-400" },
 };
 
+/* ── Stripe-style transition ── */
+const crossfade = {
+  initial: { opacity: 0, y: 4 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -4 },
+  transition: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },
+};
+
+const crossfadeReduced = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.15 },
+};
+
 /* ── Step Card ── */
 const StepCard = ({
   s,
   index,
   isActive,
   onActivate,
+  onScrollActivate,
+  prefersReducedMotion,
 }: {
   s: typeof steps[number];
   index: number;
   isActive: boolean;
   onActivate: () => void;
+  onScrollActivate: () => void;
+  prefersReducedMotion: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const inCenter = useInView(ref, { margin: "-40% 0px -40% 0px" });
+  const inCenter = useInView(ref, { margin: "-35% 0px -35% 0px" });
 
   useEffect(() => {
-    if (inCenter) onActivate();
-  }, [inCenter, onActivate]);
+    if (inCenter && !prefersReducedMotion) onScrollActivate();
+  }, [inCenter, onScrollActivate, prefersReducedMotion]);
 
   return (
     <div
       ref={ref}
+      role="button"
+      tabIndex={0}
+      onClick={onActivate}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onActivate(); }}
       className={`
-        relative flex gap-5 p-5 rounded-xl
+        relative flex gap-5 p-5 rounded-xl cursor-pointer
         transition-all duration-300 ease-out
-        ${isActive ? "bg-muted/30" : ""}
+        ${isActive ? "bg-muted/30" : "hover:bg-muted/15"}
       `}
     >
       {/* Active indicator bar */}
@@ -101,7 +124,7 @@ const StepCard = ({
         className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full bg-primary"
         initial={false}
         animate={{ opacity: isActive ? 1 : 0, scaleY: isActive ? 1 : 0.3 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
       />
 
       <div
@@ -136,10 +159,11 @@ const StepCard = ({
 };
 
 /* ── Technical Panel ── */
-const TechPanel = ({ activeStep }: { activeStep: number }) => {
+const TechPanel = ({ activeStep, prefersReducedMotion }: { activeStep: number; prefersReducedMotion: boolean }) => {
   const currentStep = steps[activeStep];
   const highlightSet = new Set(currentStep.codeLines);
   const status = receiptConfig[currentStep.receiptStatus];
+  const anim = prefersReducedMotion ? crossfadeReduced : crossfade;
 
   return (
     <div className="rounded-2xl bg-ic-navy overflow-hidden">
@@ -177,10 +201,7 @@ const TechPanel = ({ activeStep }: { activeStep: number }) => {
           <AnimatePresence mode="wait">
             <motion.span
               key={currentStep.receiptStatus}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.5, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              {...anim}
               className={`inline-block w-2 h-2 rounded-full ${status.dotClass}`}
             />
           </AnimatePresence>
@@ -192,13 +213,7 @@ const TechPanel = ({ activeStep }: { activeStep: number }) => {
           <div>timestamp: <span className="text-primary-foreground/70">{new Date().toISOString().slice(0, 19)}Z</span></div>
 
           <AnimatePresence mode="wait">
-            <motion.div
-              key={currentStep.receiptStatus}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.35 }}
-            >
+            <motion.div key={currentStep.receiptStatus} {...anim}>
               {currentStep.receiptStatus === "received" && (
                 <>
                   <div>status: <span className="text-yellow-400">pending</span></div>
@@ -224,14 +239,7 @@ const TechPanel = ({ activeStep }: { activeStep: number }) => {
 
         <div className="mt-3 pt-3 border-t border-primary-foreground/10 flex items-center gap-2">
           <AnimatePresence mode="wait">
-            <motion.span
-              key={status.label}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className={`text-xs ${status.color}`}
-            >
+            <motion.span key={status.label} {...anim} className={`text-xs ${status.color}`}>
               {status.label}
             </motion.span>
           </AnimatePresence>
@@ -246,6 +254,7 @@ const HowItWorks = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [activeStep, setActiveStep] = useState(0);
+  const prefersReducedMotion = !!useReducedMotion();
 
   const handleActivate = useCallback((i: number) => {
     setActiveStep(i);
@@ -272,10 +281,10 @@ const HowItWorks = () => {
           </p>
         </motion.div>
 
-        {/* Sticky layout */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left: scrollable steps */}
-          <div className="space-y-12 lg:space-y-24">
+        {/* Two-column layout — NO sticky */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left: steps as selectors */}
+          <div className="space-y-6">
             {steps.map((s, i) => (
               <motion.div
                 key={s.step}
@@ -288,28 +297,21 @@ const HowItWorks = () => {
                   index={i}
                   isActive={i === activeStep}
                   onActivate={() => handleActivate(i)}
+                  onScrollActivate={() => handleActivate(i)}
+                  prefersReducedMotion={prefersReducedMotion}
                 />
               </motion.div>
             ))}
           </div>
 
-          {/* Right: sticky panel */}
-          <div className="hidden lg:block">
-            <div className="sticky top-24">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <TechPanel activeStep={activeStep} />
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Mobile: non-sticky panel below steps */}
-          <div className="lg:hidden">
-            <TechPanel activeStep={activeStep} />
-          </div>
+          {/* Right: tech panel — scrolls normally */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <TechPanel activeStep={activeStep} prefersReducedMotion={prefersReducedMotion} />
+          </motion.div>
         </div>
       </div>
     </section>
