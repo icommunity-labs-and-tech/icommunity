@@ -193,6 +193,23 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
             HUB
           </text>
         </motion.g>
+
+        {/* Label below hub */}
+        <motion.text
+          x={cx}
+          y={cy + 50}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="fill-muted-foreground"
+          fontSize="7"
+          fontWeight="500"
+          fontFamily="Inter, system-ui, sans-serif"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 0.7 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          Proveedor-agnóstico. Compatible con cualquier sistema.
+        </motion.text>
       </svg>
     </div>
   );
