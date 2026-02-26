@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Clock, Eye, CheckCircle } from "lucide-react";
 
 const trustPoints = [
@@ -80,46 +80,79 @@ const Hero = () => {
   );
 };
 
-const HeroDiagram = () => (
-  <div className="relative">
-    <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-8">
-      <div className="flex flex-col gap-4">
-        {/* Step flow */}
-        {[
-          { step: "1", title: "Evento", desc: "Verificación KYC completada" },
-          { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
-          { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
-        ].map((s, i) => (
-          <div key={s.step} className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0">
-              <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold text-primary-foreground">{s.title}</div>
-              <div className="text-xs text-primary-foreground/50 mt-0.5">{s.desc}</div>
-            </div>
-            {i < 2 && (
-              <div className="absolute left-[35px] mt-10 w-px h-4 bg-ic-blue-glow/30" style={{ position: 'relative', left: 0, marginTop: 0 }} />
-            )}
-          </div>
-        ))}
+const steps = [
+  { step: "1", title: "Evento", desc: "Verificación KYC completada" },
+  { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
+  { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
+];
 
-        {/* Visual receipt */}
-        <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-green-400" />
-            <span className="text-xs font-mono text-primary-foreground/60">Evidence Receipt</span>
-          </div>
-          <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/40">
-            <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
-            <div><span className="text-ic-blue-glow">timestamp:</span> 2026-02-26T10:32:00Z</div>
-            <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
-            <div><span className="text-ic-blue-glow">status:</span> <span className="text-green-400">verified</span></div>
+const HeroDiagram = () => {
+  const now = new Date();
+  const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
+
+  return (
+    <div className="relative">
+      <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-8">
+        <div className="flex flex-col gap-4">
+          {/* Step flow with staggered progress pulse */}
+          {steps.map((s, i) => (
+            <div key={s.step} className="flex items-start gap-4">
+              <motion.div
+                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  delay: i * 1.8,
+                }}
+              >
+                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
+              </motion.div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-primary-foreground">{s.title}</div>
+                <div className="text-xs text-primary-foreground/50 mt-0.5">{s.desc}</div>
+              </div>
+            </div>
+          ))}
+
+          {/* Visual receipt */}
+          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              {/* Pulsing green dot */}
+              <motion.div
+                className="w-2 h-2 rounded-full bg-green-400"
+                animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              <span className="text-xs font-mono text-primary-foreground/60">Evidence Receipt</span>
+            </div>
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/40">
+              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
+              {/* Timestamp with slow refresh animation */}
+              <motion.div
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+              >
+                <span className="text-ic-blue-glow">timestamp:</span> {ts}
+              </motion.div>
+              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
+              {/* Verified status gentle pulse */}
+              <div>
+                <span className="text-ic-blue-glow">status:</span>{" "}
+                <motion.span
+                  className="text-green-400 inline-block"
+                  animate={{ opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+                >
+                  verified
+                </motion.span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default Hero;
