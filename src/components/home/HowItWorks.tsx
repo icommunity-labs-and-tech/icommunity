@@ -1,7 +1,8 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Download, Lock, Search } from "lucide-react";
 
+/* ── Step data ── */
 const steps = [
   {
     icon: Download,
@@ -10,6 +11,8 @@ const steps = [
     desc: "Recibe el evento de verificación desde tu proveedor KYC y lo normaliza en un payload estructurado.",
     input: "Evento (KYC / edad / interacción)",
     output: "Payload normalizado",
+    codeLines: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], // import + init + create call
+    receiptStatus: "received" as const,
   },
   {
     icon: Lock,
@@ -18,6 +21,8 @@ const steps = [
     desc: "Genera automáticamente una prueba criptográfica con sello temporal y registro inmutable.",
     input: "Payload normalizado",
     output: "Hash + sello temporal + registro inmutable",
+    codeLines: [8, 9, 10, 11, 12, 13], // create call body
+    receiptStatus: "sealed" as const,
   },
   {
     icon: Search,
@@ -26,77 +31,15 @@ const steps = [
     desc: "Consulta el verificador público o exporta la evidencia completa para cualquier auditoría.",
     input: "Evidence Receipt",
     output: "Verificación pública + export auditoría",
+    codeLines: [14, 15, 16, 17], // receipt output lines
+    receiptStatus: "verified" as const,
   },
 ];
 
-const HowItWorks = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+type ReceiptStatus = "received" | "sealed" | "verified";
 
-  return (
-    <section id="como-funciona" className="ic-section bg-background" ref={ref}>
-      <div className="ic-container">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Cómo funciona</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tres pasos para convertir cualquier verificación en evidencia verificable y auditable.
-          </p>
-          <p className="text-sm text-muted-foreground/70 font-mono mt-3 max-w-xl mx-auto">
-            Integración vía SDK / API / Webhook. Sin fricción con tu proveedor KYC.
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Steps */}
-          <div className="space-y-10">
-            {steps.map((s, i) => (
-              <motion.div
-                key={s.step}
-                initial={{ opacity: 0, x: -24 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="flex gap-5"
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent flex items-center justify-center mt-1">
-                  <s.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <div className="text-xs font-mono text-primary mb-1">PASO {s.step}</div>
-                  <h3 className="text-lg font-semibold text-foreground mb-1">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{s.desc}</p>
-                  <div className="flex flex-col sm:flex-row gap-2 text-xs font-mono">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
-                      <span className="text-primary/70">IN →</span> {s.input}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-foreground">
-                      <span className="text-primary">OUT →</span> {s.output}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Code snippet */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-2xl bg-ic-navy p-6 overflow-hidden"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-400/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-              <div className="w-3 h-3 rounded-full bg-green-400/60" />
-              <span className="ml-3 text-xs font-mono text-primary-foreground/30">evidence.ts</span>
-            </div>
-            <pre className="font-mono text-[13px] leading-relaxed text-primary-foreground/70 overflow-x-auto">
-              <code>{`import { ICommunity } from '@icommunity/sdk';
+/* ── Code lines (split for per-line highlighting) ── */
+const codeString = `import { ICommunity } from '@icommunity/sdk';
 
 const ic = new ICommunity({
   apiKey: process.env.IC_API_KEY,
@@ -114,8 +57,351 @@ const receipt = await ic.evidence.create({
 
 // receipt.hash → sha256:a1b2c3d4…
 // receipt.timestamp → ISO 8601
-// receipt.verifyUrl → https://verify.ic…`}</code>
-            </pre>
+// receipt.verifyUrl → https://verify.ic…`;
+
+const codeLines = codeString.split("\n");
+
+/* ── Receipt status config ── */
+const receiptConfig: Record<ReceiptStatus, { label: string; color: string; dotClass: string }> = {
+  received: {
+    label: "Evento recibido",
+    color: "text-yellow-400",
+    dotClass: "bg-yellow-400",
+  },
+  sealed: {
+    label: "Certificado sellado",
+    color: "text-primary",
+    dotClass: "bg-primary",
+  },
+  verified: {
+    label: "Verificación completa",
+    color: "text-green-400",
+    dotClass: "bg-green-400",
+  },
+};
+
+/* ── Auto-advance interval ── */
+const AUTO_ADVANCE_MS = 4000;
+
+const HowItWorks = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const sectionVisible = useInView(sectionRef, { amount: 0.3 });
+
+  const [activeStep, setActiveStep] = useState(0);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval>>();
+
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Auto-advance when section is visible and user hasn't clicked */
+  useEffect(() => {
+    if (!sectionVisible || userInteracted || prefersReducedMotion) {
+      clearInterval(timerRef.current);
+      return;
+    }
+    timerRef.current = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(timerRef.current);
+  }, [sectionVisible, userInteracted, prefersReducedMotion]);
+
+  const handleStepClick = useCallback((i: number) => {
+    setActiveStep(i);
+    setUserInteracted(true);
+  }, []);
+
+  /* Keyboard nav */
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent, i: number) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleStepClick(i);
+      } else if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+        e.preventDefault();
+        const next = (i + 1) % steps.length;
+        handleStepClick(next);
+      } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        const prev = (i - 1 + steps.length) % steps.length;
+        handleStepClick(prev);
+      }
+    },
+    [handleStepClick]
+  );
+
+  const currentStep = steps[activeStep];
+  const highlightSet = new Set(currentStep.codeLines);
+  const status = receiptConfig[currentStep.receiptStatus];
+
+  return (
+    <section
+      id="como-funciona"
+      className="ic-section bg-background"
+      ref={sectionRef}
+    >
+      <div className="ic-container">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Cómo funciona
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Tres pasos para convertir cualquier verificación en evidencia
+            verificable y auditable.
+          </p>
+          <p className="text-sm text-muted-foreground/70 font-mono mt-3 max-w-xl mx-auto">
+            Integración vía SDK / API / Webhook. Sin fricción con tu proveedor
+            KYC.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* ── Steps (tabs) ── */}
+          <div
+            className="space-y-3"
+            role="tablist"
+            aria-label="Pasos del proceso"
+          >
+            {steps.map((s, i) => {
+              const isActive = i === activeStep;
+              return (
+                <motion.div
+                  key={s.step}
+                  initial={{ opacity: 0, x: -24 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  role="tab"
+                  tabIndex={0}
+                  aria-selected={isActive}
+                  aria-controls="hiw-panel"
+                  onClick={() => handleStepClick(i)}
+                  onKeyDown={(e) => handleKeyDown(e, i)}
+                  className={`
+                    relative flex gap-5 p-5 rounded-xl cursor-pointer
+                    transition-all duration-300 ease-out
+                    border border-transparent
+                    ${
+                      isActive
+                        ? "bg-accent/60 border-primary/20 shadow-sm"
+                        : "hover:bg-muted/50"
+                    }
+                  `}
+                >
+                  {/* Active indicator bar */}
+                  <motion.div
+                    className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full bg-primary"
+                    initial={false}
+                    animate={{ opacity: isActive ? 1 : 0, scaleY: isActive ? 1 : 0.3 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
+                  <div
+                    className={`
+                      flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center mt-0.5
+                      transition-colors duration-300
+                      ${isActive ? "bg-primary/15" : "bg-accent"}
+                    `}
+                  >
+                    <s.icon
+                      className={`w-5 h-5 transition-colors duration-300 ${
+                        isActive ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-mono text-primary mb-1">
+                      PASO {s.step}
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                      {s.title}
+                    </h3>
+
+                    <AnimatePresence mode="wait">
+                      {isActive && (
+                        <motion.div
+                          key={`detail-${i}`}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {s.desc}
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-2 text-xs font-mono">
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
+                              <span className="text-primary/70">IN →</span>{" "}
+                              {s.input}
+                            </span>
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-foreground">
+                              <span className="text-primary">OUT →</span>{" "}
+                              {s.output}
+                            </span>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* ── Right panel (code + receipt) ── */}
+          <motion.div
+            id="hiw-panel"
+            role="tabpanel"
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-4 lg:sticky lg:top-24"
+          >
+            {/* Code block */}
+            <div className="rounded-2xl bg-ic-navy p-5 md:p-6 overflow-hidden">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-400/60" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                <span className="ml-3 text-xs font-mono text-primary-foreground/30">
+                  evidence.ts
+                </span>
+              </div>
+              <pre className="font-mono text-[13px] leading-[1.7] overflow-x-auto">
+                <code>
+                  {codeLines.map((line, idx) => (
+                    <span
+                      key={idx}
+                      className={`block px-2 -mx-2 rounded-sm transition-all duration-500 ease-out ${
+                        highlightSet.has(idx)
+                          ? "text-primary-foreground/90 bg-primary/10"
+                          : "text-primary-foreground/25"
+                      }`}
+                    >
+                      {line || "\u00A0"}
+                    </span>
+                  ))}
+                </code>
+              </pre>
+            </div>
+
+            {/* Evidence Receipt status */}
+            <div className="rounded-xl bg-ic-navy p-4 md:p-5 font-mono text-[13px]">
+              <div className="flex items-center gap-2 mb-3">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentStep.receiptStatus}
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.5, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`inline-block w-2 h-2 rounded-full ${status.dotClass}`}
+                  />
+                </AnimatePresence>
+                <span className="text-primary-foreground/50">
+                  Evidence Receipt
+                </span>
+              </div>
+
+              <div className="space-y-1 text-primary-foreground/50">
+                <div>
+                  event_type:{" "}
+                  <span className="text-primary-foreground/70">
+                    kyc_verification
+                  </span>
+                </div>
+                <div>
+                  timestamp:{" "}
+                  <span className="text-primary-foreground/70">
+                    {new Date().toISOString().slice(0, 19)}Z
+                  </span>
+                </div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentStep.receiptStatus}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.35 }}
+                  >
+                    {currentStep.receiptStatus === "received" && (
+                      <>
+                        <div>
+                          status:{" "}
+                          <span className="text-yellow-400">pending</span>
+                        </div>
+                        <div>
+                          integrity:{" "}
+                          <span className="text-primary-foreground/40">
+                            awaiting…
+                          </span>
+                        </div>
+                      </>
+                    )}
+                    {currentStep.receiptStatus === "sealed" && (
+                      <>
+                        <div>
+                          integrity:{" "}
+                          <span className="text-primary-foreground/70">
+                            sha256:a1b2c3…
+                          </span>
+                        </div>
+                        <div>
+                          status:{" "}
+                          <span className="text-primary">sealed</span>
+                        </div>
+                      </>
+                    )}
+                    {currentStep.receiptStatus === "verified" && (
+                      <>
+                        <div>
+                          integrity:{" "}
+                          <span className="text-primary-foreground/70">
+                            sha256:a1b2c3…
+                          </span>
+                        </div>
+                        <div>
+                          status:{" "}
+                          <span className="text-green-400">verified</span>
+                        </div>
+                        <div>
+                          verifyUrl:{" "}
+                          <span className="text-primary-foreground/70">
+                            https://verify.ic…
+                          </span>
+                        </div>
+                      </>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Status label */}
+              <div className="mt-3 pt-3 border-t border-primary-foreground/10 flex items-center gap-2">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={status.label}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`text-xs ${status.color}`}
+                  >
+                    {status.label}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
