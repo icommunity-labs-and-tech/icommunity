@@ -1,4 +1,4 @@
-import logoMadrid from "@/assets/logo-ayto-madrid.png";
+import logoMadrid from "@/assets/logo-ayto-madrid-3.png";
 import logoAenor from "@/assets/logo-aenor.png";
 import logoEstrella from "@/assets/logo-estrella.png";
 import logoLidl from "@/assets/logo-lidl.png";
@@ -6,6 +6,7 @@ import logoLogalty from "@/assets/logo-logalty.png";
 import logoCertifika from "@/assets/logo-certifika.png";
 
 const bottomLogos = [
+  { src: logoMadrid, alt: "Ayuntamiento de Madrid" },
   { src: logoAenor, alt: "AENOR" },
   { src: logoLogalty, alt: "Logalty" },
   { src: logoCertifika, alt: "Certifika" },
