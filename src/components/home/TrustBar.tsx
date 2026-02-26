@@ -16,7 +16,7 @@ const bottomLogos = [
 
 const TrustBar = () => {
   return (
-    <section className="trust-bar relative py-10 md:py-12">
+    <section className="trust-bar relative py-6 md:py-8">
       <div className="ic-container">
         {/* Logo row */}
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
