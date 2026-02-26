@@ -163,7 +163,7 @@ const HowItWorks = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* ── Steps (tabs) ── */}
           <div
             className="space-y-3"
