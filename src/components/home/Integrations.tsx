@@ -173,10 +173,13 @@ const Integrations = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Integra una vez.{" "}
               <span className="ic-text-gradient">Ofrece evidencia a todos tus clientes.</span>
             </h2>
+            <p className="text-sm font-medium tracking-wide text-primary/60 mb-6">
+              Integración única vía API · SDK · Webhook
+            </p>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
               Modelo B2B2B: los proveedores de identidad integran iCommunity una sola vez y ofrecen evidencia
               verificable como valor añadido a cada uno de sus clientes finales.
