@@ -25,7 +25,7 @@ const TrustBar = () => {
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              className="h-8 md:h-10 opacity-70 object-contain"
+              className="h-24 md:h-30 opacity-70 object-contain"
             />
           ))}
         </div>
