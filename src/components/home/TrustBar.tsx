@@ -18,13 +18,13 @@ const TrustBar = () => {
     <section className="trust-bar relative py-16 md:py-20">
       <div className="ic-container">
         {/* Eyebrow */}
-        <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/40 mb-6">
+        <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
           Confianza institucional
         </p>
 
         {/* Main statement + Madrid logo */}
         <div className="flex items-center justify-center gap-5 mb-14">
-          <p className="text-base md:text-lg font-semibold text-primary-foreground/80 text-center">
+          <p className="text-base md:text-lg font-semibold text-foreground/80 text-center">
             Infraestructura blockchain oficial del Ayuntamiento de Madrid
           </p>
           <img
