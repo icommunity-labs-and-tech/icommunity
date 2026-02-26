@@ -121,7 +121,7 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
                   textAnchor="middle"
                   dominantBaseline="middle"
                   className="fill-muted-foreground"
-                  fontSize="9"
+                  fontSize="10"
                   fontWeight="500"
                   fontFamily="Inter, system-ui, sans-serif"
                 >
@@ -174,7 +174,7 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
             textAnchor="middle"
             dominantBaseline="middle"
             fill="white"
-            fontSize="6.5"
+            fontSize="7"
             fontWeight="700"
             fontFamily="Inter, system-ui, sans-serif"
           >
@@ -186,7 +186,7 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
             textAnchor="middle"
             dominantBaseline="middle"
             fill="hsl(0 0% 100% / 0.7)"
-            fontSize="5"
+            fontSize="5.5"
             fontWeight="500"
             fontFamily="Inter, system-ui, sans-serif"
           >
