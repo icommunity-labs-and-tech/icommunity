@@ -7,7 +7,7 @@ const ProblemSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="ic-section bg-background" ref={ref}>
+    <section className="ic-section bg-background pt-12 md:pt-16" ref={ref}>
       <div className="ic-container max-w-3xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
