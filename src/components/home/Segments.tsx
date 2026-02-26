@@ -1,23 +1,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Fingerprint, Landmark, Gamepad2, Building2, type LucideIcon } from "lucide-react";
 
-const segments = [
+const segments: { icon: LucideIcon; title: string; outcome: string; regulation: string }[] = [
   {
+    icon: Fingerprint,
     title: "Identidad digital (KYC)",
     outcome: "Evidencia verificable de cada proceso de verificación ejecutado.",
     regulation: "eIDAS · AML5/6",
   },
   {
+    icon: Landmark,
     title: "Exchanges cripto",
     outcome: "Trazabilidad inmutable de onboarding y operaciones reguladas.",
     regulation: "MiCA · Travel Rule",
   },
   {
+    icon: Gamepad2,
     title: "Juego online",
     outcome: "Prueba auditable de verificación de edad por usuario.",
     regulation: "DGOJ · Age Verification",
   },
   {
+    icon: Building2,
     title: "Fintech & banca",
     outcome: "Historial continuo de eventos de compliance certificados.",
     regulation: "PSD2 · EBA Guidelines",
@@ -54,7 +59,12 @@ const Segments = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 ease-out hover:border-primary/20 hover:bg-accent/30"
             >
-              <h3 className="text-base font-semibold text-foreground mb-2">{seg.title}</h3>
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+                  <seg.icon className="w-5 h-5 text-primary/70" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground">{seg.title}</h3>
+              </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{seg.outcome}</p>
               <span className="text-[11px] font-medium tracking-wider uppercase text-primary/60">
                 {seg.regulation}
