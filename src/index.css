@@ -157,6 +157,11 @@
   .hero::before, .hero::after { animation: none; }
 }
 
+/* Trust bar — seamless continuation of hero */
+.trust-bar {
+  background: linear-gradient(180deg, #1d2f4d 0%, #1b253b 100%);
+}
+
 @layer utilities {
   .ic-container {
     @apply mx-auto max-w-[1200px] px-6;
