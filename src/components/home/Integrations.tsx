@@ -12,17 +12,17 @@ const spokes = [
 ];
 
 const HubDiagram = ({ inView }: { inView: boolean }) => {
-  const size = 340;
+  const size = 374;
   const cx = size / 2;
   const cy = size / 2;
-  const radius = 130;
-  const nodeR = 42;
+  const radius = 143;
+  const nodeR = 46;
 
   return (
     <div className="flex items-center justify-center">
       <svg
         viewBox={`0 0 ${size} ${size}`}
-        className="w-full max-w-[340px] h-auto"
+        className="w-full max-w-[374px] h-auto"
         fill="none"
       >
         <defs>
