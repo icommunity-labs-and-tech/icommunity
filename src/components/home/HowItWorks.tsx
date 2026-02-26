@@ -264,7 +264,7 @@ const HowItWorks = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4 lg:sticky lg:top-24"
+            className="space-y-4 flex flex-col justify-center min-h-full"
           >
             {/* Code block */}
             <div className="rounded-2xl bg-ic-navy p-5 md:p-6 overflow-hidden">
