@@ -1,3 +1,5 @@
+import logo from "@/assets/logo-blanco-negativo.png";
+
 const footerColumns = [
   {
     title: "Producto",
@@ -47,11 +49,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-primary-foreground font-bold text-lg">
-            <div className="w-7 h-7 rounded-md ic-gradient-cta flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xs">iC</span>
-            </div>
-            iCommunity
+          <div className="flex items-center">
+            <img src={logo} alt="iCommunity" className="h-6" />
           </div>
           <p className="text-xs text-primary-foreground/30">
             © {new Date().getFullYear()} iCommunity Labs S.L. Todos los derechos reservados.

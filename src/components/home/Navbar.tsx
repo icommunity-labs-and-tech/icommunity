@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo-blanco-negativo.png";
 
 const navLinks = [
   { label: "Producto", href: "#producto" },
@@ -18,11 +19,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent" role="navigation" aria-label="Navegación principal">
       <div className="ic-container flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-bold text-xl tracking-tight text-primary-foreground">
-          <div className="w-8 h-8 rounded-lg ic-gradient-cta flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">iC</span>
-          </div>
-          <span>iCommunity</span>
+        <a href="#" className="flex items-center">
+          <img src={logo} alt="iCommunity" className="h-7" />
         </a>
 
         {/* Desktop links */}
