@@ -1,105 +1,209 @@
-/* ===== iCommunity Brighter Stripe-like Animated Hero Background (robust) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* iCommunity palette — extracted from icommunity.io */
+    --background: 0 0% 100%;
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    /* Primary blue #386df0 */
+    --primary: 225 86% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Darker blue #0d3bad */
+    --primary-dark: 225 86% 37%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 30% 12%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 225 86% 96%;
+    --accent-foreground: 225 86% 37%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 225 86% 58%;
+
+    --radius: 0.75rem;
+
+    /* iCommunity custom tokens */
+    --ic-navy: 222 47% 8%;
+    --ic-navy-light: 222 30% 14%;
+    --ic-blue: 225 86% 58%;
+    --ic-blue-dark: 225 86% 37%;
+    --ic-blue-glow: 225 86% 68%;
+    --ic-gradient-hero: linear-gradient(135deg, hsl(222, 47%, 8%) 0%, hsl(222, 35%, 16%) 50%, hsl(225, 50%, 22%) 100%);
+    --ic-gradient-cta: linear-gradient(135deg, hsl(225, 86%, 58%) 0%, hsl(225, 86%, 48%) 100%);
+    --ic-gradient-card: linear-gradient(180deg, hsl(225, 86%, 97%) 0%, hsl(0, 0%, 100%) 100%);
+    --ic-gradient-lead: linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(225, 60%, 25%) 100%);
+    --ic-shadow-card: 0 4px 24px -4px hsl(225 86% 58% / 0.08);
+    --ic-shadow-card-hover: 0 12px 40px -8px hsl(225 86% 58% / 0.15);
+    --ic-glass: hsl(0 0% 100% / 0.7);
+    --ic-glass-border: hsl(220 13% 91% / 0.5);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 225 86% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ===== iCommunity Stripe-like Animated Hero Background ===== */
 .hero {
   position: relative;
   overflow: hidden;
-
-  /* Brighter base (avoid muddy flat #1b253b) */
-  background: linear-gradient(180deg, #2b2f63 0%, #1f2c5d 52%, #18294f 100%);
+  background: #1b253b;
 }
 
-/* animated mesh layers (real DOM elements) */
-.hero .mesh-layer {
+.hero::before {
+  content: "";
   position: absolute;
-  inset: -28%;
-  z-index: 0;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-}
-
-/* Layer 1: main “glow” */
-.hero .mesh-layer.mesh-1 {
+  inset: -20%;
+  background:
+    radial-gradient(40% 40% at 20% 30%, rgba(76,0,232,0.85) 0%, rgba(76,0,232,0) 60%),
+    radial-gradient(35% 35% at 75% 25%, rgba(131,117,184,0.75) 0%, rgba(131,117,184,0) 60%),
+    radial-gradient(45% 45% at 70% 75%, rgba(131,172,212,0.75) 0%, rgba(131,172,212,0) 62%),
+    radial-gradient(55% 55% at 25% 80%, rgba(76,0,232,0.45) 0%, rgba(76,0,232,0) 65%);
+  filter: blur(26px) saturate(120%);
   opacity: 0.95;
-  filter: blur(26px) saturate(140%);
-  background:
-    radial-gradient(42% 42% at 20% 25%, rgba(76, 0, 232, 0.98) 0%, rgba(76, 0, 232, 0) 62%),
-    radial-gradient(38% 38% at 78% 28%, rgba(131, 117, 184, 0.92) 0%, rgba(131, 117, 184, 0) 62%),
-    radial-gradient(46% 46% at 70% 78%, rgba(131, 172, 212, 0.92) 0%, rgba(131, 172, 212, 0) 64%),
-    radial-gradient(48% 48% at 35% 85%, rgba(76, 0, 232, 0.55) 0%, rgba(76, 0, 232, 0) 68%);
-  animation: meshMove1 26s ease-in-out infinite;
+  transform: translate3d(0,0,0);
+  animation: meshDrift 26s ease-in-out infinite;
+  z-index: 0;
 }
 
-/* Layer 2: depth + parallax */
-.hero .mesh-layer.mesh-2 {
-  inset: -32%;
-  opacity: 0.7;
-  filter: blur(36px) saturate(135%);
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
   background:
-    radial-gradient(54% 54% at 30% 18%, rgba(131, 172, 212, 0.52) 0%, rgba(131, 172, 212, 0) 70%),
-    radial-gradient(46% 46% at 85% 62%, rgba(131, 117, 184, 0.48) 0%, rgba(131, 117, 184, 0) 70%),
-    radial-gradient(50% 50% at 22% 72%, rgba(76, 0, 232, 0.4) 0%, rgba(76, 0, 232, 0) 72%);
-  animation: meshMove2 34s ease-in-out infinite;
+    radial-gradient(45% 45% at 30% 20%, rgba(131,172,212,0.35) 0%, rgba(131,172,212,0) 65%),
+    radial-gradient(40% 40% at 80% 60%, rgba(131,117,184,0.35) 0%, rgba(131,117,184,0) 65%);
+  filter: blur(34px) saturate(115%);
+  opacity: 0.85;
+  animation: meshDrift2 34s ease-in-out infinite;
+  z-index: 0;
 }
 
-/* Very light readability overlay (do NOT darken too much) */
-.hero .mesh-overlay {
+.hero .hero-overlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(180deg, rgba(27,37,59,0.10) 0%, rgba(27,37,59,0.18) 40%, rgba(27,37,59,0.22) 100%);
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 14, 30, 0.06) 0%,
-    rgba(10, 14, 30, 0.1) 45%,
-    rgba(10, 14, 30, 0.14) 100%
-  );
 }
 
-/* Subtle premium noise */
-.hero .mesh-noise {
+.hero .hero-noise {
   position: absolute;
   inset: 0;
+  opacity: 0.06;
   z-index: 2;
   pointer-events: none;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
 }
 
-/* Ensure hero content always above background */
 .hero .hero-content {
   position: relative;
   z-index: 3;
 }
 
-/* Motion: always works (transform animation) */
-@keyframes meshMove1 {
-  0% {
-    transform: translate3d(-2%, -1%, 0) scale(1.02);
-  }
-  50% {
-    transform: translate3d(3%, 2%, 0) scale(1.06);
-  }
-  100% {
-    transform: translate3d(-2%, -1%, 0) scale(1.02);
-  }
+@keyframes meshDrift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1.02); }
+  50%  { transform: translate3d( 3%,  2%, 0) scale(1.05); }
+  100% { transform: translate3d(-2%, -1%, 0) scale(1.02); }
 }
 
-@keyframes meshMove2 {
-  0% {
-    transform: translate3d(2%, 1%, 0) scale(1.03);
-  }
-  50% {
-    transform: translate3d(-3%, -2%, 0) scale(1.07);
-  }
-  100% {
-    transform: translate3d(2%, 1%, 0) scale(1.03);
-  }
+@keyframes meshDrift2 {
+  0%   { transform: translate3d( 2%,  1%, 0) scale(1.03); }
+  50%  { transform: translate3d(-3%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d( 2%,  1%, 0) scale(1.03); }
 }
 
-/* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero .mesh-layer {
-    animation: none;
+  .hero::before, .hero::after { animation: none; }
+}
+
+@layer utilities {
+  .ic-container {
+    @apply mx-auto max-w-[1200px] px-6;
+  }
+
+  .ic-section {
+    @apply py-24 md:py-32;
+  }
+
+  .ic-hero-bg {
+    background: var(--ic-gradient-hero);
+  }
+
+  .ic-gradient-cta {
+    background: var(--ic-gradient-cta);
+  }
+
+  .ic-gradient-card {
+    background: var(--ic-gradient-card);
+  }
+
+  .ic-gradient-lead {
+    background: var(--ic-gradient-lead);
+  }
+
+  .ic-card {
+    @apply rounded-2xl border border-border bg-card p-8;
+    box-shadow: var(--ic-shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .ic-card:hover {
+    box-shadow: var(--ic-shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .ic-glass {
+    background: var(--ic-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--ic-glass-border);
+  }
+
+  .ic-text-gradient {
+    background: linear-gradient(135deg, hsl(225, 86%, 58%) 0%, hsl(225, 86%, 42%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
