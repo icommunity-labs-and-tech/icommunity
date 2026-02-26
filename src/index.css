@@ -87,7 +87,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: #243050;
+  background: #1b253b;
 }
 
 .hero::before {
@@ -95,10 +95,10 @@
   position: absolute;
   inset: -20%;
   background:
-    radial-gradient(40% 40% at 20% 30%, rgba(56,109,240,0.7) 0%, rgba(56,109,240,0) 60%),
-    radial-gradient(35% 35% at 75% 25%, rgba(150,140,210,0.65) 0%, rgba(150,140,210,0) 60%),
-    radial-gradient(45% 45% at 70% 75%, rgba(140,185,230,0.65) 0%, rgba(140,185,230,0) 62%),
-    radial-gradient(55% 55% at 25% 80%, rgba(56,109,240,0.4) 0%, rgba(56,109,240,0) 65%);
+    radial-gradient(40% 40% at 20% 30%, rgba(76,0,232,0.85) 0%, rgba(76,0,232,0) 60%),
+    radial-gradient(35% 35% at 75% 25%, rgba(131,117,184,0.75) 0%, rgba(131,117,184,0) 60%),
+    radial-gradient(45% 45% at 70% 75%, rgba(131,172,212,0.75) 0%, rgba(131,172,212,0) 62%),
+    radial-gradient(55% 55% at 25% 80%, rgba(76,0,232,0.45) 0%, rgba(76,0,232,0) 65%);
   filter: blur(26px) saturate(120%);
   opacity: 0.95;
   transform: translate3d(0,0,0);
@@ -111,8 +111,8 @@
   position: absolute;
   inset: -25%;
   background:
-    radial-gradient(45% 45% at 30% 20%, rgba(140,185,230,0.4) 0%, rgba(140,185,230,0) 65%),
-    radial-gradient(40% 40% at 80% 60%, rgba(150,140,210,0.4) 0%, rgba(150,140,210,0) 65%);
+    radial-gradient(45% 45% at 30% 20%, rgba(131,172,212,0.35) 0%, rgba(131,172,212,0) 65%),
+    radial-gradient(40% 40% at 80% 60%, rgba(131,117,184,0.35) 0%, rgba(131,117,184,0) 65%);
   filter: blur(34px) saturate(115%);
   opacity: 0.85;
   animation: meshDrift2 34s ease-in-out infinite;
@@ -122,7 +122,7 @@
 .hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(36,48,80,0.08) 0%, rgba(36,48,80,0.14) 40%, rgba(36,48,80,0.18) 100%);
+  background: linear-gradient(180deg, rgba(27,37,59,0.10) 0%, rgba(27,37,59,0.18) 40%, rgba(27,37,59,0.22) 100%);
   z-index: 1;
   pointer-events: none;
 }

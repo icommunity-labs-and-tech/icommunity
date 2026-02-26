@@ -77,7 +77,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#243050]/95 backdrop-blur-md overflow-hidden"
+            className="lg:hidden bg-[#1b253b]/95 backdrop-blur-md overflow-hidden"
           >
             <div className="ic-container py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
