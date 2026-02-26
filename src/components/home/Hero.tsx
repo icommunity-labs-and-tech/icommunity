@@ -10,15 +10,11 @@ const trustPoints = [
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden ic-hero-bg pt-32 pb-20 md:pt-40 md:pb-28">
-      {/* Abstract shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-96 h-96 rounded-full bg-ic-blue/5 blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-ic-blue/8 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-ic-blue/3 blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="hero-mesh-bg" />
+      <div className="hero-mesh-overlay" />
 
-      <div className="ic-container relative z-10">
+      <div className="hero-content ic-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <motion.div

@@ -83,6 +83,63 @@
   }
 }
 
+/* HERO animated mesh background (iCommunity palette) */
+@property --14-x-position { syntax: '<percentage>'; inherits:false; initial-value: 72%; }
+@property --14-y-position { syntax: '<percentage>'; inherits:false; initial-value: 78%; }
+@property --15-x-position { syntax: '<percentage>'; inherits:false; initial-value: 58%; }
+@property --15-y-position { syntax: '<percentage>'; inherits:false; initial-value: 32%; }
+@property --16-x-position { syntax: '<percentage>'; inherits:false; initial-value: 32%; }
+@property --16-y-position { syntax: '<percentage>'; inherits:false; initial-value: 60%; }
+@property --17-x-position { syntax: '<percentage>'; inherits:false; initial-value: 80%; }
+@property --17-y-position { syntax: '<percentage>'; inherits:false; initial-value: 22%; }
+
+.hero-mesh-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(100% 100% at var(--14-x-position) var(--14-y-position), #4c00e8 0%, transparent 60%),
+    radial-gradient(100% 100% at var(--15-x-position) var(--15-y-position), #8375b8 0%, transparent 60%),
+    radial-gradient(100% 100% at var(--16-x-position) var(--16-y-position), #83acd4 0%, transparent 60%),
+    radial-gradient(100% 100% at var(--17-x-position) var(--17-y-position), rgba(27,37,59,0.9) 0%, transparent 65%),
+    #1b253b;
+  animation: main 24s ease-in-out infinite;
+}
+
+.hero-mesh-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background: rgba(10,15,35,0.22);
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+@keyframes main{
+  0%{
+    --14-x-position: 72%; --14-y-position: 78%;
+    --15-x-position: 58%; --15-y-position: 32%;
+    --16-x-position: 32%; --16-y-position: 60%;
+    --17-x-position: 80%; --17-y-position: 22%;
+  }
+  50%{
+    --14-x-position: 38%; --14-y-position: 64%;
+    --15-x-position: 70%; --15-y-position: 40%;
+    --16-x-position: 44%; --16-y-position: 28%;
+    --17-x-position: 62%; --17-y-position: 30%;
+  }
+  100%{
+    --14-x-position: 72%; --14-y-position: 78%;
+    --15-x-position: 58%; --15-y-position: 32%;
+    --16-x-position: 32%; --16-y-position: 60%;
+    --17-x-position: 80%; --17-y-position: 22%;
+  }
+}
+
 @layer utilities {
   .ic-container {
     @apply mx-auto max-w-[1200px] px-6;
