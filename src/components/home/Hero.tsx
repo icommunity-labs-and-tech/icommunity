@@ -92,110 +92,65 @@ const HeroDiagram = () => {
 
   return (
     <div className="relative">
-      {/* Subtle background processing glow */}
-      <motion.div
-        className="absolute -inset-px rounded-2xl"
-        style={{
-          background: "linear-gradient(135deg, hsl(225 86% 58% / 0.08), hsl(225 86% 68% / 0.04), hsl(225 86% 58% / 0.08))",
-        }}
-        animate={{ opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
-      />
-
-      <div className="relative rounded-2xl border border-primary-foreground/10 bg-primary-foreground/[0.04] backdrop-blur-sm p-8">
-        {/* Header */}
-        <div className="flex items-center gap-2 mb-6">
-          <motion.div
-            className="w-1.5 h-1.5 rounded-full bg-green-400/80"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
-          />
-          <span className="text-[10px] font-mono uppercase tracking-widest text-primary-foreground/30">Trust Pipeline — Active</span>
-        </div>
-
-        <div className="flex flex-col gap-0">
+      <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-8">
+        <div className="flex flex-col gap-4">
+          {/* Step flow with staggered progress pulse */}
           {steps.map((s, i) => (
-            <div key={s.step}>
-              {/* Step */}
+            <div key={s.step} className="flex items-start gap-4">
               <motion.div
-                className="flex items-start gap-4 py-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.2, delay: i * 1.5, ease: "easeOut" }}
+                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  delay: i * 1.8,
+                }}
               >
-                {/* Step indicator with slow pulse */}
-                <div className="relative flex-shrink-0">
-                  <motion.div
-                    className="w-9 h-9 rounded-lg border border-primary-foreground/10 bg-primary-foreground/[0.06] flex items-center justify-center"
-                    animate={{ borderColor: ["hsl(225 86% 58% / 0.1)", "hsl(225 86% 58% / 0.25)", "hsl(225 86% 58% / 0.1)"] }}
-                    transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, delay: i * 2 }}
-                  >
-                    <span className="text-primary-foreground/50 font-mono text-xs">{s.step}</span>
-                  </motion.div>
-                </div>
-                <div className="flex-1 min-w-0 pt-1">
-                  <div className="text-sm font-medium text-primary-foreground/80">{s.title}</div>
-                  <div className="text-xs text-primary-foreground/35 mt-0.5">{s.desc}</div>
-                </div>
+                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
               </motion.div>
-
-              {/* Connector line between steps */}
-              {i < steps.length - 1 && (
-                <div className="ml-[17px] relative h-4">
-                  <div className="absolute left-0 top-0 w-px h-full bg-primary-foreground/8" />
-                  <motion.div
-                    className="absolute left-0 top-0 w-px bg-ic-blue-glow/30"
-                    animate={{ height: ["0%", "100%", "100%"] }}
-                    transition={{ duration: 3, delay: i * 2 + 1, ease: "easeInOut", repeat: Infinity, repeatDelay: 6 }}
-                  />
-                </div>
-              )}
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-primary-foreground">{s.title}</div>
+                <div className="text-xs text-primary-foreground/50 mt-0.5">{s.desc}</div>
+              </div>
             </div>
           ))}
-        </div>
 
-        {/* Evidence output */}
-        <motion.div
-          className="mt-5 rounded-xl border border-primary-foreground/8 bg-primary-foreground/[0.03] p-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 4, ease: "easeOut" }}
-        >
-          <div className="flex items-center gap-2 mb-3">
-            <motion.div
-              className="w-2 h-2 rounded-full bg-green-400/80"
-              animate={{
-                opacity: [1, 0.3, 1],
-                boxShadow: ["0 0 0px hsl(142 69% 58% / 0)", "0 0 6px hsl(142 69% 58% / 0.3)", "0 0 0px hsl(142 69% 58% / 0)"],
-              }}
-              transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity }}
-            />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-primary-foreground/40">Evidence Output</span>
-          </div>
-          <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/35">
-            <div><span className="text-ic-blue-glow/60">event:</span> kyc_verification</div>
-            <motion.div
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
-            >
-              <span className="text-ic-blue-glow/60">timestamp:</span> {ts}
-            </motion.div>
-            <div><span className="text-ic-blue-glow/60">hash:</span> sha256:a1b2c3…f8e9</div>
-            <div>
-              <span className="text-ic-blue-glow/60">status:</span>{" "}
-              <motion.span
-                className="text-green-400/80 inline-block"
-                animate={{
-                  opacity: [0.7, 1, 0.7],
-                  textShadow: ["0 0 0px hsl(142 69% 58% / 0)", "0 0 8px hsl(142 69% 58% / 0.2)", "0 0 0px hsl(142 69% 58% / 0)"],
-                }}
-                transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, delay: 1.5 }}
+          {/* Visual receipt */}
+          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              {/* Pulsing green dot */}
+              <motion.div
+                className="w-2 h-2 rounded-full bg-green-400"
+                animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              <span className="text-xs font-mono text-primary-foreground/60">Evidence Receipt</span>
+            </div>
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/40">
+              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
+              {/* Timestamp with slow refresh animation */}
+              <motion.div
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
               >
-                verified
-              </motion.span>
+                <span className="text-ic-blue-glow">timestamp:</span> {ts}
+              </motion.div>
+              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
+              {/* Verified status gentle pulse */}
+              <div>
+                <span className="text-ic-blue-glow">status:</span>{" "}
+                <motion.span
+                  className="text-green-400 inline-block"
+                  animate={{ opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+                >
+                  verified
+                </motion.span>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
