@@ -7,19 +7,25 @@ const steps = [
     icon: Download,
     step: "01",
     title: "Captura",
-    desc: "Integra vía SDK, API REST o Webhook. Envía el evento de verificación en tiempo real.",
+    desc: "Recibe el evento de verificación desde tu proveedor KYC y lo normaliza en un payload estructurado.",
+    input: "Evento (KYC / edad / interacción)",
+    output: "Payload normalizado",
   },
   {
     icon: Lock,
     step: "02",
     title: "Certifica",
-    desc: "Generamos un hash criptográfico, sellado temporal y registro inmutable automáticamente.",
+    desc: "Genera automáticamente una prueba criptográfica con sello temporal y registro inmutable.",
+    input: "Payload normalizado",
+    output: "Hash + sello temporal + registro inmutable",
   },
   {
     icon: Search,
     step: "03",
     title: "Verifica / Audita",
-    desc: "Usa el verificador público o exporta la evidencia para cualquier auditoría regulatoria.",
+    desc: "Consulta el verificador público o exporta la evidencia completa para cualquier auditoría.",
+    input: "Evidence Receipt",
+    output: "Verificación pública + export auditoría",
   },
 ];
 
@@ -38,13 +44,16 @@ const HowItWorks = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Cómo funciona</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tres pasos para convertir cualquier verificación en evidencia regulatoria.
+            Tres pasos para convertir cualquier verificación en evidencia verificable y auditable.
+          </p>
+          <p className="text-sm text-muted-foreground/70 font-mono mt-3 max-w-xl mx-auto">
+            Integración vía SDK / API / Webhook. Sin fricción con tu proveedor KYC.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Steps */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {steps.map((s, i) => (
               <motion.div
                 key={s.step}
@@ -53,13 +62,21 @@ const HowItWorks = () => {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="flex gap-5"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent flex items-center justify-center mt-1">
                   <s.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <div className="text-xs font-mono text-primary mb-1">PASO {s.step}</div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground">{s.desc}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{s.desc}</p>
+                  <div className="flex flex-col sm:flex-row gap-2 text-xs font-mono">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
+                      <span className="text-primary/70">IN →</span> {s.input}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-foreground">
+                      <span className="text-primary">OUT →</span> {s.output}
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
