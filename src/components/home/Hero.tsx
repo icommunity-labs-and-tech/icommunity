@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Shield, Clock, Eye, CheckCircle } from "lucide-react";
 
 const trustPoints = [
@@ -50,15 +51,8 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right: Diagram */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="hidden lg:block"
-          >
-            <HeroDiagram />
-          </motion.div>
+          {/* Right: Diagram with parallax */}
+          <ParallaxPanel />
         </div>
 
         {/* Trust points */}
@@ -77,6 +71,29 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
+  );
+};
+
+const ParallaxPanel = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+      className="hidden lg:block"
+    >
+      <motion.div style={{ y }}>
+        <HeroDiagram />
+      </motion.div>
+    </motion.div>
   );
 };
 
