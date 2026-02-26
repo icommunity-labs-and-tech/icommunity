@@ -157,7 +157,7 @@ const HowItWorks = () => {
             Tres pasos para convertir cualquier verificación en evidencia
             verificable y auditable.
           </p>
-          <p className="text-sm text-muted-foreground/70 font-mono mt-3 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg font-mono mt-3 max-w-2xl mx-auto">
             Integración vía SDK / API / Webhook. Sin fricción con tu proveedor
             KYC.
           </p>
