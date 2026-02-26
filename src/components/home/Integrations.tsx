@@ -61,19 +61,40 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
                 filter="url(#lineGlow)"
               />
 
-              {/* Traveling pulse */}
+              {/* Outbound pulse */}
               {inView && (
-                <circle r="3" fill="hsl(225 86% 68% / 0.7)">
+                <circle r="2.5" fill="hsl(225 86% 68% / 0.6)">
                   <animateMotion
-                    dur={`${2.5 + i * 0.4}s`}
+                    dur={`${6 + i * 1.2}s`}
                     repeatCount="indefinite"
                     path={`M${cx},${cy} L${sx},${sy}`}
+                    begin={`${i * 0.8}s`}
                   />
                   <animate
                     attributeName="opacity"
-                    values="0;1;1;0"
-                    dur={`${2.5 + i * 0.4}s`}
+                    values="0;0.7;0.7;0"
+                    dur={`${6 + i * 1.2}s`}
                     repeatCount="indefinite"
+                    begin={`${i * 0.8}s`}
+                  />
+                </circle>
+              )}
+
+              {/* Return pulse */}
+              {inView && (
+                <circle r="2" fill="hsl(225 86% 58% / 0.4)">
+                  <animateMotion
+                    dur={`${7 + i * 1}s`}
+                    repeatCount="indefinite"
+                    path={`M${sx},${sy} L${cx},${cy}`}
+                    begin={`${3 + i * 0.6}s`}
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;0.5;0.5;0"
+                    dur={`${7 + i * 1}s`}
+                    repeatCount="indefinite"
+                    begin={`${3 + i * 0.6}s`}
                   />
                 </circle>
               )}
