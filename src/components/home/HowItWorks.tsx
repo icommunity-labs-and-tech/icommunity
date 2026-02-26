@@ -187,11 +187,10 @@ const HowItWorks = () => {
                   className={`
                     relative flex gap-5 p-5 rounded-xl cursor-pointer
                     transition-all duration-300 ease-out
-                    border border-transparent
                     ${
                       isActive
-                        ? "bg-accent/60 border-primary/20 shadow-sm"
-                        : "hover:bg-muted/50"
+                        ? "bg-muted/30"
+                        : "hover:bg-muted/20"
                     }
                   `}
                 >
