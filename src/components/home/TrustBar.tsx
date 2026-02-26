@@ -17,23 +17,6 @@ const TrustBar = () => {
   return (
     <section className="trust-bar relative py-16 md:py-20">
       <div className="ic-container">
-        {/* Eyebrow */}
-        <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
-          Confianza institucional
-        </p>
-
-        {/* Main statement + Madrid logo */}
-        <div className="flex items-center justify-center gap-5 mb-14">
-          <p className="text-base md:text-lg font-semibold text-foreground/80 text-center">
-            Infraestructura blockchain oficial del Ayuntamiento de Madrid
-          </p>
-          <img
-            src={logoMadrid}
-            alt="Ayuntamiento de Madrid"
-            className="h-10 md:h-12 opacity-70 flex-shrink-0"
-          />
-        </div>
-
         {/* Logo row */}
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
           {bottomLogos.map((logo) => (
