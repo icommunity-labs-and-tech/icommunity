@@ -116,7 +116,24 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5 }}
+          style={{ transformOrigin: `${cx}px ${cy}px` }}
         >
+          <animateTransform
+            attributeName="transform"
+            type="scale"
+            values="1;1.03;1"
+            dur="9s"
+            repeatCount="indefinite"
+            additive="sum"
+          />
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values={`0,0;${-cx * 0.03 / 2},${-cy * 0.03 / 2};0,0`}
+            dur="9s"
+            repeatCount="indefinite"
+            additive="sum"
+          />
           <circle
             cx={cx}
             cy={cy}
