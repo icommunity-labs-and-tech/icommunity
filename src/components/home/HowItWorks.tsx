@@ -201,7 +201,13 @@ const TechPanel = ({ activeStep, prefersReducedMotion }: { activeStep: number; p
           <AnimatePresence mode="wait">
             <motion.span
               key={currentStep.receiptStatus}
-              {...anim}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={prefersReducedMotion
+                ? { scale: 1, opacity: 1 }
+                : { scale: [1, 1.6, 1], opacity: 1 }
+              }
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className={`inline-block w-2 h-2 rounded-full ${status.dotClass}`}
             />
           </AnimatePresence>
