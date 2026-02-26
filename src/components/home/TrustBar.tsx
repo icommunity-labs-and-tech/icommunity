@@ -20,12 +20,12 @@ const TrustBar = () => {
       <div className="ic-container">
         {/* Logo row */}
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
-          {bottomLogos.map((logo) => (
+        {bottomLogos.map((logo) => (
             <img
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              className="h-8 md:h-10 opacity-70 object-contain"
+              className={`opacity-70 object-contain ${logo.alt === "Ayuntamiento de Madrid" ? "h-16 md:h-20" : "h-8 md:h-10"}`}
             />
           ))}
         </div>
