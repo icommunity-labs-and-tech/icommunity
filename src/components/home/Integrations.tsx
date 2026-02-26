@@ -1,6 +1,164 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Plug, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const spokes = [
+  { label: "KYC Provider", angle: 0 },
+  { label: "ID Verifier", angle: 60 },
+  { label: "AML Check", angle: 120 },
+  { label: "Age Gate", angle: 180 },
+  { label: "Biometric", angle: 240 },
+  { label: "eSignature", angle: 300 },
+];
+
+const HubDiagram = ({ inView }: { inView: boolean }) => {
+  const size = 340;
+  const cx = size / 2;
+  const cy = size / 2;
+  const radius = 130;
+  const nodeR = 42;
+
+  return (
+    <div className="flex items-center justify-center">
+      <svg
+        viewBox={`0 0 ${size} ${size}`}
+        className="w-full max-w-[340px] h-auto"
+        fill="none"
+      >
+        <defs>
+          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="hsl(225 86% 58% / 0.15)" />
+            <stop offset="100%" stopColor="hsl(225 86% 58% / 0)" />
+          </radialGradient>
+          <filter id="lineGlow">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        {/* Ambient glow */}
+        <circle cx={cx} cy={cy} r={radius + 30} fill="url(#hubGlow)" />
+
+        {/* Spokes: lines + pulse + nodes */}
+        {spokes.map((s, i) => {
+          const rad = (s.angle - 90) * (Math.PI / 180);
+          const sx = cx + radius * Math.cos(rad);
+          const sy = cy + radius * Math.sin(rad);
+
+          return (
+            <g key={s.label}>
+              {/* Connection line */}
+              <line
+                x1={cx}
+                y1={cy}
+                x2={sx}
+                y2={sy}
+                stroke="hsl(225 86% 58% / 0.18)"
+                strokeWidth="1"
+                filter="url(#lineGlow)"
+              />
+
+              {/* Traveling pulse */}
+              {inView && (
+                <circle r="3" fill="hsl(225 86% 68% / 0.7)">
+                  <animateMotion
+                    dur={`${2.5 + i * 0.4}s`}
+                    repeatCount="indefinite"
+                    path={`M${cx},${cy} L${sx},${sy}`}
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;1;1;0"
+                    dur={`${2.5 + i * 0.4}s`}
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              )}
+
+              {/* Spoke node */}
+              <motion.g
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
+              >
+                <rect
+                  x={sx - nodeR}
+                  y={sy - 14}
+                  width={nodeR * 2}
+                  height={28}
+                  rx="8"
+                  fill="hsl(0 0% 100%)"
+                  stroke="hsl(220 13% 91%)"
+                  strokeWidth="1"
+                />
+                <text
+                  x={sx}
+                  y={sy + 1}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="fill-muted-foreground"
+                  fontSize="9"
+                  fontWeight="500"
+                  fontFamily="Inter, system-ui, sans-serif"
+                >
+                  {s.label}
+                </text>
+              </motion.g>
+            </g>
+          );
+        })}
+
+        {/* Center hub */}
+        <motion.g
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <circle
+            cx={cx}
+            cy={cy}
+            r="30"
+            fill="hsl(225 86% 58%)"
+            opacity="0.1"
+          />
+          <circle
+            cx={cx}
+            cy={cy}
+            r="22"
+            fill="hsl(225 86% 58%)"
+          />
+          <text
+            x={cx}
+            y={cy - 4}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="white"
+            fontSize="6.5"
+            fontWeight="700"
+            fontFamily="Inter, system-ui, sans-serif"
+          >
+            iCommunity
+          </text>
+          <text
+            x={cx}
+            y={cy + 5}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="hsl(0 0% 100% / 0.7)"
+            fontSize="5"
+            fontWeight="500"
+            fontFamily="Inter, system-ui, sans-serif"
+          >
+            HUB
+          </text>
+        </motion.g>
+      </svg>
+    </div>
+  );
+};
 
 const Integrations = () => {
   const ref = useRef(null);
@@ -38,18 +196,8 @@ const Integrations = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-3 gap-4"
           >
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="ic-card flex items-center justify-center p-6 aspect-square">
-                <div className="flex flex-col items-center gap-2">
-                  <Plug className="w-6 h-6 text-muted-foreground/40" />
-                  <span className="text-[10px] text-muted-foreground/50 text-center font-medium">
-                    {["KYC Provider", "ID Verifier", "AML Check", "Age Gate", "Biometric", "eSignature"][i]}
-                  </span>
-                </div>
-              </div>
-            ))}
+            <HubDiagram inView={inView} />
           </motion.div>
         </div>
       </div>
