@@ -5,16 +5,16 @@ import { Layers, Package, BrainCircuit, ArrowRight } from "lucide-react";
 const cards = [
   {
     icon: Layers,
-    title: "iBS Platform",
-    desc: "Capa independiente que certifica eventos digitales y genera pruebas auditables para supervisión regulatoria.",
-    cta: "Ver plataforma",
-    href: "#arquitectura-de-confianza",
+    title: "iBS",
+    desc: "Capa independiente que certifica eventos digitales y genera pruebas auditables mediante blockchain para supervisión regulatoria.",
+    cta: "Ir a iBS",
+    href: "https://icommunity.io/ibs",
     external: false,
   },
   {
     icon: Package,
     title: "CertyPass",
-    desc: "Pasaporte Digital de Producto conforme al reglamento europeo ESPR.",
+    desc: "Pasaporte Digital de Producto conforme al reglamento europeo ESPR para garantizar la sostenibilidad ambiental de cualquier producto.",
     cta: "Ir a CertyPass",
     href: "https://certypass.com",
     external: true,
@@ -22,7 +22,7 @@ const cards = [
   {
     icon: BrainCircuit,
     title: "Privaura",
-    desc: "Gobierno, anonimización y control de datos para sistemas de IA regulados.",
+    desc: "Gobierno, anonimización y control de datos sensibles para el tratamiento en plataformas IA.",
     cta: "Ir a Privaura",
     href: "https://privaura.lovable.app",
     external: true,
@@ -42,9 +42,7 @@ const Ecosystem = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            El ecosistema de confianza iCommunity
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">iCommunity Trust Ecosystem</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Una plataforma base sobre la que se construyen soluciones regulatorias especializadas.
           </p>
