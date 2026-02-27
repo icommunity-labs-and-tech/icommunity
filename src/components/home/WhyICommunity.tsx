@@ -5,32 +5,32 @@ import { ShieldCheck, FileCheck2, Webhook, Layers, Scale, Server, X, Check } fro
 const blocks = [
   {
     icon: ShieldCheck,
-    title: "Independencia de confianza",
+    title: "La evidencia se genera fuera del sistema",
     description: "La evidencia se genera fuera del sistema que ejecuta el proceso, garantizando verificabilidad ante terceros y reguladores.",
   },
   {
     icon: FileCheck2,
-    title: "Audit-ready por diseño",
+    title: "Cada evento nace certificado",
     description: "Cada evento queda certificado con integridad criptográfica y sellado temporal verificable desde su creación.",
   },
   {
     icon: Webhook,
-    title: "API-first infrastructure",
+    title: "Se integra sin reemplazar nada",
     description: "Integración mediante SDK, API o Webhooks sin modificar los sistemas existentes.",
   },
   {
     icon: Layers,
-    title: "Neutralidad tecnológica",
+    title: "No depende del proveedor",
     description: "Compatible con cualquier proveedor KYC, onboarding o sistema corporativo existente.",
   },
   {
     icon: Scale,
-    title: "Cumplimiento regulatorio europeo",
+    title: "Alineada con el marco regulatorio europeo",
     description: "Diseñado alineado con eIDAS, AML, MiCA y marcos regulatorios aplicables.",
   },
   {
     icon: Server,
-    title: "Escalable como infraestructura",
+    title: "Arquitectura preparada para escala institucional",
     description: "Arquitectura multi-tenant preparada para operar a escala institucional.",
   },
 ];
