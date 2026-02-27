@@ -20,8 +20,8 @@ const ProblemSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             La presión regulatoria sobre identidad digital, KYC y verificación de edad crece cada trimestre.
-            Los reguladores ya no aceptan capturas de pantalla ni logs internos: exigen prueba
-            verificable, consistente e independiente del proveedor. Sin una capa de evidencia neutral,
+            Los <strong className="text-foreground font-semibold">reguladores ya no aceptan capturas de pantalla ni logs internos: exigen prueba
+            verificable</strong>, consistente e independiente del proveedor. Sin una capa de evidencia neutral,
             cada auditoría es un riesgo operativo.
           </p>
         </motion.div>
