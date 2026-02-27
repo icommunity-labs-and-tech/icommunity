@@ -1,13 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Shield, Clock, Eye, CheckCircle } from "lucide-react";
 import logoMadrid from "@/assets/logo-ayto-madrid-gray-4.png";
-
-const trustPoints = [
-  { icon: Shield, label: "Integridad" },
-  { icon: Clock, label: "Trazabilidad temporal" },
-  { icon: Eye, label: "Privacidad / RGPD" },
-  { icon: CheckCircle, label: "Verificación" },
-];
 
 const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   return (
@@ -26,20 +19,27 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             {/* Tag */}
             <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6">
               <span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">
-                Infraestructura independiente de confianza regulatoria
+                Haz verificable cualquier proceso digital
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[620px]">
-              Infraestructura de evidencia verificable
+              Convierte eventos digitales en pruebas auditables
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/70 mb-4 max-w-lg leading-relaxed">
               Transforma eventos digitales en evidencia verificable, auditable y compatible con regulación desde el origen.
             </p>
 
+            {/* Institutional badge */}
+            <div className="inline-flex items-center rounded-full border border-ic-blue-glow/30 bg-primary-foreground/5 px-4 py-1.5 mb-8">
+              <span className="text-xs font-medium text-primary-foreground/70">
+                Infraestructura desplegada en administraciones públicas y plataformas reguladas
+              </span>
+            </div>
+
             {/* Bullets */}
             <div className="flex flex-col gap-3 mb-10">
-              {["Preparado para auditoría por diseño", "Integración vía API / SDK", "Evidencia independiente verificable"].map((b) => (
+              {["Auditoría trazable desde el origen", "Integración directa vía API", "Verificación independiente para reguladores"].map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -47,8 +47,8 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 justify-start max-w-[620px]">
+            {/* CTAs - centered under bullets */}
+            <div className="flex flex-wrap gap-4 justify-center max-w-[620px]">
               <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
                 Solicitar demo técnica
               </button>
@@ -74,21 +74,6 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             <HeroDiagram />
           </motion.div>
         </div>
-
-        {/* Trust points */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {trustPoints.map((tp) => (
-            <div key={tp.label} className="flex items-center gap-3 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 px-5 py-4">
-              <tp.icon className="w-5 h-5 text-ic-blue-glow flex-shrink-0" />
-              <span className="text-sm font-medium text-primary-foreground/80">{tp.label}</span>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
@@ -108,18 +93,12 @@ const HeroDiagram = () => {
     <div className="relative">
       <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-8">
         <div className="flex flex-col gap-4">
-          {/* Step flow with staggered progress pulse */}
           {steps.map((s, i) => (
             <div key={s.step} className="flex items-start gap-4">
               <motion.div
                 className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
                 animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  delay: i * 1.8,
-                }}
+                transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.8 }}
               >
                 <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
               </motion.div>
@@ -130,10 +109,8 @@ const HeroDiagram = () => {
             </div>
           ))}
 
-          {/* Visual receipt */}
           <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
             <div className="flex items-center gap-2 mb-3">
-              {/* Pulsing green dot */}
               <motion.div
                 className="w-2 h-2 rounded-full bg-green-400"
                 animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
@@ -143,7 +120,6 @@ const HeroDiagram = () => {
             </div>
             <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/40">
               <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
-              {/* Timestamp with slow refresh animation */}
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
@@ -151,7 +127,6 @@ const HeroDiagram = () => {
                 <span className="text-ic-blue-glow">timestamp:</span> {ts}
               </motion.div>
               <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
-              {/* Verified status gentle pulse */}
               <div>
                 <span className="text-ic-blue-glow">status:</span>{" "}
                 <motion.span
