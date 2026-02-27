@@ -171,7 +171,7 @@ const HeroDiagram = () => {
       <div className="flex items-center gap-3 mt-6 w-full">
         <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto opacity-60 flex-shrink-0" />
         <span className="text-sm text-primary-foreground/50 leading-tight flex-1">
-          iCommunity, el proveedor oficial de blockchain del Ayuntamiento de Madrid
+          iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
         </span>
       </div>
     </div>
