@@ -63,7 +63,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 
         {/* CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#token-icom" className="text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+          <a href="https://www.icommunity.io/icom/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors">
             Token Icom
           </a>
           <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
