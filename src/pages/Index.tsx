@@ -29,13 +29,13 @@ const Index = () => {
       <main>
         <Hero onOpenModal={() => openModal()} />
         <StructuralProblem />
-        <TrustBar />
         <Ecosystem />
         <Segments />
         <Integrations onOpenModal={() => openModal("partner-integrador")} />
         <TrustArchitecture />
         <Security />
         <WhyICommunity />
+        <TrustBar />
         <LeadMagnet />
         <FinalCta onOpenModal={openModal} />
       </main>
