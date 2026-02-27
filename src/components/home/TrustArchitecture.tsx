@@ -93,7 +93,7 @@ const TrustArchitecture = () => {
                 <FlowDots delay={i * 0.6} />
               </div>
             ))}
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-4 whitespace-nowrap">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-10 whitespace-nowrap">
               Eventos digitales
             </span>
           </div>
@@ -154,7 +154,7 @@ const TrustArchitecture = () => {
                 <FlowDots delay={1.8 + i * 0.6} />
               </div>
             ))}
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-4 whitespace-nowrap">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-10 whitespace-nowrap">
               Evidencia verificable
             </span>
           </div>
