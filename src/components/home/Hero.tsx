@@ -39,7 +39,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 
             {/* Bullets */}
             <div className="flex flex-col gap-3 mb-10">
-              {["Audit-ready por diseño", "Integración vía API / SDK", "Evidencia independiente verificable"].map((b) => (
+              {["Preparado para auditoría por diseño", "Integración vía API / SDK", "Evidencia independiente verificable"].map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -48,7 +48,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-start max-w-[620px]">
               <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
                 Solicitar demo técnica
               </button>
@@ -168,9 +168,9 @@ const HeroDiagram = () => {
       </div>
 
       {/* Madrid badge */}
-      <div className="flex items-center gap-3 mt-6">
-        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto opacity-60" />
-        <span className="text-sm text-primary-foreground/50 leading-tight max-w-[260px]">
+      <div className="flex items-center gap-3 mt-6 w-full">
+        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto opacity-60 flex-shrink-0" />
+        <span className="text-sm text-primary-foreground/50 leading-tight flex-1">
           iCommunity, el proveedor oficial de blockchain del Ayuntamiento de Madrid
         </span>
       </div>
