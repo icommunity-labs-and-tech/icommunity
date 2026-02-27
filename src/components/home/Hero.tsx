@@ -30,11 +30,11 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6">
-              La capa de confianza que conecta sistemas digitales con supervisión regulatoria.
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[620px]">
+              Infraestructura de evidencia verificable
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-lg leading-relaxed">
-              iCommunity convierte eventos digitales en evidencia verificable, audit-ready y compatible con regulación europea desde origen.
+              Transforma eventos digitales en evidencia verificable, auditable y compatible con regulación desde el origen.
             </p>
 
             {/* Bullets */}
