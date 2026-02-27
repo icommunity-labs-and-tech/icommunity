@@ -6,7 +6,8 @@ const blocks = [
   {
     icon: ShieldCheck,
     title: "Certificación independiente del operador",
-    description: "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros.",
+    description:
+      "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros.",
   },
   {
     icon: FileCheck2,
@@ -49,14 +50,10 @@ const WhyICommunity = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-medium tracking-wide text-primary/60 mb-4">
-            Why iCommunity
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Por qué iCommunity
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Por qué iCommunity</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Capa de confianza diseñada para convertir eventos digitales en pruebas auditadas con trazabilidad regulatoria.
+            Capa de confianza diseñada para convertir eventos digitales en pruebas auditadas con trazabilidad
+            regulatoria.
           </p>
         </motion.div>
 
@@ -77,13 +74,20 @@ const WhyICommunity = () => {
                 }`}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`rounded-lg flex items-center justify-center flex-shrink-0 ${
-                    isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"
-                  }`}>
-                    <b.icon className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`} strokeWidth={1.5} />
+                  <div
+                    className={`rounded-lg flex items-center justify-center flex-shrink-0 ${
+                      isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"
+                    }`}
+                  >
+                    <b.icon
+                      className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`}
+                      strokeWidth={1.5}
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>{b.title}</h3>
+                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>
+                      {b.title}
+                    </h3>
                     <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
                   </div>
                 </div>
@@ -98,9 +102,7 @@ const WhyICommunity = () => {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 1 }}
           className="text-center mt-14 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-        >
-          <span className="font-medium text-foreground">iCommunity</span> es el registro independiente que conecta sistemas digitales con supervisión regulatoria.
-        </motion.p>
+        ></motion.p>
       </div>
     </section>
   );
