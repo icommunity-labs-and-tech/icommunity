@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ShieldCheck, FileCheck2, Webhook, Layers, Scale, Server, X, Check } from "lucide-react";
+import { ShieldCheck, FileCheck2, Webhook, Layers, Scale, Server } from "lucide-react";
 
 const blocks = [
   {
@@ -33,20 +33,6 @@ const blocks = [
     title: "Arquitectura preparada para escala institucional",
     description: "Arquitectura multi-tenant preparada para operar a escala institucional.",
   },
-];
-
-const internalItems = [
-  "Logs modificables",
-  "Dependencia del operador",
-  "Auditoría compleja",
-  "Evidencia no independiente",
-];
-
-const icommunityItems = [
-  "Evidencia verificable",
-  "Independencia criptográfica",
-  "Auditoría inmediata",
-  "Preparado para reguladores",
 ];
 
 const WhyICommunity = () => {
@@ -105,43 +91,6 @@ const WhyICommunity = () => {
             );
           })}
         </div>
-
-        {/* Comparison */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <h3 className="text-center text-lg md:text-xl font-semibold text-foreground mb-8">
-            Construir confianza internamente vs usar infraestructura independiente
-          </h3>
-          <div className="grid md:grid-cols-2 gap-5">
-            {/* Internal */}
-            <div className="rounded-xl border border-border bg-background p-6">
-              <p className="text-sm font-semibold text-muted-foreground mb-4">Sistemas internos</p>
-              <ul className="space-y-3">
-                {internalItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-[13px] text-muted-foreground/70">
-                    <X className="w-4 h-4 text-destructive/60 flex-shrink-0" strokeWidth={2} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* iCommunity */}
-            <div className="rounded-xl border border-primary/20 bg-accent/50 p-6">
-              <p className="text-sm font-semibold text-foreground mb-4">iCommunity</p>
-              <ul className="space-y-3">
-                {icommunityItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-[13px] text-foreground">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={2} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
 
         {/* Closing statement */}
         <motion.p
