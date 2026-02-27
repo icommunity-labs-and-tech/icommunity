@@ -168,7 +168,7 @@ const WhyICommunity = () => {
           transition={{ duration: 0.5, delay: 1 }}
           className="text-center mt-14 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="font-medium text-foreground">iCommunity</span> actúa como capa independiente de confianza entre sistemas digitales y supervisión regulatoria.
+          <span className="font-medium text-foreground">iCommunity</span> es la capa independiente de confianza que conecta sistemas digitales con supervisión regulatoria.
         </motion.p>
       </div>
     </section>
