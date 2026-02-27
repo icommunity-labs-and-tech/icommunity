@@ -5,7 +5,7 @@ import { Layers, Package, BrainCircuit, ArrowRight } from "lucide-react";
 const cards = [
   {
     icon: Layers,
-    title: "iCommunity Platform",
+    title: "iBS Platform",
     desc: "Capa independiente que certifica eventos digitales y genera pruebas auditables para supervisión regulatoria.",
     cta: "Ver plataforma",
     href: "#arquitectura-de-confianza",
