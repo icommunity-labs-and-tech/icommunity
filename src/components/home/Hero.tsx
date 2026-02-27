@@ -16,30 +16,23 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            {/* Tag */}
-            <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6">
-              <span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">
-                Haz verificable cualquier proceso digital
+            {/* Eyebrow */}
+            <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-6">
+              <span className="text-[11px] font-medium tracking-widest text-primary-foreground/40 uppercase">
+                Trust Infrastructure for Regulated Systems
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[620px]">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[540px]">
               Convierte eventos digitales en pruebas auditables
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-4 max-w-lg leading-relaxed">
-              Transforma eventos digitales en evidencia verificable, auditable y compatible con regulación desde el origen.
+            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-[480px] leading-relaxed">
+              Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen.
             </p>
 
-            {/* Institutional badge */}
-            <div className="inline-flex items-center rounded-full border border-ic-blue-glow/30 bg-primary-foreground/5 px-4 py-1.5 mb-8">
-              <span className="text-xs font-medium text-primary-foreground/70">
-                Infraestructura desplegada en administraciones públicas y plataformas reguladas
-              </span>
-            </div>
-
             {/* Bullets */}
-            <div className="flex flex-col gap-3 mb-10">
-              {["Auditoría trazable desde el origen", "Integración directa vía API", "Verificación independiente para reguladores"].map((b) => (
+            <div className="flex flex-col gap-3 mb-10 max-w-[480px]">
+              {["Trazabilidad auditada desde el origen", "Integración directa vía API", "Certificación independiente para reguladores"].map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -48,7 +41,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             </div>
 
             {/* CTAs - centered under bullets */}
-            <div className="flex flex-wrap gap-4 justify-center max-w-[620px]">
+            <div className="flex flex-wrap gap-4 justify-center max-w-[480px]">
               <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
                 Solicitar demo técnica
               </button>

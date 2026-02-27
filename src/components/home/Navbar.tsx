@@ -10,11 +10,11 @@ const solutionsLinks = [
 ];
 
 const navLinks = [
-  { label: "Cómo funciona", href: "#arquitectura-de-confianza" },
-  { label: "Casos de uso", href: "#segmentos" },
-  { label: "Seguridad & Compliance", href: "#seguridad" },
+  { label: "Plataforma", href: "#arquitectura-de-confianza" },
+  { label: "Arquitectura", href: "#segmentos" },
+  { label: "Seguridad", href: "#seguridad" },
   { label: "Recursos", href: "#recursos" },
-  { label: "Noticias", href: "#empresa" },
+  { label: "Empresa", href: "#empresa" },
 ];
 
 const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
@@ -65,7 +65,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               >
                 {link.label}
               </a>
-              {/* Insert Soluciones dropdown after "Casos de uso" (index 1) */}
+              {/* Insert Soluciones dropdown after "Arquitectura" (index 1) */}
               {idx === 1 && (
                 <div className="relative" ref={dropdownRef}>
                   <button
