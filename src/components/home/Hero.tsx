@@ -169,7 +169,7 @@ const HeroDiagram = () => {
 
       {/* Madrid badge */}
       <div className="flex items-center gap-3 mt-6">
-        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-10 w-auto opacity-60" />
+        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto opacity-60" />
         <span className="text-xs text-primary-foreground/50 leading-tight max-w-[220px]">
           iCommunity, el proveedor oficial de blockchain del Ayuntamiento de Madrid
         </span>
