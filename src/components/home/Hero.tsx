@@ -8,7 +8,7 @@ const trustPoints = [
   { icon: CheckCircle, label: "Verificación" },
 ];
 
-const Hero = () => {
+const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   return (
     <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="hero-overlay" />
@@ -48,9 +48,9 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <a href="#demo" className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
+              <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
                 Solicitar demo técnica
-              </a>
+              </button>
               <button
                 onClick={() => {
                   const el = document.getElementById("arquitectura-de-confianza");

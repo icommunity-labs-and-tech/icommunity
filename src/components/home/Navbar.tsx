@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Empresa", href: "#empresa" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -55,9 +55,9 @@ const Navbar = () => {
           <a href="#como-funciona" className="text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors">
             Ver cómo funciona
           </a>
-          <a href="#demo" className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+          <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
             Solicitar demo
-          </a>
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -90,9 +90,9 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a href="#demo" className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2.5 text-sm font-medium text-primary-foreground mt-2">
+              <button onClick={() => { setMobileOpen(false); onOpenModal?.(); }} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2.5 text-sm font-medium text-primary-foreground mt-2 w-full">
                 Solicitar demo
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

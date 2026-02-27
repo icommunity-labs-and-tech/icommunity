@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Landmark, ShieldCheck, BarChart3, Handshake, FileText } from "lucide-react";
-import ContactModal, { type OrganizationType } from "./ContactModal";
+import type { OrganizationType } from "./ContactModal";
 
 const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; orgType: OrganizationType }[] = [
   {
@@ -35,16 +34,9 @@ const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; 
   },
 ];
 
-const FinalCta = () => {
+const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) => void }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedOrg, setSelectedOrg] = useState<OrganizationType | undefined>();
-
-  const openModal = (orgType: OrganizationType) => {
-    setSelectedOrg(orgType);
-    setModalOpen(true);
-  };
 
   return (
     <section id="demo" className="ic-section bg-background" ref={ref}>
@@ -79,7 +71,7 @@ const FinalCta = () => {
               <h3 className="text-[15px] font-semibold text-foreground mb-2">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{p.desc}</p>
               <button
-                onClick={() => openModal(p.orgType)}
+                onClick={() => onOpenModal?.(p.orgType)}
                 className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-sm shadow-primary/15 w-full"
               >
                 {p.cta}
@@ -95,7 +87,7 @@ const FinalCta = () => {
           className="text-center"
         >
           <button
-            onClick={() => { setSelectedOrg(undefined); setModalOpen(true); }}
+            onClick={() => onOpenModal?.()}
             className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
           >
             <FileText className="w-4 h-4" />
@@ -104,7 +96,6 @@ const FinalCta = () => {
         </motion.div>
       </div>
 
-      <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
     </section>
   );
 };
