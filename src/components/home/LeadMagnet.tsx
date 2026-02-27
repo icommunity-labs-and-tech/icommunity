@@ -18,14 +18,22 @@ const LeadMagnet = () => {
             transition={{ duration: 0.6 }}
             className="ic-gradient-lead rounded-3xl p-10 md:p-16 text-center"
           >
+            <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6">
+              <span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">
+                Documento técnico
+              </span>
+            </div>
             <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-6">
               <FileText className="w-7 h-7 text-primary-foreground/80" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4 max-w-xl mx-auto">
               Whitepaper: Evidencia verificable para KYC bajo regulación UE (MiCA)
             </h2>
-            <p className="text-primary-foreground/60 mb-8 max-w-lg mx-auto">
+            <p className="text-primary-foreground/60 mb-2 max-w-lg mx-auto">
               Descubre cómo construir una capa de evidencia regulatoria independiente y preparada para auditoría.
+            </p>
+            <p className="text-primary-foreground/40 text-sm mb-8 max-w-lg mx-auto">
+              Para equipos técnicos, reguladores y responsables de compliance.
             </p>
             <button
               onClick={() => setModalOpen(true)}
