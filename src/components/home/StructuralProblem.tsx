@@ -21,7 +21,7 @@ const StructuralProblem = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="ic-section py-16 md:py-20 bg-background">
+    <section ref={ref} className="ic-section py-16 md:py-20 bg-gradient-to-b from-[hsl(222,47%,12%)] via-[hsl(222,30%,18%)] to-background">
       <div className="ic-container max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -29,13 +29,13 @@ const StructuralProblem = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             El problema estructural
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-3">
+          <p className="text-lg md:text-xl leading-relaxed text-primary-foreground/60 mb-3">
             En los sistemas tradicionales, quien ejecuta el proceso también genera la evidencia.
           </p>
-          <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium">
+          <p className="text-lg md:text-xl leading-relaxed text-primary-foreground font-medium">
             iCommunity separa ejecución y certificación, creando un registro independiente auditable.
           </p>
         </motion.div>
@@ -48,11 +48,11 @@ const StructuralProblem = () => {
           className="grid md:grid-cols-2 gap-5"
         >
           {/* Internal */}
-          <div className="rounded-xl border border-border bg-card p-6">
-            <p className="text-sm font-semibold text-muted-foreground mb-4">Sistemas internos</p>
+          <div className="rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 p-6">
+            <p className="text-sm font-semibold text-primary-foreground/50 mb-4">Sistemas internos</p>
             <ul className="space-y-3">
               {internalItems.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-[13px] text-muted-foreground/70">
+                <li key={item} className="flex items-center gap-2.5 text-[13px] text-primary-foreground/40">
                   <X className="w-4 h-4 text-destructive/60 flex-shrink-0" strokeWidth={2} />
                   {item}
                 </li>
@@ -60,12 +60,12 @@ const StructuralProblem = () => {
             </ul>
           </div>
           {/* iCommunity */}
-          <div className="rounded-xl border border-primary/20 bg-accent/50 p-6">
-            <p className="text-sm font-semibold text-foreground mb-4">iCommunity</p>
+          <div className="rounded-xl border border-primary/30 bg-primary/10 p-6">
+            <p className="text-sm font-semibold text-primary-foreground mb-4">iCommunity</p>
             <ul className="space-y-3">
               {icommunityItems.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-[13px] text-foreground">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={2} />
+                <li key={item} className="flex items-center gap-2.5 text-[13px] text-primary-foreground/80">
+                  <Check className="w-4 h-4 text-ic-blue-glow flex-shrink-0" strokeWidth={2} />
                   {item}
                 </li>
               ))}
