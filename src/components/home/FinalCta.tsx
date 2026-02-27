@@ -1,37 +1,50 @@
+import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Landmark, ShieldCheck, BarChart3, Handshake, FileText } from "lucide-react";
+import ContactModal, { type OrganizationType } from "./ContactModal";
 
-const paths = [
+const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; orgType: OrganizationType }[] = [
   {
     icon: Landmark,
     title: "Administraciones públicas",
     desc: "Explorar despliegues institucionales y certificación de procesos ciudadanos.",
     cta: "Hablar con sector público",
+    orgType: "administracion-publica",
   },
   {
     icon: ShieldCheck,
     title: "Proveedores de identidad / KYC",
     desc: "Integra evidencia verificable como capa adicional para tus clientes.",
     cta: "Integrar iCommunity",
+    orgType: "proveedor-identidad",
   },
   {
     icon: BarChart3,
     title: "Plataformas reguladas",
     desc: "Prepara tus sistemas para auditoría y supervisión regulatoria.",
     cta: "Solicitar demo técnica",
+    orgType: "plataforma-regulada",
   },
   {
     icon: Handshake,
     title: "Partners e integradores",
     desc: "Construye soluciones sobre infraestructura de confianza independiente.",
     cta: "Programa de partners",
+    orgType: "partner-integrador",
   },
 ];
 
 const FinalCta = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedOrg, setSelectedOrg] = useState<OrganizationType | undefined>();
+
+  const openModal = (orgType: OrganizationType) => {
+    setSelectedOrg(orgType);
+    setModalOpen(true);
+  };
 
   return (
     <section id="demo" className="ic-section bg-background" ref={ref}>
@@ -65,12 +78,12 @@ const FinalCta = () => {
               </div>
               <h3 className="text-[15px] font-semibold text-foreground mb-2">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{p.desc}</p>
-              <a
-                href="mailto:info@icommunity.io"
+              <button
+                onClick={() => openModal(p.orgType)}
                 className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-sm shadow-primary/15 w-full"
               >
                 {p.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
@@ -81,15 +94,17 @@ const FinalCta = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="text-center"
         >
-          <a
-            href="mailto:info@icommunity.io"
+          <button
+            onClick={() => { setSelectedOrg(undefined); setModalOpen(true); }}
             className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
           >
             <FileText className="w-4 h-4" />
             Descargar whitepaper técnico
-          </a>
+          </button>
         </motion.div>
       </div>
+
+      <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
     </section>
   );
 };
