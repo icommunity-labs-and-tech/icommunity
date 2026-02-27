@@ -79,20 +79,6 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-center"
-        >
-          <button
-            onClick={() => onOpenModal?.()}
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
-          >
-            <FileText className="w-4 h-4" />
-            Descargar whitepaper técnico
-          </button>
-        </motion.div>
       </div>
     </section>
   );
