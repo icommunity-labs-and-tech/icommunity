@@ -62,7 +62,7 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="group rounded-xl border border-border bg-background p-6 flex flex-col text-left hover:border-primary/25 hover:shadow-md transition-all duration-300"
+              className="group rounded-xl border border-border bg-background p-6 flex flex-col text-center items-center hover:border-primary/25 hover:shadow-md transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <p.icon className="w-5 h-5 text-primary" />
