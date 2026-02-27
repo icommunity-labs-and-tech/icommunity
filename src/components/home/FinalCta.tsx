@@ -43,11 +43,11 @@ const FinalCta = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
-            Empieza a construir{" "}
-            <span className="ic-text-gradient">evidencia verificable</span>
+            Despliega{" "}
+            <span className="ic-text-gradient">infraestructura de confianza</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            iCommunity se integra como infraestructura independiente de confianza para organizaciones reguladas y proveedores tecnológicos.
+            Selecciona cómo quieres integrar iCommunity en tu organización.
           </p>
         </motion.div>
 
