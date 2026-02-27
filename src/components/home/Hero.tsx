@@ -169,8 +169,8 @@ const HeroDiagram = () => {
 
       {/* Madrid badge */}
       <div className="flex items-center gap-3 mt-6 w-full">
-        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto opacity-60 flex-shrink-0" />
-        <span className="text-sm text-primary-foreground/50 leading-tight flex-1">
+        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
+        <span className="text-sm text-primary-foreground leading-tight flex-1">
           iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
         </span>
       </div>
