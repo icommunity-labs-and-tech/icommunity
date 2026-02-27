@@ -8,6 +8,7 @@ import Segments from "@/components/home/Segments";
 import Integrations from "@/components/home/Integrations";
 import Security from "@/components/home/Security";
 import ProvenTrust from "@/components/home/ProvenTrust";
+import WhyICommunity from "@/components/home/WhyICommunity";
 import LeadMagnet from "@/components/home/LeadMagnet";
 import FinalCta from "@/components/home/FinalCta";
 import Footer from "@/components/home/Footer";
@@ -26,6 +27,7 @@ const Index = () => {
         <Integrations />
         <Security />
         <ProvenTrust />
+        <WhyICommunity />
         <LeadMagnet />
         <FinalCta />
       </main>
