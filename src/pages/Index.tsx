@@ -4,6 +4,7 @@ import TrustBar from "@/components/home/TrustBar";
 import ProblemSection from "@/components/home/ProblemSection";
 import WhatWeDo from "@/components/home/WhatWeDo";
 import HowItWorks from "@/components/home/HowItWorks";
+import TrustArchitecture from "@/components/home/TrustArchitecture";
 import Segments from "@/components/home/Segments";
 import Integrations from "@/components/home/Integrations";
 import Security from "@/components/home/Security";
@@ -23,6 +24,7 @@ const Index = () => {
         <ProblemSection />
         <WhatWeDo />
         <HowItWorks />
+        <TrustArchitecture />
         <Segments />
         <Integrations />
         <Security />
