@@ -35,12 +35,6 @@ const LeadMagnet = () => {
             <p className="text-primary-foreground/40 text-sm mb-8 max-w-lg mx-auto">
               Para equipos técnicos, reguladores y responsables de compliance.
             </p>
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center rounded-lg bg-primary-foreground px-6 py-3 text-sm font-semibold text-ic-navy hover:bg-primary-foreground/90 transition-colors"
-            >
-              Descargar
-            </button>
           </motion.div>
         </div>
       </section>
