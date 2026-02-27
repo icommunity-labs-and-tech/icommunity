@@ -10,6 +10,7 @@ const solutionsLinks = [
 ];
 
 const navLinks = [
+  { label: "Cómo funciona", href: "#arquitectura-de-confianza" },
   { label: "Casos de uso", href: "#segmentos" },
   { label: "Seguridad & Compliance", href: "#seguridad" },
   { label: "Recursos", href: "#recursos" },

@@ -30,8 +30,8 @@ const Index = () => {
         <Hero onOpenModal={() => openModal()} />
         <TrustBar />
         <StructuralProblem />
-        <HowItWorks />
         <TrustArchitecture />
+        {/* <HowItWorks /> */}
         <Segments />
         <Integrations onOpenModal={() => openModal("partner-integrador")} />
         <Security />
