@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Server, Shield, FileCheck } from "lucide-react";
+import { Server, Shield, FileCheck, Link2 } from "lucide-react";
 
 /* ── Origin systems ── */
 const origins = [
@@ -144,6 +144,42 @@ const TrustArchitecture = () => {
                   {t}
                 </span>
               ))}
+            </div>
+
+            {/* Connector line to sub-layer */}
+            <div className="flex justify-center my-3">
+              <div className="w-px h-6 bg-border relative overflow-visible">
+                <motion.div
+                  className="absolute left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary/60"
+                  initial={{ top: "-3px", opacity: 0 }}
+                  animate={{ top: "calc(100% + 3px)", opacity: [0, 1, 1, 0] }}
+                  transition={{ duration: 1.4, repeat: Infinity, repeatDelay: 2, ease: "linear" }}
+                />
+              </div>
+            </div>
+
+            {/* Sub-layer: Red de certificación */}
+            <div className="rounded-xl border border-border/60 bg-muted/30 px-4 py-3 text-center">
+              <div className="flex items-center justify-center gap-2 mb-1.5">
+                <Link2 className="w-3.5 h-3.5 text-primary/70" />
+                <span className="text-xs font-semibold text-foreground">
+                  Red de certificación distribuida
+                </span>
+              </div>
+              <p className="text-[11px] text-muted-foreground leading-relaxed max-w-[240px] mx-auto">
+                Anclaje criptográfico y sellado temporal en red externa e independiente
+              </p>
+              <div className="flex justify-center gap-2 mt-2">
+                {["Blockchain anchor", "TSA externa"].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-muted text-[10px] font-mono text-muted-foreground"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-primary/50" />
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
 
