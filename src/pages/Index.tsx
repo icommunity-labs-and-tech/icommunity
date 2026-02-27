@@ -31,8 +31,8 @@ const Index = () => {
         <StructuralProblem />
         <Ecosystem />
         <Segments />
-        <Integrations onOpenModal={() => openModal("partner-integrador")} />
         <TrustArchitecture />
+        <Integrations onOpenModal={() => openModal("partner-integrador")} />
         <Security />
         <WhyICommunity />
         <TrustBar />
