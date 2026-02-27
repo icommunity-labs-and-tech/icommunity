@@ -8,14 +8,14 @@ const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; 
     icon: Landmark,
     title: "Administraciones Públicas",
     desc: "Mejora la transparencia y trazabilidad de tus procesos ciudadanos.",
-    cta: "Consúltanos",
+    cta: "Solicitar info",
     orgType: "administracion-publica",
   },
   {
     icon: ShieldCheck,
     title: "Proveedores de identidad / KYC",
     desc: "Proporciona evidencia verificable en la verificación de identidad de tus clientes.",
-    cta: "Integrar iBS",
+    cta: "Solicitar info",
     orgType: "proveedor-identidad",
   },
   {
@@ -47,8 +47,8 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-4xl mx-auto">
-            Empieza a certificar <span className="ic-text-gradient">tus procesos digitales con iCommunity hoy mismo</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
+            Empieza a certificar <span className="ic-text-gradient">procesos digitales hoy</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Integra iCommunity y genera pruebas auditables listas para supervisión regulatoria.
@@ -62,7 +62,7 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="group rounded-xl border border-border bg-background p-6 flex flex-col text-center items-center hover:border-primary/25 hover:shadow-md transition-all duration-300"
+              className="group rounded-xl border border-border bg-background p-6 flex flex-col text-left hover:border-primary/25 hover:shadow-md transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <p.icon className="w-5 h-5 text-primary" />
@@ -79,6 +79,20 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           ))}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="text-center"
+        >
+          <button
+            onClick={() => onOpenModal?.()}
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+          >
+            <FileText className="w-4 h-4" />
+            Descargar whitepaper técnico
+          </button>
+        </motion.div>
       </div>
     </section>
   );
