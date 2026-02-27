@@ -6,11 +6,11 @@ const internalItems = [
   "Logs modificables",
   "Dependencia del operador",
   "Auditoría compleja",
-  "Evidencia no independiente",
+  "Pruebas no independientes",
 ];
 
 const icommunityItems = [
-  "Evidencia verificable",
+  "Prueba auditada independiente",
   "Independencia criptográfica",
   "Auditoría inmediata",
   "Preparado para reguladores",
@@ -36,7 +36,7 @@ const StructuralProblem = () => {
             En los sistemas tradicionales, quien ejecuta el proceso también genera la evidencia.
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium">
-            iCommunity separa ejecución y certificación, creando evidencia independiente verificable.
+            iCommunity separa ejecución y certificación, creando un registro independiente auditable.
           </p>
         </motion.div>
 

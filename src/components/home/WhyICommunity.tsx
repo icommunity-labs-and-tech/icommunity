@@ -5,13 +5,13 @@ import { ShieldCheck, FileCheck2, Webhook, Layers, Scale, Server } from "lucide-
 const blocks = [
   {
     icon: ShieldCheck,
-    title: "La evidencia se genera fuera del sistema",
-    description: "La evidencia se genera fuera del sistema que ejecuta el proceso, garantizando verificabilidad ante terceros y reguladores.",
+    title: "Certificación independiente del operador",
+    description: "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros.",
   },
   {
     icon: FileCheck2,
-    title: "Cada evento nace certificado",
-    description: "Cada evento queda certificado con integridad criptográfica y sellado temporal verificable desde su creación.",
+    title: "Cada evento nace con registro inmutable",
+    description: "Cada evento queda sellado con integridad criptográfica y marca temporal desde su creación.",
   },
   {
     icon: Webhook,
@@ -56,7 +56,7 @@ const WhyICommunity = () => {
             Por qué iCommunity
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Infraestructura diseñada para convertir eventos digitales en evidencia regulatoria verificable desde origen.
+            Capa de confianza diseñada para convertir eventos digitales en pruebas auditadas con trazabilidad regulatoria.
           </p>
         </motion.div>
 
@@ -99,7 +99,7 @@ const WhyICommunity = () => {
           transition={{ duration: 0.5, delay: 1 }}
           className="text-center mt-14 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          <span className="font-medium text-foreground">iCommunity</span> es la capa independiente de confianza que conecta sistemas digitales con supervisión regulatoria.
+          <span className="font-medium text-foreground">iCommunity</span> es el registro independiente que conecta sistemas digitales con supervisión regulatoria.
         </motion.p>
       </div>
     </section>

@@ -6,13 +6,13 @@ const segments: { icon: LucideIcon; title: string; outcome: string; regulation: 
   {
     icon: Fingerprint,
     title: "Identidad digital (KYC)",
-    outcome: "Evidencia verificable de cada proceso de verificación ejecutado.",
+    outcome: "Certificación digital de cada proceso de verificación ejecutado.",
     regulation: "eIDAS · AML5/6",
   },
   {
     icon: Landmark,
     title: "Exchanges cripto",
-    outcome: "Trazabilidad inmutable de onboarding y operaciones reguladas.",
+    outcome: "Registro independiente de onboarding y operaciones reguladas.",
     regulation: "MiCA · Travel Rule",
   },
   {
@@ -24,7 +24,7 @@ const segments: { icon: LucideIcon; title: string; outcome: string; regulation: 
   {
     icon: Building2,
     title: "Fintech & banca",
-    outcome: "Historial continuo de eventos de compliance certificados.",
+    outcome: "Trazabilidad continua de eventos de compliance con certificación criptográfica.",
     regulation: "PSD2 · EBA Guidelines",
   },
 ];
@@ -46,7 +46,7 @@ const Segments = () => {
             Diseñado para ecosistemas regulados
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Infraestructura desplegada donde la evidencia verificable es un requisito, no una opción.
+            Certificación digital desplegada donde la trazabilidad regulatoria es un requisito, no una opción.
           </p>
         </motion.div>
 

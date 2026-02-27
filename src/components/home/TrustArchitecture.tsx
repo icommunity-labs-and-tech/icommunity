@@ -49,16 +49,19 @@ const TrustArchitecture = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center rounded-full border border-border bg-accent px-3.5 py-1 mb-5">
-            <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              Cómo funciona la infraestructura
+            <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
+              How Trust Infrastructure Works
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Arquitectura de confianza
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-3">
             Una capa independiente que conecta sistemas digitales con
             supervisión regulatoria, sin modificar tu infraestructura.
+          </p>
+          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto">
+            Separando ejecución y certificación para generar pruebas auditadas de forma independiente.
           </p>
         </motion.div>
 
