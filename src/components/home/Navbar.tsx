@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
 
 const solutionsLinks = [
-  { label: "iBS", href: "https://icommunity.io/ibs", external: true },
   { label: "CertyPass", href: "https://certypass.com", external: true },
   { label: "Privaura", href: "https://privaura.lovable.app", external: true },
 ];
