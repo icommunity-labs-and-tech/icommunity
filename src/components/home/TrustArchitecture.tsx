@@ -145,6 +145,37 @@ const TrustArchitecture = () => {
                 </span>
               ))}
             </div>
+
+            {/* Connector line */}
+            <div className="mx-auto mt-4 w-px h-6 bg-border relative overflow-visible">
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary"
+                initial={{ top: "-3px", opacity: 0 }}
+                animate={{ top: "calc(100% + 3px)", opacity: [0, 1, 1, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 1.4, ease: "linear" }}
+              />
+            </div>
+
+            {/* Secondary layer */}
+            <div className="rounded-xl border border-dashed border-primary/30 bg-primary/[0.02] px-4 py-3 text-center">
+              <div className="text-xs font-semibold text-foreground mb-1">
+                Red de certificación distribuida
+              </div>
+              <p className="text-[11px] text-muted-foreground mb-2 max-w-[200px] mx-auto">
+                Anclaje criptográfico y sellado temporal externo
+              </p>
+              <div className="flex flex-wrap justify-center gap-1.5">
+                {["Blockchain anchor", "TSA externo"].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent text-[10px] font-mono text-muted-foreground"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-primary/60" />
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* ── Arrow 2 ── */}
