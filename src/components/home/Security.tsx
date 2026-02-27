@@ -45,6 +45,9 @@ const Security = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
+          <p className="text-sm font-medium tracking-wide text-primary/60 mb-4">
+            Garantías técnicas diseñadas para auditoría regulatoria
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Seguridad & Compliance
           </h2>
