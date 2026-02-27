@@ -47,8 +47,8 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
-            Empieza a certificar <span className="ic-text-gradient">procesos digitales hoy</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-4xl mx-auto">
+            Empieza a certificar <span className="ic-text-gradient">tus procesos digitales con iCommunity hoy mismo</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Integra iCommunity y genera pruebas auditables listas para supervisión regulatoria.

@@ -56,12 +56,8 @@ const TrustArchitecture = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Arquitectura de confianza
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-3">
-            Una capa independiente que conecta sistemas digitales con
-            supervisión regulatoria, sin modificar tu infraestructura.
-          </p>
-          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto">
-            Separando ejecución y certificación para generar pruebas auditadas de forma independiente.
+          <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+            iCommunity es el registro independiente que conecta sistemas digitales con supervisión regulatoria, sin modificar tu infraestructura existente
           </p>
         </motion.div>
 
