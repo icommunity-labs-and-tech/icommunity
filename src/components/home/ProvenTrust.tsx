@@ -1,31 +1,31 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Landmark, CreditCard, ShieldCheck, Globe } from "lucide-react";
+import { Landmark, UserCheck, Building2, Server } from "lucide-react";
 
 const cases = [
   {
     icon: Landmark,
     name: "Ayuntamiento de Madrid",
-    description: "Certificación de procesos de identidad digital ciudadana en servicios municipales.",
-    tags: ["Administración pública", "eIDAS"],
+    description: "Certificación blockchain de procesos de identidad digital ciudadana en servicios municipales.",
+    tags: ["Administración pública", "Producción"],
   },
   {
-    icon: ShieldCheck,
-    name: "Identidad digital (KYC)",
-    description: "Evidencia verificable para flujos de verificación de identidad en plataformas de onboarding.",
-    tags: ["KYC/AML", "RGPD"],
+    icon: UserCheck,
+    name: "Proveedores de identidad digital",
+    description: "Integración de evidencia verificable en flujos reales de onboarding.",
+    tags: ["KYC", "eIDAS", "AML"],
   },
   {
-    icon: CreditCard,
-    name: "Fintech regulado",
-    description: "Registro inmutable de eventos de cumplimiento en plataformas financieras supervisadas.",
-    tags: ["PSD2", "MiFID II"],
+    icon: Building2,
+    name: "Plataformas financieras reguladas",
+    description: "Registro inmutable de eventos de compliance supervisados.",
+    tags: ["PSD2", "MiCA"],
   },
   {
-    icon: Globe,
-    name: "Ecosistemas cripto regulados",
-    description: "Trazabilidad y sellado temporal de operaciones en entornos sujetos a regulación MiCA.",
-    tags: ["MiCA", "Travel Rule"],
+    icon: Server,
+    name: "Infraestructura API de evidencia",
+    description: "Procesamiento de eventos certificados mediante SDK y Webhooks.",
+    tags: ["API-First", "Audit Ready"],
   },
 ];
 
@@ -43,7 +43,7 @@ const ProvenTrust = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Confianza demostrada en entornos reales
+            Confianza institucional en producción
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Infraestructura desplegada en administraciones públicas y plataformas reguladas.
@@ -57,7 +57,7 @@ const ProvenTrust = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.08 }}
-              className="rounded-xl border border-border bg-background p-6"
+              className="rounded-xl border border-border bg-background p-6 hover:border-primary/20 transition-colors duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
