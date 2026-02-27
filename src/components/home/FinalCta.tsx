@@ -6,29 +6,29 @@ import type { OrganizationType } from "./ContactModal";
 const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; orgType: OrganizationType }[] = [
   {
     icon: Landmark,
-    title: "Administraciones públicas",
-    desc: "Explorar despliegues institucionales y certificación de procesos ciudadanos.",
+    title: "Administraciones Públicas",
+    desc: "Mejora la transparencia y trazabilidad de tus procesos ciudadanos.",
     cta: "Hablar con sector público",
     orgType: "administracion-publica",
   },
   {
     icon: ShieldCheck,
     title: "Proveedores de identidad / KYC",
-    desc: "Integra evidencia verificable como capa adicional para tus clientes.",
+    desc: "Proporciona evidencia verificable en la verificación de identidad de tus clientes.",
     cta: "Integrar iCommunity",
     orgType: "proveedor-identidad",
   },
   {
     icon: BarChart3,
-    title: "Plataformas reguladas",
-    desc: "Prepara tus sistemas para auditoría y supervisión regulatoria.",
+    title: "Plataformas legaltech, fintech,...",
+    desc: "Adapta y mejora la seguridad tus sistemas para auditoría y cumplimiento legal.",
     cta: "Solicitar demo técnica",
     orgType: "plataforma-regulada",
   },
   {
     icon: Handshake,
     title: "Partners e integradores",
-    desc: "Construye soluciones sobre infraestructura de confianza independiente.",
+    desc: " Aumenta tu propuesta de valor integrando infraestructura de confianza independiente.",
     cta: "Programa de partners",
     orgType: "partner-integrador",
   },
@@ -48,8 +48,7 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
-            Empieza a certificar{" "}
-            <span className="ic-text-gradient">procesos digitales hoy</span>
+            Empieza a certificar <span className="ic-text-gradient">procesos digitales hoy</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Integra iCommunity y genera pruebas auditables listas para supervisión regulatoria.
@@ -95,7 +94,6 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           </button>
         </motion.div>
       </div>
-
     </section>
   );
 };
