@@ -20,8 +20,8 @@ const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; 
   },
   {
     icon: BarChart3,
-    title: "Plataformas legaltech, fintech,...",
-    desc: "Adapta y mejora la seguridad tus sistemas para auditoría y cumplimiento legal.",
+    title: "Legal, Fintech, Salud",
+    desc: "Anonimiza datos sensibles antes de usarlos en plataformas IA.",
     cta: "Solicitar demo técnica",
     orgType: "plataforma-regulada",
   },
