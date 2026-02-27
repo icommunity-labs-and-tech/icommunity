@@ -39,7 +39,7 @@ const TrustArchitecture = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="ic-section bg-background overflow-hidden">
+    <section id="arquitectura-de-confianza" ref={ref} className="ic-section bg-background overflow-hidden">
       <div className="ic-container">
         {/* Header */}
         <motion.div
