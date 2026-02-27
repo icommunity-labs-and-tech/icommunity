@@ -106,24 +106,6 @@ const WhyICommunity = () => {
           })}
         </div>
 
-        {/* Structural problem */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-16 mb-10 text-center max-w-2xl mx-auto"
-        >
-          <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
-            El problema estructural
-          </h3>
-          <p className="text-[14px] leading-relaxed text-muted-foreground">
-            En los sistemas tradicionales, quien ejecuta el proceso también genera la evidencia.
-          </p>
-          <p className="text-[14px] leading-relaxed text-foreground font-medium mt-2">
-            iCommunity separa ejecución y certificación, creando evidencia independiente verificable.
-          </p>
-        </motion.div>
-
         {/* Comparison */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

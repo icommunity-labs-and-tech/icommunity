@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
+import StructuralProblem from "@/components/home/StructuralProblem";
 import HowItWorks from "@/components/home/HowItWorks";
 import TrustArchitecture from "@/components/home/TrustArchitecture";
 import Segments from "@/components/home/Segments";
@@ -28,6 +29,7 @@ const Index = () => {
       <main>
         <Hero onOpenModal={() => openModal()} />
         <TrustBar />
+        <StructuralProblem />
         <HowItWorks />
         <TrustArchitecture />
         <Segments />
