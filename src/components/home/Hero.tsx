@@ -22,16 +22,23 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
+            {/* Tag */}
+            <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6">
+              <span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">
+                Infraestructura independiente de confianza regulatoria
+              </span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6">
-              Infraestructura Independiente de Confianza Regulatoria
+              La capa de confianza que conecta sistemas digitales con supervisión regulatoria.
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-lg leading-relaxed">
-              Convertimos eventos de identidad digital en evidencia verificable, independiente y auditable.
+              iCommunity convierte eventos digitales en evidencia verificable, audit-ready y compatible con regulación europea desde origen.
             </p>
 
             {/* Bullets */}
             <div className="flex flex-col gap-3 mb-10">
-              {["Auditoría-ready", "Integración vía API", "Capa neutral para proveedores KYC"].map((b) => (
+              {["Audit-ready por diseño", "Integración vía API / SDK", "Evidencia independiente verificable"].map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -42,11 +49,17 @@ const Hero = () => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a href="#demo" className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
-                Solicitar demo
+                Solicitar demo técnica
               </a>
-              <a href="#como-funciona" className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/20 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/5 transition-colors">
-                Ver cómo funciona
-              </a>
+              <button
+                onClick={() => {
+                  const el = document.getElementById("arquitectura-de-confianza");
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/20 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/5 transition-colors"
+              >
+                Ver arquitectura
+              </button>
             </div>
           </motion.div>
 
