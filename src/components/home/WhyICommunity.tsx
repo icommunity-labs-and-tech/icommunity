@@ -76,25 +76,34 @@ const WhyICommunity = () => {
 
         {/* 2x3 Grid */}
         <div className="grid md:grid-cols-2 gap-5">
-          {blocks.map((b, i) => (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }}
-              className="rounded-xl border border-border bg-background p-6 hover:border-primary/20 hover:shadow-sm transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
-                  <b.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+          {blocks.map((b, i) => {
+            const isPrimary = i < 2;
+            return (
+              <motion.div
+                key={b.title}
+                initial={{ opacity: 0, y: 16 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }}
+                className={`rounded-xl border bg-background transition-all duration-300 ${
+                  isPrimary
+                    ? "border-primary/15 p-7 hover:border-primary/30 hover:shadow-md"
+                    : "border-border p-6 hover:border-primary/20 hover:shadow-sm"
+                }`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"
+                  }`}>
+                    <b.icon className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`} strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>{b.title}</h3>
+                    <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-semibold text-foreground mb-1.5">{b.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Comparison */}
