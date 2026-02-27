@@ -36,8 +36,8 @@ const Index = () => {
         <Security />
         <WhyICommunity />
         <TrustBar />
-        <LeadMagnet />
         <FinalCta onOpenModal={openModal} />
+        <LeadMagnet />
       </main>
       <Footer />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
