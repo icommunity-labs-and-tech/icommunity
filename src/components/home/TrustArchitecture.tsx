@@ -39,7 +39,7 @@ const TrustArchitecture = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="arquitectura-de-confianza" ref={ref} className="ic-section bg-background overflow-hidden">
+    <section id="arquitectura-de-confianza" ref={ref} className="ic-section py-24 md:py-32 bg-background overflow-hidden">
       <div className="ic-container">
         {/* Header */}
         <motion.div
@@ -48,6 +48,11 @@ const TrustArchitecture = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center rounded-full border border-border bg-accent px-3.5 py-1 mb-5">
+            <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              Cómo funciona la infraestructura
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Arquitectura de confianza
           </h2>
