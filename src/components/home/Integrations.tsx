@@ -198,7 +198,7 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
   );
 };
 
-const Integrations = () => {
+const Integrations = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -228,9 +228,9 @@ const Integrations = () => {
                 Licencia por integración + tarifa por evento certificado. Sin costes ocultos.
               </p>
             </div>
-            <a href="#demo" className="inline-flex items-center gap-2 ic-gradient-cta text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+            <button onClick={onOpenModal} className="inline-flex items-center gap-2 ic-gradient-cta text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
               Hablar con Partnerships <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
           </motion.div>
 
           <motion.div
