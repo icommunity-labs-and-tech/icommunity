@@ -6,7 +6,7 @@ const cards = [
   {
     icon: Layers,
     title: "iBS",
-    desc: "Capa independiente que certifica eventos digitales y genera pruebas auditables mediante blockchain para supervisión regulatoria.",
+    desc: "Capa independiente que certifica eventos digitales y genera pruebas auditables mediante blockchain pública.",
     cta: "Ir a iBS",
     href: "https://icommunity.io/ibs",
     external: false,
@@ -14,7 +14,7 @@ const cards = [
   {
     icon: Package,
     title: "CertyPass",
-    desc: "Pasaporte Digital de Producto conforme al reglamento europeo ESPR para garantizar la sostenibilidad ambiental de cualquier producto.",
+    desc: "Pasaporte Digital de Producto conforme al reglamento europeo ESPR, para garantizar la sostenibilidad ambiental de cualquier producto.",
     cta: "Ir a CertyPass",
     href: "https://certypass.com",
     external: true,
@@ -22,7 +22,7 @@ const cards = [
   {
     icon: BrainCircuit,
     title: "Privaura",
-    desc: "Gobierno, anonimización y control de datos sensibles para el tratamiento en plataformas IA.",
+    desc: "Gobierno, anonimización y control de datos sensibles para su tratamiento en plataformas IA.",
     cta: "Ir a Privaura",
     href: "https://privaura.lovable.app",
     external: true,
