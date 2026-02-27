@@ -10,8 +10,8 @@ const solutionsLinks = [
 ];
 
 const navLinks = [
-  { label: "Casos de uso", href: "#segmentos" },
   { label: "Arquitectura", href: "#arquitectura-de-confianza" },
+  { label: "Casos de uso", href: "#segmentos" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Recursos", href: "#recursos" },
   { label: "Empresa", href: "#empresa" },
