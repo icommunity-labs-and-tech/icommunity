@@ -93,8 +93,8 @@ const TrustArchitecture = () => {
                 <FlowDots delay={i * 0.6} />
               </div>
             ))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">
-              eventos
+            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-1 whitespace-nowrap">
+              Eventos digitales
             </span>
           </div>
 
@@ -109,7 +109,7 @@ const TrustArchitecture = () => {
                   transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
                 />
               </div>
-              <span className="text-[11px] font-mono text-muted-foreground">eventos</span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">Eventos digitales</span>
             </div>
           </div>
 
@@ -154,8 +154,8 @@ const TrustArchitecture = () => {
                 <FlowDots delay={1.8 + i * 0.6} />
               </div>
             ))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">
-              evidencia
+            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 mt-1 whitespace-nowrap">
+              Evidencia verificable
             </span>
           </div>
 
@@ -170,7 +170,7 @@ const TrustArchitecture = () => {
                   transition={{ duration: 1.6, delay: 1.8, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
                 />
               </div>
-              <span className="text-[11px] font-mono text-muted-foreground">evidencia</span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">Evidencia verificable</span>
             </div>
           </div>
 
