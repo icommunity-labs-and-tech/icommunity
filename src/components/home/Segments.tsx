@@ -17,13 +17,13 @@ const segments: { icon: LucideIcon; title: string; outcome: string; regulation: 
   },
   {
     icon: Gamepad2,
-    title: "Juego online",
+    title: "Plataformas con acceso regulado",
     outcome: "Prueba auditable de verificación de edad por usuario.",
     regulation: "DGOJ · Age Verification",
   },
   {
     icon: Building2,
-    title: "Fintech & banca",
+    title: "Fintech & Banca",
     outcome: "Trazabilidad continua de eventos de compliance con certificación criptográfica.",
     regulation: "PSD2 · EBA Guidelines",
   },
@@ -42,9 +42,7 @@ const Segments = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Diseñado para ecosistemas regulados
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Diseñado para ecosistemas regulados</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Certificación digital desplegada donde la trazabilidad regulatoria es un requisito, no una opción.
           </p>
@@ -66,9 +64,7 @@ const Segments = () => {
                 <h3 className="text-base font-semibold text-foreground">{seg.title}</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{seg.outcome}</p>
-              <span className="text-[11px] font-medium tracking-wider uppercase text-primary/60">
-                {seg.regulation}
-              </span>
+              <span className="text-[11px] font-medium tracking-wider uppercase text-primary/60">{seg.regulation}</span>
             </motion.div>
           ))}
         </div>
