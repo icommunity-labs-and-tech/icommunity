@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
@@ -13,13 +14,22 @@ import WhyICommunity from "@/components/home/WhyICommunity";
 import LeadMagnet from "@/components/home/LeadMagnet";
 import FinalCta from "@/components/home/FinalCta";
 import Footer from "@/components/home/Footer";
+import ContactModal, { type OrganizationType } from "@/components/home/ContactModal";
 
 const Index = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedOrg, setSelectedOrg] = useState<OrganizationType | undefined>();
+
+  const openModal = (orgType?: OrganizationType) => {
+    setSelectedOrg(orgType);
+    setModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar onOpenModal={() => openModal()} />
       <main>
-        <Hero />
+        <Hero onOpenModal={() => openModal()} />
         <TrustBar />
         <ProblemSection />
         <WhatWeDo />
@@ -31,9 +41,10 @@ const Index = () => {
         <ProvenTrust />
         <WhyICommunity />
         <LeadMagnet />
-        <FinalCta />
+        <FinalCta onOpenModal={openModal} />
       </main>
       <Footer />
+      <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
     </div>
   );
 };
