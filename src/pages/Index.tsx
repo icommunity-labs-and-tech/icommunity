@@ -28,6 +28,7 @@ const Index = () => {
       <Navbar onOpenModal={() => openModal()} />
       <main>
         <Hero onOpenModal={() => openModal()} />
+        <TrustBar />
         <StructuralProblem />
         <Ecosystem />
         <TrustArchitecture />
@@ -35,7 +36,6 @@ const Index = () => {
         {/* <Integrations onOpenModal={() => openModal("partner-integrador")} /> */}
         <Security />
         <WhyICommunity />
-        <TrustBar />
         <FinalCta onOpenModal={openModal} />
         <LeadMagnet />
       </main>
