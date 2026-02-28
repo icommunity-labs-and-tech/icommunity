@@ -59,15 +59,9 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl mx-auto mb-4">
           La capa de confianza que tus sistemas necesitan
         </h2>
-        <p className="text-white/40 text-lg max-w-xl mx-auto mb-10">
+        <p className="text-white/40 text-lg max-w-xl mx-auto">
           Infraestructura criptográfica independiente para entornos regulados
         </p>
-        <button
-          onClick={onOpenModal}
-          className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-8 py-3.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
-        >
-          Solicitar demo técnica
-        </button>
       </div>
 
       {/* Links grid */}
@@ -101,12 +95,12 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         {/* Institutional funding logos */}
         <div className="border-t border-white/[0.06] pt-8 pb-8">
           <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">Proyectos cofinanciados</p>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            <img src={logoCdti} alt="CDTI - Ministerio de Ciencia e Innovación" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
-            <img src={logoNeotec} alt="CDTI Neotec" className="h-8 md:h-10 rounded" />
-            <img src={logoEnisa} alt="ENISA" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
-            <img src={logoFeder} alt="Fondo Europeo de Desarrollo Regional (FEDER)" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
-            <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            <img src={logoCdti} alt="CDTI - Ministerio de Ciencia e Innovación" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoNeotec} alt="CDTI Neotec" className="h-10 md:h-14 rounded" />
+            <img src={logoEnisa} alt="ENISA" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoFeder} alt="Fondo Europeo de Desarrollo Regional (FEDER)" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
           </div>
         </div>
 
