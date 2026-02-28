@@ -8,6 +8,7 @@ import Segments from "@/components/home/Segments";
 import Integrations from "@/components/home/Integrations";
 import TrustArchitecture from "@/components/home/TrustArchitecture";
 import TrustLifecycle from "@/components/home/TrustLifecycle";
+import TrustStatement from "@/components/home/TrustStatement";
 import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
 import BeforeAfter from "@/components/home/BeforeAfter";
@@ -34,6 +35,7 @@ const Index = () => {
         <TrustBar />
         <StructuralProblem />
         <Ecosystem />
+        <TrustStatement />
         <TrustArchitecture />
         <TrustLifecycle />
         <Segments />
