@@ -151,7 +151,7 @@ const HeroDiagram = () => {
             </div>
           ))}
 
-          <div className="mt-4 rounded-[14px] border border-ic-blue-glow/25 p-6" style={{ background: 'rgba(180,200,240,0.18)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+          <div className="mt-4 rounded-[14px] border border-ic-blue-glow/25 p-6" style={{ background: 'rgba(10,15,40,0.35)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
             <div className="flex items-center gap-2 mb-3">
               <motion.div
                 className="w-2 h-2 rounded-full bg-green-400"
@@ -161,16 +161,16 @@ const HeroDiagram = () => {
               <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
             </div>
             <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
-              <div><span className="text-foreground font-semibold">event_type:</span> kyc_verification</div>
+              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
               >
-                <span className="text-foreground font-semibold">timestamp:</span> {ts}
+                <span className="text-ic-blue-glow">timestamp:</span> {ts}
               </motion.div>
-              <div><span className="text-foreground font-semibold">integrity:</span> sha256:a1b2c3…</div>
+              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
               <div>
-                <span className="text-foreground font-semibold">status:</span>{" "}
+                <span className="text-ic-blue-glow">status:</span>{" "}
                 <motion.span
                   className="text-green-400 inline-block"
                   animate={{ opacity: [1, 0.5, 1] }}
