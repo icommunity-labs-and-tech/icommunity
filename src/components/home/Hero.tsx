@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import logoMadrid from "@/assets/logo-ayto-madrid-gray-4.png";
+
 
 declare global {
   interface Window {
@@ -121,77 +121,117 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   );
 };
 
-const steps = [
-  { step: "1", title: "Evento", desc: "Verificación KYC completada" },
-  { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
-  { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
-];
+/* ── Architecture Diagram ── */
+
+const origins = ["KYC Provider", "Fintech", "Administración"];
+const targets = ["Reguladores", "Auditores", "Terceros"];
+
+const boxClass =
+  "px-3 py-2 rounded-lg border border-primary-foreground/25 bg-primary-foreground/[0.07] backdrop-blur-sm text-[11px] font-semibold text-primary-foreground/80 text-center whitespace-nowrap";
 
 const HeroDiagram = () => {
   const now = new Date();
   const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
 
   return (
-    <div className="relative">
-      <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-8 shadow-lg shadow-black/20">
-        <div className="flex flex-col gap-4">
-          {steps.map((s, i) => (
-            <div key={s.step} className="flex items-start gap-4">
-              <motion.div
-                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.8 }}
-              >
-                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
-              </motion.div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-primary-foreground drop-shadow-sm">{s.title}</div>
-                <div className="text-xs text-primary-foreground/80 mt-0.5 font-medium">{s.desc}</div>
-              </div>
-            </div>
-          ))}
-
-          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <motion.div
-                className="w-2 h-2 rounded-full bg-green-400"
-                animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
-                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
-              />
-              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
-            </div>
-            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
-              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
-              <motion.div
-                animate={{ opacity: [1, 0.3, 1] }}
-                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-              >
-                <span className="text-ic-blue-glow">timestamp:</span> {ts}
-              </motion.div>
-              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
-              <div>
-                <span className="text-ic-blue-glow">status:</span>{" "}
-                <motion.span
-                  className="text-green-400 inline-block"
-                  animate={{ opacity: [1, 0.5, 1] }}
-                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
-                >
-                  verified
-                </motion.span>
-              </div>
-            </div>
+    <div className="relative w-full">
+      {/* Evidence Receipt – glass card floating on top */}
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+        className="relative z-10 mx-auto mb-5 max-w-[340px] rounded-xl border border-primary-foreground/20 bg-primary-foreground/[0.08] backdrop-blur-xl p-5 shadow-lg shadow-black/20"
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <motion.div
+            className="w-2 h-2 rounded-full bg-green-400"
+            animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
+            transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+          />
+          <span className="text-xs font-mono text-primary-foreground font-semibold tracking-wide">Evidence Receipt</span>
+        </div>
+        <div className="space-y-1 font-mono text-[11px] leading-relaxed">
+          <div><span className="text-ic-blue-glow">event_type:</span> <span className="text-primary-foreground/90">kyc_verification</span></div>
+          <motion.div animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}>
+            <span className="text-ic-blue-glow">timestamp:</span> <span className="text-primary-foreground/90">{ts}</span>
+          </motion.div>
+          <div><span className="text-ic-blue-glow">integrity_hash:</span> <span className="text-primary-foreground/90">sha256:a1b2c3…f8e9</span></div>
+          <div><span className="text-ic-blue-glow">tsa:</span> <span className="text-primary-foreground/90">rfc3161:verified</span></div>
+          <div><span className="text-ic-blue-glow">anchor:</span> <span className="text-primary-foreground/90">eth:0x7f3a…</span></div>
+          <div>
+            <span className="text-ic-blue-glow">status:</span>{" "}
+            <motion.span
+              className="text-green-400 font-semibold inline-block"
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+            >
+              verified ✓
+            </motion.span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Madrid badge */}
-      <div className="flex items-center gap-3 mt-6 w-full">
-        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
-        <span className="text-sm text-primary-foreground leading-tight flex-1">
-          iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
-        </span>
+      {/* Architecture line-art diagram */}
+      <div className="flex items-center justify-center gap-0">
+        {/* Left column – origins */}
+        <div className="flex flex-col gap-3 flex-shrink-0">
+          {origins.map((label) => (
+            <div key={label} className={boxClass}>{label}</div>
+          ))}
+        </div>
+
+        {/* Left arrows */}
+        <div className="flex flex-col gap-3 flex-shrink-0 w-10">
+          {origins.map((_, i) => (
+            <div key={i} className="h-[34px] flex items-center">
+              <svg width="40" height="2" className="overflow-visible">
+                <line x1="0" y1="1" x2="32" y2="1" stroke="white" strokeOpacity="0.4" strokeWidth="2" />
+                <polygon points="32,1 26,-3 26,5" fill="white" fillOpacity="0.4" />
+              </svg>
+            </div>
+          ))}
+        </div>
+
+        {/* Center – Trust Layer */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex-shrink-0 w-[140px] rounded-xl border-2 border-primary-foreground/25 bg-primary-foreground/[0.08] backdrop-blur-sm px-3 py-5 text-center shadow-lg shadow-black/10"
+        >
+          <div className="text-[10px] font-mono text-primary-foreground/50 uppercase tracking-widest mb-1">Trust Layer</div>
+          <div className="text-xs font-bold text-primary-foreground leading-tight">iCommunity</div>
+          <div className="flex flex-wrap justify-center gap-1 mt-3">
+            {["SHA-256", "TSA", "DLT"].map((t) => (
+              <span key={t} className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-foreground/10 text-[9px] font-mono text-primary-foreground/70">
+                <span className="w-1 h-1 rounded-full bg-ic-blue-glow animate-pulse" />
+                {t}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Right arrows */}
+        <div className="flex flex-col gap-3 flex-shrink-0 w-10">
+          {targets.map((_, i) => (
+            <div key={i} className="h-[34px] flex items-center">
+              <svg width="40" height="2" className="overflow-visible">
+                <line x1="0" y1="1" x2="32" y2="1" stroke="white" strokeOpacity="0.4" strokeWidth="2" />
+                <polygon points="32,1 26,-3 26,5" fill="white" fillOpacity="0.4" />
+              </svg>
+            </div>
+          ))}
+        </div>
+
+        {/* Right column – targets */}
+        <div className="flex flex-col gap-3 flex-shrink-0">
+          {targets.map((label) => (
+            <div key={label} className={boxClass}>{label}</div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
 export default Hero;
