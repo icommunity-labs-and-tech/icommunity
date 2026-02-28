@@ -61,7 +61,7 @@ const Segments = () => {
   }, [scrollYProgress]);
 
   return (
-    <section id="segmentos" ref={sectionRef} className="ic-section bg-secondary/50 overflow-hidden">
+    <section id="segmentos" ref={sectionRef} className="ic-section bg-background overflow-hidden">
       <div className="ic-container">
         {/* Header */}
         <motion.div
@@ -95,10 +95,10 @@ const Segments = () => {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }}
                   className={`
-                    flex items-start gap-3 rounded-xl border p-4 transition-all duration-500 ease-out
+                    flex items-start gap-3 rounded-xl p-4 transition-all duration-500 ease-out
                     ${isActive
-                      ? "border-primary/30 bg-primary/[0.04] shadow-[0_0_20px_-6px_hsl(225_86%_58%/0.15)]"
-                      : "border-border bg-card"
+                      ? "bg-primary/[0.04]"
+                      : ""
                     }
                   `}
                 >
@@ -185,10 +185,10 @@ const Segments = () => {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }}
                   className={`
-                    flex items-start gap-3 rounded-xl border p-4 transition-all duration-500 ease-out
+                    flex items-start gap-3 rounded-xl p-4 transition-all duration-500 ease-out
                     ${isActive
-                      ? "border-primary/30 bg-primary/[0.04] shadow-[0_0_20px_-6px_hsl(225_86%_58%/0.15)]"
-                      : "border-border bg-card"
+                      ? "bg-primary/[0.04]"
+                      : ""
                     }
                   `}
                 >

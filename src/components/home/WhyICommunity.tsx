@@ -41,7 +41,7 @@ const WhyICommunity = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="ic-section bg-accent/30" ref={ref}>
+    <section className="ic-section bg-background" ref={ref}>
       <div className="ic-container max-w-5xl">
         {/* Header */}
         <motion.div
@@ -67,10 +67,10 @@ const WhyICommunity = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }}
-                className={`rounded-xl border bg-background transition-all duration-300 ${
+                className={`rounded-xl transition-all duration-300 ${
                   isPrimary
-                    ? "border-primary/15 p-7 hover:border-primary/30 hover:shadow-md"
-                    : "border-border p-6 hover:border-primary/20 hover:shadow-sm"
+                    ? "p-7"
+                    : "p-6"
                 }`}
               >
                 <div className="flex items-start gap-4">
