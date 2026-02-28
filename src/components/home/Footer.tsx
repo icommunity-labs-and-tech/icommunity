@@ -1,4 +1,9 @@
 import logo from "@/assets/logo-blanco-negativo.png";
+import logoFeder from "@/assets/logo-feder.png";
+import logoUE from "@/assets/logo-cofinanciado-ue.png";
+import logoNeotec from "@/assets/logo-neotec-cdti.jpg";
+import logoCdti from "@/assets/logo-cdti.jpg";
+import logoEnisa from "@/assets/logo-enisa.jpg";
 
 type FooterLink = string | { label: string; href?: string; external?: boolean };
 
@@ -91,6 +96,18 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Institutional funding logos */}
+        <div className="border-t border-white/[0.06] pt-8 pb-8">
+          <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">Proyectos cofinanciados</p>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            <img src={logoCdti} alt="CDTI - Ministerio de Ciencia e Innovación" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
+            <img src={logoNeotec} alt="CDTI Neotec" className="h-8 md:h-10 rounded" />
+            <img src={logoEnisa} alt="ENISA" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
+            <img src={logoFeder} alt="Fondo Europeo de Desarrollo Regional (FEDER)" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
+            <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-8 md:h-10 rounded bg-white/90 px-2 py-1" />
+          </div>
         </div>
 
         <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
