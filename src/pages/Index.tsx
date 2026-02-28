@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
-import EvidenceStatement from "@/components/home/EvidenceStatement";
 import TrustBar from "@/components/home/TrustBar";
 import Ecosystem from "@/components/home/Ecosystem";
 import StructuralProblem from "@/components/home/StructuralProblem";
@@ -33,7 +32,6 @@ const Index = () => {
       <Navbar onOpenModal={() => openModal()} />
       <main>
         <Hero onOpenModal={() => openModal()} />
-        <EvidenceStatement />
         <TrustBar />
         <StructuralProblem />
         <Ecosystem />
