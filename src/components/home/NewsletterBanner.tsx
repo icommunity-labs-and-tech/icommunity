@@ -37,10 +37,10 @@ const NewsletterBanner = () => {
           {/* Content */}
           <div className="relative z-[2] flex flex-col md:flex-row items-center justify-between gap-6 px-8 py-10 md:px-12 md:py-12">
             <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground leading-tight max-w-xs">
-              Mantente Conectado con iCommunity
+              Forma parte del ecosistema iCommunity
             </h3>
             <p className="text-primary-foreground/80 text-sm md:text-base max-w-md leading-relaxed">
-              Suscríbete a nuestra newsletter para recibir las últimas noticias y estudios de casos sobre blockchain.
+              Unirme y forma parte del ecosistema iCommunity
             </p>
             <a
               href="https://icommunity.io"
@@ -48,7 +48,7 @@ const NewsletterBanner = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/30 transition-colors flex-shrink-0"
             >
-              Descubre iBS <ArrowRight className="w-4 h-4" />
+              Unirme <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </motion.div>
