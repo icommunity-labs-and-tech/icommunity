@@ -1,64 +1,37 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-/**
- * Animated "Trust Engine" visualization.
- * Particles flow left → core → right, simulating event certification.
- */
+const NUM_NODES = 6;
+const CORE_RADIUS = 28;
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  phase: "incoming" | "core" | "outgoing";
-  opacity: number;
+interface OrbitalNode {
+  angle: number;
+  radius: number;
+  speed: number;
   size: number;
-  coreTimer: number;
-  yOffset: number;
-  seed: number;
+  phase: number;
 }
-
-const CORE_X = 0.5;
-const CORE_W = 0.18;
-const PARTICLE_COUNT = 45;
-const GLOW_LAYERS = 5;
 
 const TrustEngineViz = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particles = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
   const time = useRef(0);
-
-  const createParticle = (side: "left" | "right" | "random"): Particle => {
-    const s = side === "random" ? (Math.random() > 0.5 ? "left" : "right") : side;
-    const fromLeft = s === "left";
-    return {
-      x: fromLeft ? -0.05 - Math.random() * 0.15 : 1.05 + Math.random() * 0.15,
-      y: 0.2 + Math.random() * 0.6,
-      vx: fromLeft ? 0.001 + Math.random() * 0.001 : -(0.001 + Math.random() * 0.001),
-      phase: "incoming",
-      opacity: 0,
-      size: 3 + Math.random() * 3,
-      coreTimer: 0,
-      yOffset: (Math.random() - 0.5) * 0.12,
-      seed: Math.random() * Math.PI * 2,
-    };
-  };
+  const nodes = useRef<OrbitalNode[]>([]);
 
   useEffect(() => {
+    // Init nodes
+    nodes.current = Array.from({ length: NUM_NODES }, (_, i) => ({
+      angle: (Math.PI * 2 * i) / NUM_NODES + Math.random() * 0.3,
+      radius: 0.22 + Math.random() * 0.12,
+      speed: 0.08 + Math.random() * 0.06,
+      size: 3.5 + Math.random() * 2.5,
+      phase: Math.random() * Math.PI * 2,
+    }));
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    // Init particles
-    particles.current = [];
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const p = createParticle("random");
-      p.x = Math.random(); // scatter initially
-      p.opacity = 0.3 + Math.random() * 0.4;
-      particles.current.push(p);
-    }
 
     const resize = () => {
       const parent = canvas.parentElement;
@@ -76,145 +49,150 @@ const TrustEngineViz = () => {
 
     const draw = () => {
       time.current += 0.016;
+      const t = time.current;
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
+      const cx = w * 0.5;
+      const cy = h * 0.48;
+      const scale = Math.min(w, h);
+
       ctx.clearRect(0, 0, w, h);
 
-      const coreXpx = CORE_X * w;
-      const coreR = CORE_W * w;
-      const coreYpx = h * 0.5;
+      // ── Outer ambient glow ──
+      const ambientR = scale * 0.42;
+      const ambient = ctx.createRadialGradient(cx, cy, 0, cx, cy, ambientR);
+      ambient.addColorStop(0, "rgba(80,60,200,0.08)");
+      ambient.addColorStop(0.4, "rgba(56,109,240,0.05)");
+      ambient.addColorStop(1, "rgba(56,109,240,0)");
+      ctx.fillStyle = ambient;
+      ctx.fillRect(0, 0, w, h);
 
-      // ── Core glow layers ──
-      for (let i = GLOW_LAYERS; i >= 0; i--) {
-        const r = coreR * (1.8 + i * 1.2);
-        const alpha = 0.14 - i * 0.018;
-        const pulse = 1 + 0.1 * Math.sin(time.current * 0.8 + i);
-        const grad = ctx.createRadialGradient(coreXpx, coreYpx, 0, coreXpx, coreYpx, r * pulse);
-        grad.addColorStop(0, `rgba(56,109,240,${alpha + 0.12})`);
-        grad.addColorStop(0.3, `rgba(56,109,240,${alpha + 0.05})`);
-        grad.addColorStop(0.7, `rgba(56,109,240,${alpha})`);
+      // ── Orbit track (subtle) ──
+      nodes.current.forEach((node) => {
+        const r = node.radius * scale;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(56,109,240,0.06)";
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      });
+
+      // ── Connection lines & pulse energy ──
+      const nodePositions = nodes.current.map((node) => {
+        const r = node.radius * scale;
+        const a = node.angle + t * node.speed;
+        return { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r };
+      });
+
+      // Lines from nodes to core
+      nodePositions.forEach((pos, i) => {
+        const node = nodes.current[i];
+        // Connection line
+        const linePulse = 0.12 + 0.1 * Math.sin(t * 0.5 + node.phase);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.strokeStyle = `rgba(100,140,255,${linePulse})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // Energy pulse traveling toward core
+        const pulseT = ((t * 0.3 + node.phase) % 1);
+        const px = pos.x + (cx - pos.x) * pulseT;
+        const py = pos.y + (cy - pos.y) * pulseT;
+        const pulseAlpha = Math.sin(pulseT * Math.PI) * 0.7;
+        const pulseGrad = ctx.createRadialGradient(px, py, 0, px, py, 6);
+        pulseGrad.addColorStop(0, `rgba(140,180,255,${pulseAlpha})`);
+        pulseGrad.addColorStop(1, `rgba(140,180,255,0)`);
+        ctx.fillStyle = pulseGrad;
+        ctx.fillRect(px - 6, py - 6, 12, 12);
+      });
+
+      // ── Inter-node connections (every other pair) ──
+      for (let i = 0; i < nodePositions.length; i++) {
+        const j = (i + 2) % nodePositions.length;
+        const alpha = 0.04 + 0.03 * Math.sin(t * 0.4 + i);
+        ctx.beginPath();
+        ctx.moveTo(nodePositions[i].x, nodePositions[i].y);
+        ctx.lineTo(nodePositions[j].x, nodePositions[j].y);
+        ctx.strokeStyle = `rgba(100,140,255,${alpha})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      // ── Core glow ──
+      const corePulse = 1 + 0.04 * Math.sin(t * 0.8);
+      for (let layer = 3; layer >= 0; layer--) {
+        const r = CORE_RADIUS * (2.5 + layer * 1.5) * corePulse;
+        const a = 0.07 - layer * 0.012;
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+        grad.addColorStop(0, `rgba(80,70,220,${a + 0.08})`);
+        grad.addColorStop(0.35, `rgba(56,109,240,${a + 0.03})`);
+        grad.addColorStop(0.7, `rgba(56,109,240,${a})`);
         grad.addColorStop(1, "rgba(56,109,240,0)");
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
       }
 
       // Core ring
-      const ringPulse = 1 + 0.06 * Math.sin(time.current * 1.2);
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.7 * ringPulse, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(56,109,240,0.7)";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      // Second ring
-      ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.5, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(100,180,255,0.35)";
+      ctx.arc(cx, cy, CORE_RADIUS * corePulse, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(100,140,255,0.4)";
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Third outer ring
+      // Inner ring
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.9 * ringPulse, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(56,109,240,0.15)";
+      ctx.arc(cx, cy, CORE_RADIUS * 0.6, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(130,160,255,0.2)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
+      // Core fill
+      const coreFill = ctx.createRadialGradient(cx, cy, 0, cx, cy, CORE_RADIUS * 0.7);
+      coreFill.addColorStop(0, "rgba(160,180,255,0.5)");
+      coreFill.addColorStop(0.5, "rgba(80,100,220,0.25)");
+      coreFill.addColorStop(1, "rgba(56,109,240,0.08)");
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.35, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(56,109,240,0.4)";
+      ctx.arc(cx, cy, CORE_RADIUS * 0.7, 0, Math.PI * 2);
+      ctx.fillStyle = coreFill;
       ctx.fill();
 
-      // Inner bright dot
+      // Bright center dot
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, 5, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(200,230,255,1)";
+      ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(210,225,255,0.9)";
       ctx.fill();
 
+      // ── Orbital nodes ──
+      nodePositions.forEach((pos, i) => {
+        const node = nodes.current[i];
+        const nodePulse = 1 + 0.15 * Math.sin(t * 1.2 + node.phase);
+        const sz = node.size * nodePulse;
 
-      // ── Update & draw particles ──
-      particles.current.forEach((p) => {
-        const goingRight = p.vx > 0;
-        const distToCore = Math.abs(p.x - CORE_X);
+        // Node glow
+        const nGlow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, sz * 5);
+        nGlow.addColorStop(0, "rgba(100,150,255,0.25)");
+        nGlow.addColorStop(1, "rgba(100,150,255,0)");
+        ctx.fillStyle = nGlow;
+        ctx.fillRect(pos.x - sz * 5, pos.y - sz * 5, sz * 10, sz * 10);
 
-        // Phase transitions
-        if (p.phase === "incoming" && distToCore < CORE_W * 0.7) {
-          p.phase = "core";
-          p.coreTimer = 0;
-        }
-        if (p.phase === "core") {
-          p.coreTimer += 0.016;
-          if (p.coreTimer > 0.8 + Math.random() * 0.4) {
-            p.phase = "outgoing";
-            p.vx = goingRight ? 0.001 + Math.random() * 0.0008 : -(0.001 + Math.random() * 0.0008);
-          }
-        }
-
-        // Movement
-        if (p.phase === "incoming") {
-          // Attract toward core center Y
-          const targetY = 0.5 + p.yOffset * 0.3;
-          p.y += (targetY - p.y) * 0.008;
-          p.x += p.vx;
-          p.opacity = Math.min(p.opacity + 0.015, 1);
-        } else if (p.phase === "core") {
-          // Orbit subtly
-          const angle = time.current * 1.5 + p.seed;
-          const orbitR = 0.015 + 0.01 * Math.sin(time.current + p.seed);
-          p.x = CORE_X + Math.cos(angle) * orbitR;
-          p.y = 0.5 + Math.sin(angle) * orbitR * 0.6;
-          p.opacity = 0.95 + 0.05 * Math.sin(time.current * 3 + p.seed);
-        } else {
-          // Outgoing — disperse
-          p.x += p.vx;
-          const targetY = 0.5 + p.yOffset;
-          p.y += (targetY - p.y) * 0.005;
-          p.opacity = Math.max(p.opacity - 0.004, 0);
-        }
-
-        // Float
-        p.y += Math.sin(time.current * 0.6 + p.seed) * 0.0003;
-
-        // Reset if off-screen
-        if (p.x < -0.2 || p.x > 1.2 || p.opacity <= 0.01) {
-          Object.assign(p, createParticle(goingRight ? "left" : "right"));
-        }
-
-        // ── Draw particle ──
-        const px = p.x * w;
-        const py = p.y * h;
-        const sz = p.size;
-
-        // Color shifts by phase
-        let r = 56, g = 109, b = 240;
-        if (p.phase === "core") {
-          r = 100; g = 180; b = 255;
-        } else if (p.phase === "outgoing") {
-          r = 74; g = 222; b = 128; // greenish = verified
-        }
-
-        // Glow
-        const glowGrad = ctx.createRadialGradient(px, py, 0, px, py, sz * 10);
-        glowGrad.addColorStop(0, `rgba(${r},${g},${b},${p.opacity * 0.5})`);
-        glowGrad.addColorStop(1, `rgba(${r},${g},${b},0)`);
-        ctx.fillStyle = glowGrad;
-        ctx.fillRect(px - sz * 10, py - sz * 10, sz * 20, sz * 20);
-
-        // Dot
+        // Node dot
         ctx.beginPath();
-        ctx.arc(px, py, sz, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${r},${g},${b},${p.opacity})`;
+        ctx.arc(pos.x, pos.y, sz, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(160,190,255,0.8)";
         ctx.fill();
 
-        // Trail line (incoming/outgoing only)
-        if (p.phase !== "core") {
-          ctx.beginPath();
-          ctx.moveTo(px, py);
-          ctx.lineTo(px - p.vx * w * 18, py);
-          ctx.strokeStyle = `rgba(${r},${g},${b},${p.opacity * 0.5})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
+        // Node inner
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, sz * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(210,225,255,0.9)";
+        ctx.fill();
+      });
+
+      // Update angles
+      nodes.current.forEach((node) => {
+        node.angle += node.speed * 0.016;
       });
 
       animRef.current = requestAnimationFrame(draw);
@@ -233,26 +211,10 @@ const TrustEngineViz = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, delay: 0.3 }}
-      className="relative w-full max-w-[520px] mx-auto" style={{ minHeight: 380 }}
+      className="relative w-full max-w-[520px] mx-auto"
+      style={{ minHeight: 380 }}
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
-      {/* Minimal labels */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4">
-        <span className="text-xs font-mono tracking-widest text-primary-foreground/70 uppercase">
-          events
-        </span>
-        <span className="text-xs font-mono tracking-widest text-primary-foreground/70 uppercase">
-          evidence
-        </span>
-      </div>
-
-      {/* Core label */}
-      <div className="absolute inset-0 pointer-events-none flex items-end justify-center pb-6">
-        <span className="text-xs font-mono tracking-[0.25em] text-primary-foreground/60 uppercase">
-          trust layer
-        </span>
-      </div>
     </motion.div>
   );
 };
