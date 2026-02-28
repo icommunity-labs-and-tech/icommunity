@@ -71,7 +71,7 @@ const Segments = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Diseñado para procesos donde la evidencia debe ser verificable
+            Diseñado para procesos donde <span className="text-primary">la evidencia debe ser verificable</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Certificación digital desplegada donde la trazabilidad regulatoria es un requisito, no una opción.
