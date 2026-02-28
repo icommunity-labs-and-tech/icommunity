@@ -14,18 +14,19 @@ const TrustLifecycle = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden ic-gradient-lead">
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
+    <section ref={ref} className="ic-section py-20 md:py-28 bg-background overflow-hidden">
+      <div className="ic-container max-w-6xl relative rounded-3xl py-16 md:py-24 px-6 md:px-12 overflow-hidden ic-gradient-lead">
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none rounded-3xl"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
 
-      <div className="relative z-10 ic-container max-w-6xl">
+        <div className="relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -111,6 +112,7 @@ const TrustLifecycle = () => {
               </motion.div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>
