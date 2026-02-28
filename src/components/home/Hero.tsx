@@ -5,7 +5,17 @@ import logoMadrid from "@/assets/logo-ayto-madrid-gray-4.png";
 const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   return (
     <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="hero-overlay" />
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/hero-bg.mp4"
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.35)' }} />
       <div className="hero-noise" />
 
       <div className="hero-content ic-container">
