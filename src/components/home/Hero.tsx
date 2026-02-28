@@ -111,18 +111,9 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="hidden lg:block relative"
+            className="hidden lg:block"
           >
-            {/* Overlay gradient to separate from bg */}
-            <div className="absolute -inset-12 rounded-[32px] bg-gradient-to-br from-[rgba(10,15,40,0.6)] via-[rgba(10,15,40,0.3)] to-transparent blur-2xl pointer-events-none" />
-            <div
-              className="relative"
-              style={{
-                transform: 'scale(1.05) translateY(-10px)',
-              }}
-            >
-              <HeroDiagram />
-            </div>
+            <HeroDiagram />
           </motion.div>
         </div>
       </div>
@@ -142,42 +133,34 @@ const HeroDiagram = () => {
 
   return (
     <div className="relative">
-      <div
-        className="rounded-3xl border border-primary-foreground/25 p-10"
-        style={{
-          background: 'rgba(10,15,40,0.35)',
-          backdropFilter: 'blur(30px)',
-          WebkitBackdropFilter: 'blur(30px)',
-          boxShadow: '0 0 120px rgba(102,0,255,0.25), 0 0 60px rgba(0,204,255,0.20), 0 20px 60px -20px rgba(0,0,0,0.5)',
-        }}
-      >
+      <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-8 shadow-lg shadow-black/20">
         <div className="flex flex-col gap-4">
           {steps.map((s, i) => (
             <div key={s.step} className="flex items-start gap-4">
               <motion.div
-                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(56,109,240,0.4)]"
+                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.8 }}
               >
-                <span className="text-primary-foreground font-bold text-sm drop-shadow-[0_0_6px_rgba(56,109,240,0.6)]">{s.step}</span>
+                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
               </motion.div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]">{s.title}</div>
-                <div className="text-xs text-white/85 mt-0.5 font-medium">{s.desc}</div>
+                <div className="text-sm font-bold text-primary-foreground drop-shadow-sm">{s.title}</div>
+                <div className="text-xs text-primary-foreground/80 mt-0.5 font-medium">{s.desc}</div>
               </div>
             </div>
           ))}
 
-          <div className="mt-4 rounded-xl border border-ic-blue-glow/30 bg-white/[0.07] p-5">
+          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
             <div className="flex items-center gap-2 mb-3">
               <motion.div
                 className="w-2 h-2 rounded-full bg-green-400"
                 animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
                 transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
               />
-              <span className="text-xs font-mono text-white/90 font-semibold tracking-wide">Evidence Receipt</span>
+              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
             </div>
-            <div className="space-y-1.5 font-mono text-[11px] text-white/80">
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
               <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
