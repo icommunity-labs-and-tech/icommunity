@@ -48,7 +48,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.55)' }} />
+      <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.25)' }} />
       <div className="hero-noise" />
 
       <div className="hero-content ic-container">
