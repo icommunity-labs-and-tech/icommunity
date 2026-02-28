@@ -145,8 +145,8 @@ const HeroDiagram = () => {
                 <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
               </motion.div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-semibold text-primary-foreground">{s.title}</div>
-                <div className="text-xs text-primary-foreground/50 mt-0.5">{s.desc}</div>
+                <div className="text-sm font-bold text-primary-foreground drop-shadow-sm">{s.title}</div>
+                <div className="text-xs text-primary-foreground/80 mt-0.5 font-medium">{s.desc}</div>
               </div>
             </div>
           ))}
@@ -158,9 +158,9 @@ const HeroDiagram = () => {
                 animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
                 transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
               />
-              <span className="text-xs font-mono text-primary-foreground/60">Evidence Receipt</span>
+              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
             </div>
-            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/40">
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
               <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
