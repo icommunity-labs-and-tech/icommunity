@@ -19,9 +19,9 @@ interface Particle {
 }
 
 const CORE_X = 0.5;
-const CORE_W = 0.08;
-const PARTICLE_COUNT = 28;
-const GLOW_LAYERS = 3;
+const CORE_W = 0.12;
+const PARTICLE_COUNT = 35;
+const GLOW_LAYERS = 4;
 
 const TrustEngineViz = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,10 +35,10 @@ const TrustEngineViz = () => {
     return {
       x: fromLeft ? -0.05 - Math.random() * 0.15 : 1.05 + Math.random() * 0.15,
       y: 0.2 + Math.random() * 0.6,
-      vx: fromLeft ? 0.0008 + Math.random() * 0.0006 : -(0.0008 + Math.random() * 0.0006),
+      vx: fromLeft ? 0.001 + Math.random() * 0.001 : -(0.001 + Math.random() * 0.001),
       phase: "incoming",
       opacity: 0,
-      size: 1.2 + Math.random() * 1.8,
+      size: 2 + Math.random() * 2.5,
       coreTimer: 0,
       yOffset: (Math.random() - 0.5) * 0.12,
       seed: Math.random() * Math.PI * 2,
@@ -86,40 +86,47 @@ const TrustEngineViz = () => {
 
       // ── Core glow layers ──
       for (let i = GLOW_LAYERS; i >= 0; i--) {
-        const r = coreR * (1.2 + i * 0.9);
-        const alpha = 0.04 - i * 0.008;
-        const pulse = 1 + 0.06 * Math.sin(time.current * 0.8 + i);
+        const r = coreR * (1.5 + i * 1.0);
+        const alpha = 0.08 - i * 0.012;
+        const pulse = 1 + 0.08 * Math.sin(time.current * 0.8 + i);
         const grad = ctx.createRadialGradient(coreXpx, coreYpx, 0, coreXpx, coreYpx, r * pulse);
-        grad.addColorStop(0, `rgba(56,109,240,${alpha + 0.03})`);
-        grad.addColorStop(0.5, `rgba(56,109,240,${alpha})`);
+        grad.addColorStop(0, `rgba(56,109,240,${alpha + 0.06})`);
+        grad.addColorStop(0.4, `rgba(56,109,240,${alpha + 0.02})`);
         grad.addColorStop(1, "rgba(56,109,240,0)");
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
       }
 
       // Core ring
-      const ringPulse = 1 + 0.04 * Math.sin(time.current * 1.2);
+      const ringPulse = 1 + 0.05 * Math.sin(time.current * 1.2);
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.6 * ringPulse, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(56,109,240,0.25)";
+      ctx.arc(coreXpx, coreYpx, coreR * 0.7 * ringPulse, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(56,109,240,0.45)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Second ring
+      ctx.beginPath();
+      ctx.arc(coreXpx, coreYpx, coreR * 0.45, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(100,180,255,0.2)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
       ctx.beginPath();
       ctx.arc(coreXpx, coreYpx, coreR * 0.3, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(56,109,240,0.12)";
+      ctx.fillStyle = "rgba(56,109,240,0.25)";
       ctx.fill();
 
       // Inner bright dot
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(136,200,255,0.6)";
+      ctx.arc(coreXpx, coreYpx, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(180,220,255,0.9)";
       ctx.fill();
 
       // ── Horizontal guide lines ──
       ctx.setLineDash([2, 6]);
       ctx.lineWidth = 0.5;
-      ctx.strokeStyle = "rgba(56,109,240,0.08)";
+      ctx.strokeStyle = "rgba(56,109,240,0.15)";
       for (let i = 0; i < 3; i++) {
         const ly = h * (0.3 + i * 0.2);
         ctx.beginPath();
@@ -153,20 +160,20 @@ const TrustEngineViz = () => {
           const targetY = 0.5 + p.yOffset * 0.3;
           p.y += (targetY - p.y) * 0.008;
           p.x += p.vx;
-          p.opacity = Math.min(p.opacity + 0.008, 0.6);
+          p.opacity = Math.min(p.opacity + 0.012, 0.85);
         } else if (p.phase === "core") {
           // Orbit subtly
           const angle = time.current * 1.5 + p.seed;
           const orbitR = 0.015 + 0.01 * Math.sin(time.current + p.seed);
           p.x = CORE_X + Math.cos(angle) * orbitR;
           p.y = 0.5 + Math.sin(angle) * orbitR * 0.6;
-          p.opacity = 0.7 + 0.2 * Math.sin(time.current * 3 + p.seed);
+          p.opacity = 0.85 + 0.15 * Math.sin(time.current * 3 + p.seed);
         } else {
           // Outgoing — disperse
           p.x += p.vx;
           const targetY = 0.5 + p.yOffset;
           p.y += (targetY - p.y) * 0.005;
-          p.opacity = Math.max(p.opacity - 0.003, 0);
+          p.opacity = Math.max(p.opacity - 0.004, 0);
         }
 
         // Float
@@ -191,11 +198,11 @@ const TrustEngineViz = () => {
         }
 
         // Glow
-        const glowGrad = ctx.createRadialGradient(px, py, 0, px, py, sz * 6);
-        glowGrad.addColorStop(0, `rgba(${r},${g},${b},${p.opacity * 0.15})`);
+        const glowGrad = ctx.createRadialGradient(px, py, 0, px, py, sz * 8);
+        glowGrad.addColorStop(0, `rgba(${r},${g},${b},${p.opacity * 0.3})`);
         glowGrad.addColorStop(1, `rgba(${r},${g},${b},0)`);
         ctx.fillStyle = glowGrad;
-        ctx.fillRect(px - sz * 6, py - sz * 6, sz * 12, sz * 12);
+        ctx.fillRect(px - sz * 8, py - sz * 8, sz * 16, sz * 16);
 
         // Dot
         ctx.beginPath();
@@ -208,7 +215,7 @@ const TrustEngineViz = () => {
           ctx.beginPath();
           ctx.moveTo(px, py);
           ctx.lineTo(px - p.vx * w * 18, py);
-          ctx.strokeStyle = `rgba(${r},${g},${b},${p.opacity * 0.2})`;
+          ctx.strokeStyle = `rgba(${r},${g},${b},${p.opacity * 0.35})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -230,23 +237,23 @@ const TrustEngineViz = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, delay: 0.3 }}
-      className="relative w-full max-w-[520px] mx-auto aspect-[4/3]"
+      className="relative w-full max-w-[520px] mx-auto" style={{ minHeight: 380 }}
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Minimal labels */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4">
-        <span className="text-[9px] font-mono tracking-widest text-primary-foreground/20 uppercase">
+        <span className="text-[10px] font-mono tracking-widest text-primary-foreground/50 uppercase">
           events
         </span>
-        <span className="text-[9px] font-mono tracking-widest text-primary-foreground/20 uppercase">
+        <span className="text-[10px] font-mono tracking-widest text-primary-foreground/50 uppercase">
           evidence
         </span>
       </div>
 
       {/* Core label */}
       <div className="absolute inset-0 pointer-events-none flex items-end justify-center pb-6">
-        <span className="text-[9px] font-mono tracking-[0.25em] text-primary-foreground/15 uppercase">
+        <span className="text-[10px] font-mono tracking-[0.25em] text-primary-foreground/40 uppercase">
           trust layer
         </span>
       </div>
