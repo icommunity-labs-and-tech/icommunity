@@ -23,9 +23,9 @@ const TrustLifecycle = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase">
-            Trust Lifecycle
-          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Trust <span className="text-primary">Lifecycle</span>
+          </h2>
         </motion.div>
 
         {/* Desktop: horizontal */}
