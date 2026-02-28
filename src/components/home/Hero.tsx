@@ -121,120 +121,119 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   );
 };
 
-/* ── Mini Console + Flow Diagram ── */
+/* ── Blueprint Line-Art Diagram ── */
 
-const flowSteps = [
-  { num: "1", label: "Evento", desc: "Acción digital capturada" },
-  { num: "2", label: "Certificación", desc: "Hash + sello + registro" },
-  { num: "3", label: "Evidencia", desc: "Recibo verificable" },
+const origins = [
+  { label: "KYC Provider", sub: "identity" },
+  { label: "Fintech", sub: "transactions" },
+  { label: "Gov / Admin", sub: "documents" },
+];
+const outputs = [
+  { label: "Reguladores", sub: "compliance" },
+  { label: "Auditores", sub: "audit trail" },
+  { label: "Terceros", sub: "public verify" },
 ];
 
-const HeroDiagram = () => {
-  const now = new Date();
-  const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
+const HeroDiagram = () => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    className="relative w-full max-w-[520px] mx-auto"
+  >
+    {/* Blueprint SVG */}
+    <svg
+      viewBox="0 0 520 340"
+      fill="none"
+      className="w-full h-auto"
+      style={{ filter: "drop-shadow(0 0 20px rgba(56,152,236,0.08))" }}
+    >
+      {/* Grid pattern */}
+      <defs>
+        <pattern id="bp-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeOpacity="0.04" strokeWidth="0.5" />
+        </pattern>
+      </defs>
+      <rect width="520" height="340" fill="url(#bp-grid)" rx="16" />
 
-  return (
-    <div className="relative w-full max-w-[480px] mx-auto">
-      {/* ── API Response Console ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="rounded-xl border border-primary-foreground/15 bg-[#0a0f1e]/80 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden"
-      >
-        {/* Terminal top bar */}
-        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-primary-foreground/10 bg-primary-foreground/[0.03]">
-          <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
-            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
-            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
-          </div>
-          <span className="text-[10px] font-mono text-primary-foreground/40 ml-2">POST /v1/certify — 200 OK</span>
-          <motion.div
-            className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400"
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
+      {/* Outer frame */}
+      <rect x="1" y="1" width="518" height="338" rx="15" stroke="white" strokeOpacity="0.08" strokeWidth="1" fill="none" />
 
-        {/* Payload body */}
-        <div className="p-5 font-mono text-[12px] leading-[1.8]">
-          <div className="text-primary-foreground/40">{"// API Response"}</div>
-          <div className="text-primary-foreground/50">{"{"}</div>
-          <div className="pl-4">
-            <span className="text-ic-blue-glow">"event_type"</span>
-            <span className="text-primary-foreground/40">: </span>
-            <span className="text-primary-foreground/90">"kyc_verification"</span>
-            <span className="text-primary-foreground/30">,</span>
-          </div>
-          <motion.div
-            className="pl-4"
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <span className="text-ic-blue-glow">"timestamp"</span>
-            <span className="text-primary-foreground/40">: </span>
-            <span className="text-primary-foreground/90">"{ts}"</span>
-            <span className="text-primary-foreground/30">,</span>
-          </motion.div>
-          <div className="pl-4">
-            <span className="text-ic-blue-glow">"integrity"</span>
-            <span className="text-primary-foreground/40">: </span>
-            <span className="text-primary-foreground/90">"sha256:a1b2c3…f8e9"</span>
-            <span className="text-primary-foreground/30">,</span>
-          </div>
-          <div className="pl-4">
-            <span className="text-ic-blue-glow">"status"</span>
-            <span className="text-primary-foreground/40">: </span>
-            <motion.span
-              className="text-green-400 font-semibold inline-block"
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            >
-              "verified"
-            </motion.span>
-          </div>
-          <div className="text-primary-foreground/50">{"}"}</div>
-        </div>
-      </motion.div>
+      {/* ── Left column: Origins ── */}
+      {origins.map((o, i) => {
+        const y = 50 + i * 85;
+        return (
+          <g key={o.label}>
+            <rect x="16" y={y} width="110" height="52" rx="8" stroke="white" strokeOpacity="0.25" strokeWidth="1" fill="white" fillOpacity="0.04" />
+            <text x="71" y={y + 22} textAnchor="middle" fill="white" fillOpacity="0.9" fontSize="11" fontWeight="600" fontFamily="ui-monospace, monospace">{o.label}</text>
+            <text x="71" y={y + 38} textAnchor="middle" fill="white" fillOpacity="0.35" fontSize="9" fontFamily="ui-monospace, monospace">{o.sub}</text>
+            {/* Connector line to center */}
+            <line x1="126" y1={y + 26} x2="190" y2={y + 26} stroke="white" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
+            {/* Arrow head */}
+            <polygon points={`190,${y + 26} 185,${y + 23} 185,${y + 29}`} fill="white" fillOpacity="0.3" />
+          </g>
+        );
+      })}
 
-      {/* ── Mini flow 1-2-3 ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="mt-5 flex items-stretch gap-0"
-      >
-        {flowSteps.map((step, i) => (
-          <div key={step.num} className="flex items-center flex-1 min-w-0">
-            {/* Step card */}
-            <motion.div
-              className="flex-1 rounded-lg border border-primary-foreground/15 bg-primary-foreground/[0.06] backdrop-blur-sm px-3 py-3 text-center"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.7 + i * 0.15 }}
-            >
-              <div className="w-7 h-7 rounded-md ic-gradient-cta flex items-center justify-center mx-auto mb-2">
-                <span className="text-primary-foreground font-bold text-xs">{step.num}</span>
-              </div>
-              <div className="text-xs font-bold text-primary-foreground mb-0.5">{step.label}</div>
-              <div className="text-[10px] text-primary-foreground/60 leading-tight">{step.desc}</div>
-            </motion.div>
+      {/* ── Center: Trust Layer ── */}
+      <rect x="190" y="30" width="140" height="280" rx="12" stroke="white" strokeOpacity="0.15" strokeWidth="1.5" fill="white" fillOpacity="0.03" />
+      {/* Inner glow border */}
+      <rect x="194" y="34" width="132" height="272" rx="10" stroke="white" strokeOpacity="0.06" strokeWidth="0.5" fill="none" />
 
-            {/* Arrow between steps */}
-            {i < flowSteps.length - 1 && (
-              <div className="flex-shrink-0 w-6 flex items-center justify-center">
-                <svg width="20" height="10" viewBox="0 0 20 10" className="overflow-visible">
-                  <line x1="0" y1="5" x2="14" y2="5" stroke="white" strokeOpacity="0.3" strokeWidth="1.5" />
-                  <polygon points="14,5 10,2 10,8" fill="white" fillOpacity="0.3" />
-                </svg>
-              </div>
-            )}
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-};
+      {/* Title area */}
+      <text x="260" y="62" textAnchor="middle" fill="white" fillOpacity="0.3" fontSize="8" fontFamily="ui-monospace, monospace" letterSpacing="3">TRUST LAYER</text>
+      <text x="260" y="82" textAnchor="middle" fill="white" fillOpacity="0.95" fontSize="13" fontWeight="700" fontFamily="ui-monospace, monospace">iCommunity</text>
+
+      {/* Process blocks inside */}
+      {[
+        { y: 105, label: "① Capture", desc: "event intake" },
+        { y: 155, label: "② Certify", desc: "hash + TSA seal" },
+        { y: 205, label: "③ Anchor", desc: "DLT + immutable" },
+      ].map((block) => (
+        <g key={block.label}>
+          <rect x="206" y={block.y} width="108" height="40" rx="6" stroke="white" strokeOpacity="0.15" strokeWidth="1" fill="white" fillOpacity="0.05" />
+          <text x="260" y={block.y + 17} textAnchor="middle" fill="white" fillOpacity="0.85" fontSize="10" fontWeight="600" fontFamily="ui-monospace, monospace">{block.label}</text>
+          <text x="260" y={block.y + 31} textAnchor="middle" fill="white" fillOpacity="0.35" fontSize="8.5" fontFamily="ui-monospace, monospace">{block.desc}</text>
+        </g>
+      ))}
+
+      {/* Vertical connectors between process blocks */}
+      <line x1="260" y1="145" x2="260" y2="155" stroke="white" strokeOpacity="0.2" strokeWidth="1" />
+      <polygon points="260,155 257,150 263,150" fill="white" fillOpacity="0.25" />
+      <line x1="260" y1="195" x2="260" y2="205" stroke="white" strokeOpacity="0.2" strokeWidth="1" />
+      <polygon points="260,205 257,200 263,200" fill="white" fillOpacity="0.25" />
+
+      {/* Status indicator */}
+      <rect x="220" y="260" width="80" height="26" rx="13" stroke="white" strokeOpacity="0.12" strokeWidth="1" fill="white" fillOpacity="0.05" />
+      <circle cx="237" cy="273" r="3" fill="#4ade80" fillOpacity="0.8" />
+      <text x="268" y="277" textAnchor="middle" fill="#4ade80" fillOpacity="0.9" fontSize="9" fontWeight="600" fontFamily="ui-monospace, monospace">ACTIVE</text>
+
+      {/* ── Right column: Outputs ── */}
+      {outputs.map((o, i) => {
+        const y = 50 + i * 85;
+        return (
+          <g key={o.label}>
+            {/* Connector line from center */}
+            <line x1="330" y1={y + 26} x2="394" y2={y + 26} stroke="white" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="4 3" />
+            <polygon points={`394,${y + 26} 389,${y + 23} 389,${y + 29}`} fill="white" fillOpacity="0.3" />
+            <rect x="394" y={y} width="110" height="52" rx="8" stroke="white" strokeOpacity="0.25" strokeWidth="1" fill="white" fillOpacity="0.04" />
+            <text x="449" y={y + 22} textAnchor="middle" fill="white" fillOpacity="0.9" fontSize="11" fontWeight="600" fontFamily="ui-monospace, monospace">{o.label}</text>
+            <text x="449" y={y + 38} textAnchor="middle" fill="white" fillOpacity="0.35" fontSize="9" fontFamily="ui-monospace, monospace">{o.sub}</text>
+          </g>
+        );
+      })}
+
+      {/* Corner labels */}
+      <text x="24" y="24" fill="white" fillOpacity="0.15" fontSize="8" fontFamily="ui-monospace, monospace">BLUEPRINT v2.1</text>
+      <text x="520" y="24" textAnchor="end" fill="white" fillOpacity="0.15" fontSize="8" fontFamily="ui-monospace, monospace" dx="-8">iCommunity Trust Infrastructure</text>
+
+      {/* Animated pulse on ACTIVE dot */}
+      <circle cx="237" cy="273" r="3" fill="none" stroke="#4ade80" strokeOpacity="0.4" strokeWidth="1">
+        <animate attributeName="r" values="3;8;3" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </motion.div>
+);
 
 export default Hero;
