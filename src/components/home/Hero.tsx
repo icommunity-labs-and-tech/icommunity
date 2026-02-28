@@ -67,7 +67,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-6">
-              <span className="text-[11px] font-medium tracking-widest text-primary-foreground/40 uppercase">
+              <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">
                 Infraestructura de confianza para sistemas regulados
               </span>
             </div>
