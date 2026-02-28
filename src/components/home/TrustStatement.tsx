@@ -15,7 +15,7 @@ const TrustStatement = () => {
         initial={{ opacity: 0, y: 14 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground/80 leading-snug max-w-xl"
+        className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground/80 leading-snug max-w-xl"
       >
         Todo sistema regulado necesita
         <br />
