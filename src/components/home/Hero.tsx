@@ -10,6 +10,11 @@ declare global {
 
 const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = 0.5;
+  }, []);
 
   useEffect(() => {
     let script = document.querySelector('script[src="/gradient.js"]') as HTMLScriptElement | null;
@@ -39,6 +44,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
     <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
       {/* Video background */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
