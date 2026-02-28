@@ -15,7 +15,7 @@ const TrustLifecycle = () => {
 
   return (
     <section ref={ref} className="ic-section py-20 md:py-28 bg-background overflow-hidden">
-      <div className="ic-container max-w-3xl relative rounded-3xl py-16 md:py-24 px-6 md:px-10 overflow-hidden ic-gradient-lead">
+      <div className="ic-container max-w-2xl relative rounded-3xl py-16 md:py-24 px-4 md:px-6 overflow-hidden ic-gradient-lead">
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none rounded-3xl"
@@ -38,7 +38,7 @@ const TrustLifecycle = () => {
             Infrastructure Pipeline
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-            Trust <span className="text-primary-foreground/60">Lifecycle</span>
+            Trust <span className="text-primary">Lifecycle</span>
           </h2>
         </motion.div>
 
