@@ -127,70 +127,65 @@ const steps = [
   { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
 ];
 
-const nodes = [
-  { x: 30, y: 20 }, { x: 70, y: 15 }, { x: 85, y: 45 }, { x: 50, y: 55 },
-  { x: 15, y: 50 }, { x: 60, y: 80 }, { x: 25, y: 78 }, { x: 80, y: 75 },
-  { x: 45, y: 35 }, { x: 10, y: 35 }, { x: 90, y: 20 }, { x: 40, y: 90 },
-];
-
-const connections = [
-  [0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [3, 5], [5, 6], [6, 4],
-  [1, 8], [8, 3], [0, 9], [2, 7], [5, 7], [1, 10], [10, 2], [6, 11], [5, 11],
-];
-
 const HeroDiagram = () => {
+  const now = new Date();
+  const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
+
   return (
     <div className="relative">
-      {/* Background technical layer — nodos y conexiones */}
-      <div className="absolute inset-0 opacity-[0.55] blur-[0.5px] pointer-events-none">
-        <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          {connections.map(([a, b], i) => (
-            <motion.line
-              key={i}
-              x1={nodes[a].x} y1={nodes[a].y}
-              x2={nodes[b].x} y2={nodes[b].y}
-              stroke="hsl(225, 86%, 68%)"
-              strokeWidth="0.5"
-              animate={{ opacity: [0.4, 0.9, 0.4] }}
-              transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, delay: i * 0.3 }}
-            />
+      <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-8 shadow-lg shadow-black/20">
+        <div className="flex flex-col gap-4">
+          {steps.map((s, i) => (
+            <div key={s.step} className="flex items-start gap-4">
+              <motion.div
+                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.8 }}
+              >
+                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
+              </motion.div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-primary-foreground drop-shadow-sm">{s.title}</div>
+                <div className="text-xs text-primary-foreground/80 mt-0.5 font-medium">{s.desc}</div>
+              </div>
+            </div>
           ))}
-          {nodes.map((n, i) => (
-            <motion.circle
-              key={i}
-              cx={n.x} cy={n.y} r="1.8"
-              fill="hsl(225, 86%, 72%)"
-              animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.4, 1] }}
-              transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: i * 0.4 }}
-            />
-          ))}
-        </svg>
-      </div>
 
-      {/* Contenido real: los 3 pasos */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[340px] gap-6">
-        {steps.map((s, i) => (
-          <motion.div
-            key={s.step}
-            className="flex items-center gap-5"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 + i * 0.15 }}
-          >
-            <motion.div
-              className="w-12 h-12 rounded-xl ic-gradient-cta flex items-center justify-center flex-shrink-0 shadow-lg shadow-ic-blue/30"
-              animate={{ opacity: [0.8, 1, 0.8] }}
-              transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.2 }}
-            >
-              <span className="text-primary-foreground font-bold text-base">{s.step}</span>
-            </motion.div>
-            <span className="text-xl font-bold text-primary-foreground drop-shadow-md">{s.title}</span>
-          </motion.div>
-        ))}
+          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <motion.div
+                className="w-2 h-2 rounded-full bg-green-400"
+                animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
+            </div>
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
+              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
+              <motion.div
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+              >
+                <span className="text-ic-blue-glow">timestamp:</span> {ts}
+              </motion.div>
+              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
+              <div>
+                <span className="text-ic-blue-glow">status:</span>{" "}
+                <motion.span
+                  className="text-green-400 inline-block"
+                  animate={{ opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+                >
+                  verified
+                </motion.span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Madrid badge */}
-      <div className="flex items-center gap-3 mt-8 w-full">
+      <div className="flex items-center gap-3 mt-6 w-full">
         <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
         <span className="text-sm text-primary-foreground leading-tight flex-1">
           iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
