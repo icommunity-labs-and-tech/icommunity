@@ -115,16 +115,14 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           >
             {/* Overlay gradient to separate from bg */}
             <div className="absolute -inset-12 rounded-[32px] bg-gradient-to-br from-[rgba(10,15,40,0.6)] via-[rgba(10,15,40,0.3)] to-transparent blur-2xl pointer-events-none" />
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
+            <div
               className="relative"
               style={{
                 transform: 'scale(1.05) translateY(-10px)',
               }}
             >
               <HeroDiagram />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
