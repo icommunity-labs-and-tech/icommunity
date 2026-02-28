@@ -19,7 +19,7 @@ const TrustStatement = () => {
       >
         Todo sistema regulado necesita
         <br />
-        <span className="text-primary font-normal">evidencia independiente.</span>
+        <span className="text-primary font-bold">evidencia independiente.</span>
       </motion.p>
     </section>
   );
