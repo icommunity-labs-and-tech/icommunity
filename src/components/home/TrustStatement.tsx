@@ -17,9 +17,9 @@ const TrustStatement = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground/80 leading-snug max-w-xl"
       >
-        La confianza no se declara.
+        Todo sistema regulado necesita
         <br />
-        <span className="text-primary font-normal">Se demuestra.</span>
+        <span className="text-primary font-normal">evidencia independiente.</span>
       </motion.p>
     </section>
   );
