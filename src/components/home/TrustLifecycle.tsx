@@ -15,7 +15,7 @@ const TrustLifecycle = () => {
 
   return (
     <section ref={ref} className="ic-section py-20 md:py-28 bg-background overflow-hidden">
-      <div className="ic-container max-w-6xl relative rounded-3xl py-16 md:py-24 px-6 md:px-12 overflow-hidden ic-gradient-lead">
+      <div className="ic-container max-w-4xl relative rounded-3xl py-16 md:py-24 px-6 md:px-12 overflow-hidden ic-gradient-lead">
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none rounded-3xl"
