@@ -37,24 +37,18 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 
   return (
     <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
-      {/* WebGL animated gradient canvas — falls back to CSS aurora */}
-      <canvas
-        ref={canvasRef}
-        id="gradient-canvas"
-        data-js-darken-top=""
-        data-transition-in=""
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-        style={{
-          "--gradient-color-0": "#6c00ca",
-          "--gradient-color-1": "#3e00de",
-          "--gradient-color-2": "#386df0",
-          "--gradient-color-3": "#88e2d2",
-        } as React.CSSProperties}
-      />
-      {/* CSS aurora fallback (visible until canvas paints) */}
-      <div className="hero-aurora" />
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.35)' }} />
+      <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.55)' }} />
       <div className="hero-noise" />
 
       <div className="hero-content ic-container">
