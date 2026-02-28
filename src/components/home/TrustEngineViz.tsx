@@ -19,9 +19,9 @@ interface Particle {
 }
 
 const CORE_X = 0.5;
-const CORE_W = 0.12;
-const PARTICLE_COUNT = 35;
-const GLOW_LAYERS = 4;
+const CORE_W = 0.18;
+const PARTICLE_COUNT = 45;
+const GLOW_LAYERS = 5;
 
 const TrustEngineViz = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -38,7 +38,7 @@ const TrustEngineViz = () => {
       vx: fromLeft ? 0.001 + Math.random() * 0.001 : -(0.001 + Math.random() * 0.001),
       phase: "incoming",
       opacity: 0,
-      size: 2 + Math.random() * 2.5,
+      size: 3 + Math.random() * 3,
       coreTimer: 0,
       yOffset: (Math.random() - 0.5) * 0.12,
       seed: Math.random() * Math.PI * 2,
@@ -86,47 +86,55 @@ const TrustEngineViz = () => {
 
       // ── Core glow layers ──
       for (let i = GLOW_LAYERS; i >= 0; i--) {
-        const r = coreR * (1.5 + i * 1.0);
-        const alpha = 0.08 - i * 0.012;
-        const pulse = 1 + 0.08 * Math.sin(time.current * 0.8 + i);
+        const r = coreR * (1.8 + i * 1.2);
+        const alpha = 0.14 - i * 0.018;
+        const pulse = 1 + 0.1 * Math.sin(time.current * 0.8 + i);
         const grad = ctx.createRadialGradient(coreXpx, coreYpx, 0, coreXpx, coreYpx, r * pulse);
-        grad.addColorStop(0, `rgba(56,109,240,${alpha + 0.06})`);
-        grad.addColorStop(0.4, `rgba(56,109,240,${alpha + 0.02})`);
+        grad.addColorStop(0, `rgba(56,109,240,${alpha + 0.12})`);
+        grad.addColorStop(0.3, `rgba(56,109,240,${alpha + 0.05})`);
+        grad.addColorStop(0.7, `rgba(56,109,240,${alpha})`);
         grad.addColorStop(1, "rgba(56,109,240,0)");
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
       }
 
       // Core ring
-      const ringPulse = 1 + 0.05 * Math.sin(time.current * 1.2);
+      const ringPulse = 1 + 0.06 * Math.sin(time.current * 1.2);
       ctx.beginPath();
       ctx.arc(coreXpx, coreYpx, coreR * 0.7 * ringPulse, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(56,109,240,0.45)";
-      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = "rgba(56,109,240,0.7)";
+      ctx.lineWidth = 2;
       ctx.stroke();
 
       // Second ring
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.45, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(100,180,255,0.2)";
+      ctx.arc(coreXpx, coreYpx, coreR * 0.5, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(100,180,255,0.35)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Third outer ring
+      ctx.beginPath();
+      ctx.arc(coreXpx, coreYpx, coreR * 0.9 * ringPulse, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(56,109,240,0.15)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, coreR * 0.3, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(56,109,240,0.25)";
+      ctx.arc(coreXpx, coreYpx, coreR * 0.35, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(56,109,240,0.4)";
       ctx.fill();
 
       // Inner bright dot
       ctx.beginPath();
-      ctx.arc(coreXpx, coreYpx, 3.5, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(180,220,255,0.9)";
+      ctx.arc(coreXpx, coreYpx, 5, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(200,230,255,1)";
       ctx.fill();
 
       // ── Horizontal guide lines ──
       ctx.setLineDash([2, 6]);
       ctx.lineWidth = 0.5;
-      ctx.strokeStyle = "rgba(56,109,240,0.15)";
+      ctx.strokeStyle = "rgba(56,109,240,0.25)";
       for (let i = 0; i < 3; i++) {
         const ly = h * (0.3 + i * 0.2);
         ctx.beginPath();
@@ -160,14 +168,14 @@ const TrustEngineViz = () => {
           const targetY = 0.5 + p.yOffset * 0.3;
           p.y += (targetY - p.y) * 0.008;
           p.x += p.vx;
-          p.opacity = Math.min(p.opacity + 0.012, 0.85);
+          p.opacity = Math.min(p.opacity + 0.015, 1);
         } else if (p.phase === "core") {
           // Orbit subtly
           const angle = time.current * 1.5 + p.seed;
           const orbitR = 0.015 + 0.01 * Math.sin(time.current + p.seed);
           p.x = CORE_X + Math.cos(angle) * orbitR;
           p.y = 0.5 + Math.sin(angle) * orbitR * 0.6;
-          p.opacity = 0.85 + 0.15 * Math.sin(time.current * 3 + p.seed);
+          p.opacity = 0.95 + 0.05 * Math.sin(time.current * 3 + p.seed);
         } else {
           // Outgoing — disperse
           p.x += p.vx;
@@ -198,11 +206,11 @@ const TrustEngineViz = () => {
         }
 
         // Glow
-        const glowGrad = ctx.createRadialGradient(px, py, 0, px, py, sz * 8);
-        glowGrad.addColorStop(0, `rgba(${r},${g},${b},${p.opacity * 0.3})`);
+        const glowGrad = ctx.createRadialGradient(px, py, 0, px, py, sz * 10);
+        glowGrad.addColorStop(0, `rgba(${r},${g},${b},${p.opacity * 0.5})`);
         glowGrad.addColorStop(1, `rgba(${r},${g},${b},0)`);
         ctx.fillStyle = glowGrad;
-        ctx.fillRect(px - sz * 8, py - sz * 8, sz * 16, sz * 16);
+        ctx.fillRect(px - sz * 10, py - sz * 10, sz * 20, sz * 20);
 
         // Dot
         ctx.beginPath();
@@ -215,8 +223,8 @@ const TrustEngineViz = () => {
           ctx.beginPath();
           ctx.moveTo(px, py);
           ctx.lineTo(px - p.vx * w * 18, py);
-          ctx.strokeStyle = `rgba(${r},${g},${b},${p.opacity * 0.35})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(${r},${g},${b},${p.opacity * 0.5})`;
+          ctx.lineWidth = 1;
           ctx.stroke();
         }
       });
@@ -243,17 +251,17 @@ const TrustEngineViz = () => {
 
       {/* Minimal labels */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4">
-        <span className="text-[10px] font-mono tracking-widest text-primary-foreground/50 uppercase">
+        <span className="text-xs font-mono tracking-widest text-primary-foreground/70 uppercase">
           events
         </span>
-        <span className="text-[10px] font-mono tracking-widest text-primary-foreground/50 uppercase">
+        <span className="text-xs font-mono tracking-widest text-primary-foreground/70 uppercase">
           evidence
         </span>
       </div>
 
       {/* Core label */}
       <div className="absolute inset-0 pointer-events-none flex items-end justify-center pb-6">
-        <span className="text-[10px] font-mono tracking-[0.25em] text-primary-foreground/40 uppercase">
+        <span className="text-xs font-mono tracking-[0.25em] text-primary-foreground/60 uppercase">
           trust layer
         </span>
       </div>
