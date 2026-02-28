@@ -142,7 +142,7 @@ const HeroDiagram = () => {
   return (
     <div className="relative">
       {/* Background technical layer — nodos y conexiones */}
-      <div className="absolute inset-0 opacity-[0.28] blur-[1.5px] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.55] blur-[0.5px] pointer-events-none">
         <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
           {connections.map(([a, b], i) => (
             <motion.line
@@ -150,17 +150,17 @@ const HeroDiagram = () => {
               x1={nodes[a].x} y1={nodes[a].y}
               x2={nodes[b].x} y2={nodes[b].y}
               stroke="hsl(225, 86%, 68%)"
-              strokeWidth="0.3"
-              animate={{ opacity: [0.3, 0.7, 0.3] }}
+              strokeWidth="0.5"
+              animate={{ opacity: [0.4, 0.9, 0.4] }}
               transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, delay: i * 0.3 }}
             />
           ))}
           {nodes.map((n, i) => (
             <motion.circle
               key={i}
-              cx={n.x} cy={n.y} r="1.2"
-              fill="hsl(225, 86%, 68%)"
-              animate={{ opacity: [0.4, 0.9, 0.4], scale: [1, 1.3, 1] }}
+              cx={n.x} cy={n.y} r="1.8"
+              fill="hsl(225, 86%, 72%)"
+              animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.4, 1] }}
               transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: i * 0.4 }}
             />
           ))}
