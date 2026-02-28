@@ -51,18 +51,6 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         }}
       />
 
-      {/* Institutional claim */}
-      <div className="relative ic-container pt-24 pb-16 md:pt-32 md:pb-20 text-center border-b border-white/[0.06]">
-        <p className="font-mono text-[11px] tracking-widest text-white/30 uppercase mb-6">
-          Trust Infrastructure
-        </p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl mx-auto mb-4">
-          La capa de confianza que tus sistemas necesitan
-        </h2>
-        <p className="text-white/40 text-lg max-w-xl mx-auto">
-          Infraestructura criptográfica independiente para entornos regulados
-        </p>
-      </div>
 
       {/* Links grid */}
       <div className="relative ic-container pt-14 pb-10">
