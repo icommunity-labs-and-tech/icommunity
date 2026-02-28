@@ -210,14 +210,14 @@ const TrustBlueprintViz = () => {
       transition={{ duration: 1.2, delay: 0.3 }}
       className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden"
       style={{
-        minHeight: 380,
+        height: 400,
         background: "rgba(15,25,70,0.3)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         border: "1px solid rgba(80,120,220,0.12)",
       }}
     >
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+      <canvas ref={canvasRef} className="w-full h-full" />
     </motion.div>
   );
 };
