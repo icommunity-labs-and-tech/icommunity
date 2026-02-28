@@ -35,7 +35,7 @@ const Ecosystem = () => {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
 
   return (
-    <section className="ic-section bg-background overflow-hidden" ref={ref}>
+    <section className="ic-section bg-secondary/30 overflow-hidden" ref={ref}>
       <div className="ic-container">
         {/* Header */}
         <motion.div
@@ -202,10 +202,10 @@ const Ecosystem = () => {
                 onMouseEnter={() => setHoveredProduct(product.id)}
                 onMouseLeave={() => setHoveredProduct(null)}
                 className={`
-                  group rounded-xl border bg-card p-6 flex flex-col transition-all duration-500
+                  group rounded-xl p-6 flex flex-col transition-all duration-500
                   ${hoveredProduct === product.id
-                    ? "border-primary/30 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.2)] -translate-y-1"
-                    : "border-border hover:border-primary/15"
+                    ? "-translate-y-1"
+                    : ""
                   }
                 `}
               >

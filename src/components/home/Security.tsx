@@ -37,7 +37,7 @@ const Security = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="seguridad" className="ic-section bg-secondary/50" ref={ref}>
+    <section id="seguridad" className="ic-section bg-secondary/30" ref={ref}>
       <div className="ic-container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
