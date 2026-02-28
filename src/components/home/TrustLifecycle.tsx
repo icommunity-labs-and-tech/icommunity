@@ -14,8 +14,8 @@ const TrustLifecycle = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="ic-section py-20 md:py-28 bg-background overflow-hidden">
-      <div className="ic-container max-w-2xl relative rounded-3xl py-16 md:py-24 px-4 md:px-6 overflow-hidden ic-gradient-lead">
+    <section ref={ref} className="bg-background px-6 py-20 md:py-28 overflow-hidden">
+      <div className="mx-auto max-w-6xl relative rounded-2xl py-16 md:py-24 px-8 md:px-16 overflow-hidden ic-gradient-lead">
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none rounded-3xl"
