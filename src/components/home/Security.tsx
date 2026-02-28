@@ -49,7 +49,7 @@ const Security = () => {
             Garantías técnicas diseñadas para auditoría regulatoria
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Seguridad & Compliance
+            Seguridad & <span className="text-primary">Compliance</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
             Tres capas de garantía técnica diseñadas desde el primer día para cumplir con los requisitos de entornos regulados y auditoría independiente
