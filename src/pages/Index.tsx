@@ -45,7 +45,7 @@ const Index = () => {
         <FinalCta onOpenModal={openModal} />
         <LeadMagnet />
       </main>
-      <Footer />
+      <Footer onOpenModal={() => openModal()} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
     </div>
   );
