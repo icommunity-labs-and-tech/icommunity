@@ -14,26 +14,39 @@ const TrustLifecycle = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="ic-section py-20 md:py-28 bg-background overflow-hidden">
-      <div className="ic-container max-w-5xl">
+    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden ic-gradient-lead">
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      <div className="relative z-10 ic-container max-w-6xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Trust <span className="text-primary">Lifecycle</span>
+          <span className="font-mono text-xs tracking-[0.2em] uppercase text-primary-foreground/40 mb-4 block">
+            Infrastructure Pipeline
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
+            Trust <span className="text-primary-foreground/60">Lifecycle</span>
           </h2>
         </motion.div>
 
         {/* Desktop: horizontal */}
         <div className="hidden md:block relative">
           {/* Connecting line */}
-          <div className="absolute top-6 left-[12.5%] right-[12.5%] h-px bg-border">
+          <div className="absolute top-6 left-[12.5%] right-[12.5%] h-px bg-primary-foreground/10">
             <motion.div
-              className="h-full bg-primary origin-left"
+              className="h-full bg-primary-foreground/30 origin-left"
               initial={{ scaleX: 0 }}
               animate={inView ? { scaleX: 1 } : {}}
               transition={{ duration: 1.6, delay: 0.3, ease: "easeOut" }}
@@ -49,18 +62,16 @@ const TrustLifecycle = () => {
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.35 }}
                 className="flex flex-col items-center text-center"
               >
-                {/* Node dot */}
-                <div className="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center bg-background relative z-10">
-                  <s.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10">
+                  <s.icon className="w-5 h-5 text-primary-foreground/70" strokeWidth={1.5} />
                 </div>
 
-                {/* Step number */}
-                <span className="font-mono text-[10px] text-muted-foreground mt-3">
+                <span className="font-mono text-[10px] text-primary-foreground/30 mt-4">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <span className="text-sm font-semibold text-foreground mt-1">{s.label}</span>
-                <span className="text-xs text-muted-foreground mt-0.5 max-w-[140px]">{s.sub}</span>
+                <span className="text-sm font-semibold text-primary-foreground mt-1">{s.label}</span>
+                <span className="text-xs text-primary-foreground/50 mt-0.5 max-w-[160px]">{s.sub}</span>
               </motion.div>
             ))}
           </div>
@@ -68,10 +79,9 @@ const TrustLifecycle = () => {
 
         {/* Mobile: vertical */}
         <div className="md:hidden relative pl-6">
-          {/* Vertical line */}
-          <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border">
+          <div className="absolute left-[23px] top-0 bottom-0 w-px bg-primary-foreground/10">
             <motion.div
-              className="w-full bg-primary origin-top"
+              className="w-full bg-primary-foreground/30 origin-top"
               initial={{ scaleY: 0 }}
               animate={inView ? { scaleY: 1 } : {}}
               transition={{ duration: 1.4, delay: 0.3, ease: "easeOut" }}
@@ -88,15 +98,15 @@ const TrustLifecycle = () => {
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.3 }}
                 className="flex items-start gap-4"
               >
-                <div className="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center bg-background relative z-10 flex-shrink-0">
-                  <s.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10 flex-shrink-0">
+                  <s.icon className="w-5 h-5 text-primary-foreground/70" strokeWidth={1.5} />
                 </div>
                 <div className="pt-1">
-                  <span className="font-mono text-[10px] text-muted-foreground">
+                  <span className="font-mono text-[10px] text-primary-foreground/30">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="text-sm font-semibold text-foreground">{s.label}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{s.sub}</div>
+                  <div className="text-sm font-semibold text-primary-foreground">{s.label}</div>
+                  <div className="text-xs text-primary-foreground/50 mt-0.5">{s.sub}</div>
                 </div>
               </motion.div>
             ))}
