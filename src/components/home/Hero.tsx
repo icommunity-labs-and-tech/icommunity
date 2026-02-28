@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import TrustEngineViz from "./TrustEngineViz";
+import logoMadrid from "@/assets/logo-ayto-madrid-gray-4.png";
 
 declare global {
   interface Window {
@@ -113,7 +113,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="hidden lg:block"
           >
-            <TrustEngineViz />
+            <HeroDiagram />
           </motion.div>
         </div>
       </div>
@@ -121,4 +121,77 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   );
 };
 
+const steps = [
+  { step: "1", title: "Evento", desc: "Verificación KYC completada" },
+  { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
+  { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
+];
+
+const HeroDiagram = () => {
+  const now = new Date();
+  const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
+
+  return (
+    <div className="relative">
+      <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-8 shadow-lg shadow-black/20">
+        <div className="flex flex-col gap-4">
+          {steps.map((s, i) => (
+            <div key={s.step} className="flex items-start gap-4">
+              <motion.div
+                className="w-10 h-10 rounded-lg ic-gradient-cta flex items-center justify-center flex-shrink-0"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity, delay: i * 1.8 }}
+              >
+                <span className="text-primary-foreground font-bold text-sm">{s.step}</span>
+              </motion.div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-bold text-primary-foreground drop-shadow-sm">{s.title}</div>
+                <div className="text-xs text-primary-foreground/80 mt-0.5 font-medium">{s.desc}</div>
+              </div>
+            </div>
+          ))}
+
+          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <motion.div
+                className="w-2 h-2 rounded-full bg-green-400"
+                animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
+            </div>
+            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
+              <div><span className="text-ic-blue-glow">event_type:</span> kyc_verification</div>
+              <motion.div
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+              >
+                <span className="text-ic-blue-glow">timestamp:</span> {ts}
+              </motion.div>
+              <div><span className="text-ic-blue-glow">integrity:</span> sha256:a1b2c3…</div>
+              <div>
+                <span className="text-ic-blue-glow">status:</span>{" "}
+                <motion.span
+                  className="text-green-400 inline-block"
+                  animate={{ opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+                >
+                  verified
+                </motion.span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Madrid badge */}
+      <div className="flex items-center gap-3 mt-6 w-full">
+        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
+        <span className="text-sm text-primary-foreground leading-tight flex-1">
+          iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
+        </span>
+      </div>
+    </div>
+  );
+};
 export default Hero;
