@@ -121,115 +121,118 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   );
 };
 
-/* ── Architecture Diagram ── */
+/* ── Mini Console + Flow Diagram ── */
 
-const origins = ["KYC Provider", "Fintech", "Administración"];
-const targets = ["Reguladores", "Auditores", "Terceros"];
-
-const boxClass =
-  "px-3 py-2 rounded-lg border border-primary-foreground/25 bg-primary-foreground/[0.07] backdrop-blur-sm text-[11px] font-semibold text-primary-foreground/80 text-center whitespace-nowrap";
+const flowSteps = [
+  { num: "1", label: "Evento", desc: "Acción digital capturada" },
+  { num: "2", label: "Certificación", desc: "Hash + sello + registro" },
+  { num: "3", label: "Evidencia", desc: "Recibo verificable" },
+];
 
 const HeroDiagram = () => {
   const now = new Date();
   const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
 
   return (
-    <div className="relative w-full">
-      {/* Evidence Receipt – glass card floating on top */}
+    <div className="relative w-full max-w-[480px] mx-auto">
+      {/* ── API Response Console ── */}
       <motion.div
-        initial={{ opacity: 0, y: -12 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.5 }}
-        className="relative z-10 mx-auto mb-5 max-w-[340px] rounded-xl border border-primary-foreground/20 bg-primary-foreground/[0.08] backdrop-blur-xl p-5 shadow-lg shadow-black/20"
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="rounded-xl border border-primary-foreground/15 bg-[#0a0f1e]/80 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden"
       >
-        <div className="flex items-center gap-2 mb-3">
+        {/* Terminal top bar */}
+        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-primary-foreground/10 bg-primary-foreground/[0.03]">
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
+            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
+            <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/20" />
+          </div>
+          <span className="text-[10px] font-mono text-primary-foreground/40 ml-2">POST /v1/certify — 200 OK</span>
           <motion.div
-            className="w-2 h-2 rounded-full bg-green-400"
-            animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
-            transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+            className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400"
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
-          <span className="text-xs font-mono text-primary-foreground font-semibold tracking-wide">Evidence Receipt</span>
         </div>
-        <div className="space-y-1 font-mono text-[11px] leading-relaxed">
-          <div><span className="text-ic-blue-glow">event_type:</span> <span className="text-primary-foreground/90">kyc_verification</span></div>
-          <motion.div animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}>
-            <span className="text-ic-blue-glow">timestamp:</span> <span className="text-primary-foreground/90">{ts}</span>
+
+        {/* Payload body */}
+        <div className="p-5 font-mono text-[12px] leading-[1.8]">
+          <div className="text-primary-foreground/40">{"// API Response"}</div>
+          <div className="text-primary-foreground/50">{"{"}</div>
+          <div className="pl-4">
+            <span className="text-ic-blue-glow">"event_type"</span>
+            <span className="text-primary-foreground/40">: </span>
+            <span className="text-primary-foreground/90">"kyc_verification"</span>
+            <span className="text-primary-foreground/30">,</span>
+          </div>
+          <motion.div
+            className="pl-4"
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <span className="text-ic-blue-glow">"timestamp"</span>
+            <span className="text-primary-foreground/40">: </span>
+            <span className="text-primary-foreground/90">"{ts}"</span>
+            <span className="text-primary-foreground/30">,</span>
           </motion.div>
-          <div><span className="text-ic-blue-glow">integrity_hash:</span> <span className="text-primary-foreground/90">sha256:a1b2c3…f8e9</span></div>
-          <div><span className="text-ic-blue-glow">tsa:</span> <span className="text-primary-foreground/90">rfc3161:verified</span></div>
-          <div><span className="text-ic-blue-glow">anchor:</span> <span className="text-primary-foreground/90">eth:0x7f3a…</span></div>
-          <div>
-            <span className="text-ic-blue-glow">status:</span>{" "}
+          <div className="pl-4">
+            <span className="text-ic-blue-glow">"integrity"</span>
+            <span className="text-primary-foreground/40">: </span>
+            <span className="text-primary-foreground/90">"sha256:a1b2c3…f8e9"</span>
+            <span className="text-primary-foreground/30">,</span>
+          </div>
+          <div className="pl-4">
+            <span className="text-ic-blue-glow">"status"</span>
+            <span className="text-primary-foreground/40">: </span>
             <motion.span
               className="text-green-400 font-semibold inline-block"
               animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
-              verified ✓
+              "verified"
             </motion.span>
           </div>
+          <div className="text-primary-foreground/50">{"}"}</div>
         </div>
       </motion.div>
 
-      {/* Architecture line-art diagram */}
-      <div className="flex items-center justify-center gap-0">
-        {/* Left column – origins */}
-        <div className="flex flex-col gap-3 flex-shrink-0">
-          {origins.map((label) => (
-            <div key={label} className={boxClass}>{label}</div>
-          ))}
-        </div>
+      {/* ── Mini flow 1-2-3 ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="mt-5 flex items-stretch gap-0"
+      >
+        {flowSteps.map((step, i) => (
+          <div key={step.num} className="flex items-center flex-1 min-w-0">
+            {/* Step card */}
+            <motion.div
+              className="flex-1 rounded-lg border border-primary-foreground/15 bg-primary-foreground/[0.06] backdrop-blur-sm px-3 py-3 text-center"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.7 + i * 0.15 }}
+            >
+              <div className="w-7 h-7 rounded-md ic-gradient-cta flex items-center justify-center mx-auto mb-2">
+                <span className="text-primary-foreground font-bold text-xs">{step.num}</span>
+              </div>
+              <div className="text-xs font-bold text-primary-foreground mb-0.5">{step.label}</div>
+              <div className="text-[10px] text-primary-foreground/60 leading-tight">{step.desc}</div>
+            </motion.div>
 
-        {/* Left arrows */}
-        <div className="flex flex-col gap-3 flex-shrink-0 w-10">
-          {origins.map((_, i) => (
-            <div key={i} className="h-[34px] flex items-center">
-              <svg width="40" height="2" className="overflow-visible">
-                <line x1="0" y1="1" x2="32" y2="1" stroke="white" strokeOpacity="0.4" strokeWidth="2" />
-                <polygon points="32,1 26,-3 26,5" fill="white" fillOpacity="0.4" />
-              </svg>
-            </div>
-          ))}
-        </div>
-
-        {/* Center – Trust Layer */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex-shrink-0 w-[140px] rounded-xl border-2 border-primary-foreground/25 bg-primary-foreground/[0.08] backdrop-blur-sm px-3 py-5 text-center shadow-lg shadow-black/10"
-        >
-          <div className="text-[10px] font-mono text-primary-foreground/50 uppercase tracking-widest mb-1">Trust Layer</div>
-          <div className="text-xs font-bold text-primary-foreground leading-tight">iCommunity</div>
-          <div className="flex flex-wrap justify-center gap-1 mt-3">
-            {["SHA-256", "TSA", "DLT"].map((t) => (
-              <span key={t} className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-foreground/10 text-[9px] font-mono text-primary-foreground/70">
-                <span className="w-1 h-1 rounded-full bg-ic-blue-glow animate-pulse" />
-                {t}
-              </span>
-            ))}
+            {/* Arrow between steps */}
+            {i < flowSteps.length - 1 && (
+              <div className="flex-shrink-0 w-6 flex items-center justify-center">
+                <svg width="20" height="10" viewBox="0 0 20 10" className="overflow-visible">
+                  <line x1="0" y1="5" x2="14" y2="5" stroke="white" strokeOpacity="0.3" strokeWidth="1.5" />
+                  <polygon points="14,5 10,2 10,8" fill="white" fillOpacity="0.3" />
+                </svg>
+              </div>
+            )}
           </div>
-        </motion.div>
-
-        {/* Right arrows */}
-        <div className="flex flex-col gap-3 flex-shrink-0 w-10">
-          {targets.map((_, i) => (
-            <div key={i} className="h-[34px] flex items-center">
-              <svg width="40" height="2" className="overflow-visible">
-                <line x1="0" y1="1" x2="32" y2="1" stroke="white" strokeOpacity="0.4" strokeWidth="2" />
-                <polygon points="32,1 26,-3 26,5" fill="white" fillOpacity="0.4" />
-              </svg>
-            </div>
-          ))}
-        </div>
-
-        {/* Right column – targets */}
-        <div className="flex flex-col gap-3 flex-shrink-0">
-          {targets.map((label) => (
-            <div key={label} className={boxClass}>{label}</div>
-          ))}
-        </div>
-      </div>
+        ))}
+      </motion.div>
     </div>
   );
 };
