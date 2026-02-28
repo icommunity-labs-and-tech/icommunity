@@ -54,7 +54,7 @@ const TrustArchitecture = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Arquitectura de confianza
+            Arquitectura <span className="text-primary">de confianza</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
             iCommunity es el registro independiente que conecta sistemas digitales con supervisión regulatoria, sin modificar tu infraestructura existente
