@@ -131,18 +131,6 @@ const TrustEngineViz = () => {
       ctx.fillStyle = "rgba(200,230,255,1)";
       ctx.fill();
 
-      // ── Horizontal guide lines ──
-      ctx.setLineDash([2, 6]);
-      ctx.lineWidth = 0.5;
-      ctx.strokeStyle = "rgba(56,109,240,0.25)";
-      for (let i = 0; i < 3; i++) {
-        const ly = h * (0.3 + i * 0.2);
-        ctx.beginPath();
-        ctx.moveTo(0, ly);
-        ctx.lineTo(w, ly);
-        ctx.stroke();
-      }
-      ctx.setLineDash([]);
 
       // ── Update & draw particles ──
       particles.current.forEach((p) => {
