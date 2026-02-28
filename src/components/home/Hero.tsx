@@ -151,7 +151,7 @@ const HeroDiagram = () => {
             </div>
           ))}
 
-          <div className="mt-4 rounded-xl border border-ic-blue-glow/20 bg-primary-foreground/5 p-5">
+          <div className="mt-4 rounded-[14px] border border-ic-blue-glow/25 p-6" style={{ background: 'rgba(10,15,40,0.35)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
             <div className="flex items-center gap-2 mb-3">
               <motion.div
                 className="w-2 h-2 rounded-full bg-green-400"
