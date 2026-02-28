@@ -7,6 +7,7 @@ import StructuralProblem from "@/components/home/StructuralProblem";
 import Segments from "@/components/home/Segments";
 import Integrations from "@/components/home/Integrations";
 import TrustArchitecture from "@/components/home/TrustArchitecture";
+import TrustLifecycle from "@/components/home/TrustLifecycle";
 import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
 import LeadMagnet from "@/components/home/LeadMagnet";
@@ -33,6 +34,7 @@ const Index = () => {
         <StructuralProblem />
         <Ecosystem />
         <TrustArchitecture />
+        <TrustLifecycle />
         <Segments />
         {/* <Integrations onOpenModal={() => openModal("partner-integrador")} /> */}
         <Security />
