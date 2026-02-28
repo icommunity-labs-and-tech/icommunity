@@ -37,8 +37,8 @@ const Index = () => {
         {/* <Integrations onOpenModal={() => openModal("partner-integrador")} /> */}
         <Security />
         <WhyICommunity />
-        <FinalCta onOpenModal={openModal} />
         <NewsletterBanner />
+        <FinalCta onOpenModal={openModal} />
         <LeadMagnet />
       </main>
       <Footer />
