@@ -40,7 +40,7 @@ const NewsletterBanner = () => {
               Forma parte del ecosistema iCommunity
             </h3>
             <p className="text-primary-foreground/80 text-sm md:text-base max-w-md leading-relaxed">
-              Unirme y forma parte del ecosistema iCommunity
+              Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable.
             </p>
             <a
               href="https://icommunity.io"
@@ -48,7 +48,7 @@ const NewsletterBanner = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/30 transition-colors flex-shrink-0"
             >
-              Unirme <ArrowRight className="w-4 h-4" />
+              Suscribirme newsletter <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </motion.div>
