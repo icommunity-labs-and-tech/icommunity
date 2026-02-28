@@ -161,16 +161,16 @@ const HeroDiagram = () => {
               <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
             </div>
             <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
-              <div><span className="font-bold" style={{ color: '#00BFFF' }}>event_type:</span> kyc_verification</div>
+              <div><span className="font-bold" style={{ color: 'hsl(225, 86%, 58%)' }}>event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
               >
-                <span className="font-bold" style={{ color: '#00BFFF' }}>timestamp:</span> {ts}
+                <span className="font-bold" style={{ color: 'hsl(225, 86%, 58%)' }}>timestamp:</span> {ts}
               </motion.div>
-              <div><span className="font-bold" style={{ color: '#00BFFF' }}>integrity:</span> sha256:a1b2c3…</div>
+              <div><span className="font-bold" style={{ color: 'hsl(225, 86%, 58%)' }}>integrity:</span> sha256:a1b2c3…</div>
               <div>
-                <span className="font-bold" style={{ color: '#00BFFF' }}>status:</span>{" "}
+                <span className="font-bold" style={{ color: 'hsl(225, 86%, 58%)' }}>status:</span>{" "}
                 <motion.span
                   className="text-green-400 inline-block"
                   animate={{ opacity: [1, 0.5, 1] }}
