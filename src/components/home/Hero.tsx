@@ -133,7 +133,7 @@ const HeroDiagram = () => {
 
   return (
     <div className="relative">
-      <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-8">
+      <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-8 shadow-lg shadow-black/20">
         <div className="flex flex-col gap-4">
           {steps.map((s, i) => (
             <div key={s.step} className="flex items-start gap-4">
