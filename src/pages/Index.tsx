@@ -11,6 +11,7 @@ import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
 import LeadMagnet from "@/components/home/LeadMagnet";
 import FinalCta from "@/components/home/FinalCta";
+import NewsletterBanner from "@/components/home/NewsletterBanner";
 import Footer from "@/components/home/Footer";
 import ContactModal, { type OrganizationType } from "@/components/home/ContactModal";
 
@@ -37,6 +38,7 @@ const Index = () => {
         <Security />
         <WhyICommunity />
         <FinalCta onOpenModal={openModal} />
+        <NewsletterBanner />
         <LeadMagnet />
       </main>
       <Footer />
