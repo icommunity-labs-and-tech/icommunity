@@ -8,8 +8,8 @@ const TrustStatement = () => {
   return (
     <section
       ref={ref}
-      className="flex items-center justify-center text-center px-6"
-      style={{ minHeight: "340px", background: "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary)/0.3) 50%, hsl(var(--background)) 100%)" }}
+      className="flex items-center justify-center text-center px-6 py-12 md:py-16"
+      style={{ background: "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary)/0.3) 50%, hsl(var(--background)) 100%)" }}
     >
       <motion.p
         initial={{ opacity: 0, y: 14 }}
