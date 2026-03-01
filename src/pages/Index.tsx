@@ -11,7 +11,7 @@ import TrustLifecycle from "@/components/home/TrustLifecycle";
 import TrustStatement from "@/components/home/TrustStatement";
 import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
-import BeforeAfter from "@/components/home/BeforeAfter";
+
 import LeadMagnet from "@/components/home/LeadMagnet";
 import FinalCta from "@/components/home/FinalCta";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
@@ -42,7 +42,7 @@ const Index = () => {
         {/* <Integrations onOpenModal={() => openModal("partner-integrador")} /> */}
         <Security />
         <WhyICommunity />
-        <BeforeAfter />
+        
         <NewsletterBanner />
         <FinalCta onOpenModal={openModal} />
         <LeadMagnet />
