@@ -39,8 +39,8 @@ const NewsletterBanner = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground leading-tight max-w-xs">
               Forma parte del ecosistema iCommunity
             </h3>
-            <p className="text-primary-foreground/80 text-sm md:text-base max-w-md leading-relaxed">
-              Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable.
+            <p className="text-primary-foreground/80 text-sm md:text-base max-w-lg leading-relaxed">
+              Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable. Recibe casos de uso, novedades del sector y recursos exclusivos directamente en tu bandeja.
             </p>
             <a
               href="https://icommunity.io"
