@@ -40,7 +40,7 @@ const NewsletterBanner = () => {
               Forma parte del ecosistema iCommunity
             </h3>
             <p className="text-primary-foreground/80 text-sm md:text-base max-w-lg leading-relaxed">
-              Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable. Recibe casos de uso, novedades del sector y recursos exclusivos directamente en tu bandeja.
+              Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable. Recibe casos de uso y novedades del sector.
             </p>
             <a
               href="https://icommunity.io"
