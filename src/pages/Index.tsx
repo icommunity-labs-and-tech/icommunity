@@ -13,6 +13,7 @@ import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
 
 import LeadMagnet from "@/components/home/LeadMagnet";
+import CaseStudy from "@/components/home/CaseStudy";
 import FinalCta from "@/components/home/FinalCta";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
 import Footer from "@/components/home/Footer";
@@ -44,6 +45,7 @@ const Index = () => {
         <WhyICommunity />
         
         <NewsletterBanner />
+        <CaseStudy onOpenModal={openModal} />
         <FinalCta onOpenModal={openModal} />
         <LeadMagnet />
       </main>
