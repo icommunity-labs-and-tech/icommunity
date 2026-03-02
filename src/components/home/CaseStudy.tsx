@@ -17,7 +17,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
 
   return (
     <section id="casos" className="ic-section bg-secondary/30" ref={ref}>
-      <div className="ic-container">
+      <div className="ic-container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -38,7 +38,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
           <div className="grid md:grid-cols-2">
             {/* Left column */}
             <div className="flex flex-col">
-              <div className="relative h-56 md:h-64 overflow-hidden">
+              <div className="relative h-44 md:h-52 overflow-hidden">
                 <img
                   src={caseImage}
                   alt="Técnico en centro de datos DATIA"
@@ -46,7 +46,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
                 />
               </div>
               <div
-                className="flex-1 p-8 flex flex-col justify-between"
+                className="flex-1 p-6 flex flex-col justify-between"
                 style={{ background: "linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(225, 60%, 28%) 100%)" }}
               >
                 <div>
@@ -84,7 +84,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
             </div>
 
             {/* Right column */}
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="p-6 md:p-8 flex flex-col justify-center">
               <span className="inline-block text-[11px] font-semibold tracking-widest text-primary uppercase mb-4 px-3 py-1 rounded-full bg-accent w-fit">
                 Caso de éxito
               </span>
