@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   LayoutGrid, Leaf, BrainCircuit, ShieldCheck, ArrowRight, ExternalLink,
   ChevronLeft, ChevronRight, FileCheck, ClipboardCheck, Eye, ShieldAlert,
-  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge, UserCheck, Database, ClipboardList,
+  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge, UserCheck, Database, ClipboardList, FileText, Link2, Handshake, ShieldPlus,
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
@@ -16,6 +16,8 @@ import logoAenor from "@/assets/logo-aenor.png";
 import caseSalusCoopImage from "@/assets/case-saluscoop.jpg";
 import logoSalusCoop from "@/assets/logo-saluscoop.png";
 import logoDatia from "@/assets/logo-datia.png";
+import caseLogaltyImage from "@/assets/case-logalty.jpg";
+import logoLogalty from "@/assets/logo-logalty.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -147,6 +149,28 @@ const cases: CaseData[] = [
       { icon: BadgeCheck, text: "Cumplimiento preparado para auditoría" },
     ],
     gradient: "linear-gradient(135deg, hsl(190, 40%, 12%) 0%, hsl(195, 50%, 24%) 100%)",
+  },
+  {
+    tag: "Caso Evidencia Legal",
+    title: "LOGALTY",
+    logo: logoLogalty,
+    description: "Evidencia electrónica preparada para entornos jurídicos y regulatorios.",
+    stats: [
+      { value: "✓", label: "Evidencia verificable de eventos contractuales" },
+      { value: "✓", label: "Preparado para validación ante terceros" },
+    ],
+    image: caseLogaltyImage,
+    imageAlt: "Oficina corporativa Logalty",
+    badge: "Caso de éxito",
+    heading: "Procesos contractuales convertidos en evidencia verificable",
+    body: "Logalty integró iCommunity como capa adicional de evidencia verificable en sus procesos de contratación y notificación electrónica. Cada evento contractual queda registrado como prueba independiente, fortaleciendo la trazabilidad y preparando la información para auditoría o supervisión regulatoria desde el origen.",
+    benefits: [
+      { icon: FileText, text: "Evidencia verificable de eventos contractuales" },
+      { icon: Link2, text: "Trazabilidad independiente del proveedor" },
+      { icon: Handshake, text: "Preparado para validación ante terceros" },
+      { icon: ShieldPlus, text: "Soporte probatorio reforzado" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(230, 35%, 14%) 0%, hsl(235, 45%, 26%) 100%)",
   },
 ];
 
