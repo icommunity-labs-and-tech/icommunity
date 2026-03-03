@@ -78,9 +78,7 @@ const logos = [
   { src: logoAytoMadrid, alt: "Ayuntamiento de Madrid" },
   { src: logoLogalty, alt: "Logalty" },
   { src: logoSalusCoop, alt: "Salus Coop" },
-  { src: logoAirtrace, alt: "AirTrace" },
   { src: logoEstrella, alt: "Estrella Galicia" },
-  { src: logoEnisa, alt: "ENISA" },
 ];
 
 /* ── Page ─────────────────────────────────────── */
