@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Casos de uso", href: "#segmentos" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Recursos", href: "#recursos" },
+  { label: "Partners", href: "/partners", isRoute: true },
   { label: "Empresa", href: "#empresa" },
 ];
 
@@ -59,12 +60,21 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link, idx) => (
             <React.Fragment key={link.label}>
-              <a
-                href={link.href}
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                {link.label}
-              </a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              )}
               {/* Insert Soluciones dropdown after "Arquitectura" (index 1) */}
               {idx === 1 && (
                 <div className="relative" ref={dropdownRef}>
@@ -133,14 +143,25 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           >
             <div className="ic-container py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground py-2"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground py-2"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground py-2"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
               {/* Mobile Soluciones */}
               <div className="text-xs font-medium text-primary-foreground/40 uppercase tracking-wide pt-2">Soluciones</div>
