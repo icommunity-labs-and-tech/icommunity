@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const spokes = [
   { label: "KYC Provider", angle: 0 },
@@ -10,6 +11,25 @@ const spokes = [
   { label: "Biometric", angle: 240 },
   { label: "eSignature", angle: 300 },
 ];
+
+const texts = {
+  en: {
+    title: "Integrate once. <span>Offer evidence to all your clients.</span>",
+    badge: "Single integration via API · SDK · Webhook",
+    desc: "B2B2B model: identity providers integrate iCommunity once and offer verifiable evidence as added value to each of their end clients.",
+    licTitle: "Licensing model",
+    licDesc: "License per integration + fee per certified event. No hidden costs.",
+    cta: "Talk to Partnerships",
+  },
+  es: {
+    title: "Integra una vez. <span>Ofrece evidencia a todos tus clientes.</span>",
+    badge: "Integración única vía API · SDK · Webhook",
+    desc: "Modelo B2B2B: los proveedores de identidad integran iCommunity una vez y ofrecen evidencia verificable como valor añadido a cada uno de sus clientes finales.",
+    licTitle: "Modelo de licencia",
+    licDesc: "Licencia por integración + tarifa por evento certificado. Sin costes ocultos.",
+    cta: "Hablar con Partnerships",
+  },
+};
 
 const HubDiagram = ({ inView }: { inView: boolean }) => {
   const size = 374;
@@ -85,6 +105,8 @@ const HubDiagram = ({ inView }: { inView: boolean }) => {
 const Integrations = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { lang } = useLanguage();
+  const t = texts[lang];
 
   return (
     <section id="integrations" className="ic-section bg-background" ref={ref}>
@@ -95,24 +117,21 @@ const Integrations = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Integrate once.{" "}
-              <span className="ic-text-gradient">Offer evidence to all your clients.</span>
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} />
             <p className="text-sm font-medium tracking-wide text-primary/60 mb-6">
-              Single integration via API · SDK · Webhook
+              {t.badge}
             </p>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              B2B2B model: identity providers integrate iCommunity once and offer verifiable evidence as added value to each of their end clients.
+              {t.desc}
             </p>
             <div className="rounded-xl bg-secondary p-5 mb-8">
-              <div className="text-sm font-semibold text-foreground mb-1">Licensing model</div>
+              <div className="text-sm font-semibold text-foreground mb-1">{t.licTitle}</div>
               <p className="text-sm text-muted-foreground">
-                License per integration + fee per certified event. No hidden costs.
+                {t.licDesc}
               </p>
             </div>
             <button onClick={onOpenModal} className="inline-flex items-center gap-2 ic-gradient-cta text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-              Talk to Partnerships <ArrowRight className="w-4 h-4" />
+              {t.cta} <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
 
