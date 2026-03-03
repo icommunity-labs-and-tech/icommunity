@@ -235,26 +235,33 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
   // Autoplay every 3 seconds, pause on hover
   useEffect(() => {
     if (!emblaApi) return;
-    let timer: ReturnType<typeof setInterval>;
+    let timer: ReturnType<typeof setTimeout>;
 
-    const startAutoplay = () => {
-      timer = setInterval(() => {
+    const scheduleNext = () => {
+      const currentIndex = emblaApi.selectedScrollSnap();
+      // AENOR (0) and Ayuntamiento (1) get 6s, rest get 3s
+      const delay = currentIndex <= 1 ? 6000 : 3000;
+      timer = setTimeout(() => {
         emblaApi.scrollNext();
-      }, 3000);
+        scheduleNext();
+      }, delay);
     };
 
-    const stopAutoplay = () => clearInterval(timer);
+    const stopAutoplay = () => clearTimeout(timer);
+    const restartAutoplay = () => { stopAutoplay(); scheduleNext(); };
 
     const rootNode = emblaApi.rootNode();
     rootNode.addEventListener("mouseenter", stopAutoplay);
-    rootNode.addEventListener("mouseleave", startAutoplay);
+    rootNode.addEventListener("mouseleave", restartAutoplay);
+    emblaApi.on("select", restartAutoplay);
 
-    startAutoplay();
+    scheduleNext();
 
     return () => {
       stopAutoplay();
       rootNode.removeEventListener("mouseenter", stopAutoplay);
-      rootNode.removeEventListener("mouseleave", startAutoplay);
+      rootNode.removeEventListener("mouseleave", restartAutoplay);
+      emblaApi.off("select", restartAutoplay);
     };
   }, [emblaApi]);
 
