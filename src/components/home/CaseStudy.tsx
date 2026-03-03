@@ -72,11 +72,6 @@ const cases: CaseData[] = [
       { icon: Eye, text: "Auditoría inmediata sin dependencia del operador" },
       { icon: ShieldAlert, text: "Verificación externa preparada para terceros" },
     ],
-    testimonial: {
-      quote: "Hoy cada evento crítico en nuestra cadena de suministro puede demostrarse.",
-      author: "Ignacio Rivera",
-      role: "CEO de Estrella Galicia",
-    },
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
   },
   {
