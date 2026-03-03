@@ -86,7 +86,6 @@ const cases: CaseData[] = [
     description: "Infraestructura de evidencia verificable en procesos de contratación pública.",
     stats: [
       { value: "✓", label: "Trazabilidad documental certificada" },
-      { value: "✓", label: "Supervisión independiente desde el origen" },
       { value: "✓", label: "Evidencia preparada para auditoría" },
     ],
     image: logoAytoMadrid,
@@ -100,11 +99,6 @@ const cases: CaseData[] = [
       { icon: SearchCheck, text: "Auditoría inmediata sin reconstrucción posterior" },
       { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
     ],
-    testimonial: {
-      quote: "",
-      author: "Dirección General de Contratación",
-      role: "",
-    },
     gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
   },
 ];
@@ -218,7 +212,7 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
             <p className="text-xs font-semibold tracking-widest text-primary-foreground/60 uppercase mb-2">{c.tag}</p>
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-3xl font-extrabold text-primary-foreground tracking-tight">{c.title}</h3>
-              {c.logo && c.image !== c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-10 w-auto object-contain" />}
+              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-8 w-auto object-contain" />}
             </div>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
