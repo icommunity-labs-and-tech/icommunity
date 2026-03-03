@@ -4,13 +4,15 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   LayoutGrid, Leaf, BrainCircuit, ShieldCheck, ArrowRight, ExternalLink,
   ChevronLeft, ChevronRight, FileCheck, ClipboardCheck, Eye, ShieldAlert,
-  Quote, Landmark, Scale, SearchCheck, BookCheck,
+  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge,
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
 import logoEstrellaGalicia from "@/assets/logo-estrella-galicia.png";
 import caseAytoMadridImage from "@/assets/case-ayto-madrid.jpg";
 import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
+import caseAenorImage from "@/assets/case-aenor.jpg";
+import logoAenor from "@/assets/logo-aenor.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -96,6 +98,30 @@ const cases: CaseData[] = [
       { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
     ],
     gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
+  },
+  {
+    tag: "Caso Certificación",
+    title: "AENOR",
+    logo: logoAenor,
+    description: "Certificaciones convertidas en evidencia verificable preparada para supervisión.",
+    stats: [
+      { value: "✓", label: "Verificación independiente en tiempo real" },
+      { value: "✓", label: "Evidencia digital asociada a cada certificación" },
+      { value: "✓", label: "Preparado para auditoría externa" },
+    ],
+    image: caseAenorImage,
+    imageAlt: "Sede corporativa AENOR",
+    badge: "Caso de éxito",
+    heading: "Certificaciones preparadas para verificación inmediata",
+    body: "AENOR integró iCommunity como infraestructura para generar evidencia verificable asociada a sus procesos de certificación. Cada emisión, validación o actualización queda registrada como prueba independiente, disponible para verificación inmediata y preparada para supervisión regulatoria desde el origen.",
+    benefits: [
+      { icon: FileBadge, text: "Evidencia digital asociada a cada certificación" },
+      { icon: ScanSearch, text: "Verificación inmediata por terceros" },
+      { icon: Lock, text: "Integridad probatoria garantizada" },
+      { icon: BadgeCheck, text: "Auditoría preparada desde la emisión" },
+    ],
+    testimonial: { quote: "", author: "Rafael García", role: "Director General de AENOR" },
+    gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
   },
 ];
 
