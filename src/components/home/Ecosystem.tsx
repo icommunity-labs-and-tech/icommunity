@@ -32,7 +32,7 @@ const texts = {
 
 const productMeta = [
   { icon: Package, href: "https://certypass.com", external: true, angle: -30 },
-  { icon: BrainCircuit, href: "https://privaura.lovable.app", external: true, angle: 30 },
+  { icon: BrainCircuit, href: "https://privaro.lovable.app/", external: true, angle: 30 },
 ];
 
 const Ecosystem = () => {
