@@ -12,17 +12,15 @@ import type { OrganizationType } from "@/components/home/ContactModal";
 
 import logoAenor from "@/assets/logo-aenor.png";
 import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
-import logoDatia from "@/assets/logo-datia.png";
 import logoLogalty from "@/assets/logo-logalty.png";
 import logoSalusCoop from "@/assets/logo-saluscoop.png";
-import logoAirtrace from "@/assets/logo-airtrace.png";
 import logoEstrella from "@/assets/logo-estrella.png";
-import logoCertifika from "@/assets/logo-certifika.png";
-import logoLidl from "@/assets/logo-lidl.png";
-import logoCdti from "@/assets/logo-cdti.jpg";
-import logoEnisa from "@/assets/logo-enisa.jpg";
-import logoFeder from "@/assets/logo-feder.png";
-import logoCofinanciadoUe from "@/assets/logo-cofinanciado-ue.png";
+import logoAyiGroup from "@/assets/logo-ayi-group.png";
+import logoFinnovating from "@/assets/logo-finnovating.png";
+import logoIfedes from "@/assets/logo-ifedes.png";
+import logoIntegranova from "@/assets/logo-integranova.png";
+import logoLiquid from "@/assets/logo-liquid.png";
+import logoMrHouston from "@/assets/logo-mr-houston.png";
 
 /* ── Section wrapper ─────────────────────────── */
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -79,6 +77,12 @@ const logos = [
   { src: logoLogalty, alt: "Logalty" },
   { src: logoSalusCoop, alt: "Salus Coop" },
   { src: logoEstrella, alt: "Estrella Galicia" },
+  { src: logoAyiGroup, alt: "AYI Group" },
+  { src: logoFinnovating, alt: "Finnovating" },
+  { src: logoIfedes, alt: "IFEDES" },
+  { src: logoIntegranova, alt: "Integranova" },
+  { src: logoLiquid, alt: "Liquid" },
+  { src: logoMrHouston, alt: "Mr Houston" },
 ];
 
 /* ── Page ─────────────────────────────────────── */
