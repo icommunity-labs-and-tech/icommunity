@@ -9,6 +9,7 @@ import {
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
 import logoEstrellaGalicia from "@/assets/logo-estrella-galicia.png";
+import caseAytoMadridImage from "@/assets/case-ayto-madrid.jpg";
 import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
 import type { OrganizationType } from "./ContactModal";
 
@@ -83,7 +84,7 @@ const cases: CaseData[] = [
       { value: "✓", label: "Trazabilidad documental certificada" },
       { value: "✓", label: "Evidencia preparada para auditoría" },
     ],
-    image: logoAytoMadrid,
+    image: caseAytoMadridImage,
     imageAlt: "Ayuntamiento de Madrid",
     badge: "Caso de éxito",
     heading: "Contratación pública con evidencia verificable desde el origen",
