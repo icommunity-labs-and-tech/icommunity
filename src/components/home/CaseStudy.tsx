@@ -82,7 +82,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseAenorImage,
     imageAlt: "AENOR corporate headquarters",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Certifications ready for immediate verification",
     body: "AENOR integrated iCommunity as infrastructure to generate verifiable evidence associated with its certification processes. Each issuance, validation, or update is recorded as independent proof, available for immediate verification and ready for regulatory oversight from the origin.",
     benefits: [
@@ -104,7 +104,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseAytoMadridImage,
     imageAlt: "Madrid City Council",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Public procurement with verifiable evidence from the origin",
     body: "iCommunity was implemented as an infrastructure layer to generate independent evidence in public procurement processes. Each document, validation, and administrative event is recorded as verifiable proof, available for audit and regulatory oversight without relying on the system operator.",
     benefits: [
@@ -127,7 +127,7 @@ const casesEn: CaseData[] = [
     image: caseDataImage,
     logo: logoDatia,
     imageAlt: "Technician at DATIA data center",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Digital Passport for all data center components",
     body: "CertyPass has been selected as the traceability infrastructure for the DATIA project. Every data center component — from servers to cooling systems — will have a digital passport that guarantees its origin, energy efficiency, and complete lifecycle.",
     benefits: [
@@ -150,7 +150,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseLogaltyImage,
     imageAlt: "Logalty corporate office",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Contractual processes turned into verifiable evidence",
     body: "Logalty integrated iCommunity as an additional layer of verifiable evidence in its contracting and electronic notification processes. Each contractual event is recorded as independent proof, strengthening traceability and preparing information for audit or regulatory oversight from the origin.",
     benefits: [
@@ -172,7 +172,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseSalusCoopImage,
     imageAlt: "Medical research laboratory",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Medical studies with protected identity and verifiable evidence",
     body: "Salus Coop integrated iCommunity as infrastructure to generate verifiable evidence on data usage in medical studies. Each access, treatment, or validation is recorded as independent proof, ensuring anonymity, integrity, and availability for audit or regulatory oversight.",
     benefits: [
@@ -194,7 +194,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseAirtraceImage,
     imageAlt: "AirTrace IoT devices in technical lab",
-    badge: "Case study",
+    badge: "Success story",
     heading: "IoT devices with verifiable integrity from the origin",
     body: "AirTrace integrated iCommunity as infrastructure to generate verifiable evidence on the integrity of its IoT devices and field-captured readings. Each firmware validation and recorded data point is associated with independent proof, ready for technical audit or regulatory oversight from the origin.",
     benefits: [
@@ -216,7 +216,7 @@ const casesEn: CaseData[] = [
     ],
     image: caseEstrellaImage,
     imageAlt: "Estrella Galicia logistics facilities",
-    badge: "Case study",
+    badge: "Success story",
     heading: "Supply chain ready for audit",
     body: "Estrella Galicia implemented iCommunity as an infrastructure layer to generate verifiable evidence in its supply chain. Each critical event — from production to distribution — is recorded as independent proof, ready for audit and regulatory oversight from the origin.",
     benefits: [
@@ -242,7 +242,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseAenorImage,
     imageAlt: "Sede corporativa de AENOR",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Certificaciones listas para verificación inmediata",
     body: "AENOR integró iCommunity como infraestructura para generar evidencia verificable asociada a sus procesos de certificación. Cada emisión, validación o actualización se registra como prueba independiente, disponible para verificación inmediata y lista para supervisión regulatoria desde el origen.",
     benefits: [
@@ -264,7 +264,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseAytoMadridImage,
     imageAlt: "Ayuntamiento de Madrid",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Contratación pública con evidencia verificable desde el origen",
     body: "iCommunity se implementó como capa de infraestructura para generar evidencia independiente en procesos de contratación pública. Cada documento, validación y evento administrativo se registra como prueba verificable, disponible para auditoría y supervisión regulatoria sin depender del operador del sistema.",
     benefits: [
@@ -287,7 +287,7 @@ const casesEs: CaseData[] = [
     image: caseDataImage,
     logo: logoDatia,
     imageAlt: "Técnico en centro de datos DATIA",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Pasaporte Digital para todos los componentes del data center",
     body: "CertyPass ha sido seleccionado como infraestructura de trazabilidad para el proyecto DATIA. Cada componente del data center —desde servidores hasta sistemas de refrigeración— dispondrá de un pasaporte digital que garantiza su origen, eficiencia energética y ciclo de vida completo.",
     benefits: [
@@ -310,7 +310,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseLogaltyImage,
     imageAlt: "Oficina corporativa de Logalty",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Procesos contractuales convertidos en evidencia verificable",
     body: "Logalty integró iCommunity como capa adicional de evidencia verificable en sus procesos de contratación y notificación electrónica. Cada evento contractual se registra como prueba independiente, reforzando la trazabilidad y preparando la información para auditoría o supervisión regulatoria desde el origen.",
     benefits: [
@@ -332,7 +332,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseSalusCoopImage,
     imageAlt: "Laboratorio de investigación médica",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Estudios médicos con identidad protegida y evidencia verificable",
     body: "Salus Coop integró iCommunity como infraestructura para generar evidencia verificable sobre el uso de datos en estudios médicos. Cada acceso, tratamiento o validación se registra como prueba independiente, garantizando anonimato, integridad y disponibilidad para auditoría o supervisión regulatoria.",
     benefits: [
@@ -354,7 +354,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseAirtraceImage,
     imageAlt: "Dispositivos IoT AirTrace en laboratorio",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Dispositivos IoT con integridad verificable desde el origen",
     body: "AirTrace integró iCommunity como infraestructura para generar evidencia verificable sobre la integridad de sus dispositivos IoT y las lecturas capturadas en campo. Cada validación de firmware y punto de datos registrado se asocia con prueba independiente, lista para auditoría técnica o supervisión regulatoria desde el origen.",
     benefits: [
@@ -376,7 +376,7 @@ const casesEs: CaseData[] = [
     ],
     image: caseEstrellaImage,
     imageAlt: "Instalaciones logísticas de Estrella Galicia",
-    badge: "Caso de estudio",
+    badge: "Caso de éxito",
     heading: "Cadena de suministro lista para auditoría",
     body: "Estrella Galicia implementó iCommunity como capa de infraestructura para generar evidencia verificable en su cadena de suministro. Cada evento crítico —desde producción hasta distribución— se registra como prueba independiente, lista para auditoría y supervisión regulatoria desde el origen.",
     benefits: [
@@ -391,13 +391,13 @@ const casesEs: CaseData[] = [
 
 const textsUI = {
   en: {
-    title: "Case <span>Studies</span>",
+    title: "Success <span>Stories</span>",
     prevLabel: "Previous case",
     nextLabel: "Next case",
     cta: "Request a similar demo",
   },
   es: {
-    title: "Casos de <span>Estudio</span>",
+    title: "Casos de <span>Éxito</span>",
     prevLabel: "Caso anterior",
     nextLabel: "Siguiente caso",
     cta: "Solicitar una demo similar",
