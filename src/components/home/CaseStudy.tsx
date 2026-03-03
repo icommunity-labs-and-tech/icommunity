@@ -15,6 +15,7 @@ import caseAenorImage from "@/assets/case-aenor.jpg";
 import logoAenor from "@/assets/logo-aenor.png";
 import caseSalusCoopImage from "@/assets/case-saluscoop.jpg";
 import logoSalusCoop from "@/assets/logo-saluscoop.png";
+import logoDatia from "@/assets/logo-datia.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -45,6 +46,7 @@ const cases: CaseData[] = [
     ],
     link: { url: "https://datiaproject.es", label: "datiaproject.es" },
     image: caseDataImage,
+    logo: logoDatia,
     imageAlt: "Técnico en centro de datos DATIA",
     badge: "Caso de éxito",
     heading: "Pasaporte Digital para todos los componentes de un CPD",
@@ -252,8 +254,8 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
         <div className="relative h-36 md:h-44 overflow-hidden shrink-0">
           <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
           {c.logo && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-              <img src={c.logo} alt={`${c.title} logo`} className="h-10 md:h-12 w-auto object-contain drop-shadow-lg" />
+            <div className="absolute top-3 left-3">
+              <img src={c.logo} alt={`${c.title} logo`} className="h-8 md:h-10 w-auto object-contain drop-shadow-lg" />
             </div>
           )}
         </div>
@@ -262,7 +264,6 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
             <p className="text-xs font-semibold tracking-widest text-primary-foreground/60 uppercase mb-2">{c.tag}</p>
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-3xl font-extrabold text-primary-foreground tracking-tight">{c.title}</h3>
-              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-5 w-auto object-contain" />}
             </div>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
