@@ -7,7 +7,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com", external: true },
-  { label: "Privaro", href: "https://privaura.lovable.app", external: true },
+  { label: "Privaro", href: "https://privaro.lovable.app", external: true },
 ];
 
 const texts = {
