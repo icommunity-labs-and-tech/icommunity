@@ -36,6 +36,7 @@ interface CaseData {
   benefits: { icon: React.ElementType; text: string }[];
   testimonial?: { quote: string; author: string; role: string };
   logo?: string;
+  logoClass?: string;
   gradient: string;
 }
 
@@ -111,6 +112,7 @@ const cases: CaseData[] = [
     tag: "Caso Certificación",
     title: "AENOR",
     logo: logoAenor,
+    logoClass: "h-6 md:h-7",
     description: "Certificaciones convertidas en evidencia verificable preparada para supervisión.",
     stats: [
       { value: "✓", label: "Verificación independiente en tiempo real" },
@@ -156,6 +158,7 @@ const cases: CaseData[] = [
     tag: "Caso Evidencia Legal",
     title: "LOGALTY",
     logo: logoLogalty,
+    logoClass: "h-6 md:h-7",
     description: "Evidencia electrónica preparada para entornos jurídicos y regulatorios.",
     stats: [
       { value: "✓", label: "Evidencia verificable de eventos contractuales" },
@@ -303,7 +306,7 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
           <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
           {c.logo && (
             <div className="absolute top-3 left-3">
-              <img src={c.logo} alt={`${c.title} logo`} className="h-8 md:h-10 w-auto object-contain drop-shadow-lg" />
+              <img src={c.logo} alt={`${c.title} logo`} className={`${c.logoClass || "h-8 md:h-10"} w-auto object-contain drop-shadow-lg`} />
             </div>
           )}
         </div>
