@@ -12,7 +12,7 @@ const texts = {
     badges: ["API Infrastructure", "Evidence Layer", "Audit Ready", "Regulatory Native"],
     products: [
       { id: "certypass", title: "CertyPass", desc: "Digital Product Passport compliant with the European ESPR regulation for traceability and sustainability.", tag: "Built on iCommunity", cta: "Go to CertyPass" },
-      { id: "privaura", title: "Privaura", desc: "Governance, anonymization, and control of sensitive data before use in AI systems.", tag: "Powered by iCommunity", cta: "Go to Privaura" },
+      { id: "privaro", title: "Privaro", desc: "Governance, anonymization, and control of sensitive data before use in AI systems.", tag: "Powered by iCommunity", cta: "Go to Privaro" },
     ],
     bottom: "A single trust infrastructure enables deploying multiple regulatory solutions without duplicating integrations.",
   },
@@ -24,7 +24,7 @@ const texts = {
     badges: ["Infraestructura API", "Capa de evidencia", "Audit Ready", "Regulatory Native"],
     products: [
       { id: "certypass", title: "CertyPass", desc: "Pasaporte Digital de Producto conforme a la regulación europea ESPR para trazabilidad y sostenibilidad.", tag: "Construido sobre iCommunity", cta: "Ir a CertyPass" },
-      { id: "privaura", title: "Privaura", desc: "Gobernanza, anonimización y control de datos sensibles antes de su uso en sistemas de IA.", tag: "Impulsado por iCommunity", cta: "Ir a Privaura" },
+      { id: "privaro", title: "Privaro", desc: "Gobernanza, anonimización y control de datos sensibles antes de su uso en sistemas de IA.", tag: "Impulsado por iCommunity", cta: "Ir a Privaro" },
     ],
     bottom: "Una única infraestructura de confianza permite desplegar múltiples soluciones regulatorias sin duplicar integraciones.",
   },
@@ -79,7 +79,7 @@ const Ecosystem = () => {
             </defs>
             <motion.path d="M400,200 C400,280 200,280 200,360" fill="none" stroke="url(#line-grad-left)" strokeWidth={hoveredProduct === "certypass" ? 2.5 : 1.5} strokeDasharray="6 4" filter={hoveredProduct === "certypass" ? "url(#glow)" : undefined} className="transition-all duration-500" initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}} transition={{ duration: 1, delay: 0.6, ease: "easeOut" }} />
             {inView && <motion.circle r="3" fill="hsl(var(--primary))" opacity={0.6} animate={{ offsetDistance: ["0%", "100%"], opacity: [0, 0.8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }} style={{ offsetPath: "path('M400,200 C400,280 200,280 200,360')" }} />}
-            <motion.path d="M400,200 C400,280 600,280 600,360" fill="none" stroke="url(#line-grad-right)" strokeWidth={hoveredProduct === "privaura" ? 2.5 : 1.5} strokeDasharray="6 4" filter={hoveredProduct === "privaura" ? "url(#glow)" : undefined} className="transition-all duration-500" initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}} transition={{ duration: 1, delay: 0.8, ease: "easeOut" }} />
+            <motion.path d="M400,200 C400,280 600,280 600,360" fill="none" stroke="url(#line-grad-right)" strokeWidth={hoveredProduct === "privaro" ? 2.5 : 1.5} strokeDasharray="6 4" filter={hoveredProduct === "privaro" ? "url(#glow)" : undefined} className="transition-all duration-500" initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}} transition={{ duration: 1, delay: 0.8, ease: "easeOut" }} />
             {inView && <motion.circle r="3" fill="hsl(var(--primary))" opacity={0.6} animate={{ offsetDistance: ["0%", "100%"], opacity: [0, 0.8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }} style={{ offsetPath: "path('M400,200 C400,280 600,280 600,360')" }} />}
           </svg>
 

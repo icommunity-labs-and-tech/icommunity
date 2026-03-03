@@ -13,10 +13,10 @@ const solutions = [
     cta: "Visit CertyPass",
   },
   {
-    name: "Privaura",
+    name: "Privaro",
     description: "Compliance and data anonymization gateway for regulated AI systems.",
     url: "https://privaura.lovable.app/",
-    cta: "Visit Privaura",
+    cta: "Visit Privaro",
   },
 ];
 
