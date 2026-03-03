@@ -26,7 +26,7 @@ const texts = {
   es: {
     navLinks: [
       { label: "Cómo funciona", href: "/#trust-architecture" },
-      { label: "Casos de uso", href: "/#segments" },
+      { label: "Casos de éxito", href: "/#segments" },
       { label: "Seguridad", href: "/#security" },
       { label: "Casos de éxito", href: "/#cases" },
       { label: "Partners", href: "/partners", isRoute: true },
