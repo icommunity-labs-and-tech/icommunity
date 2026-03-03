@@ -4,11 +4,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   LayoutGrid, Leaf, BrainCircuit, ShieldCheck, ArrowRight, ExternalLink,
   ChevronLeft, ChevronRight, FileCheck, ClipboardCheck, Eye, ShieldAlert,
-  Quote,
+  Quote, Landmark, Scale, SearchCheck, BookCheck,
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
 import logoEstrellaGalicia from "@/assets/logo-estrella-galicia.png";
+import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -77,6 +78,34 @@ const cases: CaseData[] = [
       role: "CEO de Estrella Galicia",
     },
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
+  },
+  {
+    tag: "Caso Institucional",
+    title: "AYUNTAMIENTO DE MADRID",
+    logo: logoAytoMadrid,
+    description: "Infraestructura de evidencia verificable en procesos de contratación pública.",
+    stats: [
+      { value: "✓", label: "Trazabilidad documental certificada" },
+      { value: "✓", label: "Supervisión independiente desde el origen" },
+      { value: "✓", label: "Evidencia preparada para auditoría" },
+    ],
+    image: logoAytoMadrid,
+    imageAlt: "Ayuntamiento de Madrid",
+    badge: "Caso de éxito",
+    heading: "Contratación pública con evidencia verificable desde el origen",
+    body: "iCommunity fue implementado como capa de infraestructura para generar evidencia independiente en procesos de contratación pública. Cada documento, validación y evento administrativo queda registrado como prueba verificable, disponible para auditoría y supervisión regulatoria sin depender del operador del sistema.",
+    benefits: [
+      { icon: Landmark, text: "Registro verificable de cada hito administrativo" },
+      { icon: Scale, text: "Evidencia independiente ante órganos de control" },
+      { icon: SearchCheck, text: "Auditoría inmediata sin reconstrucción posterior" },
+      { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
+    ],
+    testimonial: {
+      quote: "",
+      author: "Dirección General de Contratación",
+      role: "",
+    },
+    gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
   },
 ];
 
@@ -181,25 +210,25 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
     <div className="grid md:grid-cols-2 md:min-h-[480px]">
       {/* Left */}
       <div className="flex flex-col">
-        <div className="relative h-36 md:h-44 overflow-hidden shrink-0">
-          <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
+        <div className="relative h-36 md:h-44 overflow-hidden shrink-0" style={c.image === c.logo ? { background: c.gradient } : undefined}>
+          <img src={c.image} alt={c.imageAlt} className={c.image === c.logo ? "w-full h-full object-contain p-8" : "w-full h-full object-cover"} />
         </div>
         <div className="flex-1 p-5 flex flex-col justify-between" style={{ background: c.gradient }}>
           <div>
             <p className="text-xs font-semibold tracking-widest text-primary-foreground/60 uppercase mb-2">{c.tag}</p>
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-3xl font-extrabold text-primary-foreground tracking-tight">{c.title}</h3>
-              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-10 w-auto object-contain" />}
+              {c.logo && c.image !== c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-10 w-auto object-contain" />}
             </div>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
 
-          {c.testimonial && (
+          {c.testimonial && (c.testimonial.quote || c.testimonial.author) && (
             <div className="flex items-start gap-3 mt-5 p-3 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
-              <Quote className="w-4 h-4 text-primary-foreground/50 shrink-0 mt-0.5" />
+              {c.testimonial.quote && <Quote className="w-4 h-4 text-primary-foreground/50 shrink-0 mt-0.5" />}
               <div>
-                <p className="text-xs italic text-primary-foreground/70 leading-relaxed mb-1">"{c.testimonial.quote}"</p>
-                <p className="text-[11px] font-semibold text-primary-foreground/50">— {c.testimonial.author}, {c.testimonial.role}</p>
+                {c.testimonial.quote && <p className="text-xs italic text-primary-foreground/70 leading-relaxed mb-1">"{c.testimonial.quote}"</p>}
+                <p className="text-[11px] font-semibold text-primary-foreground/50">— {c.testimonial.author}{c.testimonial.role ? `, ${c.testimonial.role}` : ""}</p>
               </div>
             </div>
           )}
