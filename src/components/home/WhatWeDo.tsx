@@ -5,21 +5,21 @@ import { FileCheck, UserCheck, Bot } from "lucide-react";
 const cards = [
   {
     icon: FileCheck,
-    title: "Evidencia de evento KYC",
-    desc: "Genera un recibo criptográfico por cada verificación de identidad.",
-    examples: ["Onboarding completado", "Documento validado", "Liveness check superado"],
+    title: "KYC event evidence",
+    desc: "Generates a cryptographic receipt for each identity verification.",
+    examples: ["Onboarding completed", "Document validated", "Liveness check passed"],
   },
   {
     icon: UserCheck,
-    title: "Evidencia de verificación de edad",
-    desc: "Certifica que la comprobación de edad se realizó correctamente.",
-    examples: ["Age gate aprobado", "Documento de edad verificado", "Consentimiento parental registrado"],
+    title: "Age verification evidence",
+    desc: "Certifies that the age check was performed correctly.",
+    examples: ["Age gate approved", "Age document verified", "Parental consent recorded"],
   },
   {
     icon: Bot,
-    title: "Evidencia de interacción humana (anti-fraude)",
-    desc: "Prueba inmutable de que una acción fue realizada por una persona real.",
-    examples: ["CAPTCHA superado", "Detección de bot negativa", "Sesión biométrica validada"],
+    title: "Human interaction evidence (anti-fraud)",
+    desc: "Immutable proof that an action was performed by a real person.",
+    examples: ["CAPTCHA passed", "Negative bot detection", "Biometric session validated"],
   },
 ];
 
@@ -28,7 +28,7 @@ const WhatWeDo = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="producto" className="ic-section bg-secondary/50" ref={ref}>
+    <section id="product" className="ic-section bg-secondary/50" ref={ref}>
       <div className="ic-container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -36,9 +36,9 @@ const WhatWeDo = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Qué hacemos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What we do</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Convertimos eventos críticos de identidad en evidencia regulatoria verificable.
+            We turn critical identity events into verifiable regulatory evidence.
           </p>
         </motion.div>
 

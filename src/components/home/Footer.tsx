@@ -9,40 +9,39 @@ type FooterLink = string | { label: string; href?: string; external?: boolean };
 
 const footerColumns: { title: string; links: FooterLink[] }[] = [
   {
-    title: "Producto",
-    links: ["Plataforma", "SDK & API", "Verificador", "Documentación"],
+    title: "Product",
+    links: ["Platform", "SDK & API", "Verifier", "Documentation"],
   },
   {
-    title: "Casos de uso",
-    links: ["KYC", "Verificación de edad", "Anti-fraude", "MiCA"],
+    title: "Use cases",
+    links: ["KYC", "Age verification", "Anti-fraud", "MiCA"],
   },
   {
-    title: "Seguridad",
-    links: ["Arquitectura", "Compliance", "RGPD", "Detalles técnicos"],
+    title: "Security",
+    links: ["Architecture", "Compliance", "GDPR", "Technical details"],
   },
   {
-    title: "Recursos",
+    title: "Resources",
     links: [
       { label: "Blog" },
       { label: "Whitepaper" },
-      { label: "Guías" },
+      { label: "Guides" },
       { label: "Token Icom", href: "https://www.icommunity.io/icom/", external: true },
     ],
   },
   {
-    title: "Empresa",
-    links: ["Sobre nosotros", "Partnerships", "Contacto", "Empleo"],
+    title: "Company",
+    links: ["About us", "Partnerships", "Contact", "Careers"],
   },
   {
     title: "Legal",
-    links: ["Aviso legal", "Privacidad", "Cookies", "Términos"],
+    links: ["Legal notice", "Privacy", "Cookies", "Terms"],
   },
 ];
 
 const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   return (
-    <footer id="empresa" className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(225 35% 4%) 100%)" }}>
-      {/* Subtle grid pattern */}
+    <footer id="company" className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(225 35% 4%) 100%)" }}>
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -51,8 +50,6 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         }}
       />
 
-
-      {/* Links grid */}
       <div className="relative ic-container pt-14 pb-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
           {footerColumns.map((col) => (
@@ -80,15 +77,14 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           ))}
         </div>
 
-        {/* Institutional funding logos */}
         <div className="border-t border-white/[0.06] pt-8 pb-8">
-          <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">Proyectos cofinanciados</p>
+          <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">Co-funded projects</p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            <img src={logoCdti} alt="CDTI - Ministerio de Ciencia e Innovación" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoCdti} alt="CDTI – Ministry of Science and Innovation" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
             <img src={logoNeotec} alt="CDTI Neotec" className="h-10 md:h-14 rounded" />
             <img src={logoEnisa} alt="ENISA" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
-            <img src={logoFeder} alt="Fondo Europeo de Desarrollo Regional (FEDER)" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
-            <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoFeder} alt="European Regional Development Fund (ERDF)" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoUE} alt="Co-funded by the European Union" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
           </div>
         </div>
 
@@ -97,7 +93,7 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             <img src={logo} alt="iCommunity" className="h-6 opacity-60" />
           </div>
           <p className="text-xs text-white/20">
-            © {new Date().getFullYear()} iCommunity Labs S.L. Todos los derechos reservados.
+            © {new Date().getFullYear()} iCommunity Labs S.L. All rights reserved.
           </p>
         </div>
       </div>

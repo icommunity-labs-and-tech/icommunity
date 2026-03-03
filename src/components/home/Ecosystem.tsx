@@ -7,9 +7,9 @@ const products = [
     id: "certypass",
     icon: Package,
     title: "CertyPass",
-    desc: "Pasaporte Digital de Producto conforme al reglamento europeo ESPR para trazabilidad y sostenibilidad.",
+    desc: "Digital Product Passport compliant with the European ESPR regulation for traceability and sustainability.",
     tag: "Built on iCommunity",
-    cta: "Ir a CertyPass",
+    cta: "Go to CertyPass",
     href: "https://certypass.com",
     external: true,
     angle: -30,
@@ -18,9 +18,9 @@ const products = [
     id: "privaura",
     icon: BrainCircuit,
     title: "Privaura",
-    desc: "Gobierno, anonimización y control de datos sensibles antes de su uso en sistemas de IA.",
+    desc: "Governance, anonymization, and control of sensitive data before use in AI systems.",
     tag: "Powered by iCommunity",
-    cta: "Ir a Privaura",
+    cta: "Go to Privaura",
     href: "https://privaura.lovable.app",
     external: true,
     angle: 30,
@@ -37,7 +37,6 @@ const Ecosystem = () => {
   return (
     <section className="ic-section bg-secondary/30 overflow-hidden" ref={ref}>
       <div className="ic-container">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -48,14 +47,11 @@ const Ecosystem = () => {
             iCommunity <span className="text-primary">Trust Layer</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Infraestructura común sobre la que se construyen soluciones de certificación, cumplimiento y gobierno del dato.
+            Common infrastructure on which certification, compliance, and data governance solutions are built.
           </p>
         </motion.div>
 
-        {/* Core + Products */}
         <div className="relative max-w-4xl mx-auto flex flex-col items-center">
-
-          {/* Core node */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -63,20 +59,15 @@ const Ecosystem = () => {
             className="relative z-10 w-full max-w-md mb-16"
           >
             <div className="relative rounded-2xl border-2 border-primary/25 bg-primary/[0.03] p-8 text-center overflow-hidden">
-              {/* Animated glow rings */}
               <motion.div
                 className="absolute inset-0 rounded-2xl"
-                style={{
-                  background: "radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.08) 0%, transparent 70%)",
-                }}
+                style={{ background: "radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.08) 0%, transparent 70%)" }}
                 animate={{ scale: [1, 1.05, 1], opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.div
                 className="absolute -inset-8 rounded-full"
-                style={{
-                  background: "radial-gradient(circle, hsl(var(--primary) / 0.04) 0%, transparent 60%)",
-                }}
+                style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.04) 0%, transparent 60%)" }}
                 animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.7, 0.3] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               />
@@ -91,7 +82,7 @@ const Ecosystem = () => {
                 </motion.div>
                 <h3 className="text-lg font-bold text-foreground mb-2">iCommunity Trust Layer</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  Capa independiente que transforma eventos digitales en pruebas auditables verificables.
+                  Independent layer that transforms digital events into verifiable auditable evidence.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {badges.map((b, i) => (
@@ -135,7 +126,6 @@ const Ecosystem = () => {
               </filter>
             </defs>
 
-            {/* Left connector */}
             <motion.path
               d="M400,200 C400,280 200,280 200,360"
               fill="none"
@@ -148,22 +138,17 @@ const Ecosystem = () => {
               animate={inView ? { pathLength: 1, opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             />
-            {/* Animated dot on left line */}
             {inView && (
               <motion.circle
                 r="3"
                 fill="hsl(var(--primary))"
                 opacity={0.6}
-                animate={{
-                  offsetDistance: ["0%", "100%"],
-                  opacity: [0, 0.8, 0],
-                }}
+                animate={{ offsetDistance: ["0%", "100%"], opacity: [0, 0.8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
                 style={{ offsetPath: "path('M400,200 C400,280 200,280 200,360')" }}
               />
             )}
 
-            {/* Right connector */}
             <motion.path
               d="M400,200 C400,280 600,280 600,360"
               fill="none"
@@ -181,17 +166,13 @@ const Ecosystem = () => {
                 r="3"
                 fill="hsl(var(--primary))"
                 opacity={0.6}
-                animate={{
-                  offsetDistance: ["0%", "100%"],
-                  opacity: [0, 0.8, 0],
-                }}
+                animate={{ offsetDistance: ["0%", "100%"], opacity: [0, 0.8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
                 style={{ offsetPath: "path('M400,200 C400,280 600,280 600,360')" }}
               />
             )}
           </svg>
 
-          {/* Product cards */}
           <div className="relative z-10 grid md:grid-cols-2 gap-6 w-full max-w-2xl">
             {products.map((product, i) => (
               <motion.div
@@ -201,13 +182,7 @@ const Ecosystem = () => {
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.15, type: "spring", stiffness: 100 }}
                 onMouseEnter={() => setHoveredProduct(product.id)}
                 onMouseLeave={() => setHoveredProduct(null)}
-                className={`
-                  group rounded-xl p-6 flex flex-col transition-all duration-500
-                  ${hoveredProduct === product.id
-                    ? "-translate-y-1"
-                    : ""
-                  }
-                `}
+                className={`group rounded-xl p-6 flex flex-col transition-all duration-500 ${hoveredProduct === product.id ? "-translate-y-1" : ""}`}
               >
                 <motion.div
                   className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4"
@@ -218,10 +193,7 @@ const Ecosystem = () => {
                 </motion.div>
 
                 <h3 className="text-base font-semibold text-foreground mb-2">{product.title}</h3>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
-                  {product.desc}
-                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">{product.desc}</p>
 
                 {product.tag && (
                   <motion.span
@@ -248,14 +220,13 @@ const Ecosystem = () => {
           </div>
         </div>
 
-        {/* Bottom message */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center text-sm text-muted-foreground mt-14 max-w-2xl mx-auto"
         >
-          Una única infraestructura de confianza permite desplegar múltiples soluciones regulatorias sin duplicar integraciones.
+          A single trust infrastructure enables deploying multiple regulatory solutions without duplicating integrations.
         </motion.p>
       </div>
     </section>

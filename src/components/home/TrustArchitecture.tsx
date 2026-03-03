@@ -2,34 +2,25 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Server, Shield, FileCheck } from "lucide-react";
 
-/* ── Origin systems ── */
 const origins = [
-  { label: "KYC Provider", sub: "Verificación de identidad" },
-  { label: "Fintech", sub: "Operaciones reguladas" },
-  { label: "Administración", sub: "Trámites digitales" },
+  { label: "KYC Provider", sub: "Identity verification" },
+  { label: "Fintech", sub: "Regulated operations" },
+  { label: "Public Admin", sub: "Digital procedures" },
 ];
 
-/* ── Output targets ── */
 const targets = [
-  { label: "Reguladores", sub: "Supervisión normativa" },
-  { label: "Auditores", sub: "Auditoría independiente" },
-  { label: "Terceros", sub: "Verificación pública" },
+  { label: "Regulators", sub: "Regulatory oversight" },
+  { label: "Auditors", sub: "Independent audit" },
+  { label: "Third Parties", sub: "Public verification" },
 ];
 
-/* ── Animated flowing dots ── */
 const FlowDots = ({ delay = 0 }: { delay: number }) => (
   <div className="relative h-px w-full bg-border overflow-visible">
     <motion.div
       className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary"
       initial={{ left: "-4px", opacity: 0 }}
       animate={{ left: "calc(100% + 4px)", opacity: [0, 1, 1, 0] }}
-      transition={{
-        duration: 2.4,
-        delay,
-        repeat: Infinity,
-        repeatDelay: 1.2,
-        ease: "linear",
-      }}
+      transition={{ duration: 2.4, delay, repeat: Infinity, repeatDelay: 1.2, ease: "linear" }}
     />
   </div>
 );
@@ -39,9 +30,8 @@ const TrustArchitecture = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="arquitectura-de-confianza" ref={ref} className="ic-section py-24 md:py-32 bg-background overflow-hidden">
+    <section id="trust-architecture" ref={ref} className="ic-section py-24 md:py-32 bg-background overflow-hidden">
       <div className="ic-container">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -54,21 +44,19 @@ const TrustArchitecture = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Arquitectura <span className="text-primary">de confianza</span>
+            Trust <span className="text-primary">Architecture</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-            iCommunity es el registro independiente que conecta sistemas digitales con supervisión regulatoria, sin modificar tu infraestructura existente
+            iCommunity is the independent registry that connects digital systems with regulatory oversight, without modifying your existing infrastructure
           </p>
         </motion.div>
 
-        {/* Diagram */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-6 lg:gap-0"
         >
-          {/* ── Column 1: Origin systems ── */}
           <div className="space-y-3">
             {origins.map((o, i) => (
               <motion.div
@@ -90,19 +78,15 @@ const TrustArchitecture = () => {
             ))}
           </div>
 
-          {/* ── Arrow 1 ── */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {origins.map((_, i) => (
               <div key={i} className="h-[60px] flex items-center w-full">
                 <FlowDots delay={i * 0.6} />
               </div>
             ))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">
-              eventos
-            </span>
+            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">events</span>
           </div>
 
-          {/* Mobile arrow */}
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
               <div className="w-px h-8 bg-border relative overflow-visible">
@@ -113,44 +97,32 @@ const TrustArchitecture = () => {
                   transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
                 />
               </div>
-              <span className="text-[11px] font-mono text-muted-foreground">eventos</span>
+              <span className="text-[11px] font-mono text-muted-foreground">events</span>
             </div>
           </div>
 
-          {/* ── Column 2: Trust Layer ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="relative rounded-2xl border-2 border-primary/20 bg-primary/[0.03] p-6 text-center"
           >
-            {/* Glow ring */}
             <div className="absolute inset-0 rounded-2xl bg-primary/5 blur-xl -z-10" />
-
             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <Shield className="w-7 h-7 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-foreground mb-1">
-              iCommunity Trust Layer
-            </h3>
+            <h3 className="text-lg font-bold text-foreground mb-1">iCommunity Trust Layer</h3>
             <p className="text-xs text-muted-foreground mb-4 max-w-[220px] mx-auto">
-              Capa criptográfica independiente con sello temporal e integridad verificable
+              Independent cryptographic layer with timestamp sealing and verifiable integrity
             </p>
-
-            {/* Status pills */}
             <div className="flex flex-wrap justify-center gap-2">
-              {["Hash SHA-256", "Sello temporal", "Registro inmutable"].map((t) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-xs font-mono text-primary"
-                >
+              {["SHA-256 Hash", "Timestamp", "Immutable Record"].map((t) => (
+                <span key={t} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-xs font-mono text-primary">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   {t}
                 </span>
               ))}
             </div>
-
-            {/* Connector line */}
             <div className="mx-auto mt-4 w-px h-6 bg-border relative overflow-visible">
               <motion.div
                 className="absolute left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary"
@@ -159,21 +131,14 @@ const TrustArchitecture = () => {
                 transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 1.4, ease: "linear" }}
               />
             </div>
-
-            {/* Secondary layer */}
             <div className="rounded-xl border border-dashed border-primary/30 bg-primary/[0.02] px-4 py-3 text-center">
-              <div className="text-xs font-semibold text-foreground mb-1">
-                Red de certificación distribuida
-              </div>
+              <div className="text-xs font-semibold text-foreground mb-1">Distributed Certification Network</div>
               <p className="text-[11px] text-muted-foreground mb-2 max-w-[200px] mx-auto">
-                Anclaje criptográfico y sellado temporal externo
+                Cryptographic anchoring and external timestamp sealing
               </p>
               <div className="flex flex-wrap justify-center gap-1.5">
-                {["Blockchain anchor", "TSA externo"].map((t) => (
-                  <span
-                    key={t}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent text-[10px] font-mono text-muted-foreground"
-                  >
+                {["Blockchain anchor", "External TSA"].map((t) => (
+                  <span key={t} className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent text-[10px] font-mono text-muted-foreground">
                     <span className="w-1 h-1 rounded-full bg-primary/60" />
                     {t}
                   </span>
@@ -182,19 +147,15 @@ const TrustArchitecture = () => {
             </div>
           </motion.div>
 
-          {/* ── Arrow 2 ── */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {targets.map((_, i) => (
               <div key={i} className="h-[60px] flex items-center w-full">
                 <FlowDots delay={1.8 + i * 0.6} />
               </div>
             ))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">
-              evidencia
-            </span>
+            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">evidence</span>
           </div>
 
-          {/* Mobile arrow */}
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
               <div className="w-px h-8 bg-border relative overflow-visible">
@@ -205,11 +166,10 @@ const TrustArchitecture = () => {
                   transition={{ duration: 1.6, delay: 1.8, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
                 />
               </div>
-              <span className="text-[11px] font-mono text-muted-foreground">evidencia</span>
+              <span className="text-[11px] font-mono text-muted-foreground">evidence</span>
             </div>
           </div>
 
-          {/* ── Column 3: Targets ── */}
           <div className="space-y-3">
             {targets.map((t, i) => (
               <motion.div

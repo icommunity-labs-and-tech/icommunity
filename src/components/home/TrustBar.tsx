@@ -8,7 +8,7 @@ import logoLogalty from "@/assets/logo-logalty.png";
 import logoCertifika from "@/assets/logo-certifika.png";
 
 const bottomLogos = [
-  { src: logoMadrid, alt: "Ayuntamiento de Madrid" },
+  { src: logoMadrid, alt: "Madrid City Council" },
   { src: logoAenor, alt: "AENOR" },
   { src: logoLogalty, alt: "Logalty" },
   { src: logoCertifika, alt: "Certifika" },
@@ -30,10 +30,10 @@ const TrustBar = () => {
           className="text-center mb-6"
         >
           <p className="text-xs font-medium tracking-widest text-muted-foreground/60 uppercase mb-1.5">
-            Infraestructura desplegada en producción
+            Infrastructure deployed in production
           </p>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            Administraciones públicas, certificadoras y plataformas reguladas utilizan iCommunity en procesos reales.
+            Public administrations, certification bodies, and regulated platforms use iCommunity in real-world processes.
           </p>
         </motion.div>
 
@@ -46,7 +46,7 @@ const TrustBar = () => {
               initial={{ opacity: 0, y: 8 }}
               animate={inView ? { opacity: 0.7, y: 0 } : { opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-              className={`object-contain ${logo.alt === "Ayuntamiento de Madrid" ? "h-16 md:h-20" : "h-8 md:h-10"}`}
+              className={`object-contain ${logo.alt === "Madrid City Council" ? "h-16 md:h-20" : "h-8 md:h-10"}`}
             />
           ))}
         </div>

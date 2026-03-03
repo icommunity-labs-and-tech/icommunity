@@ -25,13 +25,13 @@ const NewsletterBanner = () => {
     setError("");
 
     if (!name.trim()) {
-      setError("Introduce tu nombre.");
+      setError("Please enter your name.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
-      setError("Introduce un correo válido.");
+      setError("Please enter a valid email.");
       return;
     }
 
@@ -50,7 +50,7 @@ const NewsletterBanner = () => {
       setSubmitted(true);
     } catch (err) {
       console.error(err);
-      toast({ title: "Error", description: "No se pudo enviar. Inténtalo de nuevo.", variant: "destructive" });
+      toast({ title: "Error", description: "Could not send. Please try again.", variant: "destructive" });
     } finally {
       setSending(false);
     }
@@ -67,10 +67,7 @@ const NewsletterBanner = () => {
         >
           <video
             ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
+            autoPlay loop muted playsInline
             className="absolute inset-0 w-full h-full object-cover z-0"
           >
             <source src="/hero-bg.mp4" type="video/mp4" />
@@ -80,10 +77,10 @@ const NewsletterBanner = () => {
           <div className="relative z-[2] px-8 py-10 md:px-12 md:py-14">
             <div className="mb-8 max-w-2xl">
               <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground leading-tight mb-3">
-                Forma parte del ecosistema iCommunity
+                Join the iCommunity ecosystem
               </h3>
               <p className="text-primary-foreground/75 text-sm md:text-base leading-relaxed">
-                Descubre cómo organizaciones reguladas están transformando procesos digitales en evidencia verificable. Recibe casos de uso y novedades del sector.
+                Discover how regulated organizations are transforming digital processes into verifiable evidence. Receive use cases and industry news.
               </p>
             </div>
 
@@ -99,14 +96,14 @@ const NewsletterBanner = () => {
                 >
                   <input
                     type="text"
-                    placeholder="Nombre"
+                    placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="flex-1 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary-foreground/30 transition-colors"
                   />
                   <input
                     type="email"
-                    placeholder="Correo profesional"
+                    placeholder="Professional email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-sm px-4 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary-foreground/30 transition-colors"
@@ -116,7 +113,7 @@ const NewsletterBanner = () => {
                     disabled={sending}
                     className="rounded-lg ic-gradient-cta px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity flex-shrink-0 disabled:opacity-50"
                   >
-                    {sending ? "Enviando..." : "Suscribirme"}
+                    {sending ? "Sending..." : "Subscribe"}
                   </button>
                 </motion.form>
               ) : (
@@ -129,7 +126,7 @@ const NewsletterBanner = () => {
                 >
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-sm font-medium text-primary-foreground">
-                    Gracias. Te mantendremos informado.
+                    Thank you. We'll keep you informed.
                   </span>
                 </motion.div>
               )}
@@ -141,7 +138,7 @@ const NewsletterBanner = () => {
                   <p className="text-xs text-red-300">{error}</p>
                 ) : (
                   <p className="text-xs text-primary-foreground/40">
-                    Solo enviaremos contenidos relevantes. Sin spam.
+                    We'll only send relevant content. No spam.
                   </p>
                 )}
               </div>

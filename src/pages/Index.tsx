@@ -40,7 +40,6 @@ const Index = () => {
         <TrustArchitecture />
         <TrustLifecycle />
         <Segments />
-        {/* <Integrations onOpenModal={() => openModal("partner-integrador")} /> */}
         <Security />
         <WhyICommunity />
         

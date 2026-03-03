@@ -3,17 +3,17 @@ import { useRef } from "react";
 import { X, Check } from "lucide-react";
 
 const internalItems = [
-  "Logs modificables",
-  "Almacenamiento en BBDD propias",
-  "Auditoría manual y por muestreo",
-  "Necesidad de terceros",
+  "Modifiable logs",
+  "Storage in proprietary databases",
+  "Manual and sample-based auditing",
+  "Dependency on third parties",
 ];
 
 const icommunityItems = [
-  "Logs certificados por tecnología",
-  "Sistema descentralizado",
-  "Auditoría automática y completa",
-  "Preparado para cumplimiento",
+  "Technology-certified logs",
+  "Decentralized system",
+  "Automatic and comprehensive auditing",
+  "Ready for compliance",
 ];
 
 const StructuralProblem = () => {
@@ -29,25 +29,23 @@ const StructuralProblem = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Un problema <span className="text-ic-blue">estructural</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">A <span className="text-ic-blue">structural</span> problem</h2>
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-3">
-            En los sistemas tradicionales, quien ejecuta el proceso también genera la evidencia.
+            In traditional systems, the entity that executes the process also generates the evidence.
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium">
-            iCommunity separa ejecución y certificación, creando un registro independiente auditable.
+            iCommunity separates execution from certification, creating an independent auditable record.
           </p>
         </motion.div>
 
-        {/* Comparison */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="grid md:grid-cols-2 gap-5"
         >
-          {/* Internal */}
           <div className="rounded-xl border border-border bg-card p-6">
-            <p className="text-sm font-semibold text-muted-foreground mb-4">Sistemas internos</p>
+            <p className="text-sm font-semibold text-muted-foreground mb-4">Internal systems</p>
             <ul className="space-y-3">
               {internalItems.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-[13px] text-muted-foreground/70">
@@ -57,7 +55,6 @@ const StructuralProblem = () => {
               ))}
             </ul>
           </div>
-          {/* iCommunity */}
           <div className="rounded-xl border border-primary/20 bg-accent/50 p-6">
             <p className="text-sm font-semibold text-foreground mb-4">iCommunity</p>
             <ul className="space-y-3">

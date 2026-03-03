@@ -8,17 +8,15 @@ import ContactModal, { type OrganizationType } from "@/components/home/ContactMo
 const solutions = [
   {
     name: "CertyPass",
-    description:
-      "Pasaporte Digital de Producto basado en evidencia verificable conforme regulación europea ESPR.",
+    description: "Digital Product Passport based on verifiable evidence compliant with European ESPR regulation.",
     url: "https://certypass.com/",
-    cta: "Visitar CertyPass",
+    cta: "Visit CertyPass",
   },
   {
     name: "Privaura",
-    description:
-      "Gateway de cumplimiento y anonimización de datos para sistemas de IA regulados.",
+    description: "Compliance and data anonymization gateway for regulated AI systems.",
     url: "https://privaura.lovable.app/",
-    cta: "Visitar Privaura",
+    cta: "Visit Privaura",
   },
 ];
 
@@ -32,25 +30,18 @@ const Solutions = () => {
       <main className="flex-1 pt-28 pb-20">
         <div className="ic-container">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
-            Soluciones sobre infraestructura iCommunity
+            Solutions on iCommunity infrastructure
           </h1>
           <p className="text-muted-foreground max-w-2xl mb-14">
-            Productos construidos sobre la capa de infraestructura iCommunity, diseñados para resolver necesidades regulatorias y de confianza digital.
+            Products built on the iCommunity infrastructure layer, designed to address regulatory and digital trust needs.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
             {solutions.map((s) => (
-              <div
-                key={s.name}
-                className="ic-card flex flex-col justify-between gap-6"
-              >
+              <div key={s.name} className="ic-card flex flex-col justify-between gap-6">
                 <div>
-                  <h2 className="text-xl font-semibold text-foreground mb-2">
-                    {s.name}
-                  </h2>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {s.description}
-                  </p>
+                  <h2 className="text-xl font-semibold text-foreground mb-2">{s.name}</h2>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                 </div>
                 <a
                   href={s.url}
@@ -65,11 +56,8 @@ const Solutions = () => {
             ))}
           </div>
 
-          <Link
-            to="/"
-            className="inline-block mt-14 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            ← Volver a la página principal
+          <Link to="/" className="inline-block mt-14 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            ← Back to homepage
           </Link>
         </div>
       </main>
