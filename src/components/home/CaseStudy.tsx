@@ -107,7 +107,6 @@ const cases: CaseData[] = [
     stats: [
       { value: "✓", label: "Verificación independiente en tiempo real" },
       { value: "✓", label: "Evidencia digital asociada a cada certificación" },
-      { value: "✓", label: "Preparado para auditoría externa" },
     ],
     image: caseAenorImage,
     imageAlt: "Sede corporativa AENOR",
@@ -120,7 +119,7 @@ const cases: CaseData[] = [
       { icon: Lock, text: "Integridad probatoria garantizada" },
       { icon: BadgeCheck, text: "Auditoría preparada desde la emisión" },
     ],
-    testimonial: { quote: "", author: "Rafael García", role: "Director General de AENOR" },
+    
     gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
   },
 ];
@@ -234,7 +233,7 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
             <p className="text-xs font-semibold tracking-widest text-primary-foreground/60 uppercase mb-2">{c.tag}</p>
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-3xl font-extrabold text-primary-foreground tracking-tight">{c.title}</h3>
-              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-8 w-auto object-contain" />}
+              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-5 w-auto object-contain" />}
             </div>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
