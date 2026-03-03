@@ -240,7 +240,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
     const scheduleNext = () => {
       const currentIndex = emblaApi.selectedScrollSnap();
       // AENOR (0) and Ayuntamiento (1) get 6s, rest get 3s
-      const delay = currentIndex <= 1 ? 6000 : 3000;
+      const delay = 6000;
       timer = setTimeout(() => {
         emblaApi.scrollNext();
         scheduleNext();
