@@ -3,26 +3,47 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com", external: true },
   { label: "Privaura", href: "https://privaura.lovable.app", external: true },
 ];
 
-const navLinks = [
-  { label: "How it works", href: "#trust-architecture" },
-  { label: "Use cases", href: "#segments" },
-  { label: "Security", href: "#security" },
-  { label: "Resources", href: "#resources" },
-  { label: "Partners", href: "/partners", isRoute: true },
-  { label: "Company", href: "/empresa", isRoute: true },
-];
+const texts = {
+  en: {
+    navLinks: [
+      { label: "How it works", href: "#trust-architecture" },
+      { label: "Use cases", href: "#segments" },
+      { label: "Security", href: "#security" },
+      { label: "Resources", href: "#resources" },
+      { label: "Partners", href: "/partners", isRoute: true },
+      { label: "Company", href: "/empresa", isRoute: true },
+    ],
+    solutions: "Solutions",
+    requestDemo: "Request demo",
+  },
+  es: {
+    navLinks: [
+      { label: "Cómo funciona", href: "#trust-architecture" },
+      { label: "Casos de uso", href: "#segments" },
+      { label: "Seguridad", href: "#security" },
+      { label: "Recursos", href: "#resources" },
+      { label: "Partners", href: "/partners", isRoute: true },
+      { label: "Empresa", href: "/empresa", isRoute: true },
+    ],
+    solutions: "Soluciones",
+    requestDemo: "Solicitar demo",
+  },
+};
 
 const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { lang, setLang } = useLanguage();
+  const t = texts[lang];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -56,7 +77,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link, idx) => (
+          {t.navLinks.map((link, idx) => (
             <React.Fragment key={link.label}>
               {link.isRoute ? (
                 <Link
@@ -79,7 +100,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                     onClick={() => setSolutionsOpen(!solutionsOpen)}
                     className="flex items-center gap-1 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                   >
-                    Solutions
+                    {t.solutions}
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
                   </button>
                   <AnimatePresence>
@@ -112,9 +133,24 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Language toggle */}
+          <div className="flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 overflow-hidden text-xs font-medium">
+            <button
+              onClick={() => setLang("en")}
+              className={`px-2.5 py-1 transition-colors ${lang === "en" ? "text-primary-foreground bg-primary-foreground/10" : "text-primary-foreground/40 hover:text-primary-foreground/60"}`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLang("es")}
+              className={`px-2.5 py-1 transition-colors ${lang === "es" ? "text-primary-foreground bg-primary-foreground/10" : "text-primary-foreground/40 hover:text-primary-foreground/60"}`}
+            >
+              ES
+            </button>
+          </div>
           <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-            Request demo
+            {t.requestDemo}
           </button>
         </div>
 
@@ -136,7 +172,22 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             className="lg:hidden bg-[#1b253b]/95 backdrop-blur-md overflow-hidden"
           >
             <div className="ic-container py-4 flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {/* Mobile language toggle */}
+              <div className="flex items-center gap-2 pb-2 border-b border-primary-foreground/10 mb-1">
+                <button
+                  onClick={() => setLang("en")}
+                  className={`text-xs font-medium px-2 py-1 rounded ${lang === "en" ? "text-primary-foreground bg-primary-foreground/10" : "text-primary-foreground/40"}`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLang("es")}
+                  className={`text-xs font-medium px-2 py-1 rounded ${lang === "es" ? "text-primary-foreground bg-primary-foreground/10" : "text-primary-foreground/40"}`}
+                >
+                  ES
+                </button>
+              </div>
+              {t.navLinks.map((link) => (
                 link.isRoute ? (
                   <Link
                     key={link.label}
@@ -157,7 +208,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                   </a>
                 )
               ))}
-              <div className="text-xs font-medium text-primary-foreground/40 uppercase tracking-wide pt-2">Solutions</div>
+              <div className="text-xs font-medium text-primary-foreground/40 uppercase tracking-wide pt-2">{t.solutions}</div>
               {solutionsLinks.map((s) => (
                 <a
                   key={s.label}
@@ -171,7 +222,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                 </a>
               ))}
               <button onClick={() => { setMobileOpen(false); onOpenModal?.(); }} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2.5 text-sm font-medium text-primary-foreground mt-2 w-full">
-                Request demo
+                {t.requestDemo}
               </button>
             </div>
           </motion.div>

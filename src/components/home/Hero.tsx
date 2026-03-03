@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import logoMadrid from "@/assets/logo-ayto-madrid-gray-4.png";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 declare global {
   interface Window {
@@ -8,9 +9,46 @@ declare global {
   }
 }
 
+const texts = {
+  en: {
+    badge: "Trust infrastructure for regulated systems",
+    h1: "Turn digital events into auditable evidence",
+    sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin.",
+    bullets: ["Audited traceability from the origin", "Direct API integration", "Independent certification for regulators"],
+    cta1: "Request technical demo",
+    cta2: "View architecture",
+    steps: [
+      { step: "1", title: "Event", desc: "KYC verification completed" },
+      { step: "2", title: "Certification", desc: "Hash + timestamp + immutable record" },
+      { step: "3", title: "Evidence", desc: "Verifiable and auditable receipt" },
+    ],
+    receiptLabel: "Evidence Receipt",
+    madridAlt: "Madrid City Council",
+    madridText: "iCommunity powers document traceability in public procurement processes for the Madrid City Council",
+  },
+  es: {
+    badge: "Infraestructura de confianza para sistemas regulados",
+    h1: "Convierte eventos digitales en evidencia auditable",
+    sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen.",
+    bullets: ["Trazabilidad auditada desde el origen", "Integración directa vía API", "Certificación independiente para reguladores"],
+    cta1: "Solicitar demo técnica",
+    cta2: "Ver arquitectura",
+    steps: [
+      { step: "1", title: "Evento", desc: "Verificación KYC completada" },
+      { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
+      { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
+    ],
+    receiptLabel: "Recibo de Evidencia",
+    madridAlt: "Ayuntamiento de Madrid",
+    madridText: "iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid",
+  },
+};
+
 const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { lang } = useLanguage();
+  const t = texts[lang];
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.playbackRate = 0.5;
@@ -24,19 +62,15 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
       script.async = true;
       document.head.appendChild(script);
     }
-
     let gradient: { initGradient: (s: string) => void; disconnect: () => void } | null = null;
-
     const init = () => {
       if (window.Gradient) {
         gradient = new window.Gradient();
         gradient.initGradient("#gradient-canvas");
       }
     };
-
     if (window.Gradient) init();
     else script.addEventListener("load", init);
-
     return () => { gradient?.disconnect(); };
   }, []);
 
@@ -63,20 +97,18 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-6">
-              <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">
-                Trust infrastructure for regulated systems
-              </span>
+              <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[540px]">
-              Turn digital events into auditable evidence
+              {t.h1}
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-[480px] leading-relaxed">
-              Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin.
+              {t.sub}
             </p>
 
             <div className="flex flex-col gap-3 mb-10 max-w-[480px]">
-              {["Audited traceability from the origin", "Direct API integration", "Independent certification for regulators"].map((b) => (
+              {t.bullets.map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -86,7 +118,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 
             <div className="flex flex-wrap gap-4 justify-center max-w-[480px]">
               <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
-                Request technical demo
+                {t.cta1}
               </button>
               <button
                 onClick={() => {
@@ -95,7 +127,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                 }}
                 className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/20 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/5 transition-colors"
               >
-                View architecture
+                {t.cta2}
               </button>
             </div>
           </motion.div>
@@ -106,7 +138,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="hidden lg:block"
           >
-            <HeroDiagram />
+            <HeroDiagram steps={t.steps} receiptLabel={t.receiptLabel} madridAlt={t.madridAlt} madridText={t.madridText} />
           </motion.div>
         </div>
       </div>
@@ -114,13 +146,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   );
 };
 
-const steps = [
-  { step: "1", title: "Event", desc: "KYC verification completed" },
-  { step: "2", title: "Certification", desc: "Hash + timestamp + immutable record" },
-  { step: "3", title: "Evidence", desc: "Verifiable and auditable receipt" },
-];
-
-const HeroDiagram = () => {
+const HeroDiagram = ({ steps, receiptLabel, madridAlt, madridText }: { steps: { step: string; title: string; desc: string }[]; receiptLabel: string; madridAlt: string; madridText: string }) => {
   const now = new Date();
   const ts = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}-${String(now.getUTCDate()).padStart(2, "0")}T${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}:${String(now.getUTCSeconds()).padStart(2, "0")}Z`;
 
@@ -151,7 +177,7 @@ const HeroDiagram = () => {
                 animate={{ opacity: [1, 0.4, 1], scale: [1, 0.9, 1] }}
                 transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
               />
-              <span className="text-xs font-mono text-primary-foreground/80 font-medium">Evidence Receipt</span>
+              <span className="text-xs font-mono text-primary-foreground/80 font-medium">{receiptLabel}</span>
             </div>
             <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
               <div><span className="font-bold text-primary-foreground">event_type:</span> kyc_verification</div>
@@ -178,9 +204,9 @@ const HeroDiagram = () => {
       </div>
 
       <div className="flex items-center gap-3 mt-6 w-full">
-        <img src={logoMadrid} alt="Madrid City Council" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
+        <img src={logoMadrid} alt={madridAlt} className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
         <span className="text-sm text-primary-foreground leading-tight flex-1">
-          iCommunity powers document traceability in public procurement processes for the Madrid City Council
+          {madridText}
         </span>
       </div>
     </div>
