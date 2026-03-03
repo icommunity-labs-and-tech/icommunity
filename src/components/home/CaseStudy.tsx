@@ -20,6 +20,7 @@ import caseLogaltyImage from "@/assets/case-logalty.jpg";
 import logoLogalty from "@/assets/logo-logalty.png";
 import caseAirtraceImage from "@/assets/case-airtrace.jpg";
 import logoAirtrace from "@/assets/logo-airtrace.png";
+import logoCertifika from "@/assets/logo-certifika.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
