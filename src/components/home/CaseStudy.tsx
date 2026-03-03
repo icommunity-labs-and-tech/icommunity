@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
+import logoEstrellaGalicia from "@/assets/logo-estrella-galicia.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -23,6 +24,7 @@ interface CaseData {
   body: string;
   benefits: { icon: React.ElementType; text: string }[];
   testimonial?: { quote: string; author: string; role: string };
+  logo?: string;
   gradient: string;
 }
 
@@ -52,6 +54,7 @@ const cases: CaseData[] = [
   {
     tag: "Caso Industrial",
     title: "ESTRELLA GALICIA",
+    logo: logoEstrellaGalicia,
     description: "Transformación de procesos logísticos en evidencia verificable preparada para auditoría.",
     stats: [
       { value: "✓", label: "Distribución verificable" },
@@ -184,7 +187,10 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
         <div className="flex-1 p-5 flex flex-col justify-between" style={{ background: c.gradient }}>
           <div>
             <p className="text-xs font-semibold tracking-widest text-primary-foreground/60 uppercase mb-2">{c.tag}</p>
-            <h3 className="text-3xl font-extrabold text-primary-foreground mb-2 tracking-tight">{c.title}</h3>
+            <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-3xl font-extrabold text-primary-foreground tracking-tight">{c.title}</h3>
+              {c.logo && <img src={c.logo} alt={`${c.title} logo`} className="h-10 w-auto object-contain" />}
+            </div>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
 
