@@ -1,75 +1,45 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import {
-  Shield, Globe2, Scale, ArrowRight, Send,
-} from "lucide-react";
+import { Shield, Globe2, Scale, Send } from "lucide-react";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import heroImg from "@/assets/hero-empresa.png";
 
-/* ── Fade-in ─────────────────────────────────── */
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay }}
-      className={className}
-    >
+    <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay }} className={className}>
       {children}
     </motion.div>
   );
 };
 
-/* ── Section ─────────────────────────────────── */
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <section className={`ic-section ${className}`}>{children}</section>
 );
 
-/* ── Data ─────────────────────────────────────── */
 const principles = [
-  {
-    icon: Shield,
-    title: "Independencia",
-    text: "Infraestructura neutral, no dependiente de operadores específicos.",
-  },
-  {
-    icon: Globe2,
-    title: "Interoperabilidad",
-    text: "Integración con sistemas empresariales y marcos regulatorios.",
-  },
-  {
-    icon: Scale,
-    title: "Preparación regulatoria",
-    text: "Diseñada para auditoría y supervisión desde su concepción.",
-  },
+  { icon: Shield, title: "Independence", text: "Neutral infrastructure, not dependent on specific operators." },
+  { icon: Globe2, title: "Interoperability", text: "Integration with enterprise systems and regulatory frameworks." },
+  { icon: Scale, title: "Regulatory readiness", text: "Designed for audit and oversight from its conception." },
 ];
 
 const interestOptions = [
-  "Integración tecnológica",
-  "Supervisión regulatoria",
-  "Proyecto institucional",
-  "Colaboración estratégica",
-  "Información general",
+  "Technology integration",
+  "Regulatory oversight",
+  "Institutional project",
+  "Strategic collaboration",
+  "General information",
 ];
 
-/* ── Page ─────────────────────────────────────── */
 const Empresa = () => {
   const [sending, setSending] = useState(false);
   const [interest, setInterest] = useState("");
@@ -99,11 +69,11 @@ const Empresa = () => {
 
       if (error) throw error;
 
-      toast({ title: "Mensaje enviado", description: "Responderemos en un plazo aproximado de 48 horas." });
+      toast({ title: "Message sent", description: "We will respond within approximately 48 hours." });
       form.reset();
       setInterest("");
     } catch {
-      toast({ title: "Error", description: "No se pudo enviar el mensaje. Inténtalo de nuevo.", variant: "destructive" });
+      toast({ title: "Error", description: "Could not send the message. Please try again.", variant: "destructive" });
     } finally {
       setSending(false);
     }
@@ -113,7 +83,6 @@ const Empresa = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── HERO ──────────────────────────────── */}
       <div className="hero pt-16">
         <div className="hero-aurora" />
         <div className="hero-noise" />
@@ -123,24 +92,19 @@ const Empresa = () => {
               <div>
                 <FadeIn>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">
-                    Infraestructura tecnológica independiente{" "}
-                    <span className="ic-text-gradient">para sistemas regulados</span>
+                    Independent technology infrastructure{" "}
+                    <span className="ic-text-gradient">for regulated systems</span>
                   </h1>
                 </FadeIn>
                 <FadeIn delay={0.1}>
                   <p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed max-w-xl">
-                    iCommunity desarrolla y opera infraestructura de evidencia verificable preparada para auditoría, supervisión y cumplimiento regulatorio desde el origen.
+                    iCommunity develops and operates verifiable evidence infrastructure ready for audit, oversight, and regulatory compliance from the origin.
                   </p>
                 </FadeIn>
               </div>
               <FadeIn delay={0.2} className="hidden md:block">
                 <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/30 border border-primary-foreground/10">
-                  <img
-                    src={heroImg}
-                    alt="Infraestructura tecnológica institucional"
-                    className="w-full h-auto object-cover"
-                    loading="eager"
-                  />
+                  <img src={heroImg} alt="Institutional technology infrastructure" className="w-full h-auto object-cover" loading="eager" />
                 </div>
               </FadeIn>
             </div>
@@ -148,31 +112,28 @@ const Empresa = () => {
         </div>
       </div>
 
-      {/* ── MISIÓN ────────────────────────────── */}
       <Section>
         <div className="ic-container max-w-3xl text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Nuestra <span className="ic-text-gradient">misión</span>
+              Our <span className="ic-text-gradient">mission</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Transformar procesos digitales en evidencia verificable, interoperable y preparada para supervisión regulatoria. Diseñamos infraestructura neutral que permite a organizaciones públicas y privadas operar con integridad probatoria desde el origen.
+              Transform digital processes into verifiable, interoperable evidence ready for regulatory oversight. We design neutral infrastructure that enables public and private organizations to operate with evidentiary integrity from the origin.
             </p>
           </FadeIn>
         </div>
       </Section>
 
-      {/* ── PRINCIPIOS ────────────────────────── */}
       <Section className="bg-secondary/30">
         <div className="ic-container max-w-5xl">
           <FadeIn className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Nuestros <span className="ic-text-gradient">principios</span>
+              Our <span className="ic-text-gradient">principles</span>
             </h2>
           </FadeIn>
-
           <div className="grid md:grid-cols-3 gap-6">
             {principles.map((p, i) => (
               <FadeIn key={p.title} delay={i * 0.1}>
@@ -189,64 +150,57 @@ const Empresa = () => {
         </div>
       </Section>
 
-      {/* ── ENFOQUE EUROPEO ───────────────────── */}
       <Section>
         <div className="ic-container max-w-3xl text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Compromiso con estándares y{" "}
-              <span className="ic-text-gradient">regulación europea</span>
+              Commitment to European{" "}
+              <span className="ic-text-gradient">standards and regulation</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Alineados con marcos regulatorios europeos y proyectos institucionales, desarrollamos infraestructura preparada para entornos regulados y supervisión pública.
+              Aligned with European regulatory frameworks and institutional projects, we develop infrastructure ready for regulated environments and public oversight.
             </p>
           </FadeIn>
         </div>
       </Section>
 
-      {/* ── CONTACTO INSTITUCIONAL ────────────── */}
       <Section className="bg-secondary/30">
         <div className="ic-container max-w-2xl">
           <FadeIn className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Contacto <span className="ic-text-gradient">institucional</span>
+              Institutional <span className="ic-text-gradient">contact</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl border border-border bg-card p-8 md:p-10 space-y-5 shadow-sm"
-            >
+            <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-8 md:p-10 space-y-5 shadow-sm">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <Label htmlFor="emp-name" className="mb-1.5 block text-sm">Nombre *</Label>
-                  <Input id="emp-name" name="emp-name" required placeholder="Tu nombre" maxLength={100} />
+                  <Label htmlFor="emp-name" className="mb-1.5 block text-sm">Name *</Label>
+                  <Input id="emp-name" name="emp-name" required placeholder="Your name" maxLength={100} />
                 </div>
                 <div>
-                  <Label htmlFor="emp-company" className="mb-1.5 block text-sm">Empresa *</Label>
-                  <Input id="emp-company" name="emp-company" required placeholder="Tu empresa" maxLength={100} />
+                  <Label htmlFor="emp-company" className="mb-1.5 block text-sm">Company *</Label>
+                  <Input id="emp-company" name="emp-company" required placeholder="Your company" maxLength={100} />
                 </div>
               </div>
-
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <Label htmlFor="emp-role" className="mb-1.5 block text-sm">Cargo *</Label>
-                  <Input id="emp-role" name="emp-role" required placeholder="Tu cargo" maxLength={100} />
+                  <Label htmlFor="emp-role" className="mb-1.5 block text-sm">Role *</Label>
+                  <Input id="emp-role" name="emp-role" required placeholder="Your role" maxLength={100} />
                 </div>
                 <div>
                   <Label htmlFor="emp-email" className="mb-1.5 block text-sm">Email *</Label>
-                  <Input id="emp-email" name="emp-email" type="email" required placeholder="tu@empresa.com" maxLength={255} />
+                  <Input id="emp-email" name="emp-email" type="email" required placeholder="you@company.com" maxLength={255} />
                 </div>
               </div>
-
               <div>
-                <Label className="mb-1.5 block text-sm">Tipo de interés *</Label>
+                <Label className="mb-1.5 block text-sm">Type of interest *</Label>
                 <Select value={interest} onValueChange={setInterest} required>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona una opción" />
+                    <SelectValue placeholder="Select an option" />
                   </SelectTrigger>
                   <SelectContent>
                     {interestOptions.map((opt) => (
@@ -255,23 +209,20 @@ const Empresa = () => {
                   </SelectContent>
                 </Select>
               </div>
-
               <div>
-                <Label htmlFor="emp-message" className="mb-1.5 block text-sm">Mensaje</Label>
-                <Textarea id="emp-message" name="emp-message" placeholder="Describe tu consulta..." rows={4} maxLength={1000} />
+                <Label htmlFor="emp-message" className="mb-1.5 block text-sm">Message</Label>
+                <Textarea id="emp-message" name="emp-message" placeholder="Describe your inquiry..." rows={4} maxLength={1000} />
               </div>
-
               <Button
                 type="submit"
                 disabled={!interest || sending}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-lg ic-gradient-cta px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
               >
-                {sending ? "Enviando..." : "Contactar con iCommunity"}
+                {sending ? "Sending..." : "Contact iCommunity"}
                 {!sending && <Send className="w-4 h-4" />}
               </Button>
-
               <p className="text-xs text-muted-foreground text-center pt-1">
-                Responderemos en un plazo aproximado de 48 horas.
+                We will respond within approximately 48 hours.
               </p>
             </form>
           </FadeIn>

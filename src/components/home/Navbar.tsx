@@ -10,12 +10,12 @@ const solutionsLinks = [
 ];
 
 const navLinks = [
-  { label: "¿Cómo funciona?", href: "#arquitectura-de-confianza" },
-  { label: "Casos de uso", href: "#segmentos" },
-  { label: "Seguridad", href: "#seguridad" },
-  { label: "Recursos", href: "#recursos" },
+  { label: "How it works", href: "#trust-architecture" },
+  { label: "Use cases", href: "#segments" },
+  { label: "Security", href: "#security" },
+  { label: "Resources", href: "#resources" },
   { label: "Partners", href: "/partners", isRoute: true },
-  { label: "Empresa", href: "/empresa", isRoute: true },
+  { label: "Company", href: "/empresa", isRoute: true },
 ];
 
 const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
@@ -48,15 +48,13 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           : "bg-transparent border-b border-transparent"
       }`}
       role="navigation"
-      aria-label="Navegación principal"
+      aria-label="Main navigation"
     >
       <div className="ic-container flex items-center justify-between h-16">
-        {/* Logo */}
         <a href="#" className="flex items-center">
           <img src={logo} alt="iCommunity" className="h-7" />
         </a>
 
-        {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link, idx) => (
             <React.Fragment key={link.label}>
@@ -75,14 +73,13 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                   {link.label}
                 </a>
               )}
-              {/* Insert Soluciones dropdown after "Arquitectura" (index 1) */}
               {idx === 1 && (
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setSolutionsOpen(!solutionsOpen)}
                     className="flex items-center gap-1 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                   >
-                    Soluciones
+                    Solutions
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
                   </button>
                   <AnimatePresence>
@@ -115,24 +112,21 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           ))}
         </div>
 
-        {/* CTAs */}
         <div className="hidden lg:flex items-center gap-3">
           <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-            Solicitar demo
+            Request demo
           </button>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="lg:hidden p-2 text-primary-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menú"
+          aria-label="Menu"
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -163,8 +157,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                   </a>
                 )
               ))}
-              {/* Mobile Soluciones */}
-              <div className="text-xs font-medium text-primary-foreground/40 uppercase tracking-wide pt-2">Soluciones</div>
+              <div className="text-xs font-medium text-primary-foreground/40 uppercase tracking-wide pt-2">Solutions</div>
               {solutionsLinks.map((s) => (
                 <a
                   key={s.label}
@@ -178,7 +171,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                 </a>
               ))}
               <button onClick={() => { setMobileOpen(false); onOpenModal?.(); }} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-4 py-2.5 text-sm font-medium text-primary-foreground mt-2 w-full">
-                Solicitar demo
+                Request demo
               </button>
             </div>
           </motion.div>

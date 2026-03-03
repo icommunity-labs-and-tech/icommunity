@@ -42,167 +42,160 @@ interface CaseData {
 }
 
 const cases: CaseData[] = [
-  // 1. AENOR
   {
-    tag: "Caso Certificación",
+    tag: "Certification Case",
     title: "AENOR",
     logo: logoAenor,
     logoClass: "h-6 md:h-7",
-    description: "Certificaciones convertidas en evidencia verificable preparada para supervisión.",
+    description: "Certifications turned into verifiable evidence ready for oversight.",
     stats: [
-      { value: "✓", label: "Verificación independiente en tiempo real" },
-      { value: "✓", label: "Evidencia digital asociada a cada certificación" },
+      { value: "✓", label: "Real-time independent verification" },
+      { value: "✓", label: "Digital evidence linked to each certification" },
     ],
     image: caseAenorImage,
-    imageAlt: "Sede corporativa AENOR",
-    badge: "Caso de éxito",
-    heading: "Certificaciones preparadas para verificación inmediata",
-    body: "AENOR integró iCommunity como infraestructura para generar evidencia verificable asociada a sus procesos de certificación. Cada emisión, validación o actualización queda registrada como prueba independiente, disponible para verificación inmediata y preparada para supervisión regulatoria desde el origen.",
+    imageAlt: "AENOR corporate headquarters",
+    badge: "Case study",
+    heading: "Certifications ready for immediate verification",
+    body: "AENOR integrated iCommunity as infrastructure to generate verifiable evidence associated with its certification processes. Each issuance, validation, or update is recorded as independent proof, available for immediate verification and ready for regulatory oversight from the origin.",
     benefits: [
-      { icon: FileBadge, text: "Evidencia digital asociada a cada certificación" },
-      { icon: ScanSearch, text: "Verificación inmediata por terceros" },
-      { icon: Lock, text: "Integridad probatoria garantizada" },
-      { icon: BadgeCheck, text: "Auditoría preparada desde la emisión" },
+      { icon: FileBadge, text: "Digital evidence linked to each certification" },
+      { icon: ScanSearch, text: "Immediate verification by third parties" },
+      { icon: Lock, text: "Guaranteed evidentiary integrity" },
+      { icon: BadgeCheck, text: "Audit-ready from issuance" },
     ],
     gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
   },
-  // 2. Ayuntamiento
   {
-    tag: "Caso Institucional",
-    title: "AYUNTAMIENTO DE MADRID",
+    tag: "Institutional Case",
+    title: "MADRID CITY COUNCIL",
     logo: logoAytoMadrid,
-    description: "Infraestructura de evidencia verificable en procesos de contratación pública.",
+    description: "Verifiable evidence infrastructure in public procurement processes.",
     stats: [
-      { value: "✓", label: "Trazabilidad documental certificada" },
-      { value: "✓", label: "Evidencia preparada para auditoría" },
+      { value: "✓", label: "Certified document traceability" },
+      { value: "✓", label: "Audit-ready evidence" },
     ],
     image: caseAytoMadridImage,
-    imageAlt: "Ayuntamiento de Madrid",
-    badge: "Caso de éxito",
-    heading: "Contratación pública con evidencia verificable desde el origen",
-    body: "iCommunity fue implementado como capa de infraestructura para generar evidencia independiente en procesos de contratación pública. Cada documento, validación y evento administrativo queda registrado como prueba verificable, disponible para auditoría y supervisión regulatoria sin depender del operador del sistema.",
+    imageAlt: "Madrid City Council",
+    badge: "Case study",
+    heading: "Public procurement with verifiable evidence from the origin",
+    body: "iCommunity was implemented as an infrastructure layer to generate independent evidence in public procurement processes. Each document, validation, and administrative event is recorded as verifiable proof, available for audit and regulatory oversight without relying on the system operator.",
     benefits: [
-      { icon: Landmark, text: "Registro verificable de cada hito administrativo" },
-      { icon: Scale, text: "Evidencia independiente ante órganos de control" },
-      { icon: SearchCheck, text: "Auditoría inmediata sin reconstrucción posterior" },
-      { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
+      { icon: Landmark, text: "Verifiable record of each administrative milestone" },
+      { icon: Scale, text: "Independent evidence before oversight bodies" },
+      { icon: SearchCheck, text: "Immediate audit without post-hoc reconstruction" },
+      { icon: BookCheck, text: "Public oversight ready from the origin" },
     ],
     gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
   },
-  // 3. DATIA
   {
-    tag: "Proyecto Europeo",
+    tag: "European Project",
     title: "DATIA",
-    description: "Nueva generación de centros de datos sostenibles con gemelo digital, IA y trazabilidad verificable.",
+    description: "Next-generation sustainable data centers with digital twin, AI, and verifiable traceability.",
     stats: [
-      { value: "5,7M€", label: "Presupuesto" },
+      { value: "€5.7M", label: "Budget" },
       { value: "11", label: "Partners" },
     ],
     link: { url: "https://datiaproject.es", label: "datiaproject.es" },
     image: caseDataImage,
     logo: logoDatia,
-    imageAlt: "Técnico en centro de datos DATIA",
-    badge: "Caso de éxito",
-    heading: "Pasaporte Digital para todos los componentes de un CPD",
-    body: "CertyPass ha sido seleccionado como la infraestructura de trazabilidad del proyecto DATIA. Cada componente del centro de datos — desde servidores hasta sistemas de refrigeración — contará con un pasaporte digital que garantiza su origen, eficiencia energética y ciclo de vida completo.",
+    imageAlt: "Technician at DATIA data center",
+    badge: "Case study",
+    heading: "Digital Passport for all data center components",
+    body: "CertyPass has been selected as the traceability infrastructure for the DATIA project. Every data center component — from servers to cooling systems — will have a digital passport that guarantees its origin, energy efficiency, and complete lifecycle.",
     benefits: [
-      { icon: LayoutGrid, text: "Trazabilidad de cada componente del CPD" },
-      { icon: Leaf, text: "Ecodiseño y eficiencia energética certificada" },
-      { icon: BrainCircuit, text: "Gemelo digital e IA predictiva integrados" },
-      { icon: ShieldCheck, text: "Infraestructura de certificación verificable" },
+      { icon: LayoutGrid, text: "Traceability of each data center component" },
+      { icon: Leaf, text: "Certified eco-design and energy efficiency" },
+      { icon: BrainCircuit, text: "Integrated digital twin and predictive AI" },
+      { icon: ShieldCheck, text: "Verifiable certification infrastructure" },
     ],
     gradient: "linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(225, 60%, 28%) 100%)",
   },
-  // 4. Logalty
   {
-    tag: "Caso Evidencia Legal",
+    tag: "Legal Evidence Case",
     title: "LOGALTY",
     logo: logoLogalty,
     logoClass: "h-6 md:h-7",
-    description: "Evidencia electrónica preparada para entornos jurídicos y regulatorios.",
+    description: "Electronic evidence ready for legal and regulatory environments.",
     stats: [
-      { value: "✓", label: "Evidencia verificable de eventos contractuales" },
-      { value: "✓", label: "Preparado para validación ante terceros" },
+      { value: "✓", label: "Verifiable evidence of contractual events" },
+      { value: "✓", label: "Ready for third-party validation" },
     ],
     image: caseLogaltyImage,
-    imageAlt: "Oficina corporativa Logalty",
-    badge: "Caso de éxito",
-    heading: "Procesos contractuales convertidos en evidencia verificable",
-    body: "Logalty integró iCommunity como capa adicional de evidencia verificable en sus procesos de contratación y notificación electrónica. Cada evento contractual queda registrado como prueba independiente, fortaleciendo la trazabilidad y preparando la información para auditoría o supervisión regulatoria desde el origen.",
+    imageAlt: "Logalty corporate office",
+    badge: "Case study",
+    heading: "Contractual processes turned into verifiable evidence",
+    body: "Logalty integrated iCommunity as an additional layer of verifiable evidence in its contracting and electronic notification processes. Each contractual event is recorded as independent proof, strengthening traceability and preparing information for audit or regulatory oversight from the origin.",
     benefits: [
-      { icon: FileText, text: "Evidencia verificable de eventos contractuales" },
-      { icon: Link2, text: "Trazabilidad independiente del proveedor" },
-      { icon: Handshake, text: "Preparado para validación ante terceros" },
-      { icon: ShieldPlus, text: "Soporte probatorio reforzado" },
+      { icon: FileText, text: "Verifiable evidence of contractual events" },
+      { icon: Link2, text: "Provider-independent traceability" },
+      { icon: Handshake, text: "Ready for third-party validation" },
+      { icon: ShieldPlus, text: "Reinforced evidentiary support" },
     ],
     gradient: "linear-gradient(135deg, hsl(230, 35%, 14%) 0%, hsl(235, 45%, 26%) 100%)",
   },
-  // 5. Salus Coop
   {
-    tag: "Caso Salud",
+    tag: "Healthcare Case",
     title: "SALUS COOP",
     logo: logoSalusCoop,
-    description: "Protección de datos sensibles con evidencia verificable desde el origen.",
+    description: "Sensitive data protection with verifiable evidence from the origin.",
     stats: [
-      { value: "✓", label: "Evidencia verificable del uso de datos" },
-      { value: "✓", label: "Preparado para supervisión regulatoria" },
+      { value: "✓", label: "Verifiable evidence of data usage" },
+      { value: "✓", label: "Ready for regulatory oversight" },
     ],
     image: caseSalusCoopImage,
-    imageAlt: "Laboratorio de investigación médica",
-    badge: "Caso de éxito",
-    heading: "Estudios médicos con identidad protegida y evidencia verificable",
-    body: "Salus Coop integró iCommunity como infraestructura para generar evidencia verificable sobre el uso de datos en estudios médicos. Cada acceso, tratamiento o validación queda registrado como prueba independiente, garantizando anonimato, integridad y disponibilidad ante auditoría o supervisión regulatoria.",
+    imageAlt: "Medical research laboratory",
+    badge: "Case study",
+    heading: "Medical studies with protected identity and verifiable evidence",
+    body: "Salus Coop integrated iCommunity as infrastructure to generate verifiable evidence on data usage in medical studies. Each access, treatment, or validation is recorded as independent proof, ensuring anonymity, integrity, and availability for audit or regulatory oversight.",
     benefits: [
-      { icon: UserCheck, text: "Identidad pseudonimizada desde el origen" },
-      { icon: Database, text: "Evidencia verificable del uso de datos" },
-      { icon: ClipboardList, text: "Registro independiente de accesos y validaciones" },
-      { icon: BadgeCheck, text: "Cumplimiento preparado para auditoría" },
+      { icon: UserCheck, text: "Pseudonymized identity from the origin" },
+      { icon: Database, text: "Verifiable evidence of data usage" },
+      { icon: ClipboardList, text: "Independent record of access and validations" },
+      { icon: BadgeCheck, text: "Audit-ready compliance" },
     ],
     gradient: "linear-gradient(135deg, hsl(190, 40%, 12%) 0%, hsl(195, 50%, 24%) 100%)",
   },
-  // 6. AirTrace
   {
-    tag: "Caso IoT / Integridad Técnica",
+    tag: "IoT / Technical Integrity Case",
     title: "AIRTRACE",
     logo: logoAirtrace,
-    description: "Integridad verificable de dispositivos y datos capturados en origen.",
+    description: "Verifiable integrity of devices and data captured at the source.",
     stats: [
-      { value: "✓", label: "Evidencia de firmware certificado" },
-      { value: "✓", label: "Registro verificable de lecturas IoT" },
+      { value: "✓", label: "Certified firmware evidence" },
+      { value: "✓", label: "Verifiable record of IoT readings" },
     ],
     image: caseAirtraceImage,
-    imageAlt: "Dispositivos IoT AirTrace en laboratorio técnico",
-    badge: "Caso de éxito",
-    heading: "Dispositivos IoT con integridad verificable desde el origen",
-    body: "AirTrace integró iCommunity como infraestructura para generar evidencia verificable sobre la integridad de sus dispositivos IoT y las lecturas capturadas en campo. Cada validación de firmware y cada dato registrado queda asociado a una prueba independiente, preparada para auditoría técnica o supervisión regulatoria desde el origen.",
+    imageAlt: "AirTrace IoT devices in technical lab",
+    badge: "Case study",
+    heading: "IoT devices with verifiable integrity from the origin",
+    body: "AirTrace integrated iCommunity as infrastructure to generate verifiable evidence on the integrity of its IoT devices and field-captured readings. Each firmware validation and recorded data point is associated with independent proof, ready for technical audit or regulatory oversight from the origin.",
     benefits: [
-      { icon: Cpu, text: "Certificación verificable de firmware" },
-      { icon: Radio, text: "Evidencia independiente de lecturas IoT" },
-      { icon: Waypoints, text: "Trazabilidad técnica desde el dispositivo" },
-      { icon: BadgeCheck, text: "Preparado para auditoría y validación externa" },
+      { icon: Cpu, text: "Verifiable firmware certification" },
+      { icon: Radio, text: "Independent evidence of IoT readings" },
+      { icon: Waypoints, text: "Technical traceability from the device" },
+      { icon: BadgeCheck, text: "Ready for audit and external validation" },
     ],
     gradient: "linear-gradient(135deg, hsl(210, 40%, 12%) 0%, hsl(215, 50%, 24%) 100%)",
   },
-  // 7. Estrella Galicia
   {
-    tag: "Caso Industrial",
+    tag: "Industrial Case",
     title: "ESTRELLA GALICIA",
     logo: logoEstrellaGalicia,
-    description: "Transformación de procesos logísticos en evidencia verificable preparada para auditoría.",
+    description: "Transformation of logistics processes into verifiable evidence ready for audit.",
     stats: [
-      { value: "✓", label: "Distribución verificable" },
-      { value: "✓", label: "Reducción pérdidas" },
+      { value: "✓", label: "Verifiable distribution" },
+      { value: "✓", label: "Loss reduction" },
     ],
     image: caseEstrellaImage,
-    imageAlt: "Instalaciones logísticas de Estrella Galicia",
-    badge: "Caso de éxito",
-    heading: "Cadena de suministro preparada para auditoría",
-    body: "Estrella Galicia implementó iCommunity como capa de infraestructura para generar evidencia verificable en su cadena de suministro. Cada evento crítico — desde producción hasta distribución — queda registrado como prueba independiente, lista para auditoría y supervisión regulatoria desde el origen.",
+    imageAlt: "Estrella Galicia logistics facilities",
+    badge: "Case study",
+    heading: "Supply chain ready for audit",
+    body: "Estrella Galicia implemented iCommunity as an infrastructure layer to generate verifiable evidence in its supply chain. Each critical event — from production to distribution — is recorded as independent proof, ready for audit and regulatory oversight from the origin.",
     benefits: [
-      { icon: FileCheck, text: "Evidencia independiente en cada etapa de la cadena" },
-      { icon: ClipboardCheck, text: "Registro verificable de eventos críticos" },
-      { icon: Eye, text: "Auditoría inmediata sin dependencia del operador" },
-      { icon: ShieldAlert, text: "Verificación externa preparada para terceros" },
+      { icon: FileCheck, text: "Independent evidence at each chain stage" },
+      { icon: ClipboardCheck, text: "Verifiable record of critical events" },
+      { icon: Eye, text: "Immediate audit without operator dependency" },
+      { icon: ShieldAlert, text: "External verification ready for third parties" },
     ],
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
   },
@@ -232,14 +225,11 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
     return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
 
-  // Autoplay every 3 seconds, pause on hover
   useEffect(() => {
     if (!emblaApi) return;
     let timer: ReturnType<typeof setTimeout>;
 
     const scheduleNext = () => {
-      const currentIndex = emblaApi.selectedScrollSnap();
-      // AENOR (0) and Ayuntamiento (1) get 6s, rest get 3s
       const delay = 6000;
       timer = setTimeout(() => {
         emblaApi.scrollNext();
@@ -266,7 +256,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
   }, [emblaApi]);
 
   return (
-    <section id="casos" className="ic-section bg-secondary/30" ref={sectionRef}>
+    <section id="cases" className="ic-section bg-secondary/30" ref={sectionRef}>
       <div className="ic-container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -275,7 +265,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Casos de <span className="ic-text-gradient">éxito</span>
+            Case <span className="ic-text-gradient">Studies</span>
           </h2>
         </motion.div>
 
@@ -285,7 +275,6 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
           transition={{ duration: 0.6, delay: 0.15 }}
           className="relative"
         >
-          {/* Carousel */}
           <div ref={emblaRef} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_2px_20px_-4px_hsl(225_86%_58%/0.06)]">
             <div className="flex">
               {cases.map((c, i) => (
@@ -296,23 +285,21 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
             </div>
           </div>
 
-          {/* Arrows */}
           <button
             onClick={() => emblaApi?.scrollPrev()}
             className="absolute -left-5 md:-left-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-border bg-card shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:border-primary/40 transition-all"
-            aria-label="Caso anterior"
+            aria-label="Previous case"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => emblaApi?.scrollNext()}
             className="absolute -right-5 md:-right-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-border bg-card shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:border-primary/40 transition-all"
-            aria-label="Siguiente caso"
+            aria-label="Next case"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* Dots */}
           <div className="flex justify-center gap-2 mt-5">
             {cases.map((_, i) => (
               <button
@@ -321,7 +308,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   i === selectedIndex ? "bg-primary w-5" : "bg-border hover:bg-muted-foreground/40"
                 }`}
-                aria-label={`Ir al caso ${i + 1}`}
+                aria-label={`Go to case ${i + 1}`}
               />
             ))}
           </div>
@@ -331,14 +318,11 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
   );
 };
 
-/* ── Individual Card ─────────────────────────────── */
-
 function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgType?: OrganizationType) => void }) {
   const c = data;
 
   return (
     <div className="grid md:grid-cols-2 md:min-h-[480px]">
-      {/* Left */}
       <div className="flex flex-col">
         <div className="relative h-36 md:h-44 overflow-hidden shrink-0">
           <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
@@ -390,7 +374,6 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
         </div>
       </div>
 
-      {/* Right */}
       <div className="p-5 md:p-6 flex flex-col justify-center">
         <span className="inline-block text-[11px] font-semibold tracking-widest text-primary uppercase mb-4 px-3 py-1 rounded-full bg-accent w-fit">
           {c.badge}
@@ -409,12 +392,11 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
           ))}
         </div>
 
-
         <button
           onClick={() => onOpenModal?.("partner-integrador")}
           className="inline-flex items-center justify-center gap-2 rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-sm shadow-primary/15 w-fit"
         >
-          Solicitar una demo similar
+          Request a similar demo
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

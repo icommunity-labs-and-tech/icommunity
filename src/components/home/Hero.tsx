@@ -42,7 +42,6 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 
   return (
     <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
-      {/* Video background */}
       <video
         ref={videoRef}
         autoPlay
@@ -53,35 +52,31 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
-      {/* Dark overlay for readability */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(5,10,25,0.25)' }} />
       <div className="hero-noise" />
 
       <div className="hero-content ic-container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            {/* Eyebrow */}
             <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-6">
               <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">
-                Infraestructura de confianza para sistemas regulados
+                Trust infrastructure for regulated systems
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[540px]">
-              Convierte eventos digitales en pruebas auditables
+              Turn digital events into auditable evidence
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-[480px] leading-relaxed">
-              Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen.
+              Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin.
             </p>
 
-            {/* Bullets */}
             <div className="flex flex-col gap-3 mb-10 max-w-[480px]">
-              {["Trazabilidad auditada desde el origen", "Integración directa vía API", "Certificación independiente para reguladores"].map((b) => (
+              {["Audited traceability from the origin", "Direct API integration", "Independent certification for regulators"].map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
                   <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
@@ -89,24 +84,22 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               ))}
             </div>
 
-            {/* CTAs - centered under bullets */}
             <div className="flex flex-wrap gap-4 justify-center max-w-[480px]">
               <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
-                Solicitar demo técnica
+                Request technical demo
               </button>
               <button
                 onClick={() => {
-                  const el = document.getElementById("arquitectura-de-confianza");
+                  const el = document.getElementById("trust-architecture");
                   el?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/20 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/5 transition-colors"
               >
-                Ver arquitectura
+                View architecture
               </button>
             </div>
           </motion.div>
 
-          {/* Right: Diagram */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,9 +115,9 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
 };
 
 const steps = [
-  { step: "1", title: "Evento", desc: "Verificación KYC completada" },
-  { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
-  { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
+  { step: "1", title: "Event", desc: "KYC verification completed" },
+  { step: "2", title: "Certification", desc: "Hash + timestamp + immutable record" },
+  { step: "3", title: "Evidence", desc: "Verifiable and auditable receipt" },
 ];
 
 const HeroDiagram = () => {
@@ -184,11 +177,10 @@ const HeroDiagram = () => {
         </div>
       </div>
 
-      {/* Madrid badge */}
       <div className="flex items-center gap-3 mt-6 w-full">
-        <img src={logoMadrid} alt="Ayuntamiento de Madrid" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
+        <img src={logoMadrid} alt="Madrid City Council" className="h-11 w-auto flex-shrink-0 brightness-0 invert" />
         <span className="text-sm text-primary-foreground leading-tight flex-1">
-          iCommunity impulsa la trazabilidad documental en procesos de contratación pública del Ayuntamiento de Madrid
+          iCommunity powers document traceability in public procurement processes for the Madrid City Council
         </span>
       </div>
     </div>

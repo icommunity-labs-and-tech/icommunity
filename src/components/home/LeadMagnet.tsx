@@ -32,11 +32,11 @@ const LeadMagnet = () => {
 
       if (error) throw error;
 
-      toast({ title: "Solicitud enviada", description: "Te enviaremos el whitepaper pronto." });
+      toast({ title: "Request sent", description: "We will send you the whitepaper soon." });
       setModalOpen(false);
     } catch (err) {
       console.error(err);
-      toast({ title: "Error", description: "No se pudo enviar la solicitud.", variant: "destructive" });
+      toast({ title: "Error", description: "Could not send the request.", variant: "destructive" });
     } finally {
       setSending(false);
     }
@@ -44,7 +44,7 @@ const LeadMagnet = () => {
 
   return (
     <>
-      <section id="recursos" className="ic-section bg-background" ref={ref}>
+      <section id="resources" className="ic-section bg-background" ref={ref}>
         <div className="ic-container">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -54,26 +54,26 @@ const LeadMagnet = () => {
           >
             <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6">
               <span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">
-                Documento técnico
+                Technical document
               </span>
             </div>
             <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-6">
               <FileText className="w-7 h-7 text-primary-foreground/80" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4 max-w-xl mx-auto">
-              Whitepaper: Evidencia verificable para KYC bajo regulación UE (MiCA)
+              Whitepaper: Verifiable Evidence for KYC under EU Regulation (MiCA)
             </h2>
             <p className="text-primary-foreground/60 mb-2 max-w-lg mx-auto">
-              Descubre cómo construir una capa de evidencia regulatoria independiente y preparada para auditoría.
+              Discover how to build an independent regulatory evidence layer ready for audit.
             </p>
             <p className="text-primary-foreground/40 text-sm mb-8 max-w-lg mx-auto">
-              Para equipos técnicos, reguladores y responsables de compliance.
+              For technical teams, regulators, and compliance officers.
             </p>
             <button
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center rounded-lg bg-primary-foreground px-6 py-3 text-sm font-semibold text-ic-navy hover:bg-primary-foreground/90 transition-colors"
             >
-              Descargar
+              Download
             </button>
           </motion.div>
         </div>
@@ -90,19 +90,19 @@ const LeadMagnet = () => {
             <button onClick={() => setModalOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
               <X className="w-5 h-5" />
             </button>
-            <h3 className="text-xl font-bold text-foreground mb-2">Descargar Whitepaper</h3>
-            <p className="text-sm text-muted-foreground mb-6">Rellena estos datos y te enviaremos el documento.</p>
+            <h3 className="text-xl font-bold text-foreground mb-2">Download Whitepaper</h3>
+            <p className="text-sm text-muted-foreground mb-6">Fill in these details and we'll send you the document.</p>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="text-sm font-medium text-foreground block mb-1.5">Empresa</label>
-                <input name="wp-company" type="text" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tu empresa" />
+                <label className="text-sm font-medium text-foreground block mb-1.5">Company</label>
+                <input name="wp-company" type="text" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Your company" />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground block mb-1.5">Email corporativo</label>
-                <input name="wp-email" type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="tu@empresa.com" />
+                <label className="text-sm font-medium text-foreground block mb-1.5">Corporate email</label>
+                <input name="wp-email" type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="you@company.com" />
               </div>
               <button type="submit" disabled={sending} className="w-full rounded-lg ic-gradient-cta py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50">
-                {sending ? "Enviando..." : "Descargar ahora"}
+                {sending ? "Sending..." : "Download now"}
               </button>
             </form>
           </motion.div>

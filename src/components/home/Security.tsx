@@ -5,29 +5,29 @@ import { Fingerprint, ClipboardList, ShieldCheck } from "lucide-react";
 const layers = [
   {
     icon: Fingerprint,
-    title: "Integridad criptográfica",
+    title: "Cryptographic integrity",
     properties: [
-      "Hash SHA-256 por evento certificado",
-      "Sellado temporal verificable e independiente",
-      "Registro inmutable de evidencia",
+      "SHA-256 hash per certified event",
+      "Verifiable and independent timestamp sealing",
+      "Immutable evidence record",
     ],
   },
   {
     icon: ClipboardList,
-    title: "Auditabilidad",
+    title: "Auditability",
     properties: [
-      "Evidencia exportable en formato estándar",
-      "Observabilidad y trazabilidad de accesos",
-      "Histórico completo de eventos por tenant",
+      "Exportable evidence in standard format",
+      "Access observability and traceability",
+      "Complete event history per tenant",
     ],
   },
   {
     icon: ShieldCheck,
-    title: "Privacidad y gobierno del dato",
+    title: "Privacy and data governance",
     properties: [
-      "Controles de retención conforme a RGPD",
-      "Segregación lógica por tenant",
-      "Políticas granulares de acceso y borrado",
+      "Retention controls compliant with GDPR",
+      "Logical segregation per tenant",
+      "Granular access and deletion policies",
     ],
   },
 ];
@@ -37,7 +37,7 @@ const Security = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="seguridad" className="ic-section bg-secondary/30" ref={ref}>
+    <section id="security" className="ic-section bg-secondary/30" ref={ref}>
       <div className="ic-container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -46,13 +46,13 @@ const Security = () => {
           className="text-center mb-14"
         >
           <p className="text-sm font-medium tracking-wide text-primary/60 mb-4">
-            Garantías técnicas diseñadas para auditoría regulatoria
+            Technical guarantees designed for regulatory audit
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Seguridad & <span className="text-primary">Compliance</span>
+            Security & <span className="text-primary">Compliance</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-            Tres capas de garantía técnica diseñadas desde el primer día para cumplir con los requisitos de entornos regulados y auditoría independiente
+            Three layers of technical guarantees designed from day one to meet the requirements of regulated environments and independent audit
           </p>
         </motion.div>
 
@@ -68,18 +68,12 @@ const Security = () => {
               <div className="w-11 h-11 rounded-lg bg-accent flex items-center justify-center mb-5">
                 <layer.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
-
-              <h3 className="text-sm font-semibold text-foreground mb-5 tracking-tight">
-                {layer.title}
-              </h3>
-
+              <h3 className="text-sm font-semibold text-foreground mb-5 tracking-tight">{layer.title}</h3>
               <ul className="space-y-3">
                 {layer.properties.map((prop) => (
                   <li key={prop} className="flex items-start gap-2.5">
                     <div className="w-1 h-1 rounded-full bg-primary/40 mt-2 flex-shrink-0" />
-                    <span className="text-[13px] leading-relaxed text-muted-foreground">
-                      {prop}
-                    </span>
+                    <span className="text-[13px] leading-relaxed text-muted-foreground">{prop}</span>
                   </li>
                 ))}
               </ul>
@@ -94,7 +88,7 @@ const Security = () => {
           className="text-center mt-10"
         >
           <a href="#" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">
-            Ver detalles técnicos →
+            View technical details →
           </a>
         </motion.div>
       </div>

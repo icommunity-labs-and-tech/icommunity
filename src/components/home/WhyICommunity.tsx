@@ -5,34 +5,33 @@ import { ShieldCheck, FileCheck2, Webhook, Layers, Scale, Server } from "lucide-
 const blocks = [
   {
     icon: ShieldCheck,
-    title: "Certificación independiente del operador",
-    description:
-      "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros.",
+    title: "Operator-independent certification",
+    description: "Audited proof is generated outside the system that executes the process, ensuring regulatory traceability before third parties.",
   },
   {
     icon: FileCheck2,
-    title: "Cada evento nace con registro inmutable",
-    description: "Cada evento queda sellado con integridad criptográfica y marca temporal desde su creación.",
+    title: "Every event is born with an immutable record",
+    description: "Each event is sealed with cryptographic integrity and a timestamp from its creation.",
   },
   {
     icon: Webhook,
-    title: "Se integra sin reemplazar nada",
-    description: "Integración mediante SDK, API o Webhooks sin modificar los sistemas existentes.",
+    title: "Integrates without replacing anything",
+    description: "Integration via SDK, API, or Webhooks without modifying existing systems.",
   },
   {
     icon: Layers,
-    title: "No depende del proveedor",
-    description: "Compatible con cualquier proveedor KYC, onboarding o sistema corporativo existente.",
+    title: "Provider-independent",
+    description: "Compatible with any existing KYC provider, onboarding, or corporate system.",
   },
   {
     icon: Scale,
-    title: "Alineada con el marco regulatorio europeo",
-    description: "Diseñado alineado con eIDAS, AML, MiCA y marcos regulatorios aplicables.",
+    title: "Aligned with the European regulatory framework",
+    description: "Designed aligned with eIDAS, AML, MiCA, and applicable regulatory frameworks.",
   },
   {
     icon: Server,
-    title: "Arquitectura preparada para escala institucional",
-    description: "Arquitectura multi-tenant preparada para operar a escala institucional.",
+    title: "Architecture ready for institutional scale",
+    description: "Multi-tenant architecture prepared to operate at institutional scale.",
   },
 ];
 
@@ -43,21 +42,18 @@ const WhyICommunity = () => {
   return (
     <section className="ic-section bg-background" ref={ref}>
       <div className="ic-container max-w-5xl">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Por qué <span className="text-primary">iCommunity</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why <span className="text-primary">iCommunity</span></h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Capa de confianza diseñada para convertir eventos digitales en pruebas auditadas con trazabilidad
-            regulatoria.
+            Trust layer designed to turn digital events into audited proofs with regulatory traceability.
           </p>
         </motion.div>
 
-        {/* 2x3 Grid */}
         <div className="grid md:grid-cols-2 gap-5">
           {blocks.map((b, i) => {
             const isPrimary = i < 2;
@@ -67,27 +63,14 @@ const WhyICommunity = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }}
-                className={`rounded-xl transition-all duration-300 ${
-                  isPrimary
-                    ? "p-7"
-                    : "p-6"
-                }`}
+                className={`rounded-xl transition-all duration-300 ${isPrimary ? "p-7" : "p-6"}`}
               >
                 <div className="flex items-start gap-4">
-                  <div
-                    className={`rounded-lg flex items-center justify-center flex-shrink-0 ${
-                      isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"
-                    }`}
-                  >
-                    <b.icon
-                      className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`}
-                      strokeWidth={1.5}
-                    />
+                  <div className={`rounded-lg flex items-center justify-center flex-shrink-0 ${isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"}`}>
+                    <b.icon className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`} strokeWidth={1.5} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>
-                      {b.title}
-                    </h3>
+                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>{b.title}</h3>
                     <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
                   </div>
                 </div>
@@ -96,7 +79,6 @@ const WhyICommunity = () => {
           })}
         </div>
 
-        {/* Closing statement */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}

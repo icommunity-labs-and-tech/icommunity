@@ -1,35 +1,35 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Landmark, ShieldCheck, BarChart3, Handshake, FileText } from "lucide-react";
+import { Landmark, ShieldCheck, BarChart3, Handshake } from "lucide-react";
 import type { OrganizationType } from "./ContactModal";
 
 const paths: { icon: typeof Landmark; title: string; desc: string; cta: string; orgType: OrganizationType }[] = [
   {
     icon: Landmark,
-    title: "Administraciones Públicas",
-    desc: "Mejora la transparencia y trazabilidad de tus procesos ciudadanos.",
-    cta: "Solicitar info",
+    title: "Public Administrations",
+    desc: "Improve the transparency and traceability of your citizen processes.",
+    cta: "Request info",
     orgType: "administracion-publica",
   },
   {
     icon: ShieldCheck,
-    title: "Proveedores de identidad / KYC",
-    desc: "Proporciona evidencia verificable en la verificación de identidad de tus clientes.",
-    cta: "Solicitar info",
+    title: "Identity / KYC Providers",
+    desc: "Provide verifiable evidence in your clients' identity verification.",
+    cta: "Request info",
     orgType: "proveedor-identidad",
   },
   {
     icon: BarChart3,
-    title: "Legal, Fintech, Salud",
-    desc: "Anonimiza datos sensibles antes de usarlos en plataformas IA.",
-    cta: "Solicitar demo Privaura",
+    title: "Legal, Fintech, Health",
+    desc: "Anonymize sensitive data before using it on AI platforms.",
+    cta: "Request Privaura demo",
     orgType: "plataforma-regulada",
   },
   {
     icon: Handshake,
-    title: "Fabricantes",
-    desc: "Pasaporte Digital de Producto para trazabilidad y cumplimiento de ESPR.",
-    cta: "Solicitar demo Certypass",
+    title: "Manufacturers",
+    desc: "Digital Product Passport for traceability and ESPR compliance.",
+    cta: "Request CertyPass demo",
     orgType: "partner-integrador",
   },
 ];
@@ -48,10 +48,10 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 max-w-2xl mx-auto">
-            Empieza a certificar <span className="ic-text-gradient">procesos digitales hoy</span>
+            Start certifying <span className="ic-text-gradient">digital processes today</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            Integra iCommunity y genera pruebas auditables listas para supervisión regulatoria.
+            Integrate iCommunity and generate auditable proofs ready for regulatory oversight.
           </p>
         </motion.div>
 
@@ -78,7 +78,6 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

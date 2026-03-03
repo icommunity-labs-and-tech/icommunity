@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { Radio, ShieldCheck, FileDigit, SearchCheck } from "lucide-react";
 
 const steps = [
-  { icon: Radio, label: "Captura", sub: "Evento digital registrado" },
-  { icon: ShieldCheck, label: "Certificación", sub: "Hash + sello temporal" },
-  { icon: FileDigit, label: "Registro", sub: "Evidencia inmutable" },
-  { icon: SearchCheck, label: "Verificación", sub: "Prueba auditable" },
+  { icon: Radio, label: "Capture", sub: "Digital event recorded" },
+  { icon: ShieldCheck, label: "Certification", sub: "Hash + timestamp" },
+  { icon: FileDigit, label: "Record", sub: "Immutable evidence" },
+  { icon: SearchCheck, label: "Verification", sub: "Auditable proof" },
 ];
 
 const TrustLifecycle = () => {
@@ -66,11 +66,9 @@ const TrustLifecycle = () => {
                 <div className="w-12 h-12 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10">
                   <s.icon className="w-5 h-5 text-primary-foreground/70" strokeWidth={1.5} />
                 </div>
-
                 <span className="font-mono text-[10px] text-primary-foreground/30 mt-4">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-
                 <span className="text-sm font-semibold text-primary-foreground mt-1">{s.label}</span>
                 <span className="text-xs text-primary-foreground/50 mt-0.5 max-w-[160px]">{s.sub}</span>
               </motion.div>

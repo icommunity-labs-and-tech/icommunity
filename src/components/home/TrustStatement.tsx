@@ -17,9 +17,9 @@ const TrustStatement = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground/80 leading-snug max-w-xl"
       >
-        Todo sistema regulado necesita
+        Every regulated system needs
         <br />
-        <span className="text-primary font-bold">evidencia independiente.</span>
+        <span className="text-primary font-bold">independent evidence.</span>
       </motion.p>
     </section>
   );
