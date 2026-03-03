@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   LayoutGrid, Leaf, BrainCircuit, ShieldCheck, ArrowRight, ExternalLink,
   ChevronLeft, ChevronRight, FileCheck, ClipboardCheck, Eye, ShieldAlert,
-  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge,
+  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge, UserCheck, Database, ClipboardList,
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
@@ -13,6 +13,7 @@ import caseAytoMadridImage from "@/assets/case-ayto-madrid.jpg";
 import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
 import caseAenorImage from "@/assets/case-aenor.jpg";
 import logoAenor from "@/assets/logo-aenor.png";
+import caseSalusCoopImage from "@/assets/case-saluscoop.jpg";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -121,6 +122,28 @@ const cases: CaseData[] = [
     ],
     
     gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
+  },
+  {
+    tag: "Caso Salud",
+    title: "SALUS COOP",
+    description: "Protección de datos sensibles con evidencia verificable desde el origen.",
+    stats: [
+      { value: "✓", label: "Identidad pseudonimizada desde el origen" },
+      { value: "✓", label: "Evidencia verificable del uso de datos" },
+      { value: "✓", label: "Preparado para supervisión regulatoria" },
+    ],
+    image: caseSalusCoopImage,
+    imageAlt: "Laboratorio de investigación médica",
+    badge: "Caso de éxito",
+    heading: "Estudios médicos con identidad protegida y evidencia verificable",
+    body: "Salus Coop integró iCommunity como infraestructura para generar evidencia verificable sobre el uso de datos en estudios médicos. Cada acceso, tratamiento o validación queda registrado como prueba independiente, garantizando anonimato, integridad y disponibilidad ante auditoría o supervisión regulatoria.",
+    benefits: [
+      { icon: UserCheck, text: "Identidad pseudonimizada desde el origen" },
+      { icon: Database, text: "Evidencia verificable del uso de datos" },
+      { icon: ClipboardList, text: "Registro independiente de accesos y validaciones" },
+      { icon: BadgeCheck, text: "Cumplimiento preparado para auditoría" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(190, 40%, 12%) 0%, hsl(195, 50%, 24%) 100%)",
   },
 ];
 
