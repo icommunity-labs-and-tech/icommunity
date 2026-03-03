@@ -76,17 +76,11 @@ const partnerTypes = [
 const logos = [
   { src: logoAenor, alt: "AENOR" },
   { src: logoAytoMadrid, alt: "Ayuntamiento de Madrid" },
-  { src: logoDatia, alt: "DATIA" },
   { src: logoLogalty, alt: "Logalty" },
   { src: logoSalusCoop, alt: "Salus Coop" },
   { src: logoAirtrace, alt: "AirTrace" },
   { src: logoEstrella, alt: "Estrella Galicia" },
-  { src: logoCertifika, alt: "CertyPass" },
-  { src: logoLidl, alt: "Lidl" },
-  { src: logoCdti, alt: "CDTI" },
   { src: logoEnisa, alt: "ENISA" },
-  { src: logoFeder, alt: "FEDER" },
-  { src: logoCofinanciadoUe, alt: "Cofinanciado por la UE" },
 ];
 
 /* ── Page ─────────────────────────────────────── */
