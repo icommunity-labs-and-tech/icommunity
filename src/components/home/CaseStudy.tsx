@@ -249,8 +249,13 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
     <div className="grid md:grid-cols-2 md:min-h-[480px]">
       {/* Left */}
       <div className="flex flex-col">
-        <div className="relative h-36 md:h-44 overflow-hidden shrink-0" style={c.image === c.logo ? { background: c.gradient } : undefined}>
-          <img src={c.image} alt={c.imageAlt} className={c.image === c.logo ? "w-full h-full object-contain p-8" : "w-full h-full object-cover"} />
+        <div className="relative h-36 md:h-44 overflow-hidden shrink-0">
+          <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
+          {c.logo && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+              <img src={c.logo} alt={`${c.title} logo`} className="h-10 md:h-12 w-auto object-contain drop-shadow-lg" />
+            </div>
+          )}
         </div>
         <div className="flex-1 p-5 flex flex-col justify-between" style={{ background: c.gradient }}>
           <div>
