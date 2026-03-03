@@ -90,9 +90,9 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
       aria-label="Main navigation"
     >
       <div className="ic-container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="iCommunity" className="h-7" />
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           {t.navLinks.map((link, idx) => (
