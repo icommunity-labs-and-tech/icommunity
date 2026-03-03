@@ -14,6 +14,7 @@ import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
 import caseAenorImage from "@/assets/case-aenor.jpg";
 import logoAenor from "@/assets/logo-aenor.png";
 import caseSalusCoopImage from "@/assets/case-saluscoop.jpg";
+import logoSalusCoop from "@/assets/logo-saluscoop.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -126,9 +127,9 @@ const cases: CaseData[] = [
   {
     tag: "Caso Salud",
     title: "SALUS COOP",
+    logo: logoSalusCoop,
     description: "Protección de datos sensibles con evidencia verificable desde el origen.",
     stats: [
-      { value: "✓", label: "Identidad pseudonimizada desde el origen" },
       { value: "✓", label: "Evidencia verificable del uso de datos" },
       { value: "✓", label: "Preparado para supervisión regulatoria" },
     ],
