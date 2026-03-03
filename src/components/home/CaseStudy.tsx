@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import {
   LayoutGrid, Leaf, BrainCircuit, ShieldCheck, ArrowRight, ExternalLink,
   ChevronLeft, ChevronRight, FileCheck, ClipboardCheck, Eye, ShieldAlert,
-  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge, UserCheck, Database, ClipboardList, FileText, Link2, Handshake, ShieldPlus,
+  Quote, Landmark, Scale, SearchCheck, BookCheck, BadgeCheck, ScanSearch, Lock, FileBadge, UserCheck, Database, ClipboardList, FileText, Link2, Handshake, ShieldPlus, Cpu, Radio, Waypoints, ClipboardCheck as ClipboardCheckAlt,
 } from "lucide-react";
 import caseDataImage from "@/assets/case-datia.jpg";
 import caseEstrellaImage from "@/assets/case-estrella.jpg";
@@ -18,6 +18,8 @@ import logoSalusCoop from "@/assets/logo-saluscoop.png";
 import logoDatia from "@/assets/logo-datia.png";
 import caseLogaltyImage from "@/assets/case-logalty.jpg";
 import logoLogalty from "@/assets/logo-logalty.png";
+import caseAirtraceImage from "@/assets/case-airtrace.jpg";
+import logoAirtrace from "@/assets/logo-airtrace.png";
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -171,6 +173,28 @@ const cases: CaseData[] = [
       { icon: ShieldPlus, text: "Soporte probatorio reforzado" },
     ],
     gradient: "linear-gradient(135deg, hsl(230, 35%, 14%) 0%, hsl(235, 45%, 26%) 100%)",
+  },
+  {
+    tag: "Caso IoT / Integridad Técnica",
+    title: "AIRTRACE",
+    logo: logoAirtrace,
+    description: "Integridad verificable de dispositivos y datos capturados en origen.",
+    stats: [
+      { value: "✓", label: "Evidencia de firmware certificado" },
+      { value: "✓", label: "Registro verificable de lecturas IoT" },
+    ],
+    image: caseAirtraceImage,
+    imageAlt: "Dispositivos IoT AirTrace en laboratorio técnico",
+    badge: "Caso de éxito",
+    heading: "Dispositivos IoT con integridad verificable desde el origen",
+    body: "AirTrace integró iCommunity como infraestructura para generar evidencia verificable sobre la integridad de sus dispositivos IoT y las lecturas capturadas en campo. Cada validación de firmware y cada dato registrado queda asociado a una prueba independiente, preparada para auditoría técnica o supervisión regulatoria desde el origen.",
+    benefits: [
+      { icon: Cpu, text: "Certificación verificable de firmware" },
+      { icon: Radio, text: "Evidencia independiente de lecturas IoT" },
+      { icon: Waypoints, text: "Trazabilidad técnica desde el dispositivo" },
+      { icon: BadgeCheck, text: "Preparado para auditoría y validación externa" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(210, 40%, 12%) 0%, hsl(215, 50%, 24%) 100%)",
   },
 ];
 
