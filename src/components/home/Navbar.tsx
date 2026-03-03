@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com", external: true },
-  { label: "Privaura", href: "https://privaura.lovable.app", external: true },
+  { label: "Privaro", href: "https://privaura.lovable.app", external: true },
 ];
 
 const texts = {
   en: {
     navLinks: [
-      { label: "How it works", href: "#trust-architecture" },
-      { label: "Use cases", href: "#segments" },
-      { label: "Security", href: "#security" },
-      { label: "Resources", href: "#resources" },
+      { label: "How it works", href: "/#trust-architecture" },
+      { label: "Use cases", href: "/#segments" },
+      { label: "Security", href: "/#security" },
+      { label: "Resources", href: "/#resources" },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Company", href: "/empresa", isRoute: true },
     ],
@@ -25,10 +25,10 @@ const texts = {
   },
   es: {
     navLinks: [
-      { label: "Cómo funciona", href: "#trust-architecture" },
-      { label: "Casos de uso", href: "#segments" },
-      { label: "Seguridad", href: "#security" },
-      { label: "Recursos", href: "#resources" },
+      { label: "Cómo funciona", href: "/#trust-architecture" },
+      { label: "Casos de uso", href: "/#segments" },
+      { label: "Seguridad", href: "/#security" },
+      { label: "Recursos", href: "/#resources" },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Empresa", href: "/empresa", isRoute: true },
     ],
@@ -44,6 +44,24 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { lang, setLang } = useLanguage();
   const t = texts[lang];
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const [path, hash] = href.split("#");
+    const targetPath = path || "/";
+    if (location.pathname === targetPath) {
+      const el = document.getElementById(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(targetPath + "#" + hash);
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -89,6 +107,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               ) : (
                 <a
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
                   className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
                   {link.label}
@@ -201,8 +220,8 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                   <a
                     key={link.label}
                     href={link.href}
+                    onClick={(e) => { handleAnchorClick(e, link.href); setMobileOpen(false); }}
                     className="text-sm text-primary-foreground/70 hover:text-primary-foreground py-2"
-                    onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
                   </a>
