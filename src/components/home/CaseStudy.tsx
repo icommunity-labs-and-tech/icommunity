@@ -54,8 +54,8 @@ const cases: CaseData[] = [
     title: "ESTRELLA GALICIA",
     description: "Transformación de procesos logísticos en evidencia verificable preparada para auditoría.",
     stats: [
-      { value: "✓", label: "Control verificable de distribución" },
-      { value: "✓", label: "Reducción de pérdidas" },
+      { value: "✓", label: "Distribución verificable" },
+      { value: "✓", label: "Reducción pérdidas" },
     ],
     image: caseEstrellaImage,
     imageAlt: "Instalaciones logísticas de Estrella Galicia",
@@ -175,10 +175,10 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
   const c = data;
 
   return (
-    <div className="grid md:grid-cols-2">
+    <div className="grid md:grid-cols-2 md:min-h-[480px]">
       {/* Left */}
       <div className="flex flex-col">
-        <div className="relative h-36 md:h-44 overflow-hidden">
+        <div className="relative h-36 md:h-44 overflow-hidden shrink-0">
           <img src={c.image} alt={c.imageAlt} className="w-full h-full object-cover" />
         </div>
         <div className="flex-1 p-5 flex flex-col justify-between" style={{ background: c.gradient }}>
