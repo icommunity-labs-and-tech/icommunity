@@ -114,7 +114,7 @@ const Empresa = () => {
         <Section className="py-28 md:py-36">
           <div className="ic-container grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
-              <FadeIn><h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">{t.heroTitle}<span className="ic-text-gradient">{t.heroSpan}</span></h1></FadeIn>
+              <FadeIn><h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">{t.heroTitle}<span className="ic-text-gradient-light">{t.heroSpan}</span></h1></FadeIn>
               <FadeIn delay={0.1}><p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed max-w-xl">{t.heroSub}</p></FadeIn>
             </div>
             <FadeIn delay={0.2} className="hidden md:block"><div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/30 border border-primary-foreground/10"><img src={heroImg} alt={t.heroImgAlt} className="w-full h-auto object-cover" loading="eager" /></div></FadeIn>
