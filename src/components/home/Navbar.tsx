@@ -15,7 +15,7 @@ const navLinks = [
   { label: "Seguridad", href: "#seguridad" },
   { label: "Recursos", href: "#recursos" },
   { label: "Partners", href: "/partners", isRoute: true },
-  { label: "Empresa", href: "#empresa" },
+  { label: "Empresa", href: "/empresa", isRoute: true },
 ];
 
 const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
