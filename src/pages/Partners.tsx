@@ -104,7 +104,7 @@ const Partners = () => {
       <Navbar onOpenModal={() => openModal()} />
       <div className="hero pt-16"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
         <Section className="py-28 md:py-36"><div className="ic-container text-center max-w-3xl mx-auto">
-          <FadeIn><h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">{t.heroTitle}<span className="ic-text-gradient">{t.heroSpan}</span></h1></FadeIn>
+          <FadeIn><h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">{t.heroTitle}<span className="ic-text-gradient-light">{t.heroSpan}</span></h1></FadeIn>
           <FadeIn delay={0.1}><p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed max-w-2xl mx-auto mb-10">{t.heroSub}</p></FadeIn>
           <FadeIn delay={0.2}><a href="#model" className="inline-flex items-center gap-2 rounded-lg ic-gradient-cta px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">{t.heroCta}<ArrowRight className="w-4 h-4" /></a></FadeIn>
         </div></Section>
