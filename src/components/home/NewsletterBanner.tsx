@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const NewsletterBanner = () => {
   const ref = useRef(null);
@@ -10,13 +12,15 @@ const NewsletterBanner = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const { toast } = useToast();
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.playbackRate = 0.5;
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -31,7 +35,25 @@ const NewsletterBanner = () => {
       return;
     }
 
-    setSubmitted(true);
+    setSending(true);
+
+    try {
+      const { error: fnError } = await supabase.functions.invoke("send-email", {
+        body: {
+          type: "newsletter",
+          data: { name: name.trim(), email: email.trim() },
+        },
+      });
+
+      if (fnError) throw fnError;
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Error", description: "No se pudo enviar. Inténtalo de nuevo.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -43,7 +65,6 @@ const NewsletterBanner = () => {
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-2xl"
         >
-          {/* Video background */}
           <video
             ref={videoRef}
             autoPlay
@@ -54,12 +75,9 @@ const NewsletterBanner = () => {
           >
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
-          {/* Overlay */}
           <div className="absolute inset-0 z-[1] bg-black/20" />
 
-          {/* Content */}
           <div className="relative z-[2] px-8 py-10 md:px-12 md:py-14">
-            {/* Header */}
             <div className="mb-8 max-w-2xl">
               <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground leading-tight mb-3">
                 Forma parte del ecosistema iCommunity
@@ -69,7 +87,6 @@ const NewsletterBanner = () => {
               </p>
             </div>
 
-            {/* Form / Success */}
             <AnimatePresence mode="wait">
               {!submitted ? (
                 <motion.form
@@ -96,9 +113,10 @@ const NewsletterBanner = () => {
                   />
                   <button
                     type="submit"
-                    className="rounded-lg ic-gradient-cta px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity flex-shrink-0"
+                    disabled={sending}
+                    className="rounded-lg ic-gradient-cta px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity flex-shrink-0 disabled:opacity-50"
                   >
-                    Suscribirme
+                    {sending ? "Enviando..." : "Suscribirme"}
                   </button>
                 </motion.form>
               ) : (
@@ -117,7 +135,6 @@ const NewsletterBanner = () => {
               )}
             </AnimatePresence>
 
-            {/* Microcopy / Error */}
             {!submitted && (
               <div className="mt-3 max-w-2xl">
                 {error ? (

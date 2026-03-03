@@ -2,11 +2,45 @@ import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileText, X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const LeadMagnet = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [modalOpen, setModalOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-email", {
+        body: {
+          type: "whitepaper",
+          data: {
+            company: formData.get("wp-company"),
+            email: formData.get("wp-email"),
+          },
+        },
+      });
+
+      if (error) throw error;
+
+      toast({ title: "Solicitud enviada", description: "Te enviaremos el whitepaper pronto." });
+      setModalOpen(false);
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Error", description: "No se pudo enviar la solicitud.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <>
@@ -45,7 +79,6 @@ const LeadMagnet = () => {
         </div>
       </section>
 
-      {/* Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={() => setModalOpen(false)} />
@@ -59,17 +92,17 @@ const LeadMagnet = () => {
             </button>
             <h3 className="text-xl font-bold text-foreground mb-2">Descargar Whitepaper</h3>
             <p className="text-sm text-muted-foreground mb-6">Rellena estos datos y te enviaremos el documento.</p>
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setModalOpen(false); }}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="text-sm font-medium text-foreground block mb-1.5">Empresa</label>
-                <input type="text" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tu empresa" />
+                <input name="wp-company" type="text" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tu empresa" />
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground block mb-1.5">Email corporativo</label>
-                <input type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="tu@empresa.com" />
+                <input name="wp-email" type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="tu@empresa.com" />
               </div>
-              <button type="submit" className="w-full rounded-lg ic-gradient-cta py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
-                Descargar ahora
+              <button type="submit" disabled={sending} className="w-full rounded-lg ic-gradient-cta py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50">
+                {sending ? "Enviando..." : "Descargar ahora"}
               </button>
             </form>
           </motion.div>
