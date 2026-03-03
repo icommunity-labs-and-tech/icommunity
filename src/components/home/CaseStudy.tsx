@@ -187,6 +187,17 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
             <h3 className="text-3xl font-extrabold text-primary-foreground mb-2 tracking-tight">{c.title}</h3>
             <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-sm">{c.description}</p>
           </div>
+
+          {c.testimonial && (
+            <div className="flex items-start gap-3 mt-5 p-3 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
+              <Quote className="w-4 h-4 text-primary-foreground/50 shrink-0 mt-0.5" />
+              <div>
+                <p className="text-xs italic text-primary-foreground/70 leading-relaxed mb-1">"{c.testimonial.quote}"</p>
+                <p className="text-[11px] font-semibold text-primary-foreground/50">— {c.testimonial.author}, {c.testimonial.role}</p>
+              </div>
+            </div>
+          )}
+
           <div className="flex items-end gap-5 mt-6 pt-4 border-t border-primary-foreground/10 flex-wrap">
             {c.stats.map((s, i) => (
               <div key={i}>
@@ -229,15 +240,6 @@ function CaseCard({ data, onOpenModal }: { data: CaseData; onOpenModal?: (orgTyp
           ))}
         </div>
 
-        {c.testimonial && (
-          <div className="flex items-start gap-3 mb-5 p-3 rounded-xl bg-muted/50 border border-border/40">
-            <Quote className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-            <div>
-              <p className="text-xs italic text-foreground/70 leading-relaxed mb-1">"{c.testimonial.quote}"</p>
-              <p className="text-[11px] font-semibold text-foreground/60">— {c.testimonial.author}, {c.testimonial.role}</p>
-            </div>
-          </div>
-        )}
 
         <button
           onClick={() => onOpenModal?.("partner-integrador")}
