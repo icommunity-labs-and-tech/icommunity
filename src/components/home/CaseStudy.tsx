@@ -20,7 +20,7 @@ import caseLogaltyImage from "@/assets/case-logalty.jpg";
 import logoLogalty from "@/assets/logo-logalty.png";
 import caseAirtraceImage from "@/assets/case-airtrace.jpg";
 import logoAirtrace from "@/assets/logo-airtrace.png";
-import logoCertifika from "@/assets/logo-certifika.png";
+
 import type { OrganizationType } from "./ContactModal";
 
 interface CaseData {
@@ -42,6 +42,54 @@ interface CaseData {
 }
 
 const cases: CaseData[] = [
+  // 1. AENOR
+  {
+    tag: "Caso Certificación",
+    title: "AENOR",
+    logo: logoAenor,
+    logoClass: "h-6 md:h-7",
+    description: "Certificaciones convertidas en evidencia verificable preparada para supervisión.",
+    stats: [
+      { value: "✓", label: "Verificación independiente en tiempo real" },
+      { value: "✓", label: "Evidencia digital asociada a cada certificación" },
+    ],
+    image: caseAenorImage,
+    imageAlt: "Sede corporativa AENOR",
+    badge: "Caso de éxito",
+    heading: "Certificaciones preparadas para verificación inmediata",
+    body: "AENOR integró iCommunity como infraestructura para generar evidencia verificable asociada a sus procesos de certificación. Cada emisión, validación o actualización queda registrada como prueba independiente, disponible para verificación inmediata y preparada para supervisión regulatoria desde el origen.",
+    benefits: [
+      { icon: FileBadge, text: "Evidencia digital asociada a cada certificación" },
+      { icon: ScanSearch, text: "Verificación inmediata por terceros" },
+      { icon: Lock, text: "Integridad probatoria garantizada" },
+      { icon: BadgeCheck, text: "Auditoría preparada desde la emisión" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
+  },
+  // 2. Ayuntamiento
+  {
+    tag: "Caso Institucional",
+    title: "AYUNTAMIENTO DE MADRID",
+    logo: logoAytoMadrid,
+    description: "Infraestructura de evidencia verificable en procesos de contratación pública.",
+    stats: [
+      { value: "✓", label: "Trazabilidad documental certificada" },
+      { value: "✓", label: "Evidencia preparada para auditoría" },
+    ],
+    image: caseAytoMadridImage,
+    imageAlt: "Ayuntamiento de Madrid",
+    badge: "Caso de éxito",
+    heading: "Contratación pública con evidencia verificable desde el origen",
+    body: "iCommunity fue implementado como capa de infraestructura para generar evidencia independiente en procesos de contratación pública. Cada documento, validación y evento administrativo queda registrado como prueba verificable, disponible para auditoría y supervisión regulatoria sin depender del operador del sistema.",
+    benefits: [
+      { icon: Landmark, text: "Registro verificable de cada hito administrativo" },
+      { icon: Scale, text: "Evidencia independiente ante órganos de control" },
+      { icon: SearchCheck, text: "Auditoría inmediata sin reconstrucción posterior" },
+      { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
+  },
+  // 3. DATIA
   {
     tag: "Proyecto Europeo",
     title: "DATIA",
@@ -65,96 +113,7 @@ const cases: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(225, 60%, 28%) 100%)",
   },
-  {
-    tag: "Caso Industrial",
-    title: "ESTRELLA GALICIA",
-    logo: logoEstrellaGalicia,
-    description: "Transformación de procesos logísticos en evidencia verificable preparada para auditoría.",
-    stats: [
-      { value: "✓", label: "Distribución verificable" },
-      { value: "✓", label: "Reducción pérdidas" },
-    ],
-    image: caseEstrellaImage,
-    imageAlt: "Instalaciones logísticas de Estrella Galicia",
-    badge: "Caso de éxito",
-    heading: "Cadena de suministro preparada para auditoría",
-    body: "Estrella Galicia implementó iCommunity como capa de infraestructura para generar evidencia verificable en su cadena de suministro. Cada evento crítico — desde producción hasta distribución — queda registrado como prueba independiente, lista para auditoría y supervisión regulatoria desde el origen.",
-    benefits: [
-      { icon: FileCheck, text: "Evidencia independiente en cada etapa de la cadena" },
-      { icon: ClipboardCheck, text: "Registro verificable de eventos críticos" },
-      { icon: Eye, text: "Auditoría inmediata sin dependencia del operador" },
-      { icon: ShieldAlert, text: "Verificación externa preparada para terceros" },
-    ],
-    gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
-  },
-  {
-    tag: "Caso Institucional",
-    title: "AYUNTAMIENTO DE MADRID",
-    logo: logoAytoMadrid,
-    description: "Infraestructura de evidencia verificable en procesos de contratación pública.",
-    stats: [
-      { value: "✓", label: "Trazabilidad documental certificada" },
-      { value: "✓", label: "Evidencia preparada para auditoría" },
-    ],
-    image: caseAytoMadridImage,
-    imageAlt: "Ayuntamiento de Madrid",
-    badge: "Caso de éxito",
-    heading: "Contratación pública con evidencia verificable desde el origen",
-    body: "iCommunity fue implementado como capa de infraestructura para generar evidencia independiente en procesos de contratación pública. Cada documento, validación y evento administrativo queda registrado como prueba verificable, disponible para auditoría y supervisión regulatoria sin depender del operador del sistema.",
-    benefits: [
-      { icon: Landmark, text: "Registro verificable de cada hito administrativo" },
-      { icon: Scale, text: "Evidencia independiente ante órganos de control" },
-      { icon: SearchCheck, text: "Auditoría inmediata sin reconstrucción posterior" },
-      { icon: BookCheck, text: "Supervisión pública preparada desde el origen" },
-    ],
-    gradient: "linear-gradient(135deg, hsl(215, 35%, 14%) 0%, hsl(218, 40%, 26%) 100%)",
-  },
-  {
-    tag: "Caso Certificación",
-    title: "AENOR",
-    logo: logoAenor,
-    logoClass: "h-6 md:h-7",
-    description: "Certificaciones convertidas en evidencia verificable preparada para supervisión.",
-    stats: [
-      { value: "✓", label: "Verificación independiente en tiempo real" },
-      { value: "✓", label: "Evidencia digital asociada a cada certificación" },
-    ],
-    image: caseAenorImage,
-    imageAlt: "Sede corporativa AENOR",
-    badge: "Caso de éxito",
-    heading: "Certificaciones preparadas para verificación inmediata",
-    body: "AENOR integró iCommunity como infraestructura para generar evidencia verificable asociada a sus procesos de certificación. Cada emisión, validación o actualización queda registrada como prueba independiente, disponible para verificación inmediata y preparada para supervisión regulatoria desde el origen.",
-    benefits: [
-      { icon: FileBadge, text: "Evidencia digital asociada a cada certificación" },
-      { icon: ScanSearch, text: "Verificación inmediata por terceros" },
-      { icon: Lock, text: "Integridad probatoria garantizada" },
-      { icon: BadgeCheck, text: "Auditoría preparada desde la emisión" },
-    ],
-    
-    gradient: "linear-gradient(135deg, hsl(200, 40%, 12%) 0%, hsl(205, 50%, 24%) 100%)",
-  },
-  {
-    tag: "Caso Salud",
-    title: "SALUS COOP",
-    logo: logoSalusCoop,
-    description: "Protección de datos sensibles con evidencia verificable desde el origen.",
-    stats: [
-      { value: "✓", label: "Evidencia verificable del uso de datos" },
-      { value: "✓", label: "Preparado para supervisión regulatoria" },
-    ],
-    image: caseSalusCoopImage,
-    imageAlt: "Laboratorio de investigación médica",
-    badge: "Caso de éxito",
-    heading: "Estudios médicos con identidad protegida y evidencia verificable",
-    body: "Salus Coop integró iCommunity como infraestructura para generar evidencia verificable sobre el uso de datos en estudios médicos. Cada acceso, tratamiento o validación queda registrado como prueba independiente, garantizando anonimato, integridad y disponibilidad ante auditoría o supervisión regulatoria.",
-    benefits: [
-      { icon: UserCheck, text: "Identidad pseudonimizada desde el origen" },
-      { icon: Database, text: "Evidencia verificable del uso de datos" },
-      { icon: ClipboardList, text: "Registro independiente de accesos y validaciones" },
-      { icon: BadgeCheck, text: "Cumplimiento preparado para auditoría" },
-    ],
-    gradient: "linear-gradient(135deg, hsl(190, 40%, 12%) 0%, hsl(195, 50%, 24%) 100%)",
-  },
+  // 4. Logalty
   {
     tag: "Caso Evidencia Legal",
     title: "LOGALTY",
@@ -178,6 +137,30 @@ const cases: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(230, 35%, 14%) 0%, hsl(235, 45%, 26%) 100%)",
   },
+  // 5. Salus Coop
+  {
+    tag: "Caso Salud",
+    title: "SALUS COOP",
+    logo: logoSalusCoop,
+    description: "Protección de datos sensibles con evidencia verificable desde el origen.",
+    stats: [
+      { value: "✓", label: "Evidencia verificable del uso de datos" },
+      { value: "✓", label: "Preparado para supervisión regulatoria" },
+    ],
+    image: caseSalusCoopImage,
+    imageAlt: "Laboratorio de investigación médica",
+    badge: "Caso de éxito",
+    heading: "Estudios médicos con identidad protegida y evidencia verificable",
+    body: "Salus Coop integró iCommunity como infraestructura para generar evidencia verificable sobre el uso de datos en estudios médicos. Cada acceso, tratamiento o validación queda registrado como prueba independiente, garantizando anonimato, integridad y disponibilidad ante auditoría o supervisión regulatoria.",
+    benefits: [
+      { icon: UserCheck, text: "Identidad pseudonimizada desde el origen" },
+      { icon: Database, text: "Evidencia verificable del uso de datos" },
+      { icon: ClipboardList, text: "Registro independiente de accesos y validaciones" },
+      { icon: BadgeCheck, text: "Cumplimiento preparado para auditoría" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(190, 40%, 12%) 0%, hsl(195, 50%, 24%) 100%)",
+  },
+  // 6. AirTrace
   {
     tag: "Caso IoT / Integridad Técnica",
     title: "AIRTRACE",
@@ -200,13 +183,36 @@ const cases: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(210, 40%, 12%) 0%, hsl(215, 50%, 24%) 100%)",
   },
+  // 7. Estrella Galicia
+  {
+    tag: "Caso Industrial",
+    title: "ESTRELLA GALICIA",
+    logo: logoEstrellaGalicia,
+    description: "Transformación de procesos logísticos en evidencia verificable preparada para auditoría.",
+    stats: [
+      { value: "✓", label: "Distribución verificable" },
+      { value: "✓", label: "Reducción pérdidas" },
+    ],
+    image: caseEstrellaImage,
+    imageAlt: "Instalaciones logísticas de Estrella Galicia",
+    badge: "Caso de éxito",
+    heading: "Cadena de suministro preparada para auditoría",
+    body: "Estrella Galicia implementó iCommunity como capa de infraestructura para generar evidencia verificable en su cadena de suministro. Cada evento crítico — desde producción hasta distribución — queda registrado como prueba independiente, lista para auditoría y supervisión regulatoria desde el origen.",
+    benefits: [
+      { icon: FileCheck, text: "Evidencia independiente en cada etapa de la cadena" },
+      { icon: ClipboardCheck, text: "Registro verificable de eventos críticos" },
+      { icon: Eye, text: "Auditoría inmediata sin dependencia del operador" },
+      { icon: ShieldAlert, text: "Verificación externa preparada para terceros" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
+  },
 ];
 
 const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) => void }) => {
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { once: true, margin: "-80px" });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, duration: 35 });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 35 });
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -225,6 +231,32 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
     emblaApi.on("reInit", onSelect);
     return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
+
+  // Autoplay every 3 seconds, pause on hover
+  useEffect(() => {
+    if (!emblaApi) return;
+    let timer: ReturnType<typeof setInterval>;
+
+    const startAutoplay = () => {
+      timer = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 3000);
+    };
+
+    const stopAutoplay = () => clearInterval(timer);
+
+    const rootNode = emblaApi.rootNode();
+    rootNode.addEventListener("mouseenter", stopAutoplay);
+    rootNode.addEventListener("mouseleave", startAutoplay);
+
+    startAutoplay();
+
+    return () => {
+      stopAutoplay();
+      rootNode.removeEventListener("mouseenter", stopAutoplay);
+      rootNode.removeEventListener("mouseleave", startAutoplay);
+    };
+  }, [emblaApi]);
 
   return (
     <section id="casos" className="ic-section bg-secondary/30" ref={sectionRef}>
@@ -260,19 +292,17 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
           {/* Arrows */}
           <button
             onClick={() => emblaApi?.scrollPrev()}
-            disabled={!canPrev}
-            className="absolute -left-4 md:-left-5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-border bg-card shadow-sm flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all disabled:opacity-0 disabled:pointer-events-none"
+            className="absolute -left-5 md:-left-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-border bg-card shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:border-primary/40 transition-all"
             aria-label="Caso anterior"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => emblaApi?.scrollNext()}
-            disabled={!canNext}
-            className="absolute -right-4 md:-right-5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-border bg-card shadow-sm flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all disabled:opacity-0 disabled:pointer-events-none"
+            className="absolute -right-5 md:-right-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-border bg-card shadow-md flex items-center justify-center text-foreground hover:bg-accent hover:border-primary/40 transition-all"
             aria-label="Siguiente caso"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-5 h-5" />
           </button>
 
           {/* Dots */}
