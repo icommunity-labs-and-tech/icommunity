@@ -13,9 +13,8 @@ const texts = {
   en: {
     columns: [
       { title: "Product", links: ["Platform", "SDK & API", "Verifier", "Documentation"] as FooterLink[] },
-      { title: "Use cases", links: ["KYC", "Age verification", "Anti-fraud", "MiCA"] as FooterLink[] },
-      { title: "Security", links: ["Architecture", "Compliance", "GDPR", "Technical details"] as FooterLink[] },
-      { title: "Resources", links: [{ label: "Blog" }, { label: "Whitepaper" }, { label: "Guides" }, { label: "Token Icom", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
+      { title: "Use cases", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Age verification", route: "/#trust-architecture" }, { label: "Anti-fraud", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
+      { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Legal notice", route: "/legal" }, { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Terms", route: "/legal" }] as FooterLink[] },
     ],
     coFunded: "Co-funded projects",
@@ -27,9 +26,8 @@ const texts = {
   es: {
     columns: [
       { title: "Producto", links: ["Plataforma", "SDK & API", "Verificador", "Documentación"] as FooterLink[] },
-      { title: "Casos de uso", links: ["KYC", "Verificación de edad", "Anti-fraude", "MiCA"] as FooterLink[] },
-      { title: "Seguridad", links: ["Arquitectura", "Cumplimiento", "GDPR", "Detalles técnicos"] as FooterLink[] },
-      { title: "Recursos", links: [{ label: "Blog" }, { label: "Whitepaper" }, { label: "Guías" }, { label: "Token Icom", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
+      { title: "Casos de uso", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Verificación de edad", route: "/#trust-architecture" }, { label: "Anti-fraude", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
+      { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Aviso legal", route: "/legal" }, { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Términos", route: "/legal" }] as FooterLink[] },
     ],
     coFunded: "Proyectos cofinanciados",
@@ -48,7 +46,7 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
     <footer id="company" className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(225 35% 4%) 100%)" }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div className="relative ic-container pt-14 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {t.columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-sm font-semibold text-white/70 mb-4">{col.title}</h4>
