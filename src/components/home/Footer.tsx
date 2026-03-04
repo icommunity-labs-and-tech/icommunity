@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
 import logoFeder from "@/assets/logo-feder.png";
 import logoUE from "@/assets/logo-cofinanciado-ue.png";
@@ -6,7 +7,7 @@ import logoCdti from "@/assets/logo-cdti.jpg";
 import logoEnisa from "@/assets/logo-enisa.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-type FooterLink = string | { label: string; href?: string; external?: boolean };
+type FooterLink = string | { label: string; href?: string; external?: boolean; route?: string };
 
 const texts = {
   en: {
@@ -16,7 +17,7 @@ const texts = {
       { title: "Security", links: ["Architecture", "Compliance", "GDPR", "Technical details"] as FooterLink[] },
       { title: "Resources", links: [{ label: "Blog" }, { label: "Whitepaper" }, { label: "Guides" }, { label: "Token Icom", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
       { title: "Company", links: ["About us", "Partnerships", "Contact", "Careers"] as FooterLink[] },
-      { title: "Legal", links: ["Legal notice", "Privacy", "Cookies", "Terms"] as FooterLink[] },
+      { title: "Legal", links: ["Legal notice", { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Terms", route: "/legal" }] as FooterLink[] },
     ],
     coFunded: "Co-funded projects",
     cdtiAlt: "CDTI – Ministry of Science and Innovation",
@@ -31,7 +32,7 @@ const texts = {
       { title: "Seguridad", links: ["Arquitectura", "Cumplimiento", "GDPR", "Detalles técnicos"] as FooterLink[] },
       { title: "Recursos", links: [{ label: "Blog" }, { label: "Whitepaper" }, { label: "Guías" }, { label: "Token Icom", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
       { title: "Empresa", links: ["Sobre nosotros", "Partnerships", "Contacto", "Empleo"] as FooterLink[] },
-      { title: "Legal", links: ["Aviso legal", "Privacidad", "Cookies", "Términos"] as FooterLink[] },
+      { title: "Legal", links: ["Aviso legal", { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Términos", route: "/legal" }] as FooterLink[] },
     ],
     coFunded: "Proyectos cofinanciados",
     cdtiAlt: "CDTI – Ministerio de Ciencia e Innovación",
@@ -58,7 +59,16 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
                   const label = typeof link === "string" ? link : link.label;
                   const href = typeof link === "string" ? "#" : (link.href ?? "#");
                   const external = typeof link === "string" ? false : !!link.external;
-                  return (<li key={label}><a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="text-sm text-white/30 hover:text-white/60 transition-colors">{label}</a></li>);
+                  const route = typeof link === "string" ? undefined : link.route;
+                  return (
+                    <li key={label}>
+                      {route ? (
+                        <Link to={route} className="text-sm text-white/30 hover:text-white/60 transition-colors">{label}</Link>
+                      ) : (
+                        <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="text-sm text-white/30 hover:text-white/60 transition-colors">{label}</a>
+                      )}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
