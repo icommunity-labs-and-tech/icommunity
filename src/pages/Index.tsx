@@ -43,7 +43,7 @@ const Index = () => {
         <Security />
         <WhyICommunity />
         
-        <NewsletterBanner />
+        {/* <NewsletterBanner /> */}
         <CaseStudy onOpenModal={openModal} />
         <FinalCta onOpenModal={openModal} />
       </main>
