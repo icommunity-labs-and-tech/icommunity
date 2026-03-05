@@ -38,8 +38,8 @@ const Index = () => {
         <TrustStatement />
         <TrustArchitecture />
         <TrustLifecycle />
-        <Ecosystem />
         <Segments />
+        <Ecosystem />
         <Security />
         <WhyICommunity />
         
