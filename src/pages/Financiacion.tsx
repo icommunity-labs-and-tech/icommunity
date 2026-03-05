@@ -34,8 +34,8 @@ const Financiacion = () => {
               La actuación ha permitido el desarrollo de soluciones avanzadas basadas en tecnología blockchain aplicadas a la certificación y
               trazabilidad digital.
             </p>
-            <div className="flex justify-center pt-4">
-              <img src={logoPrtrNextgen} alt="Financiado por la Unión Europea – NextGenerationEU · Plan de Recuperación, Transformación y Resiliencia" className="w-full max-w-md rounded-lg bg-white/90 px-6 py-4" />
+            <div className="flex justify-center pt-6 pb-2">
+              <img src={logoPrtrNextgen} alt="Financiado por la Unión Europea – NextGenerationEU · Plan de Recuperación, Transformación y Resiliencia" className="w-full max-w-xl rounded-xl bg-white px-8 py-6 shadow-lg" />
             </div>
             <p className="text-xs text-white/40 text-center pt-2">
               Proyecto financiado por la Unión Europea – NextGenerationEU en el marco del Plan de Recuperación, Transformación y Resiliencia.
