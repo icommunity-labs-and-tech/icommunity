@@ -100,7 +100,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-bold leading-[1.08] text-primary-foreground mb-8 max-w-[560px]">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] text-primary-foreground mb-8 max-w-[560px]">
               {t.h1}
             </h1>
 
