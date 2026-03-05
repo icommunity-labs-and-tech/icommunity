@@ -5,9 +5,9 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const texts = {
   en: {
-    badge: "How Trust Infrastructure Works",
-    title: "Trust <span>Architecture</span>",
-    subtitle: "iCommunity is the independent registry that connects digital systems with regulatory oversight, without modifying your existing infrastructure",
+    badge: "HOW IT WORKS",
+    title: "From digital events to audit-ready <span>evidence</span>",
+    subtitle: "Turns digital events into verifiable audit evidence — without modifying existing systems",
     origins: [
       { label: "KYC Provider", sub: "Identity verification" },
       { label: "Fintech", sub: "Regulated operations" },
@@ -28,9 +28,9 @@ const texts = {
     netBadges: ["Blockchain anchor", "External TSA"],
   },
   es: {
-    badge: "Cómo funciona la infraestructura de confianza",
-    title: "Arquitectura de <span>Confianza</span>",
-    subtitle: "iCommunity es el registro independiente que conecta sistemas digitales con la supervisión regulatoria, sin modificar tu infraestructura existente",
+    badge: "CÓMO FUNCIONA",
+    title: "De eventos digitales a evidencia lista para <span>auditoría</span>",
+    subtitle: "Convierte eventos digitales en evidencia de auditoría verificable — sin modificar los sistemas existentes",
     origins: [
       { label: "Proveedor KYC", sub: "Verificación de identidad" },
       { label: "Fintech", sub: "Operaciones reguladas" },
