@@ -1,7 +1,9 @@
 import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
-import { Package, BrainCircuit, ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import logoCertypass from "@/assets/logo-certypass.webp";
+import logoPrivaro from "@/assets/logo-privaro.png";
 
 const texts = {
   en: {
@@ -53,8 +55,8 @@ const texts = {
 };
 
 const productMeta = [
-  { icon: Package, href: "https://certypass.com", external: true },
-  { icon: BrainCircuit, href: "https://privaro.lovable.app/", external: true },
+  { logo: logoCertypass, href: "https://certypass.com", external: true },
+  { logo: logoPrivaro, href: "https://privaro.lovable.app/", external: true },
 ];
 
 const Ecosystem = () => {
@@ -97,12 +99,12 @@ const Ecosystem = () => {
               className="rounded-xl border border-border bg-card p-8 flex flex-col items-center text-center"
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-6">
-                {React.createElement(productMeta[i].icon, {
-                  className: "w-6 h-6 text-primary",
-                })}
-              </div>
+              {/* Logo */}
+              <img
+                src={productMeta[i].logo}
+                alt={product.eyebrow}
+                className="h-10 object-contain mb-6"
+              />
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
