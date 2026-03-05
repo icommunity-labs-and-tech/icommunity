@@ -15,7 +15,7 @@ const texts = {
     h1: "Turn digital events into auditable evidence",
     sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin",
     bullets: ["Verifiable digital evidence", "Compliance-ready infrastructure", "Trust layer for AI and automated systems"],
-    cta1: "Request technical demo",
+    cta1: "Explore the framework",
     cta2: "View architecture",
     steps: [
       { step: "1", title: "Event", desc: "KYC verification completed" },
@@ -31,7 +31,7 @@ const texts = {
     h1: "Convierte eventos digitales en evidencia auditable",
     sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
     bullets: ["Evidencia digital verificable", "Infraestructura preparada para cumplimiento normativo", "Capa de confianza para IA y sistemas automatizados"],
-    cta1: "Solicitar demo técnica",
+    cta1: "Explorar el framework",
     cta2: "Ver arquitectura",
     steps: [
       { step: "1", title: "Evento", desc: "Verificación KYC completada" },
@@ -118,7 +118,13 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             </div>
 
             <div>
-              <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("trust-architecture");
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20"
+              >
                 {t.cta1}
               </button>
             </div>
