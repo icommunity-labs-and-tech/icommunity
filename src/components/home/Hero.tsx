@@ -27,7 +27,7 @@ const texts = {
     madridText: "iCommunity powers document traceability in public procurement processes for the Madrid City Council",
   },
   es: {
-    badge: "Infraestructura de confianza para sistemas regulados",
+    badge: "Infraestructura de confianza para entornos regulados",
     h1: "Convierte eventos digitales en evidencia auditable",
     sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
     bullets: ["Verificaciones KYC", "Eventos de cadena de suministro", "Análisis y decisiones de IA"],
