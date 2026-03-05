@@ -5,7 +5,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const texts = {
   en: {
-    title: "iCommunity <span>Trust Layer</span>",
+    title: "The iCommunity <span>Trust Layer</span>",
     subtitle: "Common infrastructure on which certification, compliance, and data governance solutions are built.",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Independent layer that transforms digital events into verifiable auditable evidence.",
@@ -17,7 +17,7 @@ const texts = {
     bottom: "A single trust infrastructure enables deploying multiple regulatory solutions without duplicating integrations.",
   },
   es: {
-    title: "iCommunity <span>Trust Layer</span>",
+    title: "The iCommunity <span>Trust Layer</span>",
     subtitle: "Infraestructura común sobre la que se construyen soluciones de certificación, cumplimiento y gobernanza de datos.",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Capa independiente que transforma eventos digitales en evidencia verificable y auditable.",
