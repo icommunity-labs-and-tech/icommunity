@@ -2,17 +2,6 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
-import logoCdti from "@/assets/logo-cdti.jpg";
-import logoNeotec from "@/assets/logo-neotec-cdti.jpg";
-import logoFeder from "@/assets/logo-feder.png";
-import logoUE from "@/assets/logo-cofinanciado-ue.png";
-import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
-import logoPRTR from "@/assets/logo-prtr.png";
-import logoNextGenEU from "@/assets/logo-nextgen-eu.png";
-import logoFondosEuropeos from "@/assets/logo-fondos-europeos.png";
-import logoFSE from "@/assets/logo-fse.png";
-import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
-import logoComunidadMadrid from "@/assets/logo-comunidad-madrid.png";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,10 +34,6 @@ const Financiacion = () => {
               El proyecto se desarrolla en las instalaciones de ICOMMUNITY en C/ Valverde 2 (Telefónica Open Future), Madrid, durante las
               anualidades de 2019 – 2021, y con un presupuesto de ejecución de 351,055.00€.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoFeder} alt="FEDER" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoCdti} alt="CDTI" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-            </div>
           </section>
 
           {/* Proyecto Cervera */}
@@ -69,9 +54,6 @@ const Financiacion = () => {
               <strong className="text-white"> Centro Tecnológico EURECAT</strong> de Barcelona en la investigación de soluciones técnicas encaminadas hacia la resolución de la
               <strong className="text-white"> interoperabilidad</strong> entre las cadenas de bloques/DLTs.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoCdtiCervera} alt="CDTI Red Cervera" className="h-14 rounded bg-white/90 px-3 py-1.5" />
-            </div>
           </section>
 
           {/* Programa NEOTEC */}
@@ -95,9 +77,6 @@ const Financiacion = () => {
               reducir los datos personales que se comparten con terceros y mejorar la privacidad de los mismos gracias a técnicas de
               criptografía avanzadas.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoNeotec} alt="CDTI Neotec" className="h-14 rounded" />
-            </div>
           </section>
 
           {/* Proyecto Blockchain PRTR 2025 */}
@@ -118,10 +97,6 @@ const Financiacion = () => {
               La actuación ha permitido el desarrollo de soluciones avanzadas basadas en tecnología blockchain aplicadas a la certificación y
               trazabilidad digital.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoNextGenEU} alt="Financiado por la UE – NextGenerationEU" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoPRTR} alt="Plan de Recuperación, Transformación y Resiliencia" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-            </div>
             <p className="text-xs text-white/40 pt-2">
               Proyecto financiado por la Unión Europea – NextGenerationEU en el marco del Plan de Recuperación, Transformación y Resiliencia.
             </p>
@@ -146,11 +121,6 @@ const Financiacion = () => {
               Este proyecto contribuye a la mejora de la cooperación público-privada en I+D+i en la Comunidad de Madrid, conforme a la
               Orden de concesión correspondiente.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoComunidadMadrid} alt="Comunidad de Madrid" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoFondosEuropeos} alt="Fondos Europeos" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-            </div>
             <p className="text-xs text-white/40 pt-2">
               Proyecto parcialmente financiado por el Fondo Europeo de Desarrollo Regional (FEDER) en el marco del Programa Operativo Comunidad de Madrid 2021–2027.
             </p>
@@ -169,11 +139,6 @@ const Financiacion = () => {
               ICOMMUNITY LABS & TECH, S.L. ha recibido una ayuda para al contratación estable de jóvenes, del programa para el fomento de
               la contratación en el ámbito de la Comunidad de Madrid.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <img src={logoUE} alt="Cofinanciado por la Unión Europea" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoFondosEuropeos} alt="Fondos Europeos" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-              <img src={logoFSE} alt="Fondo Social Europeo" className="h-12 rounded bg-white/90 px-3 py-1.5" />
-            </div>
           </section>
 
         </article>
