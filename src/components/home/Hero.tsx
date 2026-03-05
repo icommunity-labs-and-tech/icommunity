@@ -108,11 +108,11 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               {t.sub}
             </p>
 
-            <div className="flex flex-col gap-4 mb-14 max-w-[480px]">
+            <div className="flex flex-col gap-3 mb-14 max-w-[480px]">
               {t.bullets.map((b) => (
-                <div key={b} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
-                  <span className="text-primary-foreground/75 text-[15px]">{b}</span>
+                <div key={b} className="flex items-center gap-3 rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 backdrop-blur-sm px-5 py-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow flex-shrink-0" />
+                  <span className="text-primary-foreground/90 text-[13px] md:text-sm font-medium">{b}</span>
                 </div>
               ))}
             </div>
