@@ -40,11 +40,11 @@ const Index = () => {
         <TrustLifecycle />
         <Segments />
         <Ecosystem />
+        <CaseStudy onOpenModal={openModal} />
         <Security />
         <WhyICommunity />
         
         {/* <NewsletterBanner /> */}
-        <CaseStudy onOpenModal={openModal} />
         <FinalCta onOpenModal={openModal} />
       </main>
       <Footer onOpenModal={() => openModal()} />
