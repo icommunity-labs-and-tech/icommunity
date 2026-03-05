@@ -118,6 +118,12 @@ const Financiacion = () => {
               reducir los datos personales que se comparten con terceros y mejorar la privacidad de los mismos gracias a técnicas de
               criptografía avanzadas.
             </p>
+            <div className="flex justify-center pt-8 pb-2">
+              <img src={logoNeotecCdti} alt="CDTI – Programa NEOTEC" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
+              Proyecto financiado por el Centro para el Desarrollo Tecnológico Industrial (CDTI) en el marco del programa NEOTEC.
+            </p>
           </section>
 
           {/* Programa Fomento Contratación Jóvenes */}
