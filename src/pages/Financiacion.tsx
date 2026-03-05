@@ -15,27 +15,6 @@ const Financiacion = () => {
         <article className="max-w-3xl mx-auto space-y-16 text-sm leading-relaxed">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Proyectos Cofinanciados</h1>
 
-          {/* FEDER */}
-          <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
-            <h2 className="text-xl font-semibold text-white">Fondo Europeo de Desarrollo Regional (FEDER)</h2>
-            <p>
-              <strong className="text-white">ICOMMUNITY LABS & TECH, S.L.</strong> ha recibido una ayuda para la ejecución del proyecto de Investigación y Desarrollo con título
-              <strong className="text-white"> "ICOMMUNITY BLOCKCHAIN SOLUTIONS"</strong> y número de expediente <strong className="text-white">IDI-20200143</strong>, a través del Centro para el Desarrollo
-              Tecnológico Industrial (CDTI). Esta ayuda está cofinanciada por el Fondo Europeo de Desarrollo Regional (FEDER) a través del
-              programa Operativo Plurirregional de Crecimiento Inteligente 2014-2020.
-            </p>
-            <p>
-              El objetivo global perseguido es desarrollar una nueva plataforma, que internamente se ha denominado como "iCommunity
-              Blockchain Solutions" (de ahora en adelante "iBS"), que proporcione herramientas y casos de uso basados en Blockchain a las
-              empresas, y que al mismo tiempo permita a éstas acceder a diferentes cadenas de bloques de forma transparente
-              (interoperabilidad).
-            </p>
-            <p>
-              El proyecto se desarrolla en las instalaciones de ICOMMUNITY en C/ Valverde 2 (Telefónica Open Future), Madrid, durante las
-              anualidades de 2019 – 2021, y con un presupuesto de ejecución de 351,055.00€.
-            </p>
-          </section>
-
           {/* Proyecto Cervera */}
           <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
             <h2 className="text-xl font-semibold text-white">Proyecto Cervera</h2>
