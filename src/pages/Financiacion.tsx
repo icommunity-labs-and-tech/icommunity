@@ -4,6 +4,7 @@ import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
+import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -87,6 +88,12 @@ const Financiacion = () => {
               Esta financiación ha permitido a iCommunity Labs completar el desarrollo de la plataforma IBS, colaborando junto con el
               <strong className="text-white"> Centro Tecnológico EURECAT</strong> de Barcelona en la investigación de soluciones técnicas encaminadas hacia la resolución de la
               <strong className="text-white"> interoperabilidad</strong> entre las cadenas de bloques/DLTs.
+            </p>
+            <div className="flex justify-center pt-8 pb-2">
+              <img src={logoCdtiCervera} alt="CDTI – Red Cervera" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
+              Proyecto financiado por el Centro para el Desarrollo Tecnológico Industrial (CDTI) en el marco del programa de Transferencia Tecnológica "Cervera".
             </p>
           </section>
 
