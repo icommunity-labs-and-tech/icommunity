@@ -30,7 +30,7 @@ const texts = {
     badge: "Infraestructura de confianza para entornos regulados",
     h1: "Convierte eventos digitales en evidencia auditable",
     sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
-    bullets: ["Verificaciones KYC", "Eventos de cadena de suministro", "Análisis y decisiones de IA"],
+    bullets: ["Verificaciones KYC", "Eventos en cadena de suministro", "Análisis y decisiones de IA"],
     cta1: "Explorar el framework",
     cta2: "Ver arquitectura",
     steps: [
