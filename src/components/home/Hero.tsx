@@ -11,7 +11,7 @@ declare global {
 
 const texts = {
   en: {
-    badge: "Trust infrastructure for verifiable digital interactions",
+    badge: "Trust infrastructure for regulated systems",
     h1: "Turn digital events into auditable evidence",
     sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin",
     bullets: ["Verifiable digital evidence", "Compliance-ready infrastructure", "Trust layer for AI and automated systems"],
@@ -27,7 +27,7 @@ const texts = {
     madridText: "iCommunity powers document traceability in public procurement processes for the Madrid City Council",
   },
   es: {
-    badge: "Infraestructura de confianza para interacciones digitales verificables",
+    badge: "Infraestructura de confianza para sistemas regulados",
     h1: "Convierte eventos digitales en evidencia auditable",
     sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
     bullets: ["Evidencia digital verificable", "Infraestructura preparada para cumplimiento normativo", "Capa de confianza para IA y sistemas automatizados"],
