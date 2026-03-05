@@ -46,7 +46,6 @@ const Index = () => {
         <NewsletterBanner />
         <CaseStudy onOpenModal={openModal} />
         <FinalCta onOpenModal={openModal} />
-        <LeadMagnet />
       </main>
       <Footer onOpenModal={() => openModal()} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} defaultOrgType={selectedOrg} />
