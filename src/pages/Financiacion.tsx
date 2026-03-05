@@ -3,6 +3,7 @@ import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
+import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
