@@ -6,6 +6,9 @@ import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
 import logoNeotecCdti from "@/assets/logo-neotec-cdti.jpg";
+import logoCofinanciadoUe from "@/assets/logo-cofinanciado-ue.jpg";
+import logoFondosEuropeos from "@/assets/logo-fondos-europeos.jpg";
+import logoFse from "@/assets/logo-fse.jpg";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
