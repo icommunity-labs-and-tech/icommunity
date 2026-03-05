@@ -6,7 +6,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const texts = {
   en: {
     badge: "HOW IT WORKS",
-    title: "From digital events to audit-ready <span>evidence</span>",
+    title: "From digital events to <span>audit-ready evidence</span>",
     subtitle: "Turns digital events into verifiable audit evidence — without modifying existing systems",
     origins: [
       { label: "KYC Provider", sub: "Identity verification" },
@@ -29,7 +29,7 @@ const texts = {
   },
   es: {
     badge: "CÓMO FUNCIONA",
-    title: "De eventos digitales a evidencia lista para <span>auditoría</span>",
+    title: "De eventos digitales a <span>evidencia lista para auditoría</span>",
     subtitle: "Convierte eventos digitales en evidencia de auditoría verificable — sin modificar los sistemas existentes",
     origins: [
       { label: "Proveedor KYC", sub: "Verificación de identidad" },
