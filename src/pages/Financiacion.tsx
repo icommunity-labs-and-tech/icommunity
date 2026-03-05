@@ -5,6 +5,7 @@ import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
+import logoNeotecCdti from "@/assets/logo-neotec-cdti.jpg";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
