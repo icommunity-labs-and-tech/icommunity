@@ -75,7 +75,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   }, []);
 
   return (
-    <section className="hero pt-32 pb-20 md:pt-40 md:pb-28">
+    <section className="hero pt-36 pb-24 md:pt-48 md:pb-36">
       <video
         ref={videoRef}
         autoPlay
@@ -90,44 +90,36 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
       <div className="hero-noise" />
 
       <div className="hero-content ic-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-6">
+            <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-8">
               <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] text-primary-foreground mb-6 max-w-[540px]">
+            <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-bold leading-[1.08] text-primary-foreground mb-8 max-w-[560px]">
               {t.h1}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-[480px] leading-relaxed">
+
+            <p className="text-lg md:text-xl text-primary-foreground/55 font-light mb-12 max-w-[480px] leading-relaxed">
               {t.sub}
             </p>
 
-            <div className="flex flex-col gap-3 mb-10 max-w-[480px]">
+            <div className="flex flex-col gap-4 mb-14 max-w-[480px]">
               {t.bullets.map((b) => (
                 <div key={b} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow" />
-                  <span className="text-primary-foreground/80 text-sm font-medium">{b}</span>
+                  <span className="text-primary-foreground/75 text-[15px]">{b}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center max-w-[480px]">
-              <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
+            <div>
+              <button onClick={onOpenModal} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-ic-blue/20">
                 {t.cta1}
-              </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById("trust-architecture");
-                  el?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/20 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/5 transition-colors"
-              >
-                {t.cta2}
               </button>
             </div>
           </motion.div>
