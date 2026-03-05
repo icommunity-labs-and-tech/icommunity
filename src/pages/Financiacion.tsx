@@ -5,6 +5,7 @@ import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
+import logoNeotecCdti from "@/assets/logo-neotec-cdti.jpg";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -117,6 +118,12 @@ const Financiacion = () => {
               identidad digital unificada basado en algoritmos de prueba conocimiento cero o zero knowledge proof (ZKP) que nos permitirán
               reducir los datos personales que se comparten con terceros y mejorar la privacidad de los mismos gracias a técnicas de
               criptografía avanzadas.
+            </p>
+            <div className="flex justify-center pt-8 pb-2">
+              <img src={logoNeotecCdti} alt="CDTI – Programa NEOTEC" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
+              Proyecto financiado por el Centro para el Desarrollo Tecnológico Industrial (CDTI) en el marco del programa NEOTEC.
             </p>
           </section>
 
