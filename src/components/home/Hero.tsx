@@ -75,7 +75,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   }, []);
 
   return (
-    <section className="hero pt-36 pb-24 md:pt-48 md:pb-36">
+    <section className="hero pt-28 pb-24 md:pt-36 md:pb-36">
       <video
         ref={videoRef}
         autoPlay
