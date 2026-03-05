@@ -55,8 +55,8 @@ const texts = {
 };
 
 const productMeta = [
-  { logo: logoCertypass, href: "https://certypass.com", external: true },
-  { logo: logoPrivaro, href: "https://privaro.lovable.app/", external: true },
+  { logo: logoCertypass, href: "https://certypass.com", external: true, logoClass: "h-10" },
+  { logo: logoPrivaro, href: "https://privaro.lovable.app/", external: true, logoClass: "h-14" },
 ];
 
 const Ecosystem = () => {
@@ -103,7 +103,7 @@ const Ecosystem = () => {
               <img
                 src={productMeta[i].logo}
                 alt={product.eyebrow}
-                className="h-10 object-contain mb-6"
+                className={`${productMeta[i].logoClass} object-contain mb-6`}
               />
 
               {/* Eyebrow */}
