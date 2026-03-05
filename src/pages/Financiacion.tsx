@@ -15,49 +15,6 @@ const Financiacion = () => {
         <article className="max-w-3xl mx-auto space-y-16 text-sm leading-relaxed">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Proyectos Cofinanciados</h1>
 
-          {/* Proyecto Cervera */}
-          <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
-            <h2 className="text-xl font-semibold text-white">Proyecto Cervera</h2>
-            <div className="space-y-1 text-white/60">
-              <p>Nº: Proyecto IDI-20200143</p>
-              <p>Título: ICOMMUNITY BLOCKCHAIN SOLUTIONS</p>
-              <p>Entidad: B-88350897 ICOMMUNITY LABS & TECH SL</p>
-              <p>Presupuesto concedido: 298,395.70€</p>
-            </div>
-            <p>
-              El objetivo del proyecto Cervera, es la financiación de proyectos individuales de I+D desarrollados por empresas que colaboren
-              con Centros Tecnológicos de ámbito estatal en las tecnologías prioritarias Cervera.
-            </p>
-            <p>
-              Esta financiación ha permitido a iCommunity Labs completar el desarrollo de la plataforma IBS, colaborando junto con el
-              <strong className="text-white"> Centro Tecnológico EURECAT</strong> de Barcelona en la investigación de soluciones técnicas encaminadas hacia la resolución de la
-              <strong className="text-white"> interoperabilidad</strong> entre las cadenas de bloques/DLTs.
-            </p>
-          </section>
-
-          {/* Programa NEOTEC */}
-          <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
-            <h2 className="text-xl font-semibold text-white">Programa NEOTEC</h2>
-            <div className="space-y-1 text-white/60">
-              <p>Expediente: EXP 00135216 / SNEO-20201073</p>
-              <p>Título: TECNOLOGÍA DE SEGURIDAD MEDIANTE ALGORITMOS DE ENCRIPTACIÓN E IDENTIDAD TOKENIZADA PARA EL ALMACENAMIENTO DE DATOS EN REDES IPFS Y BLOCKCHAIN.</p>
-              <p>Entidad: B-88350897 ICOMMUNITY LABS & TECH SL</p>
-              <p>Presupuesto concedido: 250.000€</p>
-            </div>
-            <p>
-              El objetivo del programa NEOTEC, es la financiación de la puesta en marcha de nuevos proyectos empresariales, que requieran
-              el uso de tecnologías o conocimientos desarrollados a partir de la actividad investigadora y en los que la estrategia de negocio se
-              base en el desarrollo de tecnología.
-            </p>
-            <p>
-              Esta financiación ha facilitado a iCommunity Labs desarrollar su tecnología de seguridad mediante algoritmos de encriptación e
-              identidad tokenizada para el almacenamiento de datos en redes IPFS y blockchain. Esto incluye la creación de un módulo de
-              identidad digital unificada basado en algoritmos de prueba conocimiento cero o zero knowledge proof (ZKP) que nos permitirán
-              reducir los datos personales que se comparten con terceros y mejorar la privacidad de los mismos gracias a técnicas de
-              criptografía avanzadas.
-            </p>
-          </section>
-
           {/* Proyecto Blockchain PRTR 2025 */}
           <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
             <h2 className="text-xl font-semibold text-white">Proyecto de Caso de Uso Blockchain – PRTR 2025</h2>
@@ -102,6 +59,49 @@ const Financiacion = () => {
             </p>
             <p className="text-xs text-white/40 pt-2">
               Proyecto parcialmente financiado por el Fondo Europeo de Desarrollo Regional (FEDER) en el marco del Programa Operativo Comunidad de Madrid 2021–2027.
+            </p>
+          </section>
+
+          {/* Proyecto Cervera */}
+          <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
+            <h2 className="text-xl font-semibold text-white">Proyectos de I+D de Transferencia Tecnológica "Cervera"</h2>
+            <div className="space-y-1 text-white/60">
+              <p>Nº: Proyecto IDI-20200143</p>
+              <p>Título: ICOMMUNITY BLOCKCHAIN SOLUTIONS</p>
+              <p>Entidad: B-88350897 ICOMMUNITY LABS & TECH SL</p>
+              <p>Presupuesto concedido: 298,395.70€</p>
+            </div>
+            <p>
+              El objetivo del proyecto Cervera, es la financiación de proyectos individuales de I+D desarrollados por empresas que colaboren
+              con Centros Tecnológicos de ámbito estatal en las tecnologías prioritarias Cervera.
+            </p>
+            <p>
+              Esta financiación ha permitido a iCommunity Labs completar el desarrollo de la plataforma IBS, colaborando junto con el
+              <strong className="text-white"> Centro Tecnológico EURECAT</strong> de Barcelona en la investigación de soluciones técnicas encaminadas hacia la resolución de la
+              <strong className="text-white"> interoperabilidad</strong> entre las cadenas de bloques/DLTs.
+            </p>
+          </section>
+
+          {/* Programa NEOTEC */}
+          <section className="space-y-4 border border-white/10 rounded-xl p-6 md:p-8 bg-white/[0.02]">
+            <h2 className="text-xl font-semibold text-white">Programa NEOTEC</h2>
+            <div className="space-y-1 text-white/60">
+              <p>Expediente: EXP 00135216 / SNEO-20201073</p>
+              <p>Título: TECNOLOGÍA DE SEGURIDAD MEDIANTE ALGORITMOS DE ENCRIPTACIÓN E IDENTIDAD TOKENIZADA PARA EL ALMACENAMIENTO DE DATOS EN REDES IPFS Y BLOCKCHAIN.</p>
+              <p>Entidad: B-88350897 ICOMMUNITY LABS & TECH SL</p>
+              <p>Presupuesto concedido: 250.000€</p>
+            </div>
+            <p>
+              El objetivo del programa NEOTEC, es la financiación de la puesta en marcha de nuevos proyectos empresariales, que requieran
+              el uso de tecnologías o conocimientos desarrollados a partir de la actividad investigadora y en los que la estrategia de negocio se
+              base en el desarrollo de tecnología.
+            </p>
+            <p>
+              Esta financiación ha facilitado a iCommunity Labs desarrollar su tecnología de seguridad mediante algoritmos de encriptación e
+              identidad tokenizada para el almacenamiento de datos en redes IPFS y blockchain. Esto incluye la creación de un módulo de
+              identidad digital unificada basado en algoritmos de prueba conocimiento cero o zero knowledge proof (ZKP) que nos permitirán
+              reducir los datos personales que se comparten con terceros y mejorar la privacidad de los mismos gracias a técnicas de
+              criptografía avanzadas.
             </p>
           </section>
 
