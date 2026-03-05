@@ -3,6 +3,7 @@ import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
+import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -61,7 +62,10 @@ const Financiacion = () => {
               Este proyecto contribuye a la mejora de la cooperación público-privada en I+D+i en la Comunidad de Madrid, conforme a la
               Orden de concesión correspondiente.
             </p>
-            <p className="text-xs text-white/40 pt-2">
+            <div className="flex justify-center pt-8 pb-2">
+              <img src={logoDatiaFeder} alt="Comunidad de Madrid · Fondos Europeos · Cofinanciado por la Unión Europea – FEDER 2021-2027" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
               Proyecto parcialmente financiado por el Fondo Europeo de Desarrollo Regional (FEDER) en el marco del Programa Operativo Comunidad de Madrid 2021–2027.
             </p>
           </section>
