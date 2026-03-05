@@ -37,31 +37,27 @@ const WhyICommunity = () => {
   const t = texts[lang];
 
   return (
-    <section className="ic-section bg-background" ref={ref}>
+    <section className="ic-section py-16 md:py-20 bg-background" ref={ref}>
       <div className="ic-container max-w-5xl">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t.subtitle}</p>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto">{t.subtitle}</p>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-5">
-          {t.blocks.map((b, i) => {
-            const isPrimary = i < 2;
-            return (
-              <motion.div key={b.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }} className={`rounded-xl transition-all duration-300 ${isPrimary ? "p-7" : "p-6"}`}>
-                <div className="flex items-start gap-4">
-                  <div className={`rounded-lg flex items-center justify-center flex-shrink-0 ${isPrimary ? "w-11 h-11 bg-primary/10" : "w-10 h-10 bg-accent"}`}>
-                    <b.icon className={`text-primary ${isPrimary ? "w-[22px] h-[22px]" : "w-5 h-5"}`} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className={`font-semibold text-foreground mb-1.5 ${isPrimary ? "text-[15px]" : "text-sm"}`}>{b.title}</h3>
-                    <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-3">
+          {t.blocks.map((b, i) => (
+            <motion.div key={b.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }} className="rounded-xl transition-all duration-300 p-5">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+                  <b.icon className="text-primary w-[18px] h-[18px]" strokeWidth={1.5} />
                 </div>
-              </motion.div>
-            );
-          })}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-semibold text-foreground mb-1">{b.title}</h3>
+                  <p className="text-[12px] leading-relaxed text-muted-foreground">{b.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1 }} className="text-center mt-14 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed" />
       </div>
     </section>
   );
