@@ -15,7 +15,7 @@ const texts = {
     navLinks: [
       { label: "How it works", href: "/#trust-architecture" },
       { label: "Use cases", href: "/#segments" },
-      { label: "Security", href: "/#security" },
+      
       { label: "Success stories", href: "/#cases" },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Company", href: "/empresa", isRoute: true },
@@ -27,7 +27,7 @@ const texts = {
     navLinks: [
       { label: "Cómo funciona", href: "/#trust-architecture" },
       { label: "Casos de uso", href: "/#segments" },
-      { label: "Seguridad", href: "/#security" },
+      
       { label: "Casos de éxito", href: "/#cases" },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Empresa", href: "/empresa", isRoute: true },
