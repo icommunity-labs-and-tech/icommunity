@@ -13,8 +13,8 @@ const texts = {
   en: {
     badge: "Trust infrastructure for verifiable digital interactions",
     h1: "Turn digital events into auditable evidence",
-    sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin.",
-    bullets: ["Audited traceability from the origin", "Direct API integration", "Independent certification for regulators"],
+    sub: "We secure, certify and verify digital interactions\nfor AI systems, supply chains and regulatory compliance",
+    bullets: ["Verifiable digital evidence", "Compliance-ready infrastructure", "Trust layer for AI and automated systems"],
     cta1: "Request technical demo",
     cta2: "View architecture",
     steps: [
