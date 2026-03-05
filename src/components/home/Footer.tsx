@@ -12,7 +12,7 @@ type FooterLink = string | { label: string; href?: string; external?: boolean; r
 const texts = {
   en: {
     columns: [
-      { title: "Product", links: ["Platform", "SDK & API", "Verifier", "Documentation"] as FooterLink[] },
+      { title: "Product", links: ["Documentation"] as FooterLink[] },
       { title: "Use cases", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Age verification", route: "/#trust-architecture" }, { label: "Anti-fraud", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Legal notice", route: "/legal" }, { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Funding", route: "/financiacion" }] as FooterLink[] },
