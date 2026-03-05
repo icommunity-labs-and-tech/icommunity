@@ -14,7 +14,7 @@ const texts = {
     badge: "Trust infrastructure for regulated systems",
     h1: "Turn digital events into auditable evidence",
     sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin",
-    bullets: ["KYC verifications", "Supply chain events", "AI decisions"],
+    bullets: ["KYC verifications", "Supply chain events", "AI analysis and decisions"],
     cta1: "Explore the framework",
     cta2: "View architecture",
     steps: [
@@ -30,7 +30,7 @@ const texts = {
     badge: "Infraestructura de confianza para sistemas regulados",
     h1: "Convierte eventos digitales en evidencia auditable",
     sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
-    bullets: ["Verificaciones KYC", "Eventos de cadena de suministro", "Decisiones de IA"],
+    bullets: ["Verificaciones KYC", "Eventos de cadena de suministro", "Análisis y decisiones de IA"],
     cta1: "Explorar el framework",
     cta2: "Ver arquitectura",
     steps: [
