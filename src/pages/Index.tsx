@@ -35,9 +35,9 @@ const Index = () => {
         <Hero onOpenModal={() => openModal()} />
         <TrustBar />
         <StructuralProblem />
+        <TrustStatement />
         <TrustArchitecture />
         <Ecosystem />
-        <TrustStatement />
         <TrustLifecycle />
         <Segments />
         <Security />
