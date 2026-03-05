@@ -119,12 +119,6 @@ const Ecosystem = () => {
                 {product.desc}
               </p>
 
-              {/* Tag */}
-              <span className="inline-flex items-center text-[10px] font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-md mb-6 border border-border">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mr-1.5 animate-pulse" />
-                {product.tag}
-              </span>
-
               {/* CTA */}
               <a
                 href={productMeta[i].href}
