@@ -11,7 +11,7 @@ declare global {
 
 const texts = {
   en: {
-    badge: "Trust infrastructure for regulated systems",
+    badge: "Trust infrastructure for regulated environments",
     h1: "Turn digital events into auditable evidence",
     sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin",
     bullets: ["KYC verifications", "Supply chain events", "AI analysis and decisions"],
