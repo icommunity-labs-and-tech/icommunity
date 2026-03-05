@@ -37,8 +37,8 @@ const Index = () => {
         <StructuralProblem />
         <TrustStatement />
         <TrustArchitecture />
-        <Ecosystem />
         <TrustLifecycle />
+        <Ecosystem />
         <Segments />
         <Security />
         <WhyICommunity />
