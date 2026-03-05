@@ -6,6 +6,9 @@ import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
 import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
 import logoNeotecCdti from "@/assets/logo-neotec-cdti.jpg";
+import logoCofinanciadoUe from "@/assets/logo-cofinanciado-ue.jpg";
+import logoFondosEuropeos from "@/assets/logo-fondos-europeos.jpg";
+import logoFse from "@/assets/logo-fse.jpg";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -139,6 +142,14 @@ const Financiacion = () => {
             <p>
               ICOMMUNITY LABS & TECH, S.L. ha recibido una ayuda para al contratación estable de jóvenes, del programa para el fomento de
               la contratación en el ámbito de la Comunidad de Madrid.
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-6 pt-8 pb-2">
+              <img src={logoFondosEuropeos} alt="Fondos Europeos" className="h-16 rounded bg-white px-4 py-2 shadow-lg" />
+              <img src={logoCofinanciadoUe} alt="Cofinanciado por la Unión Europea" className="h-16 rounded bg-white px-4 py-2 shadow-lg" />
+              <img src={logoFse} alt="Unión Europea – Fondo Social Europeo" className="h-16 rounded bg-white px-4 py-2 shadow-lg" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
+              Proyecto cofinanciado por el Fondo Social Europeo de la Unión Europea.
             </p>
           </section>
 
