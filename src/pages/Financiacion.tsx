@@ -91,7 +91,7 @@ const Financiacion = () => {
               <strong className="text-white"> interoperabilidad</strong> entre las cadenas de bloques/DLTs.
             </p>
             <div className="flex justify-center pt-8 pb-2">
-              <img src={logoCdtiCervera} alt="CDTI – Red Cervera" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+              <img src={logoCdtiCervera} alt="CDTI – Red Cervera" className="max-w-xs mx-auto rounded-xl bg-white px-8 py-6 shadow-xl" />
             </div>
             <p className="text-xs text-white/40 text-center pt-2">
               Proyecto financiado por el Centro para el Desarrollo Tecnológico Industrial (CDTI) en el marco del programa de Transferencia Tecnológica "Cervera".
@@ -120,7 +120,7 @@ const Financiacion = () => {
               criptografía avanzadas.
             </p>
             <div className="flex justify-center pt-8 pb-2">
-              <img src={logoNeotecCdti} alt="CDTI – Programa NEOTEC" className="w-full rounded-xl bg-white px-10 py-8 shadow-xl" />
+              <img src={logoNeotecCdti} alt="CDTI – Programa NEOTEC" className="max-w-xs mx-auto rounded-xl bg-white px-8 py-6 shadow-xl" />
             </div>
             <p className="text-xs text-white/40 text-center pt-2">
               Proyecto financiado por el Centro para el Desarrollo Tecnológico Industrial (CDTI) en el marco del programa NEOTEC.
