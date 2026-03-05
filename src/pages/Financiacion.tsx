@@ -4,6 +4,7 @@ import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
+import logoCdtiCervera from "@/assets/logo-cdti-cervera.png";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
