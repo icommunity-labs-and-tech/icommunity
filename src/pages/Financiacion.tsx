@@ -2,6 +2,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import { useState } from "react";
+import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 
 const Financiacion = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,7 +34,10 @@ const Financiacion = () => {
               La actuación ha permitido el desarrollo de soluciones avanzadas basadas en tecnología blockchain aplicadas a la certificación y
               trazabilidad digital.
             </p>
-            <p className="text-xs text-white/40 pt-2">
+            <div className="flex justify-center pt-4">
+              <img src={logoPrtrNextgen} alt="Financiado por la Unión Europea – NextGenerationEU · Plan de Recuperación, Transformación y Resiliencia" className="w-full max-w-md rounded-lg bg-white/90 px-6 py-4" />
+            </div>
+            <p className="text-xs text-white/40 text-center pt-2">
               Proyecto financiado por la Unión Europea – NextGenerationEU en el marco del Plan de Recuperación, Transformación y Resiliencia.
             </p>
           </section>
