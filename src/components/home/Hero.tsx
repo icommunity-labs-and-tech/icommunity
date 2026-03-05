@@ -29,8 +29,8 @@ const texts = {
   es: {
     badge: "Infraestructura de confianza para interacciones digitales verificables",
     h1: "Convierte eventos digitales en evidencia auditable",
-    sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen.",
-    bullets: ["Trazabilidad auditada desde el origen", "Integración directa vía API", "Certificación independiente para reguladores"],
+    sub: "Transforma procesos digitales en evidencia verificable, lista para auditoría y supervisión regulatoria desde el origen",
+    bullets: ["Evidencia digital verificable", "Infraestructura preparada para cumplimiento normativo", "Capa de confianza para IA y sistemas automatizados"],
     cta1: "Solicitar demo técnica",
     cta2: "Ver arquitectura",
     steps: [
