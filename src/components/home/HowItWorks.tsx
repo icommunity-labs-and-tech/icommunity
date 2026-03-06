@@ -116,7 +116,13 @@ const HowItWorks = () => {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t.title}</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t.subtitle}</p>
-          <p className="text-muted-foreground text-lg font-mono mt-3 max-w-2xl mx-auto">{t.integration}</p>
+          <p className="text-muted-foreground text-lg font-mono mt-3 max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span>{t.integration.prefix}</span>
+            {t.integration.methods.map((m) => (
+              <span key={m} className="inline-flex items-center px-2.5 py-0.5 rounded-md bg-primary/10 text-primary font-semibold text-sm border border-primary/20">{m}</span>
+            ))}
+            <span>{t.integration.suffix}</span>
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
