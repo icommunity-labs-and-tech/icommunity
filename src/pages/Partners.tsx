@@ -140,21 +140,21 @@ const Partners = () => {
       </div></div>
 
       <Section><div id="model" className="ic-container max-w-5xl scroll-mt-24">
-        <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.modelTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
+        <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.modelTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="grid md:grid-cols-3 gap-6">{t.collabs.map((b, i) => (
           <FadeIn key={b.title} delay={i * 0.1}><div className="ic-card flex flex-col items-start gap-4 h-full"><div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center"><b.icon className="w-5 h-5 text-primary" /></div><h3 className="text-lg font-semibold text-foreground">{b.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{b.text}</p></div></FadeIn>
         ))}</div>
       </div></Section>
 
       <Section className="bg-secondary/30"><div className="ic-container max-w-5xl">
-        <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.typesTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
+        <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.typesTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{t.partnerTypes.map((p, i) => (
           <FadeIn key={p.title} delay={i * 0.08}><div className="rounded-2xl border border-border bg-card p-6 flex items-start gap-4"><div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0"><p.icon className="w-5 h-5 text-primary" /></div><div><h3 className="text-sm font-semibold text-foreground mb-1">{p.title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p></div></div></FadeIn>
         ))}</div>
       </div></Section>
 
       <Section><div className="ic-container max-w-5xl">
-        <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
+        <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">{logos.map((l, i) => (
           <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
         ))}</div>

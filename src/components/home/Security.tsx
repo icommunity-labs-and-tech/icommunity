@@ -39,7 +39,7 @@ const Security = () => {
       <div className="ic-container max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
           <p className="text-sm font-medium tracking-wide text-primary/60 mb-4">{t.badge}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">{t.subtitle}</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-10">
