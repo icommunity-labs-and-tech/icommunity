@@ -49,7 +49,7 @@ const Security = () => {
               <h3 className="text-sm font-semibold text-foreground mb-5 tracking-tight">{layer.title}</h3>
               <ul className="space-y-3">
                 {layer.properties.map((prop) => (
-                  <li key={prop} className="flex items-start gap-2.5"><div className="w-1 h-1 rounded-full bg-primary/40 mt-2 flex-shrink-0" /><span className="text-[13px] leading-relaxed text-muted-foreground">{prop}</span></li>
+                  <li key={prop} className="flex items-start gap-2.5"><div className="w-1 h-1 rounded-full bg-primary/40 mt-2 flex-shrink-0" /><span className="text-[14px] leading-relaxed text-muted-foreground">{prop}</span></li>
                 ))}
               </ul>
             </motion.div>

@@ -86,8 +86,8 @@ const ProvenTrust = () => {
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0"><c.icon className="w-5 h-5 text-primary" strokeWidth={1.5} /></div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground mb-1.5">{c.name}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground mb-3">{c.description}</p>
-                  <div className="flex flex-wrap gap-1.5">{c.tags.map((tag) => (<span key={tag} className="text-[11px] font-medium tracking-wide uppercase text-primary/60 bg-accent px-2 py-0.5 rounded">{tag}</span>))}</div>
+                  <p className="text-[14px] leading-relaxed text-muted-foreground mb-3">{c.description}</p>
+                  <div className="flex flex-wrap gap-1.5">{c.tags.map((tag) => (<span key={tag} className="text-[12px] font-medium tracking-wide uppercase text-primary/60 bg-accent px-2 py-0.5 rounded">{tag}</span>))}</div>
                 </div>
               </div>
             </motion.div>
@@ -103,7 +103,7 @@ const ProvenTrust = () => {
             {t.trustColumns.map((col, i) => (
               <motion.div key={col.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }} className="rounded-xl border border-border bg-background p-6 flex flex-col">
                 <h4 className="text-sm font-semibold text-foreground mb-2">{col.title}</h4>
-                <p className="text-[12px] leading-relaxed text-muted-foreground mb-5">{col.description}</p>
+                <p className="text-[13px] leading-relaxed text-muted-foreground mb-5">{col.description}</p>
                 <div className="flex items-center gap-6 justify-center py-6 flex-1">
                   {logoData[i].map((logo, j) => 'src' in logo ? (<img key={j} src={logo.src} alt={logo.alt} className="h-8 object-contain grayscale opacity-50 hover:opacity-80 transition-opacity duration-300" />) : (<span key={j} className="text-sm font-semibold text-muted-foreground/50 hover:text-muted-foreground/80 transition-colors duration-300 tracking-wide">{logo.text}</span>))}
                 </div>
@@ -114,11 +114,11 @@ const ProvenTrust = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.9 }} className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {t.metrics.map((m) => (<div key={m.value} className="text-center"><p className="text-2xl md:text-3xl font-bold text-foreground mb-1">{m.value}</p><p className="text-[12px] text-muted-foreground">{m.label}</p></div>))}
+          {t.metrics.map((m) => (<div key={m.value} className="text-center"><p className="text-2xl md:text-3xl font-bold text-foreground mb-1">{m.value}</p><p className="text-[13px] text-muted-foreground">{m.label}</p></div>))}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.1 }} className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {t.signals.map((s) => (<span key={s} className="flex items-center gap-1.5 text-[12px] text-muted-foreground/70"><Check className="w-3.5 h-3.5 text-primary/50" strokeWidth={2} />{s}</span>))}
+          {t.signals.map((s) => (<span key={s} className="flex items-center gap-1.5 text-[13px] text-muted-foreground/70"><Check className="w-3.5 h-3.5 text-primary/50" strokeWidth={2} />{s}</span>))}
         </motion.div>
 
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.3 }} className="text-center mt-12 text-xs tracking-widest uppercase text-muted-foreground/60 font-medium">{t.bottom}</motion.p>

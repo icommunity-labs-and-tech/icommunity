@@ -97,7 +97,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-8">
-              <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
+              <span className="text-[12px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] text-primary-foreground mb-8 max-w-[560px]">
@@ -112,7 +112,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               {t.bullets.map((b) => (
                 <div key={b} className="flex items-center gap-3 rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 backdrop-blur-sm px-5 py-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow flex-shrink-0" />
-                  <span className="text-primary-foreground/90 text-[13px] md:text-sm font-medium">{b}</span>
+                  <span className="text-primary-foreground/90 text-[14px] md:text-sm font-medium">{b}</span>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ const HeroDiagram = ({ steps, receiptLabel, madridAlt, madridText }: { steps: { 
               />
               <span className="text-xs font-mono text-primary-foreground/80 font-medium">{receiptLabel}</span>
             </div>
-            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
+            <div className="space-y-1.5 font-mono text-[12px] text-primary-foreground/70">
               <div><span className="font-bold text-primary-foreground">event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
@@ -203,7 +203,7 @@ const HeroDiagram = ({ steps, receiptLabel, madridAlt, madridText }: { steps: { 
 
       <div className="flex items-center gap-4 mt-6 w-full rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 backdrop-blur-sm px-5 py-4">
         <img src={logoMadrid} alt={madridAlt} className="h-12 w-auto flex-shrink-0 brightness-0 invert drop-shadow-md" />
-        <span className="text-[13px] md:text-sm font-medium text-primary-foreground/90 leading-snug flex-1">
+        <span className="text-[14px] md:text-sm font-medium text-primary-foreground/90 leading-snug flex-1">
           {madridText}
         </span>
       </div>

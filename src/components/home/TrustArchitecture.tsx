@@ -69,7 +69,7 @@ const TrustArchitecture = () => {
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <div className="inline-flex items-center rounded-full border border-border bg-accent px-3.5 py-1 mb-5">
-            <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">{t.badge}</span>
+            <span className="text-[12px] font-medium tracking-widest text-muted-foreground uppercase">{t.badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">{t.subtitle}</p>
@@ -89,12 +89,12 @@ const TrustArchitecture = () => {
           {/* Flow dots left */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {t.origins.map((_, i) => (<div key={i} className="h-[60px] flex items-center w-full"><FlowDots delay={i * 0.6} /></div>))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.eventsLabel}</span>
+            <span className="text-[12px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.eventsLabel}</span>
           </div>
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
               <div className="w-px h-8 bg-border relative overflow-visible"><motion.div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" initial={{ top: "-4px", opacity: 0 }} animate={{ top: "calc(100% + 4px)", opacity: [0, 1, 1, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1, ease: "linear" }} /></div>
-              <span className="text-[11px] font-mono text-muted-foreground">{t.eventsLabel}</span>
+              <span className="text-[12px] font-mono text-muted-foreground">{t.eventsLabel}</span>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ const TrustArchitecture = () => {
             </div>
             <div className="rounded-xl border border-dashed border-primary/30 bg-primary/[0.02] px-4 py-3 text-center">
               <div className="text-xs font-semibold text-foreground mb-1">{t.netTitle}</div>
-              <p className="text-[11px] text-muted-foreground mb-2 max-w-[200px] mx-auto">{t.netDesc}</p>
+              <p className="text-[12px] text-muted-foreground mb-2 max-w-[200px] mx-auto">{t.netDesc}</p>
               <div className="flex flex-wrap justify-center gap-1.5">
                 {t.netBadges.map((b) => (
                   <span key={b} className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent text-[10px] font-mono text-muted-foreground"><span className="w-1 h-1 rounded-full bg-primary/60" />{b}</span>
@@ -126,12 +126,12 @@ const TrustArchitecture = () => {
           {/* Flow dots right */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {t.targets.map((_, i) => (<div key={i} className="h-[60px] flex items-center w-full"><FlowDots delay={1.8 + i * 0.6} /></div>))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.evidenceLabel}</span>
+            <span className="text-[12px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.evidenceLabel}</span>
           </div>
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
               <div className="w-px h-8 bg-border relative overflow-visible"><motion.div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" initial={{ top: "-4px", opacity: 0 }} animate={{ top: "calc(100% + 4px)", opacity: [0, 1, 1, 0] }} transition={{ duration: 1.6, delay: 1.8, repeat: Infinity, repeatDelay: 1, ease: "linear" }} /></div>
-              <span className="text-[11px] font-mono text-muted-foreground">{t.evidenceLabel}</span>
+              <span className="text-[12px] font-mono text-muted-foreground">{t.evidenceLabel}</span>
             </div>
           </div>
 

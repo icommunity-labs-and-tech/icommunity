@@ -155,12 +155,12 @@ const HowItWorks = () => {
                 <div className="w-3 h-3 rounded-full bg-red-400/60" /><div className="w-3 h-3 rounded-full bg-yellow-400/60" /><div className="w-3 h-3 rounded-full bg-green-400/60" />
                 <span className="ml-3 text-xs font-mono text-primary-foreground/30">evidence.ts</span>
               </div>
-              <pre className="font-mono text-[13px] leading-[1.7] overflow-x-auto"><code>
+              <pre className="font-mono text-[14px] leading-[1.7] overflow-x-auto"><code>
                 {codeLines.map((line, idx) => (<span key={idx} className={`block px-2 -mx-2 rounded-sm transition-all duration-500 ease-out ${highlightSet.has(idx) ? "text-primary-foreground/90 bg-primary/10" : "text-primary-foreground/25"}`}>{line || "\u00A0"}</span>))}
               </code></pre>
             </div>
             <div className="border-t border-primary-foreground/10" />
-            <div className="p-4 md:p-5 font-mono text-[13px]">
+            <div className="p-4 md:p-5 font-mono text-[14px]">
               <div className="flex items-center gap-2 mb-3">
                 <AnimatePresence mode="wait"><motion.span key={currentStatus} initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.5, opacity: 0 }} transition={{ duration: 0.3 }} className={`inline-block w-2 h-2 rounded-full ${statusConfig.dotClass}`} /></AnimatePresence>
                 <span className="text-primary-foreground/50">Evidence Receipt</span>

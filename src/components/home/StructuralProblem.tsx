@@ -43,7 +43,7 @@ const StructuralProblem = () => {
             <p className="text-sm font-semibold text-muted-foreground mb-4">{t.colLeft}</p>
             <ul className="space-y-3">
               {t.internal.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-[13px] text-muted-foreground/70">
+                <li key={item} className="flex items-center gap-2.5 text-[14px] text-muted-foreground/70">
                   <X className="w-4 h-4 text-destructive/60 flex-shrink-0" strokeWidth={2} />
                   {item}
                 </li>
@@ -54,7 +54,7 @@ const StructuralProblem = () => {
             <p className="text-sm font-semibold text-foreground mb-4">{t.colRight}</p>
             <ul className="space-y-3">
               {t.ic.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-[13px] text-foreground">
+                <li key={item} className="flex items-center gap-2.5 text-[14px] text-foreground">
                   <Check className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={2} />
                   {item}
                 </li>
