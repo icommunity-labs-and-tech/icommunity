@@ -69,7 +69,7 @@ const TrustArchitecture = () => {
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <div className="inline-flex items-center rounded-full border border-border bg-accent px-3.5 py-1 mb-5">
-            <span className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">{t.badge}</span>
+            <span className="text-[12px] font-medium tracking-widest text-muted-foreground uppercase">{t.badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">{t.subtitle}</p>
