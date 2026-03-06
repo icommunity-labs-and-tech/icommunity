@@ -54,9 +54,6 @@ const Security = () => {
             </motion.div>
           ))}
         </div>
-        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.6 }} className="text-center mt-10">
-          <a href="#" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors">{t.link}</a>
-        </motion.div>
       </div>
     </section>
   );
