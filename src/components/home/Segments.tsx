@@ -81,7 +81,7 @@ const Segments = () => {
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t.subtitle}</p>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-0 items-start">
