@@ -114,7 +114,7 @@ const ProvenTrust = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.9 }} className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {t.metrics.map((m) => (<div key={m.value} className="text-center"><p className="text-2xl md:text-3xl font-bold text-foreground mb-1">{m.value}</p><p className="text-[12px] text-muted-foreground">{m.label}</p></div>))}
+          {t.metrics.map((m) => (<div key={m.value} className="text-center"><p className="text-2xl md:text-3xl font-bold text-foreground mb-1">{m.value}</p><p className="text-[13px] text-muted-foreground">{m.label}</p></div>))}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.1 }} className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
