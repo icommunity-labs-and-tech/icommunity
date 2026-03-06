@@ -50,7 +50,7 @@ const TrustLifecycle = () => {
             <div className="grid grid-cols-4 relative">
               {t.steps.map((s, i) => (
                 <motion.div key={s.label} initial={{ opacity: 0, y: 12 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.3 + i * 0.35 }} className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10"><s.icon className="w-5 h-5 text-primary-foreground/70" strokeWidth={1.5} /></div>
+                  <div className="w-16 h-16 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10"><s.icon className="w-7 h-7 text-primary-foreground/70" strokeWidth={1.5} /></div>
                   <span className="font-mono text-[10px] text-primary-foreground/30 mt-4">{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-sm font-semibold text-primary-foreground mt-1">{s.label}</span>
                   <span className="text-xs text-primary-foreground/50 mt-0.5 max-w-[160px]">{s.sub}</span>
@@ -67,7 +67,7 @@ const TrustLifecycle = () => {
             <div className="space-y-10">
               {t.steps.map((s, i) => (
                 <motion.div key={s.label} initial={{ opacity: 0, x: -12 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.4, delay: 0.3 + i * 0.3 }} className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10 flex-shrink-0"><s.icon className="w-5 h-5 text-primary-foreground/70" strokeWidth={1.5} /></div>
+                  <div className="w-16 h-16 rounded-full border border-primary-foreground/15 flex items-center justify-center bg-primary-foreground/5 relative z-10 flex-shrink-0"><s.icon className="w-7 h-7 text-primary-foreground/70" strokeWidth={1.5} /></div>
                   <div className="pt-1">
                     <span className="font-mono text-[10px] text-primary-foreground/30">{String(i + 1).padStart(2, "0")}</span>
                     <div className="text-sm font-semibold text-primary-foreground">{s.label}</div>
