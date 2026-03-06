@@ -416,10 +416,11 @@ serve(async (req) => {
         { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
-    // Sync to Bigin CRM (awaited to ensure it completes before function shuts down)
-    if (biginSync) {
-      await syncToBigin(biginSync);
-    }
+    // Sync to Bigin CRM and MailerLite (awaited to ensure completion)
+    const syncPromises: Promise<void>[] = [];
+    if (biginSync) syncPromises.push(syncToBigin(biginSync));
+    if (mlSync) syncPromises.push(syncToMailerLite(mlSync));
+    await Promise.all(syncPromises);
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
