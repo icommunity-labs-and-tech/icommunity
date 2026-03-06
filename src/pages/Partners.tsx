@@ -25,10 +25,15 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 
 const texts = {
   en: {
-    heroTitle: "Integration & Trust ",
-    heroSpan: "Ecosystem",
-    heroSub: "iCommunity operates as verifiable evidence infrastructure within an interoperable technical, institutional, and regulatory ecosystem.",
-    heroCta: "Explore collaboration model",
+    heroTitle: "Grow your business with ",
+    heroSpan: "verifiable trust",
+    heroSub: "Integrate evidence infrastructure into your platform. Add regulatory value to your clients and open new revenue streams.",
+    heroStats: [
+      { value: "+40", label: "Active partners" },
+      { value: "3", label: "Sectors covered" },
+      { value: "99.9%", label: "Uptime SLA" },
+    ],
+    heroCta: "Become a partner",
     modelTitle: "Collaboration <span>model</span>",
     collabs: [
       { icon: Code2, title: "Technology integration", text: "API integration with SaaS platforms, sector systems, and enterprise solutions." },
@@ -49,10 +54,15 @@ const texts = {
     madridAlt: "Madrid City Council",
   },
   es: {
-    heroTitle: "Ecosistema de Integración y ",
-    heroSpan: "Confianza",
-    heroSub: "iCommunity opera como infraestructura de evidencia verificable dentro de un ecosistema técnico, institucional y regulatorio interoperable.",
-    heroCta: "Explorar modelo de colaboración",
+    heroTitle: "Haz crecer tu negocio con ",
+    heroSpan: "confianza verificable",
+    heroSub: "Integra infraestructura de evidencia en tu plataforma. Añade valor regulatorio a tus clientes y abre nuevas líneas de negocio.",
+    heroStats: [
+      { value: "+40", label: "Partners activos" },
+      { value: "3", label: "Sectores cubiertos" },
+      { value: "99.9%", label: "SLA de disponibilidad" },
+    ],
+    heroCta: "Hazte partner",
     modelTitle: "Modelo de <span>colaboración</span>",
     collabs: [
       { icon: Code2, title: "Integración tecnológica", text: "Integración API con plataformas SaaS, sistemas sectoriales y soluciones empresariales." },
