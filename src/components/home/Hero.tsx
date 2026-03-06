@@ -177,7 +177,7 @@ const HeroDiagram = ({ steps, receiptLabel, madridAlt, madridText }: { steps: { 
               />
               <span className="text-xs font-mono text-primary-foreground/80 font-medium">{receiptLabel}</span>
             </div>
-            <div className="space-y-1.5 font-mono text-[11px] text-primary-foreground/70">
+            <div className="space-y-1.5 font-mono text-[12px] text-primary-foreground/70">
               <div><span className="font-bold text-primary-foreground">event_type:</span> kyc_verification</div>
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
