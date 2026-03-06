@@ -45,7 +45,7 @@ const WhyICommunity = () => {
         </motion.div>
         <div className="grid md:grid-cols-2 gap-3">
           {t.blocks.map((b, i) => (
-            <motion.div key={b.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }} className="rounded-xl transition-all duration-300 p-5">
+            <motion.div key={b.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 + i * 0.07 }} className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-sm">
               <div className="flex items-start gap-3">
                 <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
                   <b.icon className="text-primary w-[18px] h-[18px]" strokeWidth={1.5} />
