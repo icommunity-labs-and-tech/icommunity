@@ -97,10 +97,35 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <Navbar onOpenModal={() => openModal()} />
       <div className="hero pt-16"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
-        <Section className="py-28 md:py-36"><div className="ic-container text-center max-w-3xl mx-auto">
-          <FadeIn><h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-6">{t.heroTitle}<span className="ic-text-gradient-light">{t.heroSpan}</span></h1></FadeIn>
-          <FadeIn delay={0.1}><p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed max-w-2xl mx-auto mb-10">{t.heroSub}</p></FadeIn>
-          <FadeIn delay={0.2}><a href="#model" className="inline-flex items-center gap-2 rounded-lg ic-gradient-cta px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">{t.heroCta}<ArrowRight className="w-4 h-4" /></a></FadeIn>
+        <Section className="py-28 md:py-40"><div className="ic-container max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            {/* Left: copy */}
+            <div className="text-left">
+              <FadeIn>
+                <span className="inline-block text-xs font-mono font-semibold tracking-widest text-primary uppercase mb-4 px-3 py-1 rounded-full border border-primary/30 bg-primary/10">Partner Program</span>
+              </FadeIn>
+              <FadeIn delay={0.05}><h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold text-primary-foreground tracking-tight leading-[1.08] mb-6">{t.heroTitle}<span className="ic-text-gradient-light">{t.heroSpan}</span></h1></FadeIn>
+              <FadeIn delay={0.12}><p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-md mb-10">{t.heroSub}</p></FadeIn>
+              <FadeIn delay={0.18}><button onClick={() => openModal("partner-integrador")} className="inline-flex items-center gap-2 rounded-lg ic-gradient-cta px-8 py-4 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">{t.heroCta}<ArrowRight className="w-4 h-4" /></button></FadeIn>
+            </div>
+            {/* Right: stats */}
+            <FadeIn delay={0.2}>
+              <div className="grid grid-cols-3 gap-4">
+                {t.heroStats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                    className="flex flex-col items-center justify-center rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-6 md:p-8 text-center"
+                  >
+                    <span className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-1">{stat.value}</span>
+                    <span className="text-xs text-primary-foreground/50 font-medium">{stat.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
         </div></Section>
       </div></div>
 
