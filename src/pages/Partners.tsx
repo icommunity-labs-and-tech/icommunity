@@ -83,17 +83,14 @@ const Partners = () => {
   const openModal = (org?: OrganizationType) => { setOrgType(org); setModalOpen(true); };
 
   const logos = [
-    { src: logoAenor, alt: "AENOR" },
-    { src: logoAytoMadrid, alt: t.madridAlt },
-    { src: logoLogalty, alt: "Logalty" },
-    { src: logoSalusCoop, alt: "Salus Coop" },
-    { src: logoEstrella, alt: "Estrella Galicia" },
-    { src: logoAyiGroup, alt: "AYI Group" },
-    { src: logoFinnovating, alt: "Finnovating" },
-    { src: logoIfedes, alt: "IFEDES" },
-    { src: logoIntegranova, alt: "Integranova" },
-    { src: logoLiquid, alt: "Liquid" },
-    { src: logoMrHouston, alt: "Mr Houston" },
+    { src: logoNexta, alt: "Nexta Digital Strategy" },
+    { src: logoMadrid, alt: t.madridAlt },
+    { src: logoAcbp, alt: "ACBP Soluciones Informáticas" },
+    { src: logoAhora, alt: "Ahora" },
+    { src: logoAlpha, alt: "Alpha Consulting" },
+    { src: logoAmapala, alt: "Amapala" },
+    { src: logoAmypro, alt: "AmyPro ECM Solutions" },
+    { src: logoTkAnalytics, alt: "TK Analytics Group" },
   ];
 
   return (
