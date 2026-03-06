@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
 import logoFeder from "@/assets/logo-feder.png";
 import logoUE from "@/assets/logo-cofinanciado-ue.png";
-import logoNeotec from "@/assets/logo-neotec-cdti.jpg";
+
 import logoCdti from "@/assets/logo-cdti.jpg";
 import logoEnisa from "@/assets/logo-enisa.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
