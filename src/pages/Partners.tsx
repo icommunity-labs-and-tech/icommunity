@@ -7,17 +7,14 @@ import ContactModal from "@/components/home/ContactModal";
 import type { OrganizationType } from "@/components/home/ContactModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-import logoAenor from "@/assets/logo-aenor.png";
-import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
-import logoLogalty from "@/assets/logo-logalty.png";
-import logoSalusCoop from "@/assets/logo-saluscoop.png";
-import logoEstrella from "@/assets/logo-estrella.png";
-import logoAyiGroup from "@/assets/logo-ayi-group.png";
-import logoFinnovating from "@/assets/logo-finnovating.png";
-import logoIfedes from "@/assets/logo-ifedes.png";
-import logoIntegranova from "@/assets/logo-integranova.png";
-import logoLiquid from "@/assets/logo-liquid.png";
-import logoMrHouston from "@/assets/logo-mr-houston.png";
+import logoNexta from "@/assets/logo-nexta.jpg";
+import logoMadrid from "@/assets/logo-ayto-madrid-bw.png";
+import logoAcbp from "@/assets/logo-acbp.jpg";
+import logoAhora from "@/assets/logo-ahora.jpg";
+import logoAlpha from "@/assets/logo-alpha.jpg";
+import logoAmapala from "@/assets/logo-amapala.jpg";
+import logoAmypro from "@/assets/logo-amypro.jpg";
+import logoTkAnalytics from "@/assets/logo-tk-analytics.jpg";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (<section className={`ic-section ${className}`}>{children}</section>);
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
@@ -86,17 +83,14 @@ const Partners = () => {
   const openModal = (org?: OrganizationType) => { setOrgType(org); setModalOpen(true); };
 
   const logos = [
-    { src: logoAenor, alt: "AENOR" },
-    { src: logoAytoMadrid, alt: t.madridAlt },
-    { src: logoLogalty, alt: "Logalty" },
-    { src: logoSalusCoop, alt: "Salus Coop" },
-    { src: logoEstrella, alt: "Estrella Galicia" },
-    { src: logoAyiGroup, alt: "AYI Group" },
-    { src: logoFinnovating, alt: "Finnovating" },
-    { src: logoIfedes, alt: "IFEDES" },
-    { src: logoIntegranova, alt: "Integranova" },
-    { src: logoLiquid, alt: "Liquid" },
-    { src: logoMrHouston, alt: "Mr Houston" },
+    { src: logoNexta, alt: "Nexta Digital Strategy" },
+    { src: logoMadrid, alt: t.madridAlt },
+    { src: logoAcbp, alt: "ACBP Soluciones Informáticas" },
+    { src: logoAhora, alt: "Ahora" },
+    { src: logoAlpha, alt: "Alpha Consulting" },
+    { src: logoAmapala, alt: "Amapala" },
+    { src: logoAmypro, alt: "AmyPro ECM Solutions" },
+    { src: logoTkAnalytics, alt: "TK Analytics Group" },
   ];
 
   return (
@@ -126,8 +120,8 @@ const Partners = () => {
 
       <Section><div className="ic-container max-w-5xl">
         <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">{logos.map((l, i) => (
-          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-10 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">{logos.map((l, i) => (
+          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
         ))}</div>
       </div></Section>
 
