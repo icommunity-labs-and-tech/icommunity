@@ -139,7 +139,7 @@ const Empresa = () => {
         <FadeIn delay={0.1}><p className="text-base md:text-lg text-muted-foreground leading-relaxed">{t.euText}</p></FadeIn>
       </div></Section>
 
-      <Section className="bg-secondary/30"><div className="ic-container max-w-2xl">
+      <Section className="bg-secondary/30"><div className="ic-container max-w-xl">
         <FadeIn className="text-center mb-10"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.contactTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <FadeIn delay={0.1}>
           <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-8 md:p-10 space-y-5 shadow-sm">
