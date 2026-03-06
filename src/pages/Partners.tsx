@@ -48,7 +48,7 @@ const texts = {
       { icon: Building2, title: "Public administrations", desc: "Verifiable evidence in regulated and institutional processes." },
       { icon: FolderGit2, title: "European projects", desc: "Traceability and compliance in R&D&I consortia." },
     ],
-    trustTitle: "They trust the <span>infrastructure</span>",
+    trustTitle: "They already trust <span>us</span>",
     ctaText: "Interoperable infrastructure for <span>regulated systems.</span>",
     ctaButton: "Request collaboration",
     madridAlt: "Madrid City Council",
