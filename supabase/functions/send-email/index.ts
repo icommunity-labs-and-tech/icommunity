@@ -184,6 +184,22 @@ async function syncToBigin(contactInfo: {
 
 const MAILERLITE_API = "https://connect.mailerlite.com/api";
 
+async function getMailerLiteGroupId(apiKey: string, groupName: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${MAILERLITE_API}/groups?filter[name]=${encodeURIComponent(groupName)}&limit=100`, {
+      headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" },
+    });
+    const data = await res.json();
+    const group = data.data?.find((g: { name: string }) => g.name === groupName);
+    if (group) return group.id;
+    console.error(`MailerLite group "${groupName}" not found`);
+    return null;
+  } catch (err) {
+    console.error("MailerLite group lookup error:", err);
+    return null;
+  }
+}
+
 async function syncToMailerLite(subscriber: {
   email: string; name?: string; company?: string; source?: string;
 }): Promise<void> {
@@ -198,6 +214,15 @@ async function syncToMailerLite(subscriber: {
     if (subscriber.company) fields.company = subscriber.company;
     if (subscriber.source) fields.source = subscriber.source;
 
+    // Find the group ID
+    const groupId = await getMailerLiteGroupId(apiKey, "Contactos iCommunity WEB");
+
+    const body: Record<string, unknown> = {
+      email: subscriber.email,
+      fields: { name: subscriber.name || "", ...fields },
+    };
+    if (groupId) body.groups = [groupId];
+
     const res = await fetch(`${MAILERLITE_API}/subscribers`, {
       method: "POST",
       headers: {
@@ -205,18 +230,12 @@ async function syncToMailerLite(subscriber: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({
-        email: subscriber.email,
-        fields: {
-          name: subscriber.name || "",
-          ...fields,
-        },
-      }),
+      body: JSON.stringify(body),
     });
 
     const data = await res.text();
-    if (res.ok || res.status === 200 || res.status === 201) {
-      console.log(`MailerLite: subscriber "${subscriber.email}" synced`);
+    if (res.ok) {
+      console.log(`MailerLite: subscriber "${subscriber.email}" synced${groupId ? " to group" : ""}`);
     } else {
       console.error(`MailerLite sync failed [${res.status}]:`, data);
     }
