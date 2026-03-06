@@ -359,6 +359,7 @@ serve(async (req) => {
 
         // Sync whitepaper leads to Bigin
         biginSync = { name: company, email, company, message: "Descarga de whitepaper" };
+        mlSync = { email, name: company, company, source: "whitepaper" };
         break;
       }
       case "newsletter": {
