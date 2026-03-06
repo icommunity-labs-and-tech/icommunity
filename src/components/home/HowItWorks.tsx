@@ -7,7 +7,7 @@ const textsData = {
   en: {
     title: "How it works",
     subtitle: "Three steps to turn any verification into verifiable and auditable evidence.",
-    integration: "Integration via SDK / API / Webhook. No friction with your KYC provider.",
+    integration: { prefix: "Integration via", methods: ["SDK", "API", "Webhook"], suffix: "No friction with your KYC provider." },
     stepLabel: "STEP",
     steps: [
       { icon: Download, step: "01", title: "Capture", desc: "Receives the verification event from your KYC provider and normalizes it into a structured payload.", input: "Event (KYC / age / interaction)", output: "Normalized payload" },
