@@ -156,9 +156,11 @@ const Empresa = () => {
               <Select value={interest} onValueChange={setInterest} required><SelectTrigger><SelectValue placeholder={t.interestPh} /></SelectTrigger><SelectContent>{t.interestOptions.map((opt) => (<SelectItem key={opt} value={opt}>{opt}</SelectItem>))}</SelectContent></Select>
             </div>
             <div><Label htmlFor="emp-message" className="mb-1.5 block text-sm">{t.message}</Label><Textarea id="emp-message" name="emp-message" placeholder={t.messagePh} rows={4} maxLength={1000} /></div>
-            <Button type="submit" disabled={!interest || sending} className="w-auto mx-auto inline-flex items-center justify-center gap-2 rounded-lg ic-gradient-cta px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
-              {sending ? t.sending : t.submit}{!sending && <Send className="w-4 h-4" />}
-            </Button>
+             <div className="flex justify-center">
+               <Button type="submit" disabled={!interest || sending} className="inline-flex items-center justify-center gap-2 rounded-lg ic-gradient-cta px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
+                 {sending ? t.sending : t.submit}{!sending && <Send className="w-4 h-4" />}
+               </Button>
+             </div>
             <p className="text-xs text-muted-foreground text-center pt-1">{t.footer}</p>
           </form>
         </FadeIn>
