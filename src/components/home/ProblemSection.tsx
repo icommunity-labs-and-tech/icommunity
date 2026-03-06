@@ -23,7 +23,7 @@ const ProblemSection = () => {
     <section className="ic-section bg-background pt-12 md:pt-16" ref={ref}>
       <div className="ic-container max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} />
+          <h2 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /> dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} />
           <p className="text-lg text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: t.body.replace("<strong>", '<strong class="text-foreground font-semibold">') }} />
         </motion.div>
       </div>

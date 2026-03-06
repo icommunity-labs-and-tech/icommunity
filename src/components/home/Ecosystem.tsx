@@ -76,7 +76,7 @@ const Ecosystem = () => {
           className="text-center mb-16"
         >
           <h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4"
             dangerouslySetInnerHTML={{
               __html: t.title
                 .replace("<span>", '<span class="text-primary">')
