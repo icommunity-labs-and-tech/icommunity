@@ -94,7 +94,7 @@ const TrustArchitecture = () => {
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
               <div className="w-px h-8 bg-border relative overflow-visible"><motion.div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" initial={{ top: "-4px", opacity: 0 }} animate={{ top: "calc(100% + 4px)", opacity: [0, 1, 1, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1, ease: "linear" }} /></div>
-              <span className="text-[11px] font-mono text-muted-foreground">{t.eventsLabel}</span>
+              <span className="text-[12px] font-mono text-muted-foreground">{t.eventsLabel}</span>
             </div>
           </div>
 
