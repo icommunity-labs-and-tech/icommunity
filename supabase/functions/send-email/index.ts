@@ -333,7 +333,10 @@ serve(async (req) => {
             <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
             <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
           </table>
-        `;
+          `;
+
+        // Sync newsletter subscribers to Bigin
+        biginSync = { name, email, company: "Newsletter subscriber", message: "Suscripción newsletter" };
         break;
       }
       default:
