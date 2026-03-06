@@ -89,7 +89,7 @@ const TrustArchitecture = () => {
           {/* Flow dots left */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {t.origins.map((_, i) => (<div key={i} className="h-[60px] flex items-center w-full"><FlowDots delay={i * 0.6} /></div>))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.eventsLabel}</span>
+            <span className="text-[12px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.eventsLabel}</span>
           </div>
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
