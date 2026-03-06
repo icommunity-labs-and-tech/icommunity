@@ -11,8 +11,8 @@ const texts = {
     paths: [
       { icon: Landmark, title: "Public Administrations", desc: "Improve the transparency and traceability of your citizen processes.", cta: "Request info", orgType: "administracion-publica" as OrganizationType },
       { icon: ShieldCheck, title: "Identity / KYC Providers", desc: "Provide verifiable evidence in your clients' identity verification.", cta: "Request info", orgType: "proveedor-identidad" as OrganizationType },
-      { icon: BarChart3, title: "Legal, Fintech, Health", desc: "Anonymize sensitive data before using it on AI platforms.", cta: "Request Privaro demo", orgType: "plataforma-regulada" as OrganizationType },
       { icon: Handshake, title: "Manufacturers", desc: "Digital Product Passport for traceability and ESPR compliance.", cta: "Request CertyPass demo", orgType: "partner-integrador" as OrganizationType },
+      { icon: BarChart3, title: "Legal, Fintech, Health", desc: "Anonymize sensitive data before using it on AI platforms.", cta: "Request Privaro demo", orgType: "plataforma-regulada" as OrganizationType },
     ],
   },
   es: {
@@ -21,8 +21,8 @@ const texts = {
     paths: [
       { icon: Landmark, title: "Administraciones Públicas", desc: "Mejora la transparencia y trazabilidad de tus procesos ciudadanos.", cta: "Solicitar info", orgType: "administracion-publica" as OrganizationType },
       { icon: ShieldCheck, title: "Proveedores de Identidad / KYC", desc: "Ofrece evidencia verificable en la verificación de identidad de tus clientes.", cta: "Solicitar info", orgType: "proveedor-identidad" as OrganizationType },
-      { icon: BarChart3, title: "Legal, Fintech, Salud", desc: "Anonimiza datos sensibles antes de usarlos en plataformas de IA.", cta: "Solicitar demo Privaro", orgType: "plataforma-regulada" as OrganizationType },
       { icon: Handshake, title: "Fabricantes", desc: "Pasaporte Digital de Producto para trazabilidad y cumplimiento ESPR.", cta: "Solicitar demo CertyPass", orgType: "partner-integrador" as OrganizationType },
+      { icon: BarChart3, title: "Legal, Fintech, Salud", desc: "Anonimiza datos sensibles antes de usarlos en plataformas de IA.", cta: "Solicitar demo Privaro", orgType: "plataforma-regulada" as OrganizationType },
     ],
   },
 };
