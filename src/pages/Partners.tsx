@@ -79,7 +79,7 @@ const texts = {
     ],
     trustTitle: "Ya confían en <span>nosotros</span>",
     ctaText: "Infraestructura interoperable para <span>sistemas regulados.</span>",
-    ctaButton: "Solicitar colaboración",
+    ctaButton: "Hazte partner",
     madridAlt: "Ayuntamiento de Madrid",
   },
 };
