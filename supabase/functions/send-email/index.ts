@@ -385,6 +385,7 @@ serve(async (req) => {
 
         // Sync newsletter subscribers to Bigin
         biginSync = { name, email, company: "Newsletter subscriber", message: "Suscripción newsletter" };
+        mlSync = { email, name, source: "newsletter" };
         break;
       }
       default:
