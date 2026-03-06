@@ -114,7 +114,7 @@ const TrustArchitecture = () => {
             </div>
             <div className="rounded-xl border border-dashed border-primary/30 bg-primary/[0.02] px-4 py-3 text-center">
               <div className="text-xs font-semibold text-foreground mb-1">{t.netTitle}</div>
-              <p className="text-[11px] text-muted-foreground mb-2 max-w-[200px] mx-auto">{t.netDesc}</p>
+              <p className="text-[12px] text-muted-foreground mb-2 max-w-[200px] mx-auto">{t.netDesc}</p>
               <div className="flex flex-wrap justify-center gap-1.5">
                 {t.netBadges.map((b) => (
                   <span key={b} className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent text-[10px] font-mono text-muted-foreground"><span className="w-1 h-1 rounded-full bg-primary/60" />{b}</span>
