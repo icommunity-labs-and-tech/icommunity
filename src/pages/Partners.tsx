@@ -59,8 +59,8 @@ const texts = {
     heroSub: "Integra infraestructura de evidencia en tu plataforma. Añade valor regulatorio a tus clientes y abre nuevas líneas de negocio.",
     heroStats: [
       { value: "+40", label: "Partners activos" },
-      { value: "3", label: "Sectores cubiertos" },
-      { value: "99.9%", label: "SLA de disponibilidad" },
+      { value: "3", label: "Sectores" },
+      { value: ">25%", label: "Margen" },
     ],
     heroCta: "Hazte partner",
     modelTitle: "Modelo de <span>colaboración</span>",
