@@ -147,7 +147,7 @@ const Partners = () => {
       </div></Section>
 
       <Section className="bg-secondary/30"><div className="ic-container max-w-5xl">
-        <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.typesTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
+        <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.typesTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{t.partnerTypes.map((p, i) => (
           <FadeIn key={p.title} delay={i * 0.08}><div className="rounded-2xl border border-border bg-card p-6 flex items-start gap-4"><div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0"><p.icon className="w-5 h-5 text-primary" /></div><div><h3 className="text-sm font-semibold text-foreground mb-1">{p.title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p></div></div></FadeIn>
         ))}</div>
