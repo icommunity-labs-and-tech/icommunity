@@ -563,7 +563,7 @@ function CaseCard({
                     "{c.testimonial.quote}"
                   </p>
                 )}
-                <p className="text-[11px] font-semibold text-primary-foreground/50">
+                <p className="text-[12px] font-semibold text-primary-foreground/50">
                   — {c.testimonial.author}
                   {c.testimonial.role ? `, ${c.testimonial.role}` : ""}
                 </p>
