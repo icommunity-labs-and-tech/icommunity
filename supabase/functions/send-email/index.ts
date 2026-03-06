@@ -180,6 +180,51 @@ async function syncToBigin(contactInfo: {
   }
 }
 
+// ── MailerLite sync ──
+
+const MAILERLITE_API = "https://connect.mailerlite.com/api";
+
+async function syncToMailerLite(subscriber: {
+  email: string; name?: string; company?: string; source?: string;
+}): Promise<void> {
+  try {
+    const apiKey = Deno.env.get("MAILERLITE_API_KEY");
+    if (!apiKey) {
+      console.error("MAILERLITE_API_KEY not configured, skipping sync");
+      return;
+    }
+
+    const fields: Record<string, string> = {};
+    if (subscriber.company) fields.company = subscriber.company;
+    if (subscriber.source) fields.source = subscriber.source;
+
+    const res = await fetch(`${MAILERLITE_API}/subscribers`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email: subscriber.email,
+        fields: {
+          name: subscriber.name || "",
+          ...fields,
+        },
+      }),
+    });
+
+    const data = await res.text();
+    if (res.ok || res.status === 200 || res.status === 201) {
+      console.log(`MailerLite: subscriber "${subscriber.email}" synced`);
+    } else {
+      console.error(`MailerLite sync failed [${res.status}]:`, data);
+    }
+  } catch (err) {
+    console.error("MailerLite sync error (non-blocking):", err);
+  }
+}
+
 // ── Email building & main handler ──
 
 function buildEmailHtml(contentHtml: string): string {
@@ -251,6 +296,7 @@ serve(async (req) => {
     let subject = "";
     let contentHtml = "";
     let biginSync: { name: string; email: string; company: string; message?: string } | null = null;
+    let mlSync: { email: string; name?: string; company?: string; source?: string } | null = null;
 
     switch (type) {
       case "contact": {
@@ -287,6 +333,7 @@ serve(async (req) => {
 
         // Queue Bigin sync for contact form submissions
         biginSync = { name, email, company, message };
+        mlSync = { email, name, company, source: "contact-form" };
         break;
       }
       case "whitepaper": {
@@ -312,6 +359,7 @@ serve(async (req) => {
 
         // Sync whitepaper leads to Bigin
         biginSync = { name: company, email, company, message: "Descarga de whitepaper" };
+        mlSync = { email, name: company, company, source: "whitepaper" };
         break;
       }
       case "newsletter": {
@@ -337,6 +385,7 @@ serve(async (req) => {
 
         // Sync newsletter subscribers to Bigin
         biginSync = { name, email, company: "Newsletter subscriber", message: "Suscripción newsletter" };
+        mlSync = { email, name, source: "newsletter" };
         break;
       }
       default:
@@ -367,10 +416,11 @@ serve(async (req) => {
         { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
-    // Sync to Bigin CRM (awaited to ensure it completes before function shuts down)
-    if (biginSync) {
-      await syncToBigin(biginSync);
-    }
+    // Sync to Bigin CRM and MailerLite (awaited to ensure completion)
+    const syncPromises: Promise<void>[] = [];
+    if (biginSync) syncPromises.push(syncToBigin(biginSync));
+    if (mlSync) syncPromises.push(syncToMailerLite(mlSync));
+    await Promise.all(syncPromises);
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
