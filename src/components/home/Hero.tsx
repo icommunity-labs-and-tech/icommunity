@@ -12,8 +12,8 @@ declare global {
 const texts = {
   en: {
     badge: "Trust infrastructure for regulated environments",
-    h1: "Turn digital events into auditable evidence",
-    sub: "Transform digital processes into verifiable evidence, ready for audit and regulatory oversight from the origin",
+    h1: "Turn digital processes into auditable evidence",
+    sub: "Transform digital operations into verifiable evidence, ready for audit and regulatory oversight from the origin",
     bullets: ["KYC verifications", "Supply chain events", "AI analysis and decisions"],
     cta1: "Explore the framework",
     cta2: "View architecture",
@@ -28,8 +28,8 @@ const texts = {
   },
   es: {
     badge: "Infraestructura de confianza para entornos regulados",
-    h1: "Transforma eventos digitales en evidencia auditable",
-    sub: "Convierte procesos digitales en evidencia verificable para auditoría, cumplimiento y supervisión regulatoria.",
+    h1: "Transforma procesos digitales en evidencia auditable",
+    sub: "Convierte operaciones digitales en evidencia verificable para auditoría, cumplimiento y supervisión regulatoria.",
     bullets: ["Verificaciones KYC", "Eventos en cadena de suministro", "Análisis y decisiones de IA"],
     cta1: "Explorar el framework",
     cta2: "Ver arquitectura",
@@ -104,7 +104,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               {t.h1}
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/55 font-light mb-12 max-w-[480px] leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/80 font-light mb-12 max-w-[480px] leading-relaxed">
               {t.sub}
             </p>
 
