@@ -10,7 +10,7 @@ const texts = {
     blocks: [
       { icon: ShieldCheck, title: "Operator-independent certification", description: "Audited proof is generated outside the system that executes the process, ensuring regulatory traceability before third parties." },
       { icon: FileCheck2, title: "Every event is born with an immutable record", description: "Each event is sealed with cryptographic integrity and a timestamp from its creation." },
-      { icon: Webhook, title: "Integrates without replacing anything", description: "Integration via SDK, API, or Webhooks without modifying existing systems." },
+      { icon: Webhook, title: "Integrates without replacing anything", description: "Integration via <strong>SDK</strong>, <strong>API</strong>, or <strong>Webhooks</strong> without modifying existing systems." },
       { icon: Layers, title: "Provider-independent", description: "Compatible with any existing KYC provider, onboarding, or corporate system." },
       { icon: Scale, title: "Aligned with the European regulatory framework", description: "Designed aligned with eIDAS, AML, MiCA, and applicable regulatory frameworks." },
       { icon: Server, title: "Architecture ready for institutional scale", description: "Multi-tenant architecture prepared to operate at institutional scale." },
@@ -22,7 +22,7 @@ const texts = {
     blocks: [
       { icon: ShieldCheck, title: "Certificación independiente del operador", description: "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros." },
       { icon: FileCheck2, title: "Cada evento nace con un registro inmutable", description: "Cada evento se sella con integridad criptográfica y sellado de tiempo desde su creación." },
-      { icon: Webhook, title: "Se integra sin sustituir nada", description: "Integración vía SDK, API o Webhooks sin modificar los sistemas existentes." },
+      { icon: Webhook, title: "Se integra sin sustituir nada", description: "Integración vía <strong>SDK</strong>, <strong>API</strong> o <strong>Webhooks</strong> sin modificar los sistemas existentes." },
       { icon: Layers, title: "Independiente del proveedor", description: "Compatible con cualquier proveedor KYC, onboarding o sistema corporativo existente." },
       { icon: Scale, title: "Alineado con el marco regulatorio europeo", description: "Diseñado alineado con eIDAS, AML, MiCA y los marcos regulatorios aplicables." },
       { icon: Server, title: "Arquitectura preparada para escala institucional", description: "Arquitectura multi-tenant preparada para operar a escala institucional." },
@@ -52,7 +52,7 @@ const WhyICommunity = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground mb-1">{b.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
+                  <p className="text-[13px] leading-relaxed text-muted-foreground [&_strong]:text-primary [&_strong]:font-semibold" dangerouslySetInnerHTML={{ __html: b.description }} />
                 </div>
               </div>
             </motion.div>
