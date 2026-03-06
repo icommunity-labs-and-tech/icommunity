@@ -46,7 +46,7 @@ const BeforeAfter = () => {
     <section ref={ref} className="ic-section py-20 md:py-28 bg-secondary/30 overflow-hidden">
       <div className="ic-container max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-center mb-14">
-          <h2 <h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} /> dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
         </motion.div>
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 items-start">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: 0.2 }} className="space-y-5 md:pr-10">

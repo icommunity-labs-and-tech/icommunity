@@ -39,7 +39,7 @@ const TrustLifecycle = () => {
         <div className="relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-center mb-20">
             <span className="font-mono text-xs tracking-[0.2em] uppercase text-primary-foreground/40 mb-4 block">{t.badge}</span>
-            <h2 <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} /> dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
           </motion.div>
 
           {/* Desktop */}
