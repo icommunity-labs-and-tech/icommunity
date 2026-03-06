@@ -103,7 +103,7 @@ const ProvenTrust = () => {
             {t.trustColumns.map((col, i) => (
               <motion.div key={col.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }} className="rounded-xl border border-border bg-background p-6 flex flex-col">
                 <h4 className="text-sm font-semibold text-foreground mb-2">{col.title}</h4>
-                <p className="text-[12px] leading-relaxed text-muted-foreground mb-5">{col.description}</p>
+                <p className="text-[13px] leading-relaxed text-muted-foreground mb-5">{col.description}</p>
                 <div className="flex items-center gap-6 justify-center py-6 flex-1">
                   {logoData[i].map((logo, j) => 'src' in logo ? (<img key={j} src={logo.src} alt={logo.alt} className="h-8 object-contain grayscale opacity-50 hover:opacity-80 transition-opacity duration-300" />) : (<span key={j} className="text-sm font-semibold text-muted-foreground/50 hover:text-muted-foreground/80 transition-colors duration-300 tracking-wide">{logo.text}</span>))}
                 </div>
