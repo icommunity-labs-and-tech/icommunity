@@ -75,15 +75,28 @@ const BIGIN_API = "https://www.zohoapis.eu/bigin/v2";
 
 async function createBiginCompany(accessToken: string, companyName: string): Promise<string | null> {
   // First search if company already exists
-  const searchRes = await fetch(
-    `${BIGIN_API}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(companyName)})`,
-    { headers: { Authorization: `Zoho-oauthtoken ${accessToken}` } }
-  );
-  const searchData = await searchRes.json();
+  try {
+    const searchRes = await fetch(
+      `${BIGIN_API}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(companyName)})`,
+      { headers: { Authorization: `Zoho-oauthtoken ${accessToken}` } }
+    );
 
-  if (searchData.data && searchData.data.length > 0) {
-    console.log(`Company "${companyName}" already exists in Bigin, id: ${searchData.data[0].id}`);
-    return searchData.data[0].id;
+    // Bigin returns 204 No Content when no results found
+    if (searchRes.ok && searchRes.status !== 204) {
+      const searchText = await searchRes.text();
+      if (searchText) {
+        const searchData = JSON.parse(searchText);
+        if (searchData.data && searchData.data.length > 0) {
+          console.log(`Company "${companyName}" already exists in Bigin, id: ${searchData.data[0].id}`);
+          return searchData.data[0].id;
+        }
+      }
+    } else {
+      // Consume response body to prevent resource leak
+      await searchRes.text();
+    }
+  } catch (searchErr) {
+    console.error("Bigin company search error:", searchErr);
   }
 
   // Create new company
