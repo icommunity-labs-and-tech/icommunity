@@ -71,7 +71,7 @@ const TrustArchitecture = () => {
           <div className="inline-flex items-center rounded-full border border-border bg-accent px-3.5 py-1 mb-5">
             <span className="text-[12px] font-medium tracking-widest text-muted-foreground uppercase">{t.badge}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-primary">').replace("</span>", "</span>") }} />
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
