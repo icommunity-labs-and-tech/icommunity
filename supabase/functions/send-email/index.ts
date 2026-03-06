@@ -333,6 +333,7 @@ serve(async (req) => {
 
         // Queue Bigin sync for contact form submissions
         biginSync = { name, email, company, message };
+        mlSync = { email, name, company, source: "contact-form" };
         break;
       }
       case "whitepaper": {
