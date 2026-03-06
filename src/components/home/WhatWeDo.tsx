@@ -34,7 +34,7 @@ const WhatWeDo = () => {
     <section id="product" className="ic-section bg-secondary/50" ref={ref}>
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <h2 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{t.title}</h2></h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{t.title}</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t.subtitle}</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8">
