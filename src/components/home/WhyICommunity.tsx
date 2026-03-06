@@ -52,7 +52,7 @@ const WhyICommunity = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground mb-1">{b.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{b.description}</p>
+                  <p className="text-[13px] leading-relaxed text-muted-foreground [&_strong]:text-primary [&_strong]:font-semibold" dangerouslySetInnerHTML={{ __html: b.description }} />
                 </div>
               </div>
             </motion.div>
