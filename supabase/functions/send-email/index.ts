@@ -308,7 +308,10 @@ serve(async (req) => {
             <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
             <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
           </table>
-        `;
+          `;
+
+        // Sync whitepaper leads to Bigin
+        biginSync = { name: company, email, company, message: "Descarga de whitepaper" };
         break;
       }
       case "newsletter": {
