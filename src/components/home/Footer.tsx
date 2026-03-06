@@ -74,7 +74,6 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">{t.coFunded}</p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             <img src={logoCdti} alt={t.cdtiAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
-            <img src={logoNeotec} alt="CDTI Neotec" className="h-14 md:h-20 rounded" />
             <img src={logoEnisa} alt="ENISA" className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
             <img src={logoFeder} alt={t.federAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
             <img src={logoUE} alt={t.ueAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
