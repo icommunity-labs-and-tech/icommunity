@@ -112,7 +112,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               {t.bullets.map((b) => (
                 <div key={b} className="flex items-center gap-3 rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 backdrop-blur-sm px-5 py-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-ic-blue-glow flex-shrink-0" />
-                  <span className="text-primary-foreground/90 text-[13px] md:text-sm font-medium">{b}</span>
+                  <span className="text-primary-foreground/90 text-[14px] md:text-sm font-medium">{b}</span>
                 </div>
               ))}
             </div>
