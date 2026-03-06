@@ -39,7 +39,7 @@ const texts = {
     resultsLabel: "Resultados",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Capa independiente que certifica eventos digitales mediante:",
-    features: ["Hash criptográfico", "Sello temporal verificable", "Registro inmutable", "Evidencia exportable"],
+    features: ["Hash criptográfico", "Sellado de tiempo verificable", "Registro inmutable", "Evidencia exportable"],
     badges: ["API-first", "Audit-ready", "Independiente"],
     bottom: "Una sola integración convierte cualquier evento digital en evidencia verificable para terceros y reguladores.",
     processes: [
