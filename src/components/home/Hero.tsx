@@ -97,7 +97,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3.5 py-1 mb-8">
-              <span className="text-[11px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
+              <span className="text-[12px] font-semibold tracking-widest text-primary-foreground uppercase">{t.badge}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] text-primary-foreground mb-8 max-w-[560px]">
