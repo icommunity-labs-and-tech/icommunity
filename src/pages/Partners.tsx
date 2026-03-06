@@ -77,7 +77,7 @@ const texts = {
       { icon: Building2, title: "Administraciones públicas", desc: "Evidencia verificable en procesos regulados e institucionales." },
       { icon: FolderGit2, title: "Proyectos europeos", desc: "Trazabilidad y cumplimiento en consorcios de I+D+i." },
     ],
-    trustTitle: "Confían en la <span>infraestructura</span>",
+    trustTitle: "Ya confían en <span>nosotros</span>",
     ctaText: "Infraestructura interoperable para <span>sistemas regulados.</span>",
     ctaButton: "Solicitar colaboración",
     madridAlt: "Ayuntamiento de Madrid",
