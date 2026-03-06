@@ -10,7 +10,7 @@ const texts = {
     blocks: [
       { icon: ShieldCheck, title: "Operator-independent certification", description: "Audited proof is generated outside the system that executes the process, ensuring regulatory traceability before third parties." },
       { icon: FileCheck2, title: "Every event is born with an immutable record", description: "Each event is sealed with cryptographic integrity and a timestamp from its creation." },
-      { icon: Webhook, title: "Integrates without replacing anything", description: "Integration via SDK, API, or Webhooks without modifying existing systems." },
+      { icon: Webhook, title: "Integrates without replacing anything", description: "Integration via <strong>SDK</strong>, <strong>API</strong>, or <strong>Webhooks</strong> without modifying existing systems." },
       { icon: Layers, title: "Provider-independent", description: "Compatible with any existing KYC provider, onboarding, or corporate system." },
       { icon: Scale, title: "Aligned with the European regulatory framework", description: "Designed aligned with eIDAS, AML, MiCA, and applicable regulatory frameworks." },
       { icon: Server, title: "Architecture ready for institutional scale", description: "Multi-tenant architecture prepared to operate at institutional scale." },
