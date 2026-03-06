@@ -593,7 +593,7 @@ function CaseCard({
         </div>
       </div>
       <div className="p-5 md:p-6 flex flex-col justify-center">
-        <span className="inline-block text-[11px] font-semibold tracking-widest text-primary uppercase mb-4 px-3 py-1 rounded-full bg-accent w-fit">
+        <span className="inline-block text-[12px] font-semibold tracking-widest text-primary uppercase mb-4 px-3 py-1 rounded-full bg-accent w-fit">
           {c.badge}
         </span>
         <h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug mb-3">{c.heading}</h3>

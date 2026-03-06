@@ -118,7 +118,7 @@ const ProvenTrust = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.1 }} className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {t.signals.map((s) => (<span key={s} className="flex items-center gap-1.5 text-[12px] text-muted-foreground/70"><Check className="w-3.5 h-3.5 text-primary/50" strokeWidth={2} />{s}</span>))}
+          {t.signals.map((s) => (<span key={s} className="flex items-center gap-1.5 text-[13px] text-muted-foreground/70"><Check className="w-3.5 h-3.5 text-primary/50" strokeWidth={2} />{s}</span>))}
         </motion.div>
 
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.3 }} className="text-center mt-12 text-xs tracking-widest uppercase text-muted-foreground/60 font-medium">{t.bottom}</motion.p>

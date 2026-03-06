@@ -203,7 +203,7 @@ const HeroDiagram = ({ steps, receiptLabel, madridAlt, madridText }: { steps: { 
 
       <div className="flex items-center gap-4 mt-6 w-full rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 backdrop-blur-sm px-5 py-4">
         <img src={logoMadrid} alt={madridAlt} className="h-12 w-auto flex-shrink-0 brightness-0 invert drop-shadow-md" />
-        <span className="text-[13px] md:text-sm font-medium text-primary-foreground/90 leading-snug flex-1">
+        <span className="text-[14px] md:text-sm font-medium text-primary-foreground/90 leading-snug flex-1">
           {madridText}
         </span>
       </div>

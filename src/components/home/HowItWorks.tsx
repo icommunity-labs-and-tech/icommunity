@@ -160,7 +160,7 @@ const HowItWorks = () => {
               </code></pre>
             </div>
             <div className="border-t border-primary-foreground/10" />
-            <div className="p-4 md:p-5 font-mono text-[13px]">
+            <div className="p-4 md:p-5 font-mono text-[14px]">
               <div className="flex items-center gap-2 mb-3">
                 <AnimatePresence mode="wait"><motion.span key={currentStatus} initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.5, opacity: 0 }} transition={{ duration: 0.3 }} className={`inline-block w-2 h-2 rounded-full ${statusConfig.dotClass}`} /></AnimatePresence>
                 <span className="text-primary-foreground/50">Evidence Receipt</span>

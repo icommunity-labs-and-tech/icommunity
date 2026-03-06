@@ -125,7 +125,7 @@ const Segments = () => {
           </div>
 
           <div className="space-y-3 lg:pl-6">
-            <div className="text-[11px] font-medium tracking-widest uppercase text-muted-foreground mb-4 text-center lg:text-left">{t.resultsLabel}</div>
+            <div className="text-[12px] font-medium tracking-widest uppercase text-muted-foreground mb-4 text-center lg:text-left">{t.resultsLabel}</div>
             {t.results.map((r, i) => {
               const isActive = i <= activeIndex;
               return (
