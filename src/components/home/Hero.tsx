@@ -104,7 +104,7 @@ const Hero = ({ onOpenModal }: { onOpenModal?: () => void }) => {
               {t.h1}
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/80 font-light mb-12 max-w-[480px] leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/90 font-light mb-12 max-w-[480px] leading-relaxed">
               {t.sub}
             </p>
 
