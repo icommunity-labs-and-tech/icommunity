@@ -117,7 +117,7 @@ const Integrations = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-3" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} />
             <p className="text-sm font-medium tracking-wide text-primary/60 mb-6">
               {t.badge}
             </p>
