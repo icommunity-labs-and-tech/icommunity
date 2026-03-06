@@ -8,8 +8,8 @@ const corsHeaders = {
 
 // Simple in-memory rate limiter (per IP, resets on cold start)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
-const RATE_LIMIT_MAX = 5; // max 5 requests per minute per IP
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 5;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -22,11 +22,10 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT_MAX;
 }
 
-// Sanitize user input: strip HTML tags and limit length
 function sanitize(input: unknown, maxLength = 500): string {
   if (typeof input !== "string") return "";
   return input
-    .replace(/<[^>]*>/g, "") // strip HTML tags
+    .replace(/<[^>]*>/g, "")
     .replace(/[&<>"']/g, (ch) => {
       const map: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
       return map[ch] || ch;
@@ -42,147 +41,136 @@ function isValidEmail(email: string): boolean {
 const VALID_TYPES = ["contact", "whitepaper", "newsletter"];
 const VALID_ORG_TYPES = ["administracion-publica", "proveedor-identidad", "plataforma-regulada", "partner-integrador", "otro"];
 
-serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+// ── Zoho Bigin OAuth helpers ──
+
+async function getZohoAccessToken(): Promise<string> {
+  const clientId = Deno.env.get("ZOHO_CLIENT_ID");
+  const clientSecret = Deno.env.get("ZOHO_CLIENT_SECRET");
+  const refreshToken = Deno.env.get("ZOHO_REFRESH_TOKEN");
+
+  if (!clientId || !clientSecret || !refreshToken) {
+    throw new Error("Zoho OAuth credentials not configured");
   }
 
-  // Rate limiting
-  const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  if (isRateLimited(clientIp)) {
-    return new Response(
-      JSON.stringify({ success: false, error: "Too many requests. Please try again later." }),
-      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+  const res = await fetch("https://accounts.zoho.eu/oauth/v2/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+    }),
+  });
+
+  const data = await res.json();
+  if (!data.access_token) {
+    console.error("Zoho token refresh failed:", JSON.stringify(data));
+    throw new Error("Failed to refresh Zoho access token");
+  }
+  return data.access_token;
+}
+
+const BIGIN_API = "https://www.zohoapis.eu/bigin/v2";
+
+async function createBiginCompany(accessToken: string, companyName: string): Promise<string | null> {
+  // First search if company already exists
+  const searchRes = await fetch(
+    `${BIGIN_API}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(companyName)})`,
+    { headers: { Authorization: `Zoho-oauthtoken ${accessToken}` } }
+  );
+  const searchData = await searchRes.json();
+
+  if (searchData.data && searchData.data.length > 0) {
+    console.log(`Company "${companyName}" already exists in Bigin, id: ${searchData.data[0].id}`);
+    return searchData.data[0].id;
   }
 
+  // Create new company
+  const createRes = await fetch(`${BIGIN_API}/Accounts`, {
+    method: "POST",
+    headers: {
+      Authorization: `Zoho-oauthtoken ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      data: [{ Account_Name: companyName }],
+    }),
+  });
+  const createData = await createRes.json();
+
+  if (createData.data?.[0]?.details?.id) {
+    console.log(`Created company "${companyName}" in Bigin, id: ${createData.data[0].details.id}`);
+    return createData.data[0].details.id;
+  }
+
+  console.error("Failed to create company in Bigin:", JSON.stringify(createData));
+  return null;
+}
+
+async function createBiginContact(
+  accessToken: string,
+  opts: { firstName: string; lastName: string; email: string; companyId: string | null; message?: string }
+): Promise<void> {
+  const contactData: Record<string, unknown> = {
+    First_Name: opts.firstName,
+    Last_Name: opts.lastName || opts.firstName,
+    Email: opts.email,
+  };
+
+  if (opts.companyId) {
+    contactData.Account_Name = { id: opts.companyId };
+  }
+
+  if (opts.message) {
+    contactData.Description = opts.message;
+  }
+
+  const res = await fetch(`${BIGIN_API}/Contacts`, {
+    method: "POST",
+    headers: {
+      Authorization: `Zoho-oauthtoken ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: [contactData] }),
+  });
+  const data = await res.json();
+
+  if (data.data?.[0]?.status === "success") {
+    console.log(`Created contact "${opts.firstName}" in Bigin`);
+  } else {
+    console.error("Failed to create contact in Bigin:", JSON.stringify(data));
+  }
+}
+
+async function syncToBigin(contactInfo: {
+  name: string; email: string; company: string; message?: string;
+}): Promise<void> {
   try {
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
-    }
+    const accessToken = await getZohoAccessToken();
+    const companyId = await createBiginCompany(accessToken, contactInfo.company);
 
-    const body = await req.json();
-    const { type, data } = body;
+    const nameParts = contactInfo.name.trim().split(/\s+/);
+    const firstName = nameParts[0];
+    const lastName = nameParts.slice(1).join(" ") || firstName;
 
-    // Validate type
-    if (!type || !VALID_TYPES.includes(type)) {
-      return new Response(
-        JSON.stringify({ success: false, error: "Invalid request type." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+    await createBiginContact(accessToken, {
+      firstName,
+      lastName,
+      email: contactInfo.email,
+      companyId,
+      message: contactInfo.message,
+    });
+  } catch (err) {
+    // Log but don't fail the main request — email was already sent
+    console.error("Bigin sync error (non-blocking):", err);
+  }
+}
 
-    if (!data || typeof data !== "object") {
-      return new Response(
-        JSON.stringify({ success: false, error: "Invalid request data." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+// ── Email building & main handler ──
 
-    let subject = "";
-    let contentHtml = "";
-
-    switch (type) {
-      case "contact": {
-        const name = sanitize(data.name, 100);
-        const company = sanitize(data.company, 100);
-        const role = sanitize(data.role, 100);
-        const email = sanitize(data.email, 255);
-        const country = sanitize(data.country, 100);
-        const orgType = VALID_ORG_TYPES.includes(data.orgType) ? data.orgType : "otro";
-        const message = sanitize(data.message, 1000);
-
-        if (!name || !company || !role || !country) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Missing required fields." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-        if (!isValidEmail(email)) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Invalid email address." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-
-        subject = `[iCommunity] Nuevo contacto: ${company} (${orgType})`;
-        contentHtml = `
-          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nuevo formulario de contacto</h2>
-          <table style="border-collapse:collapse;width:100%;">
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Cargo</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${role}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${email}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">País</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${country}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Tipo org.</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${orgType}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Mensaje</td><td style="padding:10px 14px;color:#374151;">${message || "—"}</td></tr>
-          </table>
-        `;
-        break;
-      }
-      case "whitepaper": {
-        const company = sanitize(data.company, 100);
-        const email = sanitize(data.email, 255);
-
-        if (!company) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Missing required fields." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-        if (!isValidEmail(email)) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Invalid email address." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-
-        subject = `[iCommunity] Descarga whitepaper: ${company}`;
-        contentHtml = `
-          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Solicitud de descarga de Whitepaper</h2>
-          <table style="border-collapse:collapse;width:100%;">
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
-          </table>
-        `;
-        break;
-      }
-      case "newsletter": {
-        const name = sanitize(data.name, 100);
-        const email = sanitize(data.email, 255);
-
-        if (!name) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Missing required fields." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-        if (!isValidEmail(email)) {
-          return new Response(
-            JSON.stringify({ success: false, error: "Invalid email address." }),
-            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-
-        subject = `[iCommunity] Nueva suscripción newsletter: ${name}`;
-        contentHtml = `
-          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nueva suscripción al newsletter</h2>
-          <table style="border-collapse:collapse;width:100%;">
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
-          </table>
-        `;
-        break;
-      }
-      default:
-        return new Response(
-          JSON.stringify({ success: false, error: "Unknown email type." }),
-          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-    }
-
-    const htmlBody = `
+function buildEmailHtml(contentHtml: string): string {
+  return `
 <!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
@@ -190,22 +178,17 @@ serve(async (req) => {
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f5f7;padding:40px 0;">
     <tr><td align="center">
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
-        <!-- Header -->
         <tr><td style="background:linear-gradient(135deg,#0d3bad 0%,#386df0 100%);padding:32px 40px;border-radius:12px 12px 0 0;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            <tr>
-              <td>
-                <span style="font-size:24px;font-weight:700;color:#ffffff;letter-spacing:-0.02em;">iCommunity</span>
-                <span style="display:block;margin-top:4px;font-size:13px;color:rgba(255,255,255,0.75);font-weight:400;">Trust Infrastructure</span>
-              </td>
-            </tr>
+            <tr><td>
+              <span style="font-size:24px;font-weight:700;color:#ffffff;letter-spacing:-0.02em;">iCommunity</span>
+              <span style="display:block;margin-top:4px;font-size:13px;color:rgba(255,255,255,0.75);font-weight:400;">Trust Infrastructure</span>
+            </td></tr>
           </table>
         </td></tr>
-        <!-- Body -->
         <tr><td style="background-color:#ffffff;padding:32px 40px;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;">
           ${contentHtml}
         </td></tr>
-        <!-- Footer -->
         <tr><td style="background-color:#ffffff;padding:20px 40px 28px;border-radius:0 0 12px 12px;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="border-top:1px solid #e5e7eb;padding-top:20px;">
@@ -221,7 +204,128 @@ serve(async (req) => {
   </table>
 </body>
 </html>`;
+}
 
+serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(clientIp)) {
+    return new Response(
+      JSON.stringify({ success: false, error: "Too many requests. Please try again later." }),
+      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  }
+
+  try {
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    if (!RESEND_API_KEY) throw new Error("RESEND_API_KEY is not configured");
+
+    const body = await req.json();
+    const { type, data } = body;
+
+    if (!type || !VALID_TYPES.includes(type)) {
+      return new Response(JSON.stringify({ success: false, error: "Invalid request type." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+    if (!data || typeof data !== "object") {
+      return new Response(JSON.stringify({ success: false, error: "Invalid request data." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    let subject = "";
+    let contentHtml = "";
+    let biginSync: { name: string; email: string; company: string; message?: string } | null = null;
+
+    switch (type) {
+      case "contact": {
+        const name = sanitize(data.name, 100);
+        const company = sanitize(data.company, 100);
+        const role = sanitize(data.role, 100);
+        const email = sanitize(data.email, 255);
+        const country = sanitize(data.country, 100);
+        const orgType = VALID_ORG_TYPES.includes(data.orgType) ? data.orgType : "otro";
+        const message = sanitize(data.message, 1000);
+
+        if (!name || !company || !role || !country) {
+          return new Response(JSON.stringify({ success: false, error: "Missing required fields." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+        if (!isValidEmail(email)) {
+          return new Response(JSON.stringify({ success: false, error: "Invalid email address." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+
+        subject = `[iCommunity] Nuevo contacto: ${company} (${orgType})`;
+        contentHtml = `
+          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nuevo formulario de contacto</h2>
+          <table style="border-collapse:collapse;width:100%;">
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Cargo</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${role}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${email}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">País</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${country}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Tipo org.</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${orgType}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Mensaje</td><td style="padding:10px 14px;color:#374151;">${message || "—"}</td></tr>
+          </table>
+        `;
+
+        // Queue Bigin sync for contact form submissions
+        biginSync = { name, email, company, message };
+        break;
+      }
+      case "whitepaper": {
+        const company = sanitize(data.company, 100);
+        const email = sanitize(data.email, 255);
+        if (!company) {
+          return new Response(JSON.stringify({ success: false, error: "Missing required fields." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+        if (!isValidEmail(email)) {
+          return new Response(JSON.stringify({ success: false, error: "Invalid email address." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+
+        subject = `[iCommunity] Descarga whitepaper: ${company}`;
+        contentHtml = `
+          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Solicitud de descarga de Whitepaper</h2>
+          <table style="border-collapse:collapse;width:100%;">
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
+          </table>
+        `;
+        break;
+      }
+      case "newsletter": {
+        const name = sanitize(data.name, 100);
+        const email = sanitize(data.email, 255);
+        if (!name) {
+          return new Response(JSON.stringify({ success: false, error: "Missing required fields." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+        if (!isValidEmail(email)) {
+          return new Response(JSON.stringify({ success: false, error: "Invalid email address." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+
+        subject = `[iCommunity] Nueva suscripción newsletter: ${name}`;
+        contentHtml = `
+          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nueva suscripción al newsletter</h2>
+          <table style="border-collapse:collapse;width:100%;">
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;color:#374151;">${email}</td></tr>
+          </table>
+        `;
+        break;
+      }
+      default:
+        return new Response(JSON.stringify({ success: false, error: "Unknown email type." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    // Send email via Resend
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -232,18 +336,23 @@ serve(async (req) => {
         from: "iCommunity <onboarding@resend.dev>",
         to: ["hello@icommunity.io"],
         subject,
-        html: htmlBody,
+        html: buildEmailHtml(contentHtml),
       }),
     });
 
     const resData = await res.json();
 
     if (!res.ok) {
-      // Don't leak Resend error details to client
       console.error(`Resend API error [${res.status}]:`, JSON.stringify(resData));
-      return new Response(
-        JSON.stringify({ success: false, error: "Failed to send email." }),
-        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      return new Response(JSON.stringify({ success: false, error: "Failed to send email." }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    // Sync to Bigin CRM (non-blocking — don't fail the response if CRM is down)
+    if (biginSync) {
+      // Fire and forget — we don't await this to keep response fast
+      syncToBigin(biginSync).catch((err) =>
+        console.error("Bigin background sync failed:", err)
       );
     }
 
@@ -255,10 +364,7 @@ serve(async (req) => {
     console.error("Error sending email:", error);
     return new Response(
       JSON.stringify({ success: false, error: "An unexpected error occurred." }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 });
