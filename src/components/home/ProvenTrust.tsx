@@ -86,8 +86,8 @@ const ProvenTrust = () => {
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0"><c.icon className="w-5 h-5 text-primary" strokeWidth={1.5} /></div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-semibold text-foreground mb-1.5">{c.name}</h3>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground mb-3">{c.description}</p>
-                  <div className="flex flex-wrap gap-1.5">{c.tags.map((tag) => (<span key={tag} className="text-[11px] font-medium tracking-wide uppercase text-primary/60 bg-accent px-2 py-0.5 rounded">{tag}</span>))}</div>
+                  <p className="text-[14px] leading-relaxed text-muted-foreground mb-3">{c.description}</p>
+                  <div className="flex flex-wrap gap-1.5">{c.tags.map((tag) => (<span key={tag} className="text-[12px] font-medium tracking-wide uppercase text-primary/60 bg-accent px-2 py-0.5 rounded">{tag}</span>))}</div>
                 </div>
               </div>
             </motion.div>
