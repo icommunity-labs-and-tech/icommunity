@@ -9,7 +9,7 @@ const texts = {
     title: "Security & <span>Compliance</span>",
     subtitle: "Three layers of technical guarantees designed from day one to meet the requirements of regulated environments and independent audit",
     layers: [
-      { icon: Fingerprint, title: "Cryptographic integrity", properties: ["SHA-256 hash per certified event", "Verifiable and independent timestamp sealing", "Immutable evidence record"] },
+      { icon: Fingerprint, title: "Cryptographic integrity", properties: ["SHA-512 hash per certified event", "Verifiable and independent timestamp sealing", "Immutable evidence record"] },
       { icon: ClipboardList, title: "Auditability", properties: ["Exportable evidence in standard format", "Access observability and traceability", "Complete event history per tenant"] },
       { icon: ShieldCheck, title: "Privacy and data governance", properties: ["Retention controls compliant with GDPR", "Logical segregation per tenant", "Granular access and deletion policies"] },
     ],
@@ -20,7 +20,7 @@ const texts = {
     title: "Seguridad & <span>Cumplimiento</span>",
     subtitle: "Tres capas de garantías técnicas diseñadas desde el primer día para cumplir con los requisitos de entornos regulados y auditoría independiente",
     layers: [
-      { icon: Fingerprint, title: "Integridad criptográfica", properties: ["Hash SHA-256 por evento certificado", "Sellado temporal verificable e independiente", "Registro inmutable de evidencia"] },
+      { icon: Fingerprint, title: "Integridad criptográfica", properties: ["Hash SHA-512 por evento certificado", "Sellado de tiempo verificable e independiente", "Registro inmutable de evidencia"] },
       { icon: ClipboardList, title: "Auditabilidad", properties: ["Evidencia exportable en formato estándar", "Observabilidad y trazabilidad de accesos", "Historial completo de eventos por tenant"] },
       { icon: ShieldCheck, title: "Privacidad y gobernanza de datos", properties: ["Controles de retención conformes con GDPR", "Segregación lógica por tenant", "Políticas granulares de acceso y eliminación"] },
     ],
