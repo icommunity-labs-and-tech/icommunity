@@ -71,7 +71,7 @@ const LeadMagnet = () => {
           <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="ic-gradient-lead rounded-3xl p-10 md:p-16 text-center">
             <div className="inline-flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3.5 py-1 mb-6"><span className="text-xs font-medium tracking-wide text-primary-foreground/60 uppercase">{t.badge}</span></div>
             <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-6"><FileText className="w-7 h-7 text-primary-foreground/80" /></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4 max-w-xl mx-auto">{t.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 max-w-xl mx-auto">{t.title}</h2>
             <p className="text-primary-foreground/60 mb-2 max-w-lg mx-auto">{t.subtitle}</p>
             <p className="text-primary-foreground/40 text-sm mb-8 max-w-lg mx-auto">{t.audience}</p>
             <button onClick={() => setModalOpen(true)} className="inline-flex items-center justify-center rounded-lg bg-primary-foreground px-6 py-3 text-sm font-semibold text-ic-navy hover:bg-primary-foreground/90 transition-colors">{t.cta}</button>
