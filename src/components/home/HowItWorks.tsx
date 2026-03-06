@@ -28,7 +28,7 @@ const textsData = {
     stepLabel: "PASO",
     steps: [
       { icon: Download, step: "01", title: "Captura", desc: "Recibe el evento de verificación desde tu proveedor KYC y lo normaliza en un payload estructurado.", input: "Evento (KYC / edad / interacción)", output: "Payload normalizado" },
-      { icon: Lock, step: "02", title: "Certifica", desc: "Genera automáticamente una prueba criptográfica con sello temporal y registro inmutable.", input: "Payload normalizado", output: "Hash + sello temporal + registro inmutable" },
+      { icon: Lock, step: "02", title: "Certifica", desc: "Genera automáticamente una prueba criptográfica con sellado de tiempo y registro inmutable.", input: "Payload normalizado", output: "Hash + sellado de tiempo + registro inmutable" },
       { icon: Search, step: "03", title: "Verifica / Audita", desc: "Consulta el verificador público o exporta la evidencia completa para cualquier auditoría.", input: "Evidence Receipt", output: "Verificación pública + export auditoría" },
     ],
     receiptStatuses: {

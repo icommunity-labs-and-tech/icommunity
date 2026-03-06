@@ -19,7 +19,7 @@ const texts = {
     title: "Ciclo de <span>Confianza</span>",
     steps: [
       { icon: Radio, label: "Captura", sub: "Evento digital registrado" },
-      { icon: ShieldCheck, label: "Certificación", sub: "Hash + sello temporal" },
+      { icon: ShieldCheck, label: "Certificación", sub: "Hash + sellado de tiempo" },
       { icon: FileDigit, label: "Registro", sub: "Evidencia inmutable" },
       { icon: SearchCheck, label: "Verificación", sub: "Prueba auditable" },
     ],

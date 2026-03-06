@@ -21,7 +21,7 @@ const texts = {
     subtitle: "Capa de confianza diseñada para convertir eventos digitales en pruebas auditadas con trazabilidad regulatoria.",
     blocks: [
       { icon: ShieldCheck, title: "Certificación independiente del operador", description: "La prueba auditada se genera fuera del sistema que ejecuta el proceso, garantizando trazabilidad regulatoria ante terceros." },
-      { icon: FileCheck2, title: "Cada evento nace con un registro inmutable", description: "Cada evento se sella con integridad criptográfica y sello temporal desde su creación." },
+      { icon: FileCheck2, title: "Cada evento nace con un registro inmutable", description: "Cada evento se sella con integridad criptográfica y sellado de tiempo desde su creación." },
       { icon: Webhook, title: "Se integra sin sustituir nada", description: "Integración vía SDK, API o Webhooks sin modificar los sistemas existentes." },
       { icon: Layers, title: "Independiente del proveedor", description: "Compatible con cualquier proveedor KYC, onboarding o sistema corporativo existente." },
       { icon: Scale, title: "Alineado con el marco regulatorio europeo", description: "Diseñado alineado con eIDAS, AML, MiCA y los marcos regulatorios aplicables." },

@@ -45,7 +45,7 @@ const texts = {
     evidenceLabel: "evidencia",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Capa criptográfica independiente con sellado temporal e integridad verificable",
-    coreBadges: ["Hash SHA-256", "Sello temporal", "Registro inmutable"],
+    coreBadges: ["Hash SHA-512", "Sellado de tiempo", "Registro inmutable"],
     netTitle: "Red de Certificación Distribuida",
     netDesc: "Anclaje criptográfico y sellado temporal externo",
     netBadges: ["Anclaje blockchain", "TSA externa"],

@@ -35,7 +35,7 @@ const texts = {
     cta2: "Ver arquitectura",
     steps: [
       { step: "1", title: "Evento", desc: "Verificación KYC completada" },
-      { step: "2", title: "Certificación", desc: "Hash + sello temporal + registro inmutable" },
+      { step: "2", title: "Certificación", desc: "Hash + sellado de tiempo + registro inmutable" },
       { step: "3", title: "Evidencia", desc: "Recibo verificable y auditable" },
     ],
     receiptLabel: "Recibo de Evidencia",
