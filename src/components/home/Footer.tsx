@@ -73,10 +73,10 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
         <div className="border-t border-white/[0.06] pt-8 pb-8">
           <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">{t.coFunded}</p>
           <div className="flex flex-nowrap items-center justify-center gap-6 md:gap-12 overflow-x-auto">
-            <img src={logoCdti} alt={t.cdtiAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
-            <img src={logoEnisa} alt="ENISA" className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
-            <img src={logoFeder} alt={t.federAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
-            <img src={logoUE} alt={t.ueAlt} className="h-14 md:h-20 rounded bg-white/90 px-4 py-2" />
+            <img src={logoCdti} alt={t.cdtiAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoEnisa} alt="ENISA" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoFeder} alt={t.federAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoUE} alt={t.ueAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
           </div>
         </div>
         <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
