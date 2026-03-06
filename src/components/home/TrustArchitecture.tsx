@@ -126,7 +126,7 @@ const TrustArchitecture = () => {
           {/* Flow dots right */}
           <div className="hidden lg:flex flex-col items-center justify-center gap-3 px-4 w-28">
             {t.targets.map((_, i) => (<div key={i} className="h-[60px] flex items-center w-full"><FlowDots delay={1.8 + i * 0.6} /></div>))}
-            <span className="text-[11px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.evidenceLabel}</span>
+            <span className="text-[12px] font-mono text-muted-foreground mt-1 whitespace-nowrap">{t.evidenceLabel}</span>
           </div>
           <div className="flex lg:hidden items-center justify-center py-2">
             <div className="flex flex-col items-center gap-1">
