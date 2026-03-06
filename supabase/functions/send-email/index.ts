@@ -180,6 +180,51 @@ async function syncToBigin(contactInfo: {
   }
 }
 
+// ── MailerLite sync ──
+
+const MAILERLITE_API = "https://connect.mailerlite.com/api";
+
+async function syncToMailerLite(subscriber: {
+  email: string; name?: string; company?: string; source?: string;
+}): Promise<void> {
+  try {
+    const apiKey = Deno.env.get("MAILERLITE_API_KEY");
+    if (!apiKey) {
+      console.error("MAILERLITE_API_KEY not configured, skipping sync");
+      return;
+    }
+
+    const fields: Record<string, string> = {};
+    if (subscriber.company) fields.company = subscriber.company;
+    if (subscriber.source) fields.source = subscriber.source;
+
+    const res = await fetch(`${MAILERLITE_API}/subscribers`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email: subscriber.email,
+        fields: {
+          name: subscriber.name || "",
+          ...fields,
+        },
+      }),
+    });
+
+    const data = await res.text();
+    if (res.ok || res.status === 200 || res.status === 201) {
+      console.log(`MailerLite: subscriber "${subscriber.email}" synced`);
+    } else {
+      console.error(`MailerLite sync failed [${res.status}]:`, data);
+    }
+  } catch (err) {
+    console.error("MailerLite sync error (non-blocking):", err);
+  }
+}
+
 // ── Email building & main handler ──
 
 function buildEmailHtml(contentHtml: string): string {
