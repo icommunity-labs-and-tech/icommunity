@@ -7,17 +7,14 @@ import ContactModal from "@/components/home/ContactModal";
 import type { OrganizationType } from "@/components/home/ContactModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-import logoAenor from "@/assets/logo-aenor.png";
-import logoAytoMadrid from "@/assets/logo-ayto-madrid.png";
-import logoLogalty from "@/assets/logo-logalty.png";
-import logoSalusCoop from "@/assets/logo-saluscoop.png";
-import logoEstrella from "@/assets/logo-estrella.png";
-import logoAyiGroup from "@/assets/logo-ayi-group.png";
-import logoFinnovating from "@/assets/logo-finnovating.png";
-import logoIfedes from "@/assets/logo-ifedes.png";
-import logoIntegranova from "@/assets/logo-integranova.png";
-import logoLiquid from "@/assets/logo-liquid.png";
-import logoMrHouston from "@/assets/logo-mr-houston.png";
+import logoNexta from "@/assets/logo-nexta.jpg";
+import logoMadrid from "@/assets/logo-ayto-madrid-bw.png";
+import logoAcbp from "@/assets/logo-acbp.jpg";
+import logoAhora from "@/assets/logo-ahora.jpg";
+import logoAlpha from "@/assets/logo-alpha.jpg";
+import logoAmapala from "@/assets/logo-amapala.jpg";
+import logoAmypro from "@/assets/logo-amypro.jpg";
+import logoTkAnalytics from "@/assets/logo-tk-analytics.jpg";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (<section className={`ic-section ${className}`}>{children}</section>);
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
