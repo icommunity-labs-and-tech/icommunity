@@ -140,7 +140,7 @@ const Partners = () => {
       </div></div>
 
       <Section><div id="model" className="ic-container max-w-5xl scroll-mt-24">
-        <FadeIn className="text-center mb-14"><h2 className="text-3xl md:text-4xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.modelTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
+        <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.modelTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="grid md:grid-cols-3 gap-6">{t.collabs.map((b, i) => (
           <FadeIn key={b.title} delay={i * 0.1}><div className="ic-card flex flex-col items-start gap-4 h-full"><div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center"><b.icon className="w-5 h-5 text-primary" /></div><h3 className="text-lg font-semibold text-foreground">{b.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{b.text}</p></div></FadeIn>
         ))}</div>
