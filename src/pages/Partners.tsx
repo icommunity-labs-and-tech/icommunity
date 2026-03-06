@@ -56,7 +56,7 @@ const texts = {
   es: {
     heroTitle: "Haz crecer tu negocio con ",
     heroSpan: "confianza verificable",
-    heroSub: "Integra infraestructura de evidencia en tu plataforma. Añade valor regulatorio a tus clientes y abre nuevas líneas de negocio.",
+    heroSub: "Integra infraestructura de evidencia en tus soluciones. Añade valor regulatorio a tus clientes y abre nuevas líneas de negocio.",
     heroStats: [
       { value: "+40", label: "Partners activos" },
       { value: "3", label: "Sectores" },
