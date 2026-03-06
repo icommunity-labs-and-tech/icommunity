@@ -106,8 +106,8 @@ const Partners = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onOpenModal={() => openModal()} />
-      <div className="hero pt-16"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
-        <Section className="py-28 md:py-40"><div className="ic-container max-w-5xl mx-auto">
+      <div className="hero pt-28 md:pt-36"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
+        <Section className="pb-24 md:pb-36"><div className="ic-container max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: copy */}
             <div className="text-left">
