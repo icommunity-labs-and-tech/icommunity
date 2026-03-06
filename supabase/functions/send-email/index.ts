@@ -367,12 +367,9 @@ serve(async (req) => {
         { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
-    // Sync to Bigin CRM (non-blocking — don't fail the response if CRM is down)
+    // Sync to Bigin CRM (awaited to ensure it completes before function shuts down)
     if (biginSync) {
-      // Fire and forget — we don't await this to keep response fast
-      syncToBigin(biginSync).catch((err) =>
-        console.error("Bigin background sync failed:", err)
-      );
+      await syncToBigin(biginSync);
     }
 
     return new Response(JSON.stringify({ success: true }), {
