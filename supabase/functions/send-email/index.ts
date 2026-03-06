@@ -296,6 +296,7 @@ serve(async (req) => {
     let subject = "";
     let contentHtml = "";
     let biginSync: { name: string; email: string; company: string; message?: string } | null = null;
+    let mlSync: { email: string; name?: string; company?: string; source?: string } | null = null;
 
     switch (type) {
       case "contact": {
