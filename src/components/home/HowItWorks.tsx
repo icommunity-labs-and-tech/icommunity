@@ -114,7 +114,7 @@ const HowItWorks = () => {
     <section id="como-funciona" className="ic-section bg-background" ref={sectionRef}>
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">{t.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{t.title}</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t.subtitle}</p>
           <p className="text-muted-foreground text-lg font-mono mt-3 max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-2">
             <span>{t.integration.prefix}</span>
