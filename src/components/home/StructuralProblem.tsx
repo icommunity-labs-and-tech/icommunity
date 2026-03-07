@@ -51,7 +51,7 @@ const StructuralProblem = () => {
             </ul>
           </div>
           <div className="rounded-xl border border-primary/20 bg-accent/50 p-6">
-            <p className="text-sm font-semibold text-foreground mb-4">{t.colRight}</p>
+            <p className="text-base font-semibold text-foreground mb-4">{t.colRight}</p>
             <ul className="space-y-3">
               {t.ic.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-[14px] text-foreground">
