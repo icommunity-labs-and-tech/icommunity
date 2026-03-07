@@ -46,7 +46,7 @@ const FinalCta = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType) 
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4"><p.icon className="w-5 h-5 text-primary" /></div>
               <h3 className="text-[15px] font-semibold text-foreground mb-2">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{p.desc}</p>
-              <button onClick={() => onOpenModal?.(p.orgType)} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-sm shadow-primary/15 w-full">{p.cta}</button>
+              <button onClick={() => onOpenModal?.(p.orgType)} className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-5 py-2.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-sm shadow-primary/15 w-full whitespace-nowrap">{p.cta}</button>
             </motion.div>
           ))}
         </div>
