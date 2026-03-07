@@ -95,16 +95,16 @@ const Partners = () => {
   const openModal = (org?: OrganizationType) => { setOrgType(org); setModalOpen(true); };
 
   const logos = [
-    { src: logoNexta, alt: "Nexta Digital Strategy" },
-    { src: logoMadrid, alt: t.madridAlt },
-    { src: logoAcbp, alt: "ACBP Soluciones Informáticas" },
-    { src: logoAhora, alt: "Ahora" },
-    { src: logoAlpha, alt: "Alpha Consulting" },
-    { src: logoAmapala, alt: "Amapala" },
-    { src: logoAmypro, alt: "AmyPro ECM Solutions" },
-    { src: logoTkAnalytics, alt: "TK Analytics Group" },
-    { src: logoProefex, alt: "Proefex" },
-    { src: logoGmintegra, alt: "GM Integra RRHH" },
+    { src: logoNexta, alt: "Nexta Digital Strategy", cls: "max-h-10" },
+    { src: logoMadrid, alt: t.madridAlt, cls: "max-h-14" },
+    { src: logoAcbp, alt: "ACBP Soluciones Informáticas", cls: "max-h-10" },
+    { src: logoAhora, alt: "Ahora", cls: "max-h-10" },
+    { src: logoAlpha, alt: "Alpha Consulting", cls: "max-h-10" },
+    { src: logoAmapala, alt: "Amapala", cls: "max-h-10" },
+    { src: logoAmypro, alt: "AmyPro ECM Solutions", cls: "max-h-10" },
+    { src: logoTkAnalytics, alt: "TK Analytics Group", cls: "max-h-10" },
+    { src: logoProefex, alt: "Proefex", cls: "max-h-9" },
+    { src: logoGmintegra, alt: "GM Integra RRHH", cls: "max-h-8" },
   ];
 
   return (
