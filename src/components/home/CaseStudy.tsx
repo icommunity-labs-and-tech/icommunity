@@ -48,6 +48,8 @@ import caseLogaltyImage from "@/assets/case-logalty.jpg";
 import logoLogalty from "@/assets/logo-logalty.png";
 import caseAirtraceImage from "@/assets/case-airtrace.jpg";
 import logoAirtrace from "@/assets/logo-airtrace.png";
+import caseMusicDibsImage from "@/assets/case-musicdibs.jpg";
+import logoMusicDibs from "@/assets/logo-musicdibs.png";
 import type { OrganizationType } from "./ContactModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -227,6 +229,29 @@ const casesEn: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
   },
+  {
+    tag: "Intellectual Property Case",
+    title: "MUSICDIBS",
+    logo: logoMusicDibs,
+    description: "Music authorship registration with verifiable legal evidence powered by blockchain.",
+    stats: [
+      { value: "100K+", label: "Artists registered" },
+      { value: "220+", label: "Distribution platforms" },
+    ],
+    link: { url: "https://musicdibs.com", label: "musicdibs.com" },
+    image: caseMusicDibsImage,
+    imageAlt: "MusicDibs music production studio",
+    badge: "Success story",
+    heading: "Music authorship with verifiable legal proof from registration",
+    body: "MusicDibs uses iCommunity to generate immutable digital certificates for each music registration, providing legal proof of authorship compliant with the Berne Convention, WIPO Copyright Treaty, and EU Directive on Copyright. Each registration is sealed with verifiable evidence, ready for legal disputes and regulatory oversight.",
+    benefits: [
+      { icon: FileBadge, text: "Immutable certificate per registration" },
+      { icon: Scale, text: "Legal proof compliant with international treaties" },
+      { icon: ScanSearch, text: "Public verification of authorship" },
+      { icon: BadgeCheck, text: "Ready for legal disputes from the origin" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(250, 45%, 14%) 0%, hsl(260, 55%, 28%) 100%)",
+  },
 ];
 
 const casesEs: CaseData[] = [
@@ -386,6 +411,29 @@ const casesEs: CaseData[] = [
       { icon: ShieldAlert, text: "Verificación externa lista para terceros" },
     ],
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
+  },
+  {
+    tag: "Caso de Propiedad Intelectual",
+    title: "MUSICDIBS",
+    logo: logoMusicDibs,
+    description: "Registro de autoría musical con evidencia legal verificable respaldada por blockchain.",
+    stats: [
+      { value: "100K+", label: "Artistas registrados" },
+      { value: "220+", label: "Plataformas de distribución" },
+    ],
+    link: { url: "https://musicdibs.com", label: "musicdibs.com" },
+    image: caseMusicDibsImage,
+    imageAlt: "Estudio de producción musical MusicDibs",
+    badge: "Caso de éxito",
+    heading: "Autoría musical con prueba legal verificable desde el registro",
+    body: "MusicDibs utiliza iCommunity para generar certificados digitales inmutables en cada registro musical, proporcionando prueba legal de autoría conforme al Convenio de Berna, Tratado OMPI y Directiva Europea de Derechos de Autor. Cada registro se sella con evidencia verificable, lista para disputas legales y supervisión regulatoria.",
+    benefits: [
+      { icon: FileBadge, text: "Certificado inmutable por cada registro" },
+      { icon: Scale, text: "Prueba legal conforme a tratados internacionales" },
+      { icon: ScanSearch, text: "Verificación pública de autoría" },
+      { icon: BadgeCheck, text: "Lista para disputas legales desde el origen" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(250, 45%, 14%) 0%, hsl(260, 55%, 28%) 100%)",
   },
 ];
 
