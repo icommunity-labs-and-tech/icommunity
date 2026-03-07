@@ -95,16 +95,16 @@ const Partners = () => {
   const openModal = (org?: OrganizationType) => { setOrgType(org); setModalOpen(true); };
 
   const logos = [
-    { src: logoNexta, alt: "Nexta Digital Strategy" },
-    { src: logoMadrid, alt: t.madridAlt },
-    { src: logoAcbp, alt: "ACBP Soluciones Informáticas" },
-    { src: logoAhora, alt: "Ahora" },
-    { src: logoAlpha, alt: "Alpha Consulting" },
-    { src: logoAmapala, alt: "Amapala" },
-    { src: logoAmypro, alt: "AmyPro ECM Solutions" },
-    { src: logoTkAnalytics, alt: "TK Analytics Group" },
-    { src: logoProefex, alt: "Proefex" },
-    { src: logoGmintegra, alt: "GM Integra RRHH" },
+    { src: logoNexta, alt: "Nexta Digital Strategy", cls: "max-h-10" },
+    { src: logoMadrid, alt: t.madridAlt, cls: "max-h-14" },
+    { src: logoAcbp, alt: "ACBP Soluciones Informáticas", cls: "max-h-10" },
+    { src: logoAhora, alt: "Ahora", cls: "max-h-10" },
+    { src: logoAlpha, alt: "Alpha Consulting", cls: "max-h-10" },
+    { src: logoAmapala, alt: "Amapala", cls: "max-h-10" },
+    { src: logoAmypro, alt: "AmyPro ECM Solutions", cls: "max-h-10" },
+    { src: logoTkAnalytics, alt: "TK Analytics Group", cls: "max-h-10" },
+    { src: logoProefex, alt: "Proefex", cls: "max-h-9" },
+    { src: logoGmintegra, alt: "GM Integra RRHH", cls: "max-h-8" },
   ];
 
   return (
@@ -160,7 +160,7 @@ const Partners = () => {
       <Section><div className="ic-container max-w-5xl">
         <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
         <div className="flex flex-wrap justify-center gap-8">{logos.map((l, i) => (
-          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 w-[calc(25%-1.5rem)] min-w-[200px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
+          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 w-[calc(25%-1.5rem)] min-w-[200px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className={`${l.cls} w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300`} /></div></FadeIn>
         ))}</div>
       </div></Section>
 
