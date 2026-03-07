@@ -50,7 +50,7 @@ const TrustBar = () => {
     <section className="trust-bar relative py-10 md:py-14" ref={ref}>
       <div className="ic-container">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-center mb-6">
-          <p className="text-xs font-medium tracking-widest text-muted-foreground/60 uppercase mb-1.5">{t.badge}</p>
+          <p className="text-sm md:text-base font-medium tracking-widest text-muted-foreground/60 uppercase mb-1.5">{t.badge}</p>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">{t.sub}</p>
         </motion.div>
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
