@@ -35,8 +35,8 @@ const StructuralProblem = () => {
       <div className="ic-container max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" dangerouslySetInnerHTML={{ __html: t.title.replace("<span>", '<span class="text-ic-blue">').replace("</span>", "</span>") }} />
-          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-3">{t.p1}</p>
-          <p className="text-lg md:text-xl leading-relaxed text-foreground font-medium">{t.p2}</p>
+          <p className="text-lg leading-relaxed text-muted-foreground mb-3">{t.p1}</p>
+          <p className="text-lg leading-relaxed text-foreground font-medium">{t.p2}</p>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="grid md:grid-cols-2 gap-5">
           <div className="rounded-xl border border-border bg-card p-6">
