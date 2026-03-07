@@ -130,16 +130,16 @@ const Segments = () => {
               const isActive = i <= activeIndex;
               return (
               <motion.div key={r.title} initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.4, delay: 0.15 + i * 0.07 }} className={`flex items-start gap-3 rounded-xl p-4 transition-all duration-500 ease-out ${isActive ? "bg-primary/[0.04]" : ""}`}>
+                  <div className="hidden lg:flex items-center flex-shrink-0">
+                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-700 ${isActive ? "bg-primary scale-100" : "bg-border scale-75"}`} />
+                    <div className={`w-8 h-px transition-all duration-700 ${isActive ? "bg-primary/40" : "bg-border"}`} />
+                  </div>
                   <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-500 ${isActive ? "bg-primary/10" : "bg-accent"}`}>
                     <r.icon className={`w-[18px] h-[18px] transition-colors duration-500 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
                   </div>
                   <div className="min-w-0">
                     <div className={`text-sm font-semibold transition-colors duration-500 ${isActive ? "text-foreground" : "text-foreground/70"}`}>{r.title}</div>
                     <div className="text-xs text-muted-foreground mt-0.5">{r.desc}</div>
-                  </div>
-                  <div className="hidden lg:flex items-center ml-auto flex-shrink-0">
-                    <div className={`w-8 h-px transition-all duration-700 ${isActive ? "bg-primary/40" : "bg-border"}`} />
-                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-700 ${isActive ? "bg-primary scale-100" : "bg-border scale-75"}`} />
                   </div>
                 </motion.div>
               );
