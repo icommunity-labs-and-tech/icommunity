@@ -48,6 +48,8 @@ import caseLogaltyImage from "@/assets/case-logalty.jpg";
 import logoLogalty from "@/assets/logo-logalty.png";
 import caseAirtraceImage from "@/assets/case-airtrace.jpg";
 import logoAirtrace from "@/assets/logo-airtrace.png";
+import caseMusicDibsImage from "@/assets/case-musicdibs.jpg";
+import logoMusicDibs from "@/assets/logo-musicdibs.png";
 import type { OrganizationType } from "./ContactModal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
