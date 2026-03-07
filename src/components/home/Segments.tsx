@@ -147,7 +147,7 @@ const Segments = () => {
           </div>
         </div>
 
-        <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.6 }} className="text-center text-sm text-muted-foreground mt-14 max-w-2xl mx-auto">{t.bottom}</motion.p>
+        <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.6 }} className="text-center text-sm text-muted-foreground mt-14 max-w-3xl mx-auto">{t.bottom}</motion.p>
       </div>
     </section>
   );
