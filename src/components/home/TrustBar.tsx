@@ -55,7 +55,7 @@ const TrustBar = () => {
         </motion.div>
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
           {bottomLogos.map((logo, i) => (
-            <motion.img key={logo.alt} src={logo.src} alt={logo.alt} initial={{ opacity: 0, y: 8 }} animate={inView ? { opacity: 0.7, y: 0 } : { opacity: 0 }} transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }} className={`object-contain ${logo.alt === t.madridAlt ? "h-16 md:h-20" : "h-8 md:h-10"}`} />
+            <motion.img key={logo.alt} src={logo.src} alt={logo.alt} initial={{ opacity: 0, y: 8 }} animate={inView ? { opacity: 0.7, y: 0 } : { opacity: 0 }} transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }} className={`object-contain grayscale ${logo.alt === t.madridAlt ? "h-16 md:h-20" : "h-8 md:h-10"}`} />
           ))}
         </div>
       </div>
