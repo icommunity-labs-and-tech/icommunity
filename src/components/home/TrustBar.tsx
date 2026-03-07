@@ -40,7 +40,7 @@ const TrustBar = () => {
     { src: logoEstrella, alt: "Estrella Galicia", cls: "h-8 md:h-10" },
     { src: logoLidl, alt: "Lidl", cls: "h-8 md:h-10" },
     { src: logoComforce, alt: "Comforce", cls: "h-6 md:h-8" },
-    { src: logoGobe, alt: "Gobe", cls: "h-6 md:h-7" },
+    { src: logoGobe, alt: "Gobe", cls: "h-12 md:h-14" },
     { src: logoPatterson, alt: "Patterson Travel", cls: "h-7 md:h-9" },
     { src: logoAsac, alt: "ASAC", cls: "h-7 md:h-9" },
     { src: logoSmile, alt: "Smile", cls: "h-6 md:h-8" },
