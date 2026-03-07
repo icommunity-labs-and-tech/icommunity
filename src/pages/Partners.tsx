@@ -15,6 +15,8 @@ import logoAlpha from "@/assets/logo-alpha.jpg";
 import logoAmapala from "@/assets/logo-amapala.jpg";
 import logoAmypro from "@/assets/logo-amypro.jpg";
 import logoTkAnalytics from "@/assets/logo-tk-analytics.jpg";
+import logoProefex from "@/assets/logo-proefex.png";
+import logoGmintegra from "@/assets/logo-gmintegra.png";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (<section className={`ic-section ${className}`}>{children}</section>);
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
