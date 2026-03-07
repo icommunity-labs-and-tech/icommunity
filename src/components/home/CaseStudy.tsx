@@ -229,6 +229,29 @@ const casesEn: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
   },
+  {
+    tag: "Intellectual Property Case",
+    title: "MUSICDIBS",
+    logo: logoMusicDibs,
+    description: "Music authorship registration with verifiable legal evidence powered by blockchain.",
+    stats: [
+      { value: "100K+", label: "Artists registered" },
+      { value: "220+", label: "Distribution platforms" },
+    ],
+    link: { url: "https://musicdibs.com", label: "musicdibs.com" },
+    image: caseMusicDibsImage,
+    imageAlt: "MusicDibs music production studio",
+    badge: "Success story",
+    heading: "Music authorship with verifiable legal proof from registration",
+    body: "MusicDibs uses iCommunity to generate immutable digital certificates for each music registration, providing legal proof of authorship compliant with the Berne Convention, WIPO Copyright Treaty, and EU Directive on Copyright. Each registration is sealed with verifiable evidence, ready for legal disputes and regulatory oversight.",
+    benefits: [
+      { icon: FileBadge, text: "Immutable certificate per registration" },
+      { icon: Scale, text: "Legal proof compliant with international treaties" },
+      { icon: ScanSearch, text: "Public verification of authorship" },
+      { icon: BadgeCheck, text: "Ready for legal disputes from the origin" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(250, 45%, 14%) 0%, hsl(260, 55%, 28%) 100%)",
+  },
 ];
 
 const casesEs: CaseData[] = [
