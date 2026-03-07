@@ -34,7 +34,7 @@ const texts = {
   },
   es: {
     title: "Diseñado para procesos donde la <span>evidencia debe ser verificable</span>",
-    subtitle: "Certificación digital desplegada donde la trazabilidad regulatoria es un requisito, no una opción.",
+    subtitle: "Certificación digital del proceso donde la trazabilidad verificable no es opcional.",
     processesLabel: "Procesos",
     resultsLabel: "Resultados",
     coreTitle: "iCommunity Trust Layer",
