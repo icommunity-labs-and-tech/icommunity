@@ -19,8 +19,8 @@ const texts = {
     p2: "iCommunity separa la ejecución de la certificación, creando un registro auditable independiente.",
     colLeft: "Sistemas internos",
     colRight: "iCommunity",
-    internal: ["Logs modificables", "Almacenamiento en bases de datos propietarias", "Auditoría manual y por muestreo", "Dependencia de terceros"],
-    ic: ["Logs certificados tecnológicamente", "Sistema descentralizado", "Auditoría automática e integral", "Preparado para cumplimiento"],
+    internal: ["Logs modificables", "Almacenamiento de evidencias en bases de datos propietarias", "Auditoría manual y por muestreo", "Dependencia de terceros"],
+    ic: ["Logs certificados por tecnología", "Almacenamiento en repositorio descentralizado", "Auditoría automática e integral", "Preparado para cumplimiento"],
   },
 };
 
