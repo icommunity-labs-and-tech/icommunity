@@ -159,8 +159,8 @@ const Partners = () => {
 
       <Section><div className="ic-container max-w-5xl">
         <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">{logos.map((l, i) => (
-          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
+        <div className="flex flex-wrap justify-center gap-8">{logos.map((l, i) => (
+          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 w-[calc(25%-1.5rem)] min-w-[200px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
         ))}</div>
       </div></Section>
 
