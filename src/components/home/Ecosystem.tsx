@@ -31,7 +31,7 @@ const texts = {
   },
   es: {
     title: "Soluciones construidas sobre <span>iCommunity</span>",
-    subtitle: "Para trazabilidad regulatoria y gobernanza segura de datos.",
+    subtitle: "Incorpore trazabilidad certificada y gobernanza segura de datos en IA.",
     products: [
       {
         id: "certypass",
