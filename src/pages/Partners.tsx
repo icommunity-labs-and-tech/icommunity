@@ -15,6 +15,8 @@ import logoAlpha from "@/assets/logo-alpha.jpg";
 import logoAmapala from "@/assets/logo-amapala.jpg";
 import logoAmypro from "@/assets/logo-amypro.jpg";
 import logoTkAnalytics from "@/assets/logo-tk-analytics.jpg";
+import logoProefex from "@/assets/logo-proefex.png";
+import logoGmintegra from "@/assets/logo-gmintegra.png";
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (<section className={`ic-section ${className}`}>{children}</section>);
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
@@ -101,6 +103,8 @@ const Partners = () => {
     { src: logoAmapala, alt: "Amapala" },
     { src: logoAmypro, alt: "AmyPro ECM Solutions" },
     { src: logoTkAnalytics, alt: "TK Analytics Group" },
+    { src: logoProefex, alt: "Proefex" },
+    { src: logoGmintegra, alt: "GM Integra RRHH" },
   ];
 
   return (
@@ -155,8 +159,8 @@ const Partners = () => {
 
       <Section><div className="ic-container max-w-5xl">
         <FadeIn className="text-center mb-14"><h2 className="text-4xl md:text-5xl font-bold text-foreground" dangerouslySetInnerHTML={{ __html: t.trustTitle.replace("<span>", '<span class="ic-text-gradient">').replace("</span>", "</span>") }} /></FadeIn>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">{logos.map((l, i) => (
-          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
+        <div className="flex flex-wrap justify-center gap-8">{logos.map((l, i) => (
+          <FadeIn key={l.alt} delay={i * 0.04}><div className="flex items-center justify-center rounded-2xl border border-border bg-card p-8 h-28 w-[calc(25%-1.5rem)] min-w-[200px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"><img src={l.src} alt={l.alt} className="max-h-12 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" /></div></FadeIn>
         ))}</div>
       </div></Section>
 
