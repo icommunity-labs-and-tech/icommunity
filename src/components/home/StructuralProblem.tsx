@@ -10,8 +10,8 @@ const texts = {
     p2: "iCommunity separates execution from certification, creating an independent auditable record.",
     colLeft: "Internal systems",
     colRight: "iCommunity",
-    internal: ["Modifiable logs", "Storage in proprietary databases", "Manual and sample-based auditing", "Dependency on third parties"],
-    ic: ["Technology-certified logs", "Decentralized system", "Automatic and comprehensive auditing", "Ready for compliance"],
+    internal: ["Modifiable logs", "Evidence storage in proprietary databases", "Manual and sample-based auditing", "Dependency on third parties"],
+    ic: ["Technology-certified logs", "Storage in decentralized repository", "Automatic and comprehensive auditing", "Ready for compliance"],
   },
   es: {
     title: "Un problema <span>estructural</span>",
