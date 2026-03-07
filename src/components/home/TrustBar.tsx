@@ -33,17 +33,17 @@ const TrustBar = () => {
   const t = texts[lang];
 
   const bottomLogos = [
-    { src: logoMadrid, alt: t.madridAlt },
-    { src: logoAenor, alt: "AENOR" },
-    { src: logoLogalty, alt: "Logalty" },
-    { src: logoCertifika, alt: "Certifika" },
-    { src: logoEstrella, alt: "Estrella Galicia" },
-    { src: logoLidl, alt: "Lidl" },
-    { src: logoComforce, alt: "Comforce" },
-    { src: logoGobe, alt: "Gobe" },
-    { src: logoPatterson, alt: "Patterson Travel" },
-    { src: logoAsac, alt: "ASAC" },
-    { src: logoSmile, alt: "Smile" },
+    { src: logoMadrid, alt: t.madridAlt, cls: "h-16 md:h-20" },
+    { src: logoAenor, alt: "AENOR", cls: "h-8 md:h-10" },
+    { src: logoLogalty, alt: "Logalty", cls: "h-8 md:h-10" },
+    { src: logoCertifika, alt: "Certifika", cls: "h-7 md:h-9" },
+    { src: logoEstrella, alt: "Estrella Galicia", cls: "h-8 md:h-10" },
+    { src: logoLidl, alt: "Lidl", cls: "h-8 md:h-10" },
+    { src: logoComforce, alt: "Comforce", cls: "h-6 md:h-8" },
+    { src: logoGobe, alt: "Gobe", cls: "h-6 md:h-7" },
+    { src: logoPatterson, alt: "Patterson Travel", cls: "h-7 md:h-9" },
+    { src: logoAsac, alt: "ASAC", cls: "h-7 md:h-9" },
+    { src: logoSmile, alt: "Smile", cls: "h-6 md:h-8" },
   ];
 
   return (
@@ -55,7 +55,7 @@ const TrustBar = () => {
         </motion.div>
         <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
           {bottomLogos.map((logo, i) => (
-            <motion.img key={logo.alt} src={logo.src} alt={logo.alt} initial={{ opacity: 0, y: 8 }} animate={inView ? { opacity: 0.7, y: 0 } : { opacity: 0 }} transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }} className={`object-contain grayscale ${logo.alt === t.madridAlt ? "h-16 md:h-20" : "h-8 md:h-10"}`} />
+            <motion.img key={logo.alt} src={logo.src} alt={logo.alt} initial={{ opacity: 0, y: 8 }} animate={inView ? { opacity: 0.7, y: 0 } : { opacity: 0 }} transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }} className={`object-contain grayscale mix-blend-multiply ${logo.cls}`} />
           ))}
         </div>
       </div>
