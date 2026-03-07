@@ -6,6 +6,11 @@ import logoEstrella from "@/assets/logo-estrella.png";
 import logoLidl from "@/assets/logo-lidl.png";
 import logoLogalty from "@/assets/logo-logalty.png";
 import logoCertifika from "@/assets/logo-certifika.png";
+import logoComforce from "@/assets/logo-comforce.png";
+import logoGobe from "@/assets/logo-gobe.png";
+import logoPatterson from "@/assets/logo-patterson.png";
+import logoAsac from "@/assets/logo-asac.png";
+import logoSmile from "@/assets/logo-smile.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const texts = {
@@ -34,6 +39,11 @@ const TrustBar = () => {
     { src: logoCertifika, alt: "Certifika" },
     { src: logoEstrella, alt: "Estrella Galicia" },
     { src: logoLidl, alt: "Lidl" },
+    { src: logoComforce, alt: "Comforce" },
+    { src: logoGobe, alt: "Gobe" },
+    { src: logoPatterson, alt: "Patterson Travel" },
+    { src: logoAsac, alt: "ASAC" },
+    { src: logoSmile, alt: "Smile" },
   ];
 
   return (
