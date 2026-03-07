@@ -22,7 +22,7 @@ const texts = {
       { icon: Landmark, title: "Administraciones Públicas", desc: "Mejora la transparencia y trazabilidad de tus procesos ciudadanos.", cta: "Solicitar info", orgType: "administracion-publica" as OrganizationType },
       { icon: ShieldCheck, title: "Proveedores de Identidad / KYC", desc: "Ofrece evidencia verificable en la verificación de identidad de tus clientes.", cta: "Solicitar info", orgType: "proveedor-identidad" as OrganizationType },
       { icon: Handshake, title: "Fabricantes", desc: "Pasaporte Digital de Producto para trazabilidad y cumplimiento ESPR.", cta: "Solicitar demo CertyPass", orgType: "partner-integrador" as OrganizationType },
-      { icon: BarChart3, title: "Legal, Fintech, Salud", desc: "Anonimiza datos sensibles antes de usarlos en plataformas de IA.", cta: "Solicitar demo Privaro", orgType: "plataforma-regulada" as OrganizationType },
+      { icon: BarChart3, title: "Legal, Fintech, Salud", desc: "Anonimiza datos sensibles antes de usarlos en tu operativa o en plataformas de IA.", cta: "Solicitar demo Privaro", orgType: "plataforma-regulada" as OrganizationType },
     ],
   },
 };
