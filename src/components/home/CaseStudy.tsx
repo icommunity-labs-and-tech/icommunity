@@ -437,7 +437,7 @@ const CaseStudy = ({ onOpenModal }: { onOpenModal?: (orgType?: OrganizationType)
       timer = setTimeout(() => {
         emblaApi.scrollNext();
         scheduleNext();
-      }, 6000);
+      }, 8000);
     };
     const stopAutoplay = () => clearTimeout(timer);
     const restartAutoplay = () => {
