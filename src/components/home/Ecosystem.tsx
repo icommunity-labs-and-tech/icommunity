@@ -8,7 +8,7 @@ import logoPrivaro from "@/assets/logo-privaro.png";
 const texts = {
   en: {
     title: "Solutions built on <span>iCommunity</span>",
-    subtitle: "For regulatory traceability and secure data governance.",
+    subtitle: "Add certified traceability and secure data governance for AI.",
     products: [
       {
         id: "certypass",

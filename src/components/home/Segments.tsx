@@ -9,7 +9,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const texts = {
   en: {
     title: "Designed for processes where <span>evidence must be verifiable</span>",
-    subtitle: "Digital certification deployed where regulatory traceability is a requirement",
+    subtitle: "Digital certification of the process where verifiable traceability is not optional.",
     processesLabel: "Processes",
     resultsLabel: "Results",
     coreTitle: "iCommunity Trust Layer",
