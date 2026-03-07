@@ -40,7 +40,7 @@ const StructuralProblem = () => {
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }} className="grid md:grid-cols-2 gap-5">
           <div className="rounded-xl border border-border bg-card p-6">
-            <p className="text-sm font-semibold text-muted-foreground mb-4">{t.colLeft}</p>
+            <p className="text-base font-semibold text-muted-foreground mb-4">{t.colLeft}</p>
             <ul className="space-y-3">
               {t.internal.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-[14px] text-muted-foreground/70">
@@ -51,7 +51,7 @@ const StructuralProblem = () => {
             </ul>
           </div>
           <div className="rounded-xl border border-primary/20 bg-accent/50 p-6">
-            <p className="text-sm font-semibold text-foreground mb-4">{t.colRight}</p>
+            <p className="text-base font-semibold text-foreground mb-4">{t.colRight}</p>
             <ul className="space-y-3">
               {t.ic.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-[14px] text-foreground">
