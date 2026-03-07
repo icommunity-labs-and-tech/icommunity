@@ -22,7 +22,7 @@ const texts = {
     evidenceLabel: "evidence",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Independent cryptographic layer with timestamp sealing and verifiable integrity",
-    coreBadges: ["SHA-512 Hash", "Timestamp", "Immutable Record"],
+    coreBadges: ["SHA-512 Hash", "Timestamp", "Immutable Record", "Traceable Evidence"],
     netTitle: "Distributed Certification Network",
     netDesc: "Cryptographic anchoring and external timestamp sealing",
     netBadges: ["Blockchain anchor", "External TSA"],
