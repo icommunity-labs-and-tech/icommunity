@@ -412,6 +412,29 @@ const casesEs: CaseData[] = [
     ],
     gradient: "linear-gradient(135deg, hsl(20, 50%, 12%) 0%, hsl(25, 55%, 25%) 100%)",
   },
+  {
+    tag: "Caso de Propiedad Intelectual",
+    title: "MUSICDIBS",
+    logo: logoMusicDibs,
+    description: "Registro de autoría musical con evidencia legal verificable respaldada por blockchain.",
+    stats: [
+      { value: "100K+", label: "Artistas registrados" },
+      { value: "220+", label: "Plataformas de distribución" },
+    ],
+    link: { url: "https://musicdibs.com", label: "musicdibs.com" },
+    image: caseMusicDibsImage,
+    imageAlt: "Estudio de producción musical MusicDibs",
+    badge: "Caso de éxito",
+    heading: "Autoría musical con prueba legal verificable desde el registro",
+    body: "MusicDibs utiliza iCommunity para generar certificados digitales inmutables en cada registro musical, proporcionando prueba legal de autoría conforme al Convenio de Berna, Tratado OMPI y Directiva Europea de Derechos de Autor. Cada registro se sella con evidencia verificable, lista para disputas legales y supervisión regulatoria.",
+    benefits: [
+      { icon: FileBadge, text: "Certificado inmutable por cada registro" },
+      { icon: Scale, text: "Prueba legal conforme a tratados internacionales" },
+      { icon: ScanSearch, text: "Verificación pública de autoría" },
+      { icon: BadgeCheck, text: "Lista para disputas legales desde el origen" },
+    ],
+    gradient: "linear-gradient(135deg, hsl(250, 45%, 14%) 0%, hsl(260, 55%, 28%) 100%)",
+  },
 ];
 
 const textsUI = {
