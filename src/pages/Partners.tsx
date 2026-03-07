@@ -103,7 +103,7 @@ const Partners = () => {
     { src: logoAmapala, alt: "Amapala", cls: "max-h-10" },
     { src: logoAmypro, alt: "AmyPro ECM Solutions", cls: "max-h-10" },
     { src: logoTkAnalytics, alt: "TK Analytics Group", cls: "max-h-10" },
-    { src: logoProefex, alt: "Proefex", cls: "max-h-12" },
+    { src: logoProefex, alt: "Proefex", cls: "max-h-[76px]" },
     { src: logoGmintegra, alt: "GM Integra RRHH", cls: "max-h-11" },
   ];
 
