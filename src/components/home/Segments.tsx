@@ -14,7 +14,7 @@ const texts = {
     resultsLabel: "Results",
     coreTitle: "iCommunity Trust Layer",
     coreDesc: "Independent layer that certifies digital events through:",
-    features: ["Cryptographic hash", "Verifiable timestamp", "Immutable record", "Exportable evidence"],
+    features: ["Cryptographic hash", "Timestamp", "Immutable record", "Traceable evidence"],
     badges: ["API-first", "Audit-ready", "Independent"],
     bottom: "A single integration turns any digital event into verifiable evidence for third parties and regulators.",
     processes: [
