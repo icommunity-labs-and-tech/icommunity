@@ -12,7 +12,7 @@ const texts = {
       { icon: Landmark, title: "Public Administrations", desc: "Improve the transparency and traceability of your citizen processes.", cta: "Request info", orgType: "administracion-publica" as OrganizationType },
       { icon: ShieldCheck, title: "Identity / KYC Providers", desc: "Provide verifiable evidence in your clients' identity verification.", cta: "Request info", orgType: "proveedor-identidad" as OrganizationType },
       { icon: Handshake, title: "Manufacturers", desc: "Digital Product Passport for traceability and ESPR compliance.", cta: "Request CertyPass demo", orgType: "partner-integrador" as OrganizationType },
-      { icon: BarChart3, title: "Legal, Fintech, Health", desc: "Anonymize sensitive data before using it on AI platforms.", cta: "Request Privaro demo", orgType: "plataforma-regulada" as OrganizationType },
+      { icon: BarChart3, title: "Legal, Fintech, Health", desc: "Anonymize sensitive data before using it in your operations or on AI platforms.", cta: "Request Privaro demo", orgType: "plataforma-regulada" as OrganizationType },
     ],
   },
   es: {
