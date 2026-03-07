@@ -39,6 +39,11 @@ const TrustBar = () => {
     { src: logoCertifika, alt: "Certifika" },
     { src: logoEstrella, alt: "Estrella Galicia" },
     { src: logoLidl, alt: "Lidl" },
+    { src: logoComforce, alt: "Comforce" },
+    { src: logoGobe, alt: "Gobe" },
+    { src: logoPatterson, alt: "Patterson Travel" },
+    { src: logoAsac, alt: "ASAC" },
+    { src: logoSmile, alt: "Smile" },
   ];
 
   return (
