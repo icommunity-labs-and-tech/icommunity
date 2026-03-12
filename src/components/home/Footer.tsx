@@ -27,7 +27,7 @@ const texts = {
     columns: [
       { title: "Producto", links: ["Documentación"] as FooterLink[] },
       { title: "Casos de uso", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Verificación de edad", route: "/#trust-architecture" }, { label: "Anti-fraude", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
-      { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://www.icommunity.io/icom/", external: true }] as FooterLink[] },
+      { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Aviso legal", route: "/legal" }, { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Financiación", route: "/financiacion" }] as FooterLink[] },
     ],
     coFunded: "Proyectos cofinanciados",
