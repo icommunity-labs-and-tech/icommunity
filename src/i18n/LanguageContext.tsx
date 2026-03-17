@@ -16,10 +16,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(() => {
     try {
       const saved = localStorage.getItem("ic-lang");
-      return saved === "es" ? "es" : "en";
-    } catch {
-      return "en";
-    }
+      if (saved === "es" || saved === "en") return saved;
+    } catch {}
+    // Auto-detect from browser language
+    const browserLang = navigator.language || (navigator as any).userLanguage || "";
+    return browserLang.startsWith("es") ? "es" : "en";
   });
 
   const setLang = (l: Lang) => {
