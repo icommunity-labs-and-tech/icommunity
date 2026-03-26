@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import logo from "@/assets/logo-blanco-negativo.png";
 import logoFeder from "@/assets/logo-feder.png";
 import logoUE from "@/assets/logo-cofinanciado-ue.png";
-
 import logoCdti from "@/assets/logo-cdti.jpg";
 import logoEnisa from "@/assets/logo-enisa.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-type FooterLink = string | { label: string; href?: string; external?: boolean; route?: string };
+const solutionsLinks = [
+  { label: "CertyPass", href: "https://certypass.com" },
+  { label: "Privaro", href: "https://privaro.lovable.app" },
+  { label: "MusicDibs", href: "https://musicdibs.com" },
+];
+
+type FooterLink = { label: string; href?: string; external?: boolean; route?: string; anchor?: string; isSolutionsDropdown?: boolean };
 
 const texts = {
   en: {
@@ -15,13 +22,8 @@ const texts = {
       { title: "Company", links: [
         { label: "About us", route: "/empresa" },
         { label: "Partners", route: "/partners" },
-        { label: "Success stories", route: "/#cases" },
-        { label: "Solutions", route: "/solutions" },
-      ] as FooterLink[] },
-      { title: "Solutions", links: [
-        { label: "CertyPass", href: "https://certypass.com", external: true },
-        { label: "Privaro", href: "https://privaro.lovable.app", external: true },
-        { label: "MusicDibs", href: "https://musicdibs.com", external: true },
+        { label: "Success stories", anchor: "cases" },
+        { label: "Solutions", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Legal notice", route: "/legal" }, { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Funding", route: "/financiacion" }] as FooterLink[] },
@@ -37,13 +39,8 @@ const texts = {
       { title: "Empresa", links: [
         { label: "Quiénes somos", route: "/empresa" },
         { label: "Partners", route: "/partners" },
-        { label: "Casos de éxito", route: "/#cases" },
-        { label: "Soluciones", route: "/solutions" },
-      ] as FooterLink[] },
-      { title: "Soluciones", links: [
-        { label: "CertyPass", href: "https://certypass.com", external: true },
-        { label: "Privaro", href: "https://privaro.lovable.app", external: true },
-        { label: "MusicDibs", href: "https://musicdibs.com", external: true },
+        { label: "Casos de éxito", anchor: "cases" },
+        { label: "Soluciones", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Aviso legal", route: "/legal" }, { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Financiación", route: "/financiacion" }] as FooterLink[] },
@@ -59,28 +56,79 @@ const texts = {
 const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
   const { lang } = useLanguage();
   const t = texts[lang];
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [solOpen, setSolOpen] = useState(false);
+
+  const handleAnchorClick = (anchor: string) => {
+    if (location.pathname === "/") {
+      const el = document.getElementById(anchor);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/#" + anchor);
+      setTimeout(() => {
+        const el = document.getElementById(anchor);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  };
 
   return (
     <footer id="company" className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(225 35% 4%) 100%)" }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div className="relative ic-container pt-14 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
           {t.columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-sm font-semibold text-white/70 mb-4">{col.title}</h4>
               <ul className="space-y-2.5">
                 {col.links.map((link) => {
-                  const label = typeof link === "string" ? link : link.label;
-                  const href = typeof link === "string" ? "#" : (link.href ?? "#");
-                  const external = typeof link === "string" ? false : !!link.external;
-                  const route = typeof link === "string" ? undefined : link.route;
+                  if (link.isSolutionsDropdown) {
+                    return (
+                      <li key={link.label}>
+                        <button
+                          onClick={() => setSolOpen(!solOpen)}
+                          className="flex items-center gap-1 text-sm text-white/30 hover:text-white/60 transition-colors"
+                        >
+                          {link.label}
+                          <ChevronDown className={`w-3 h-3 transition-transform ${solOpen ? "rotate-180" : ""}`} />
+                        </button>
+                        {solOpen && (
+                          <ul className="mt-1.5 ml-3 space-y-1.5">
+                            {solutionsLinks.map((s) => (
+                              <li key={s.label}>
+                                <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/30 hover:text-white/60 transition-colors">
+                                  {s.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    );
+                  }
+                  if (link.anchor) {
+                    return (
+                      <li key={link.label}>
+                        <button
+                          onClick={() => handleAnchorClick(link.anchor!)}
+                          className="text-sm text-white/30 hover:text-white/60 transition-colors"
+                        >
+                          {link.label}
+                        </button>
+                      </li>
+                    );
+                  }
+                  if (link.route) {
+                    return (
+                      <li key={link.label}>
+                        <Link to={link.route} className="text-sm text-white/30 hover:text-white/60 transition-colors">{link.label}</Link>
+                      </li>
+                    );
+                  }
                   return (
-                    <li key={label}>
-                      {route ? (
-                        <Link to={route} className="text-sm text-white/30 hover:text-white/60 transition-colors">{label}</Link>
-                      ) : (
-                        <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="text-sm text-white/30 hover:text-white/60 transition-colors">{label}</a>
-                      )}
+                    <li key={link.label}>
+                      <a href={link.href ?? "#"} {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="text-sm text-white/30 hover:text-white/60 transition-colors">{link.label}</a>
                     </li>
                   );
                 })}
