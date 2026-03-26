@@ -12,8 +12,17 @@ type FooterLink = string | { label: string; href?: string; external?: boolean; r
 const texts = {
   en: {
     columns: [
-      { title: "Product", links: ["Documentation"] as FooterLink[] },
-      { title: "Use cases", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Age verification", route: "/#trust-architecture" }, { label: "Anti-fraud", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
+      { title: "Company", links: [
+        { label: "About us", route: "/empresa" },
+        { label: "Partners", route: "/partners" },
+        { label: "Success stories", route: "/#cases" },
+        { label: "Solutions", route: "/solutions" },
+      ] as FooterLink[] },
+      { title: "Solutions", links: [
+        { label: "CertyPass", href: "https://certypass.com", external: true },
+        { label: "Privaro", href: "https://privaro.lovable.app", external: true },
+        { label: "MusicDibs", href: "https://musicdibs.com", external: true },
+      ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Legal notice", route: "/legal" }, { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Funding", route: "/financiacion" }] as FooterLink[] },
     ],
@@ -25,8 +34,17 @@ const texts = {
   },
   es: {
     columns: [
-      { title: "Producto", links: ["Documentación"] as FooterLink[] },
-      { title: "Casos de uso", links: [{ label: "KYC", route: "/#trust-architecture" }, { label: "Verificación de edad", route: "/#trust-architecture" }, { label: "Anti-fraude", route: "/#trust-architecture" }, { label: "MiCA", route: "/#trust-architecture" }] as FooterLink[] },
+      { title: "Empresa", links: [
+        { label: "Quiénes somos", route: "/empresa" },
+        { label: "Partners", route: "/partners" },
+        { label: "Casos de éxito", route: "/#cases" },
+        { label: "Soluciones", route: "/solutions" },
+      ] as FooterLink[] },
+      { title: "Soluciones", links: [
+        { label: "CertyPass", href: "https://certypass.com", external: true },
+        { label: "Privaro", href: "https://privaro.lovable.app", external: true },
+        { label: "MusicDibs", href: "https://musicdibs.com", external: true },
+      ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Aviso legal", route: "/legal" }, { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Financiación", route: "/financiacion" }] as FooterLink[] },
     ],
