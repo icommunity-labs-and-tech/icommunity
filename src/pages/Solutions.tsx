@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import { useState } from "react";
