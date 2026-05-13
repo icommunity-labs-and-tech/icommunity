@@ -34,16 +34,16 @@ const TrustBar = () => {
 
   const bottomLogos = [
     { src: logoMadrid, alt: t.madridAlt, cls: "h-16 md:h-20" },
-    { src: logoAenor, alt: "AENOR", cls: "h-8 md:h-10" },
-    { src: logoLogalty, alt: "Logalty", cls: "h-8 md:h-10" },
-    { src: logoCertifika, alt: "Certifika", cls: "h-7 md:h-9" },
+    { src: logoAenor, alt: "AENOR logo", cls: "h-8 md:h-10" },
+    { src: logoLogalty, alt: "Logalty logo", cls: "h-8 md:h-10" },
+    { src: logoCertifika, alt: "Certifika logo", cls: "h-7 md:h-9" },
     { src: logoEstrella, alt: "Estrella Galicia", cls: "h-8 md:h-10" },
-    { src: logoLidl, alt: "Lidl", cls: "h-8 md:h-10" },
-    { src: logoComforce, alt: "Comforce", cls: "h-8 md:h-10" },
-    { src: logoGobe, alt: "Gobe", cls: "h-12 md:h-14" },
+    { src: logoLidl, alt: "Lidl logo", cls: "h-8 md:h-10" },
+    { src: logoComforce, alt: "Comforce logo", cls: "h-8 md:h-10" },
+    { src: logoGobe, alt: "Gobe logo", cls: "h-12 md:h-14" },
     { src: logoPatterson, alt: "Patterson Travel", cls: "h-7 md:h-9" },
-    { src: logoAsac, alt: "ASAC", cls: "h-7 md:h-9" },
-    { src: logoSmile, alt: "Smile", cls: "h-6 md:h-8" },
+    { src: logoAsac, alt: "ASAC logo", cls: "h-7 md:h-9" },
+    { src: logoSmile, alt: "Smile logo", cls: "h-6 md:h-8" },
   ];
 
   return (

@@ -102,7 +102,7 @@ const Ecosystem = () => {
               {/* Logo */}
               <img
                 src={productMeta[i].logo}
-                alt={product.eyebrow}
+                alt={`${product.eyebrow} logo`}
                 className="h-10 object-contain mb-6"
               />
 

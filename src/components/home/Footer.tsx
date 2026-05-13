@@ -140,13 +140,13 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           <p className="text-[10px] text-white/25 uppercase tracking-widest text-center mb-5">{t.coFunded}</p>
           <div className="flex flex-nowrap items-center justify-center gap-6 md:gap-12 overflow-x-auto">
             <img src={logoCdti} alt={t.cdtiAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
-            <img src={logoEnisa} alt="ENISA" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
+            <img src={logoEnisa} alt="ENISA logo" className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
             <img src={logoFeder} alt={t.federAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
             <img src={logoUE} alt={t.ueAlt} className="h-10 md:h-14 rounded bg-white/90 px-3 py-1.5" />
           </div>
         </div>
         <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center"><img src={logo} alt="iCommunity" className="h-6 opacity-60" /></div>
+          <div className="flex items-center"><img src={logo} alt="iCommunity logo" className="h-6 opacity-60" /></div>
           <p className="text-xs text-white/20">© {new Date().getFullYear()} iCommunity Labs S.L. {t.rights}</p>
         </div>
       </div>

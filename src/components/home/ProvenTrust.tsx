@@ -60,7 +60,7 @@ const texts = {
 };
 
 const logoData = [
-  [{ src: logoAenor, alt: "AENOR" }, { src: logoLogalty, alt: "Logalty" }],
+  [{ src: logoAenor, alt: "AENOR logo" }, { src: logoLogalty, alt: "Logalty logo" }],
   [{ src: logoEstrella, alt: "Estrella Galicia" }],
   [{ text: "Conforce" }],
 ];
