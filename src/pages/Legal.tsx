@@ -1,6 +1,7 @@
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
+import PageSEO from "@/components/PageSEO";
 import { useState } from "react";
 
 const Legal = () => {
@@ -8,6 +9,12 @@ const Legal = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(225,30%,6%)] text-white/80">
+      <PageSEO
+        title="Legal Notice"
+        description="Privacy policy, legal notice and cookie policy of iCommunity Labs & Tech S.L."
+        path="/legal"
+        lang="es"
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
 

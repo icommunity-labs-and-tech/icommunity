@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Shield, Globe2, Scale, Send } from "lucide-react";
+import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import { Input } from "@/components/ui/input";
@@ -109,6 +110,12 @@ const Empresa = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Company"
+        description="Learn about iCommunity's mission, principles and commitment to European standards for regulated systems."
+        path="/empresa"
+        lang="en"
+      />
       <Navbar />
       <div className="hero pt-16"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
         <Section className="py-28 md:py-36">
