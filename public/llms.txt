@@ -1,0 +1,26 @@
+# iCommunity
+
+> iCommunity develops and operates independent regulatory trust infrastructure for verifiable evidence, audit compliance and digital product passports in regulated environments. Built on distributed ledger technology, our platform enables organizations to prove integrity from the origin.
+
+## Pages
+
+- [Homepage](/): Independent regulatory trust infrastructure — how it works, use cases, success stories and ecosystem overview.
+- [Solutions](/soluciones): Product suite built on iCommunity infrastructure — CertyPass (Digital Product Passport / ESPR), Privaro (AI compliance gateway) and MusicDibs (digital rights verification).
+- [Partners](/partners): Partner ecosystem, collaboration models and types of partners (SaaS platforms, certification bodies, technology integrators, public administrations, European projects).
+- [Company](/empresa): About iCommunity — mission, principles, commitment to European standards and contact form.
+- [Legal Notice](/legal): Privacy policy, legal notice and cookie policy of iCommunity Labs & Tech S.L.
+- [Funded Projects](/financiacion): European and nationally funded projects — PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs.
+
+## Solutions
+
+- **CertyPass** — Digital Product Passport based on verifiable evidence, compliant with European ESPR regulation.
+- **Privaro** — Compliance and data anonymization gateway for regulated AI systems.
+- **MusicDibs** — Digital rights and copyright verification platform for the music industry.
+
+## Contact
+
+- Website: https://www.icommunity.io
+- Web ICOM: https://icom.icommunity.io
+- Email: hello@icommunity.io
+- Address: Calle Colmenares, 3 – Bajo Dcha, 28014 Madrid, Spain
+- CIF: B88350897
