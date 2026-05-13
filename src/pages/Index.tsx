@@ -31,6 +31,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="iCommunity — Independent Regulatory Trust Infrastructure"
+        description="Independent trust infrastructure for verifiable evidence and audit compliance in regulated environments. CertyPass, Privaro and MusicDibs."
+        path="/"
+        lang="en"
+      />
       <Navbar onOpenModal={() => openModal()} />
       <main>
         <Hero onOpenModal={() => openModal()} />
