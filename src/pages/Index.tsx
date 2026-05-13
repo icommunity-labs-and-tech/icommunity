@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
@@ -11,13 +12,13 @@ import TrustLifecycle from "@/components/home/TrustLifecycle";
 import TrustStatement from "@/components/home/TrustStatement";
 import Security from "@/components/home/Security";
 import WhyICommunity from "@/components/home/WhyICommunity";
-
 import LeadMagnet from "@/components/home/LeadMagnet";
 import CaseStudy from "@/components/home/CaseStudy";
 import FinalCta from "@/components/home/FinalCta";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
 import Footer from "@/components/home/Footer";
 import ContactModal, { type OrganizationType } from "@/components/home/ContactModal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
