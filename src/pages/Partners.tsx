@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Code2, ShieldCheck, Landmark, Globe2, Handshake, Server, BadgeCheck, Blocks, Building2, FolderGit2, ArrowRight } from "lucide-react";
+import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
@@ -109,6 +110,12 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Partners"
+        description="Join the iCommunity partner ecosystem. Technology integrators, certification bodies, SaaS platforms and public administrations."
+        path="/partners"
+        lang="en"
+      />
       <Navbar onOpenModal={() => openModal()} />
       <div className="hero pt-28 md:pt-36"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
         <Section className="pb-24 md:pb-36"><div className="ic-container max-w-5xl mx-auto">

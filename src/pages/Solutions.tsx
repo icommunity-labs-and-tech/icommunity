@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import { useState } from "react";
@@ -18,6 +19,12 @@ const solutions = [
     url: "https://privaro.lovable.app/",
     cta: "Visit Privaro",
   },
+  {
+    name: "MusicDibs",
+    description: "Digital rights and copyright verification platform for the music industry.",
+    url: "https://musicdibs.com/",
+    cta: "Visit MusicDibs",
+  },
 ];
 
 const Solutions = () => {
@@ -25,6 +32,12 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <PageSEO
+        title="Solutions"
+        description="Discover CertyPass, Privaro and MusicDibs: solutions built on iCommunity infrastructure for regulatory compliance and digital trust."
+        path="/soluciones"
+        lang="en"
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
       <main className="flex-1 pt-28 pb-20">

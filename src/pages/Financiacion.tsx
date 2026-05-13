@@ -1,6 +1,7 @@
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
+import PageSEO from "@/components/PageSEO";
 import { useState } from "react";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
 import logoDatiaFeder from "@/assets/logo-datia-feder.webp";
@@ -15,6 +16,12 @@ const Financiacion = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(225,30%,6%)] text-white/80">
+      <PageSEO
+        title="Funded Projects"
+        description="European and national funded projects: PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs."
+        path="/financiacion"
+        lang="es"
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
 
