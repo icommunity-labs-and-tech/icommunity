@@ -92,7 +92,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
     >
       <div className="ic-container flex items-center justify-between h-16">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="iCommunity" className="h-7" />
+          <img src={logo} alt="iCommunity logo" className="h-7" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">

@@ -99,12 +99,12 @@ const Partners = () => {
     { src: logoNexta, alt: "Nexta Digital Strategy", cls: "max-h-10" },
     { src: logoMadrid, alt: t.madridAlt, cls: "max-h-14" },
     { src: logoAcbp, alt: "ACBP Soluciones Informáticas", cls: "max-h-10" },
-    { src: logoAhora, alt: "Ahora", cls: "max-h-10" },
+    { src: logoAhora, alt: "Ahora logo", cls: "max-h-10" },
     { src: logoAlpha, alt: "Alpha Consulting", cls: "max-h-10" },
-    { src: logoAmapala, alt: "Amapala", cls: "max-h-10" },
+    { src: logoAmapala, alt: "Amapala logo", cls: "max-h-10" },
     { src: logoAmypro, alt: "AmyPro ECM Solutions", cls: "max-h-10" },
     { src: logoTkAnalytics, alt: "TK Analytics Group", cls: "max-h-10" },
-    { src: logoProefex, alt: "Proefex", cls: "max-h-[99px]" },
+    { src: logoProefex, alt: "Proefex logo", cls: "max-h-[99px]" },
     { src: logoGmintegra, alt: "GM Integra RRHH", cls: "max-h-[57px]" },
   ];
 
