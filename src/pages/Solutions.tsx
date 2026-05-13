@@ -32,6 +32,12 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <PageSEO
+        title="Solutions"
+        description="Discover CertyPass, Privaro and MusicDibs: solutions built on iCommunity infrastructure for regulatory compliance and digital trust."
+        path="/soluciones"
+        lang="en"
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
       <main className="flex-1 pt-28 pb-20">
