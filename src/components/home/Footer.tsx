@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Linkedin } from "lucide-react";
 import logo from "@/assets/logo-blanco-negativo.png";
 import logoFeder from "@/assets/logo-feder.png";
 import logoUE from "@/assets/logo-cofinanciado-ue.png";
@@ -146,7 +146,18 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           </div>
         </div>
         <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center"><img src={logo} alt="iCommunity logo" className="h-6 opacity-60" /></div>
+          <div className="flex items-center gap-4">
+            <img src={logo} alt="iCommunity logo" className="h-6 opacity-60" />
+            <a
+              href="https://es.linkedin.com/company/icommunity-baas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="iCommunity en LinkedIn"
+              className="text-white/30 hover:text-white/60 transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
           <p className="text-xs text-white/20">© {new Date().getFullYear()} iCommunity Labs S.L. {t.rights}</p>
         </div>
       </div>
