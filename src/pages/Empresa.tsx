@@ -4,6 +4,7 @@ import { Shield, Globe2, Scale, Send } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
+import ContactModal from "@/components/home/ContactModal";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -44,6 +45,7 @@ const texts = {
     company: "Company *", companyPh: "Your company",
     role: "Role *", rolePh: "Your role",
     email: "Email *", emailPh: "you@company.com",
+    country: "Country *", countryPh: "Country",
     interest: "Type of interest *", interestPh: "Select an option",
     interestOptions: ["Technology integration", "Regulatory oversight", "Institutional project", "Strategic collaboration", "General information"],
     message: "Message", messagePh: "Describe your inquiry...",
@@ -73,6 +75,7 @@ const texts = {
     company: "Empresa *", companyPh: "Tu empresa",
     role: "Cargo *", rolePh: "Tu cargo",
     email: "Email *", emailPh: "tu@empresa.com",
+    country: "País *", countryPh: "País",
     interest: "Tipo de interés *", interestPh: "Seleccionar opción",
     interestOptions: ["Integración tecnológica", "Supervisión regulatoria", "Proyecto institucional", "Colaboración estratégica", "Información general"],
     message: "Mensaje", messagePh: "Describe tu consulta...",
@@ -83,9 +86,24 @@ const texts = {
   },
 };
 
+// Maps the page's "type of interest" labels to the org types accepted by the send-email function
+const INTEREST_TO_ORG_TYPE: Record<string, string> = {
+  "Technology integration": "partner-integrador",
+  "Regulatory oversight": "plataforma-regulada",
+  "Institutional project": "administracion-publica",
+  "Strategic collaboration": "partner-integrador",
+  "General information": "otro",
+  "Integración tecnológica": "partner-integrador",
+  "Supervisión regulatoria": "plataforma-regulada",
+  "Proyecto institucional": "administracion-publica",
+  "Colaboración estratégica": "partner-integrador",
+  "Información general": "otro",
+};
+
 const Empresa = () => {
   const [sending, setSending] = useState(false);
   const [interest, setInterest] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const { toast } = useToast();
   const { lang } = useLanguage();
   const t = texts[lang];
@@ -96,7 +114,9 @@ const Empresa = () => {
     const form = e.currentTarget;
     const fd = new FormData(form);
     try {
-      const { error } = await supabase.functions.invoke("send-email", { body: { type: "contact", data: { name: fd.get("emp-name"), company: fd.get("emp-company"), role: fd.get("emp-role"), email: fd.get("emp-email"), orgType: interest, message: fd.get("emp-message") } } });
+      const userMessage = (fd.get("emp-message") as string) || "";
+      const message = `[${interest}] ${userMessage}`.trim();
+      const { error } = await supabase.functions.invoke("send-email", { body: { type: "contact", data: { name: fd.get("emp-name"), company: fd.get("emp-company"), role: fd.get("emp-role"), email: fd.get("emp-email"), country: fd.get("emp-country"), orgType: INTEREST_TO_ORG_TYPE[interest] ?? "otro", message } } });
       if (error) throw error;
       toast({ title: t.successTitle, description: t.successDesc });
       form.reset();
@@ -116,7 +136,8 @@ const Empresa = () => {
         path="/empresa"
         lang="en"
       />
-      <Navbar />
+      <Navbar onOpenModal={() => setModalOpen(true)} />
+      <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
       <div className="hero pt-16"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">
         <Section className="py-28 md:py-36">
           <div className="ic-container grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -158,6 +179,7 @@ const Empresa = () => {
               <div><Label htmlFor="emp-role" className="mb-1.5 block text-sm">{t.role}</Label><Input id="emp-role" name="emp-role" required placeholder={t.rolePh} maxLength={100} /></div>
               <div><Label htmlFor="emp-email" className="mb-1.5 block text-sm">{t.email}</Label><Input id="emp-email" name="emp-email" type="email" required placeholder={t.emailPh} maxLength={255} /></div>
             </div>
+            <div><Label htmlFor="emp-country" className="mb-1.5 block text-sm">{t.country}</Label><Input id="emp-country" name="emp-country" required placeholder={t.countryPh} maxLength={100} /></div>
             <div>
               <Label className="mb-1.5 block text-sm">{t.interest}</Label>
               <Select value={interest} onValueChange={setInterest} required><SelectTrigger><SelectValue placeholder={t.interestPh} /></SelectTrigger><SelectContent>{t.interestOptions.map((opt) => (<SelectItem key={opt} value={opt}>{opt}</SelectItem>))}</SelectContent></Select>
