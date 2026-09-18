@@ -85,9 +85,24 @@ const texts = {
   },
 };
 
+// Maps the page's "type of interest" labels to the org types accepted by the send-email function
+const INTEREST_TO_ORG_TYPE: Record<string, string> = {
+  "Technology integration": "partner-integrador",
+  "Regulatory oversight": "plataforma-regulada",
+  "Institutional project": "administracion-publica",
+  "Strategic collaboration": "partner-integrador",
+  "General information": "otro",
+  "Integración tecnológica": "partner-integrador",
+  "Supervisión regulatoria": "plataforma-regulada",
+  "Proyecto institucional": "administracion-publica",
+  "Colaboración estratégica": "partner-integrador",
+  "Información general": "otro",
+};
+
 const Empresa = () => {
   const [sending, setSending] = useState(false);
   const [interest, setInterest] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const { toast } = useToast();
   const { lang } = useLanguage();
   const t = texts[lang];
@@ -98,7 +113,9 @@ const Empresa = () => {
     const form = e.currentTarget;
     const fd = new FormData(form);
     try {
-      const { error } = await supabase.functions.invoke("send-email", { body: { type: "contact", data: { name: fd.get("emp-name"), company: fd.get("emp-company"), role: fd.get("emp-role"), email: fd.get("emp-email"), orgType: interest, message: fd.get("emp-message") } } });
+      const userMessage = (fd.get("emp-message") as string) || "";
+      const message = `[${interest}] ${userMessage}`.trim();
+      const { error } = await supabase.functions.invoke("send-email", { body: { type: "contact", data: { name: fd.get("emp-name"), company: fd.get("emp-company"), role: fd.get("emp-role"), email: fd.get("emp-email"), country: fd.get("emp-country"), orgType: INTEREST_TO_ORG_TYPE[interest] ?? "otro", message } } });
       if (error) throw error;
       toast({ title: t.successTitle, description: t.successDesc });
       form.reset();
