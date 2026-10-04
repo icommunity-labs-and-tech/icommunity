@@ -29,34 +29,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "iCommunity Labs & Tech S.L.",
-    "alternateName": "iCommunity",
-    "url": "https://www.icommunity.io",
-    "logo": "https://www.icommunity.io/logo.png",
-    "description": "Independent regulatory trust infrastructure for verifiable evidence and audit compliance in regulated environments.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Calle Colmenares, 3 – Bajo Dcha",
-      "addressLocality": "Madrid",
-      "postalCode": "28014",
-      "addressCountry": "ES"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/icommunity"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.icommunity.io/#organization",
+        "name": "iCommunity Labs & Tech S.L.",
+        "alternateName": "iCommunity",
+        "url": "https://www.icommunity.io/",
+        "logo": { "@type": "ImageObject", "url": "https://www.icommunity.io/logo.png" },
+        "email": "hello@icommunity.io",
+        "description": "Independent regulatory trust infrastructure for verifiable evidence and audit compliance in regulated environments.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Colmenares, 3 – Bajo Dcha",
+          "addressLocality": "Madrid",
+          "postalCode": "28014",
+          "addressCountry": "ES"
+        },
+        "sameAs": ["https://es.linkedin.com/company/icommunity-baas", "https://noticias.icommunity.io/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.icommunity.io/#website",
+        "name": "iCommunity",
+        "url": "https://www.icommunity.io/",
+        "inLanguage": ["es-ES", "en"],
+        "publisher": { "@id": "https://www.icommunity.io/#organization" }
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "iCommunity | Verifiable Evidence for Audits",
-    "url": "https://www.icommunity.io",
-    "publisher": {
-      "@type": "Organization",
-      "name": "iCommunity Labs & Tech S.L."
-    }
   }
   </script>
 </head>

@@ -2,13 +2,14 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs } from "@/lib/structuredData";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const content = {
   es: {
-    seoTitle: "Aviso Legal",
-    seoDesc: "Política de privacidad, aviso legal y política de cookies de iCommunity Labs & Tech S.L.",
+    seoTitle: "Aviso legal, privacidad y cookies",
+    seoDesc: "Aviso legal, política de privacidad conforme al RGPD y política de cookies de iCommunity Labs & Tech S.L. (Madrid, España).",
     h1: "Política de Privacidad",
     legalTitle: "Aviso Legal",
     legalParas: [
@@ -56,8 +57,8 @@ const content = {
     footer: "© iCommunity Labs & Tech S.L. Todos los derechos reservados.",
   },
   en: {
-    seoTitle: "Legal Notice",
-    seoDesc: "Privacy policy, legal notice and cookie policy of iCommunity Labs & Tech S.L.",
+    seoTitle: "Legal Notice, Privacy & Cookies",
+    seoDesc: "Legal notice, GDPR-compliant privacy policy and cookie policy of iCommunity Labs & Tech S.L. (Madrid, Spain).",
     h1: "Privacy Policy",
     legalTitle: "Legal Notice",
     legalParas: [
@@ -118,6 +119,13 @@ const Legal = () => {
         description={t.seoDesc}
         path="/legal"
         lang={lang}
+        jsonLd={[
+          webPage({ path: "/legal", name: t.seoTitle, description: t.seoDesc, lang }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: t.seoTitle, path: "/legal" },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />

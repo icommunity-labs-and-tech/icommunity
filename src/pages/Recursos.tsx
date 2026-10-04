@@ -5,6 +5,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs } from "@/lib/structuredData";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { articles } from "@/content/articles";
 import ComplianceGuide from "@/components/ComplianceGuide";
@@ -44,7 +45,29 @@ const Recursos = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <PageSEO title={t.seoTitle} description={t.seoDesc} path="/recursos" lang={lang} />
+      <PageSEO
+        title={t.seoTitle}
+        description={t.seoDesc}
+        path="/recursos"
+        lang={lang}
+        jsonLd={[
+          webPage({ path: "/recursos", name: t.seoTitle, description: t.seoDesc, lang, type: "CollectionPage" }),
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: articles.map((a, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://www.icommunity.io/recursos/${a.slug}`,
+              name: a.title[lang],
+            })),
+          },
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: lang === "es" ? "Recursos" : "Resources", path: "/recursos" },
+          ]),
+        ]}
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
       <div className="hero pt-28 md:pt-36 pb-20 md:pb-28">
