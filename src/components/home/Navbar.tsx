@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-blanco-negativo.png";
@@ -16,25 +16,31 @@ const texts = {
     navLinks: [
       { label: "How it works", href: "/#trust-architecture" },
       { label: "Use cases", href: "/#segments" },
-      
+
       { label: "Success stories", href: "/#cases" },
+      { label: "Resources", href: "/recursos", isRoute: true },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Company", href: "/empresa", isRoute: true },
     ],
     solutions: "Solutions",
     requestDemo: "Request demo",
+    icomLogin: "iCOM Login",
+    icomUrl: "https://icom.icommunity.io",
   },
   es: {
     navLinks: [
       { label: "Cómo funciona", href: "/#trust-architecture" },
       { label: "Casos de uso", href: "/#segments" },
-      
+
       { label: "Casos de éxito", href: "/#cases" },
+      { label: "Recursos", href: "/recursos", isRoute: true },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Empresa", href: "/empresa", isRoute: true },
     ],
     solutions: "Soluciones",
     requestDemo: "Solicitar demo",
+    icomLogin: "Acceder a iCOM",
+    icomUrl: "https://icom.icommunity.io",
   },
 };
 
