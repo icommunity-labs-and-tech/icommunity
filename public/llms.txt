@@ -9,6 +9,12 @@
 - [Partners](/partners): Partner ecosystem, collaboration models and types of partners (SaaS platforms, certification bodies, technology integrators, public administrations, European projects).
 - [Company](/empresa): About iCommunity — mission, principles, commitment to European standards and contact form.
 - [Legal Notice](/legal): Privacy policy, legal notice and cookie policy of iCommunity Labs & Tech S.L.
+- [Terms of Service](/terminos): Service conditions based on EU regulation (Directive 2011/83/EU, GDPR, DSA).
+- [Refund Policy](/reembolsos): Refund and withdrawal policy compliant with EU consumer law.
+- [Resources](/recursos): Practical guides on blockchain use cases, payment tokenization and real estate tokenization.
+- [Blockchain use cases for business](/recursos/casos-de-uso-blockchain): Practical guide — traceability, payment tokenization, IP & royalties, real estate, public sector.
+- [Blockchain payment tokenization](/recursos/tokenizacion-de-pagos): How payment tokenization works on blockchain, benefits and MiCA compliance.
+- [Real estate tokenization](/recursos/tokenizacion-inmobiliaria): How to tokenize a real estate asset — process, benefits, MiCA and Spanish regulation.
 - [Funded Projects](/financiacion): European and nationally funded projects — PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs.
 
 ## Solutions
