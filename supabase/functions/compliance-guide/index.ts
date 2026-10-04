@@ -1,3 +1,5 @@
+import { isCorporateEmail } from "../_shared/freeEmail.ts";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -41,19 +43,27 @@ Deno.serve(async (req) => {
   if (req.method !== "POST") return json({ error: "Método no permitido" }, 405);
 
   // Payload validation
-  let payload: { email?: unknown; sector?: unknown; useCase?: unknown; lang?: unknown };
+  let payload: { name?: unknown; company?: unknown; email?: unknown; sector?: unknown; useCase?: unknown; lang?: unknown };
   try {
     payload = await req.json();
   } catch {
     return json({ error: "Solicitud no válida" }, 400);
   }
+  const name = typeof payload.name === "string" ? payload.name.trim().slice(0, 100) : "";
+  const company = typeof payload.company === "string" ? payload.company.trim().slice(0, 100) : "";
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   const sector = typeof payload.sector === "string" ? payload.sector.trim().slice(0, 120) : "";
   const useCase = typeof payload.useCase === "string" ? payload.useCase.trim().slice(0, 2000) : "";
   const lang = payload.lang === "en" ? "en" : "es";
 
+  if (name.length < 3 || company.length < 2) {
+    return json({ error: lang === "es" ? "Indica tu nombre completo y tu empresa" : "Please enter your full name and company" }, 400);
+  }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255) {
     return json({ error: lang === "es" ? "Email no válido" : "Invalid email" }, 400);
+  }
+  if (!isCorporateEmail(email)) {
+    return json({ error: lang === "es" ? "Usa tu email corporativo (no se aceptan Gmail, Hotmail, Yahoo y similares)" : "Please use your work email (Gmail, Hotmail, Yahoo and similar are not accepted)" }, 400);
   }
   if (useCase.length < 30) {
     return json({ error: lang === "es" ? "Describe tu caso con algo más de detalle (mín. 30 caracteres)" : "Please describe your case in more detail (min. 30 characters)" }, 400);

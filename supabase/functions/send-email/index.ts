@@ -1,3 +1,4 @@
+import { isCorporateEmail } from "../_shared/freeEmail.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
@@ -408,27 +409,30 @@ serve(async (req) => {
         break;
       }
       case "compliance-guide": {
+        const name = sanitize(data.name, 100);
+        const company = sanitize(data.company, 100);
         const email = sanitize(data.email, 255);
         const sector = sanitize(data.sector, 120);
         const useCase = sanitize(data.useCase, 2000);
-        if (!isValidEmail(email) || useCase.length < 30) {
+        if (!name || !company || !isValidEmail(email) || !isCorporateEmail(email) || useCase.length < 30) {
           return new Response(JSON.stringify({ success: false, error: "Invalid request data." }),
             { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
         }
-        const domain = email.split("@")[1] || "Desconocida";
-        subject = `[iCommunity] Lead guía de cumplimiento: ${email}`;
+        subject = `[iCommunity] Lead guía de cumplimiento: ${company} (${name})`;
         contentHtml = `
           <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nuevo lead desde la guía de cumplimiento con IA</h2>
           <table style="border-collapse:collapse;width:100%;">
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${email}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Nombre</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${name}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Empresa</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${company}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${email}</td></tr>
             <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Sector</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${sector || "—"}</td></tr>
             <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Caso de uso</td><td style="padding:10px 14px;color:#374151;white-space:pre-wrap;">${useCase}</td></tr>
           </table>
         `;
         biginSync = {
-          name: email.split("@")[0],
+          name,
           email,
-          company: domain,
+          company,
           message: `Guía de cumplimiento IA${sector ? ` (${sector})` : ""}: ${useCase}`,
         };
         break;
