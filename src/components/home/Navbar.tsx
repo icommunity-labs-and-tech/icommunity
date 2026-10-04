@@ -25,6 +25,7 @@ const texts = {
     solutions: "Solutions",
     requestDemo: "Request demo",
     icomLogin: "iCOM Login",
+    icomShort: "iCOM",
     icomUrl: "https://icom.icommunity.io",
   },
   es: {
@@ -40,6 +41,7 @@ const texts = {
     solutions: "Soluciones",
     requestDemo: "Solicitar demo",
     icomLogin: "Acceder a iCOM",
+    icomShort: "iCOM",
     icomUrl: "https://icom.icommunity.io",
   },
 };
@@ -164,10 +166,11 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
             href={t.icomUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            aria-label={t.icomLogin}
+            className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
           >
             <LogIn className="w-3.5 h-3.5" />
-            {t.icomLogin}
+            {t.icomShort}
           </a>
           {/* Language toggle */}
           <div className="flex items-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 overflow-hidden text-xs font-medium">
