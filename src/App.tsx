@@ -15,6 +15,8 @@ import Legal from "./pages/Legal";
 import Financiacion from "./pages/Financiacion";
 import Terms from "./pages/Terms";
 import Refunds from "./pages/Refunds";
+import Recursos from "./pages/Recursos";
+import ArticlePage from "./pages/Article";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="/reembolsos" element={<Refunds />} />
               <Route path="/refunds" element={<Refunds />} />
+              <Route path="/recursos" element={<Recursos />} />
+              <Route path="/recursos/:slug" element={<ArticlePage />} />
               {/* Legacy route redirects (client-side, replace history so crawlers treat as permanent) */}
               <Route path="/privacy" element={<Navigate to="/legal" replace />} />
               <Route path="/privacy-policy" element={<Navigate to="/legal" replace />} />

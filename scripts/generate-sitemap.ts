@@ -21,6 +21,10 @@ const entries: SitemapEntry[] = [
   { path: "/financiacion", changefreq: "monthly", priority: "0.5" },
   { path: "/terminos", changefreq: "monthly", priority: "0.5" },
   { path: "/reembolsos", changefreq: "monthly", priority: "0.5" },
+  { path: "/recursos", changefreq: "weekly", priority: "0.7" },
+  { path: "/recursos/casos-de-uso-blockchain", changefreq: "monthly", priority: "0.6" },
+  { path: "/recursos/tokenizacion-de-pagos", changefreq: "monthly", priority: "0.6" },
+  { path: "/recursos/tokenizacion-inmobiliaria", changefreq: "monthly", priority: "0.6" },
 ];
 
 function generateSitemap(entries: SitemapEntry[]) {
