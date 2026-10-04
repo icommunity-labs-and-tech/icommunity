@@ -7,13 +7,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { isCorporateEmail } from "@/lib/corporateEmail";
 
 const texts = {
   es: {
     kicker: "Herramienta con IA",
     title: "Tu guía inicial de evidencia verificable",
     sub: "Describe tu caso de uso y recibe al momento una guía personalizada: obligaciones normativas, qué evidencia trazable generar y recursos para empezar.",
-    email: "Email profesional",
+    name: "Nombre completo",
+    company: "Empresa",
+    email: "Email corporativo",
+    corporateError: "Usa tu email corporativo. No aceptamos Gmail, Hotmail, Yahoo ni similares.",
     sector: "Sector (opcional)",
     sectorPh: "Banca, salud, administración pública…",
     useCase: "Describe tu caso de uso",
@@ -28,7 +32,10 @@ const texts = {
     kicker: "AI-powered tool",
     title: "Your starter guide to verifiable evidence",
     sub: "Describe your use case and instantly get a tailored guide: regulatory obligations, what traceable evidence to produce and resources to get started.",
+    name: "Full name",
+    company: "Company",
     email: "Work email",
+    corporateError: "Please use your work email. Gmail, Hotmail, Yahoo and similar are not accepted.",
     sector: "Industry (optional)",
     sectorPh: "Banking, healthcare, public sector…",
     useCase: "Describe your use case",
@@ -82,14 +89,17 @@ const GuideMarkdown = ({ content }: { content: string }) => (
 const ComplianceGuide = () => {
   const { lang } = useLanguage();
   const t = texts[lang];
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [formError, setFormError] = useState("");
   const [sector, setSector] = useState("");
   const [useCase, setUseCase] = useState("");
 
   const mutation = useMutation({
     mutationFn: async (): Promise<string> => {
       const { data, error } = await supabase.functions.invoke<{ guide?: string; error?: string }>("compliance-guide", {
-        body: { email, sector, useCase, lang },
+        body: { name, company, email, sector, useCase, lang },
       });
       if (error) {
         let message = t.error;
@@ -104,7 +114,7 @@ const ComplianceGuide = () => {
       if (!data?.guide) throw new Error(data?.error ?? t.error);
       // Lead capture (Bigin + hello@icommunity.io); never blocks the guide
       supabase.functions
-        .invoke("send-email", { body: { type: "compliance-guide", data: { email, sector, useCase } } })
+        .invoke("send-email", { body: { type: "compliance-guide", data: { name, company, email, sector, useCase } } })
         .then(({ error: leadError }) => {
           if (leadError) console.error("compliance-guide lead sync failed:", leadError);
         });
@@ -114,6 +124,11 @@ const ComplianceGuide = () => {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!isCorporateEmail(email)) {
+      setFormError(t.corporateError);
+      return;
+    }
+    setFormError("");
     mutation.mutate();
   };
 
@@ -138,6 +153,14 @@ const ComplianceGuide = () => {
           <form onSubmit={onSubmit} className="space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
+                <Label htmlFor="cg-name">{t.name}</Label>
+                <Input id="cg-name" required minLength={3} maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="cg-company">{t.company}</Label>
+                <Input id="cg-company" required minLength={2} maxLength={100} autoComplete="organization" value={company} onChange={(e) => setCompany(e.target.value)} />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="cg-email">{t.email}</Label>
                 <Input id="cg-email" type="email" required maxLength={255} value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
@@ -159,7 +182,7 @@ const ComplianceGuide = () => {
                 onChange={(e) => setUseCase(e.target.value)}
               />
             </div>
-            {mutation.error && <p className="text-sm text-destructive">{mutation.error.message}</p>}
+            {(formError || mutation.error) && <p className="text-sm text-destructive">{formError || mutation.error?.message}</p>}
             <Button type="submit" disabled={mutation.isPending} className="w-full sm:w-auto">
               {mutation.isPending ? (
                 <>
