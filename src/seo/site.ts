@@ -119,6 +119,18 @@ export const LEGACY_INTERNAL_REDIRECTS: Record<string, string> = {
   "/politica-de-privacidad/": "/legal",
   "/en/privacy-policy/": "/legal",
   "/en/partners/": "/partners",
+  // Digital Product Passport (CertyPass)
+  "/el-pasaporte-digital-de-productos-dpp-de-la-ue-clave-para-la-transparencia-y-sostenibilidad/": "/recursos/pasaporte-digital-de-producto-dpp",
+  "/en/the-eu-digital-product-passport-dpp-key-to-transparency-and-sustainability/": "/recursos/pasaporte-digital-de-producto-dpp",
+  "/category/pasaporte-digital-de-productos/": "/recursos/pasaporte-digital-de-producto-dpp",
+  "/en/category/digital-product-passport/": "/recursos/pasaporte-digital-de-producto-dpp",
+  "/desafios-tecnicos-y-de-implementacion-del-dpp-costes-infraestructura-aceptacion/": "/recursos/desafios-implementacion-dpp",
+  "/en/technical-and-implementation-challenges-of-the-dpp-costs-infrastructure-acceptance/": "/recursos/desafios-implementacion-dpp",
+  "/impacto-ambiental-del-dpp-reduccion-de-residuos-y-mejores-practicas-de-reciclaje/": "/recursos/impacto-ambiental-dpp",
+  "/en/environmental-impact-of-the-dpp-waste-reduction-and-improved-recycling-practices/": "/recursos/impacto-ambiental-dpp",
+  // Verifactu
+  "/blockchain-para-adaptar-cualquier-solucion-de-facturacion-a-verifactu/": "/recursos/verifactu-blockchain",
+  "/en/blockchain-to-adapt-any-billing-solution-to-verifactu/": "/recursos/verifactu-blockchain",
 };
 
 export const canonicalUrl = (path: string) =>

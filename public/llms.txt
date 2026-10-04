@@ -15,6 +15,10 @@
 - [Blockchain use cases for business](/recursos/casos-de-uso-blockchain): Practical guide — traceability, payment tokenization, IP & royalties, real estate, public sector.
 - [Blockchain payment tokenization](/recursos/tokenizacion-de-pagos): How payment tokenization works on blockchain, benefits and MiCA compliance.
 - [Real estate tokenization](/recursos/tokenizacion-inmobiliaria): How to tokenize a real estate asset — process, benefits, MiCA and Spanish regulation.
+- [Digital Product Passport (DPP) guide](/recursos/pasaporte-digital-de-producto-dpp): EU ESPR regulation — affected products, timeline, required data and how to implement the DPP with verifiable evidence.
+- [Implementing the DPP](/recursos/desafios-implementacion-dpp): Supplier data, interoperability, long-term integrity, costs and access control.
+- [Environmental impact of the DPP](/recursos/impacto-ambiental-dpp): Recycling, repair, unsold-goods destruction ban and verifiable environmental claims.
+- [Verifactu and blockchain](/recursos/verifactu-blockchain): Spanish AEAT Verifactu requirements, 2027 timeline and adding verifiable evidence to invoicing records.
 - [Funded Projects](/financiacion): European and nationally funded projects — PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs.
 
 ## Solutions
