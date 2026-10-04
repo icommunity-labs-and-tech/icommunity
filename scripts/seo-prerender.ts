@@ -23,6 +23,7 @@ const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const NAV = `<nav><a href="/">iCommunity</a> · <a href="/soluciones">Solutions</a> · <a href="/partners">Partners</a> · <a href="/recursos">Resources</a> · <a href="/empresa">About</a> · <a href="${NEWS_BLOG}/">News</a></nav>`;
+const FOOTER_GUIDES = `<footer><a href="/recursos/pasaporte-digital-de-producto-dpp">Digital Product Passport</a> · <a href="/recursos/ai-act-datos-personales-llm">AI Act &amp; personal data</a> · <a href="/recursos/trazabilidad-documental">Document traceability</a> · <a href="/recursos/verifactu-blockchain">Verifactu</a></footer>`;
 
 function setHead(html: string, o: { title: string; description: string; path: string; type?: string; jsonLd?: object[] }) {
   const url = canonicalUrl(o.path);
@@ -46,7 +47,7 @@ function setHead(html: string, o: { title: string; description: string; path: st
 }
 
 const setBody = (html: string, body: string) =>
-  html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${NAV}<main>${body}</main></div>`);
+  html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${NAV}<main>${body}</main>${FOOTER_GUIDES}</div>`);
 
 function write(dist: string, path: string, html: string) {
   const file = path === "/" ? resolve(dist, "index.html") : resolve(dist, `.${path.replace(/\/+$/, "")}`, "index.html");
@@ -78,7 +79,10 @@ export function seoPrerender(): Plugin {
       for (const r of STATIC_ROUTES) {
         const body =
           `<h1>${esc(r.h1)}</h1><p>${esc(r.description)}</p>` +
-          (r.path === "/recursos"
+          (r.path === "/soluciones"
+            ? `<ul><li><a href="https://certypass.com/">CertyPass</a> — <a href="/recursos/pasaporte-digital-de-producto-dpp">Digital Product Passport guide</a></li><li><a href="https://privaro.ai">Privaro</a> — <a href="/recursos/ai-act-datos-personales-llm">AI Act and personal data in LLMs</a></li><li><a href="https://musicdibs.com/">MusicDibs</a></li></ul>`
+            : "") +
+          (r.path === "/" || r.path === "/recursos"
             ? `<ul>${articles.map((a) => `<li><a href="/recursos/${a.slug}">${esc(a.title.en)}</a> — ${esc(a.description.en)}</li>`).join("")}</ul>`
             : "");
         write(outDir, r.path, setBody(setHead(template, r), body));
@@ -98,7 +102,15 @@ export function seoPrerender(): Plugin {
                 (s.bullets?.length ? `<ul>${s.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : ""),
             )
             .join("") +
-          `</article>`;
+          `</article>` +
+          (a.product ? `<p><a href="${a.product.url}">${esc(a.product.name)}</a></p>` : "") +
+          `<h2>Related guides</h2><ul>` +
+          (a.related ?? [])
+            .map((slug) => articles.find((x) => x.slug === slug))
+            .filter(Boolean)
+            .map((x) => `<li><a href="/recursos/${x!.slug}">${esc(x!.title.en)}</a></li>`)
+            .join("") +
+          `</ul>`;
         const jsonLd = [
           {
             "@context": "https://schema.org",

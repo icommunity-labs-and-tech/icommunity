@@ -24,7 +24,10 @@ const ArticlePage = () => {
 
   if (!article) return <Navigate to="/recursos" replace />;
 
-  const related = articles.filter((a) => a.slug !== article.slug);
+  const topical = (article.related ?? [])
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter((a): a is (typeof articles)[number] => Boolean(a));
+  const related = [...topical, ...articles.filter((a) => a.slug !== article.slug && !topical.includes(a))].slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -115,7 +118,20 @@ const ArticlePage = () => {
           </div>
 
           <div className="ic-card mt-14 flex flex-col md:flex-row md:items-center gap-6 justify-between">
-            <p className="text-foreground/90 leading-relaxed md:max-w-xl">{article.cta[lang].text}</p>
+            <div className="md:max-w-xl space-y-3">
+              <p className="text-foreground/90 leading-relaxed">{article.cta[lang].text}</p>
+              {article.product && (
+                <a
+                  href={article.product.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium ic-text-gradient hover:opacity-80 transition-opacity"
+                >
+                  {lang === "es" ? `Conoce ${article.product.name}` : `Discover ${article.product.name}`}
+                  <ArrowRight className="w-4 h-4 text-primary" />
+                </a>
+              )}
+            </div>
             <button
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center rounded-lg ic-gradient-cta px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity shrink-0"

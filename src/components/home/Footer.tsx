@@ -26,6 +26,12 @@ const texts = {
         { label: "Resources", route: "/recursos" },
         { label: "Solutions", isSolutionsDropdown: true },
       ] as FooterLink[] },
+      { title: "Guides", links: [
+        { label: "Digital Product Passport", route: "/recursos/pasaporte-digital-de-producto-dpp" },
+        { label: "AI Act & personal data", route: "/recursos/ai-act-datos-personales-llm" },
+        { label: "Document traceability", route: "/recursos/trazabilidad-documental" },
+        { label: "Verifactu", route: "/recursos/verifactu-blockchain" },
+      ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Legal notice", route: "/legal" }, { label: "Privacy", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Terms of service", route: "/terms" }, { label: "Refund policy", route: "/refunds" }, { label: "Funding", route: "/financiacion" }] as FooterLink[] },
     ],
@@ -43,6 +49,12 @@ const texts = {
         { label: "Casos de éxito", anchor: "cases" },
         { label: "Recursos", route: "/recursos" },
         { label: "Soluciones", isSolutionsDropdown: true },
+      ] as FooterLink[] },
+      { title: "Guías", links: [
+        { label: "Pasaporte Digital de Producto", route: "/recursos/pasaporte-digital-de-producto-dpp" },
+        { label: "AI Act y datos personales", route: "/recursos/ai-act-datos-personales-llm" },
+        { label: "Trazabilidad documental", route: "/recursos/trazabilidad-documental" },
+        { label: "Verifactu", route: "/recursos/verifactu-blockchain" },
       ] as FooterLink[] },
       { title: "Token ICOM", links: [{ label: "Web ICOM", href: "https://icom.icommunity.io/", external: true }] as FooterLink[] },
       { title: "Legal", links: [{ label: "Aviso legal", route: "/legal" }, { label: "Privacidad", route: "/legal" }, { label: "Cookies", route: "/legal#cookies" }, { label: "Condiciones de servicio", route: "/terminos" }, { label: "Política de reembolsos", route: "/reembolsos" }, { label: "Financiación", route: "/financiacion" }] as FooterLink[] },
@@ -79,7 +91,7 @@ const Footer = ({ onOpenModal }: { onOpenModal?: () => void }) => {
     <footer id="company" className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(225 35% 4%) 100%)" }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(hsl(225 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(225 80% 60%) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div className="relative ic-container pt-14 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {t.columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-sm font-semibold text-white/70 mb-4">{col.title}</h4>

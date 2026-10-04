@@ -14,18 +14,24 @@ const solutions = [
     description: "Digital Product Passport based on verifiable evidence compliant with European ESPR regulation.",
     url: "https://certypass.com/",
     cta: "Visit CertyPass",
+    guides: [
+      { label: "Digital Product Passport (ESPR) guide", to: "/recursos/pasaporte-digital-de-producto-dpp" },
+      { label: "Implementing the DPP", to: "/recursos/desafios-implementacion-dpp" },
+    ],
   },
   {
     name: "Privaro",
     description: "Compliance and data anonymization gateway for regulated AI systems.",
     url: "https://privaro.ai",
     cta: "Visit Privaro",
+    guides: [{ label: "AI Act and personal data in LLMs", to: "/recursos/ai-act-datos-personales-llm" }],
   },
   {
     name: "MusicDibs",
     description: "Digital rights and copyright verification platform for the music industry.",
     url: "https://musicdibs.com/",
     cta: "Visit MusicDibs",
+    guides: [] as { label: string; to: string }[],
   },
 ];
 
@@ -86,6 +92,17 @@ const Solutions = () => {
                 <div>
                   <h2 className="text-xl font-semibold text-foreground mb-2">{s.name}</h2>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
+                  {s.guides.length > 0 && (
+                    <ul className="mt-4 space-y-1.5">
+                      {s.guides.map((g) => (
+                        <li key={g.to}>
+                          <Link to={g.to} className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
+                            {g.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
                 <a
                   href={s.url}
@@ -99,6 +116,15 @@ const Solutions = () => {
               </div>
             ))}
           </div>
+
+          <section className="mt-16 max-w-3xl">
+            <h2 className="text-xl font-semibold text-foreground mb-3">Verifiable evidence for any process</h2>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              All products share the same infrastructure: cryptographic fingerprints, qualified timestamps and distributed-ledger anchoring. Learn how it applies to{" "}
+              <Link to="/recursos/trazabilidad-documental" className="underline underline-offset-4 hover:text-foreground">document traceability</Link> and{" "}
+              <Link to="/recursos/verifactu-blockchain" className="underline underline-offset-4 hover:text-foreground">Verifactu invoicing records</Link>.
+            </p>
+          </section>
 
           <Link to="/" className="inline-block mt-14 text-sm text-muted-foreground hover:text-foreground transition-colors">
             ← Back to homepage

@@ -20,11 +20,16 @@ export interface Article {
   intro: Record<Lang, string[]>;
   sections: Record<Lang, ArticleSection[]>;
   cta: Record<Lang, { text: string; button: string }>;
+  /** Topical related guides (slugs), shown in "Keep reading" before the rest. */
+  related?: string[];
+  /** Product this guide supports; linked from the CTA box. */
+  product?: { name: string; url: string };
 }
 
 export const articles: Article[] = [
   {
     slug: "casos-de-uso-blockchain",
+    related: ["trazabilidad-documental", "tokenizacion-de-pagos", "pasaporte-digital-de-producto-dpp"],
     date: "2026-10-04",
     readingMinutes: 8,
     category: { es: "Guía", en: "Guide" },
@@ -157,6 +162,7 @@ export const articles: Article[] = [
   },
   {
     slug: "tokenizacion-de-pagos",
+    related: ["tokenizacion-inmobiliaria", "casos-de-uso-blockchain"],
     date: "2026-10-04",
     readingMinutes: 7,
     category: { es: "Pagos", en: "Payments" },
@@ -275,6 +281,7 @@ export const articles: Article[] = [
   },
   {
     slug: "tokenizacion-inmobiliaria",
+    related: ["tokenizacion-de-pagos", "casos-de-uso-blockchain"],
     date: "2026-10-04",
     readingMinutes: 7,
     category: { es: "Inmobiliario", en: "Real estate" },
@@ -395,6 +402,8 @@ export const articles: Article[] = [
   },
   {
     slug: "pasaporte-digital-de-producto-dpp",
+    related: ["desafios-implementacion-dpp", "impacto-ambiental-dpp", "trazabilidad-documental"],
+    product: { name: "CertyPass", url: "https://certypass.com/" },
     date: "2026-10-04",
     readingMinutes: 10,
     category: { es: "Guía regulatoria", en: "Regulatory guide" },
@@ -525,6 +534,8 @@ export const articles: Article[] = [
   },
   {
     slug: "desafios-implementacion-dpp",
+    related: ["pasaporte-digital-de-producto-dpp", "impacto-ambiental-dpp"],
+    product: { name: "CertyPass", url: "https://certypass.com/" },
     date: "2026-10-04",
     readingMinutes: 7,
     category: { es: "Guía regulatoria", en: "Regulatory guide" },
@@ -623,6 +634,8 @@ export const articles: Article[] = [
   },
   {
     slug: "impacto-ambiental-dpp",
+    related: ["pasaporte-digital-de-producto-dpp", "desafios-implementacion-dpp"],
+    product: { name: "CertyPass", url: "https://certypass.com/" },
     date: "2026-10-04",
     readingMinutes: 6,
     category: { es: "Sostenibilidad", en: "Sustainability" },
@@ -709,6 +722,7 @@ export const articles: Article[] = [
   },
   {
     slug: "verifactu-blockchain",
+    related: ["trazabilidad-documental", "casos-de-uso-blockchain"],
     date: "2026-10-04",
     readingMinutes: 7,
     category: { es: "Guía regulatoria", en: "Regulatory guide" },
@@ -809,6 +823,8 @@ export const articles: Article[] = [
   },
   {
     slug: "ai-act-datos-personales-llm",
+    related: ["trazabilidad-documental", "casos-de-uso-blockchain"],
+    product: { name: "Privaro", url: "https://privaro.ai" },
     date: "2026-10-04",
     readingMinutes: 9,
     category: { es: "Guía regulatoria", en: "Regulatory guide" },
@@ -933,6 +949,7 @@ export const articles: Article[] = [
   },
   {
     slug: "trazabilidad-documental",
+    related: ["verifactu-blockchain", "ai-act-datos-personales-llm", "pasaporte-digital-de-producto-dpp"],
     date: "2026-10-04",
     readingMinutes: 7,
     category: { es: "Evidencia verificable", en: "Verifiable evidence" },
