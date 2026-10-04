@@ -7,6 +7,7 @@ import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { articles } from "@/content/articles";
+import ComplianceGuide from "@/components/ComplianceGuide";
 
 const texts = {
   en: {
@@ -90,6 +91,7 @@ const Recursos = () => {
             ))}
           </div>
         </div>
+        <ComplianceGuide />
       </main>
 
       <Footer onOpenModal={() => setModalOpen(true)} />
