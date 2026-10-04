@@ -1,0 +1,2 @@
+- Unknown routes (NotFound) redirect to the same path on noticias.icommunity.io, where the old WordPress content lives; trailing-slash variants retry the internal route first. Why: avoids hundreds of Google "soft 404" errors from legacy URLs.
+- Lead forms check for a corporate email with a free-webmail domain list duplicated in `supabase/functions/_shared/freeEmail.ts` (server, source of truth) and `src/lib/corporateEmail.ts` (client). Why: the server enforces the rule, the client copy only gives instant feedback.
