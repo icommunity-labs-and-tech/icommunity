@@ -2,7 +2,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
-import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
+import { webPage, breadcrumbs } from "@/lib/structuredData";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
@@ -15,7 +15,7 @@ import logoFse from "@/assets/logo-fse.jpg";
 
 const content = {
   es: {
-    seoTitle: "Proyectos Cofinanciados",
+    seoTitle: "Proyectos cofinanciados por la UE y CDTI",
     seoDesc: "Proyectos financiados a nivel europeo y nacional: PRTR 2025, DATIA, Cervera, NEOTEC y programas de empleo joven.",
     h1: "Proyectos Cofinanciados",
     sections: {
@@ -90,7 +90,7 @@ const content = {
     },
   },
   en: {
-    seoTitle: "Funded Projects",
+    seoTitle: "EU and CDTI Co-funded Projects",
     seoDesc: "European and national funded projects: PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs.",
     h1: "Co-funded Projects",
     sections: {

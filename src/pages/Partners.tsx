@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Code2, ShieldCheck, Landmark, Globe2, Handshake, Server, BadgeCheck, Blocks, Building2, FolderGit2, ArrowRight } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs } from "@/lib/structuredData";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
@@ -111,10 +112,23 @@ const Partners = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Partners"
-        description="Join the iCommunity partner ecosystem. Technology integrators, certification bodies, SaaS platforms and public administrations."
+        title={lang === "es" ? "Programa de partners e integradores" : "Partner Program for Integrators"}
+        description={lang === "es" ? "Únete al ecosistema de partners de iCommunity: integradores tecnológicos, entidades certificadoras, plataformas SaaS y administraciones públicas." : "Join the iCommunity partner ecosystem: technology integrators, certification bodies, SaaS platforms and public administrations."}
         path="/partners"
-        lang="en"
+        lang={lang}
+        jsonLd={[
+          webPage({
+            path: "/partners",
+            name: lang === "es" ? "Programa de partners e integradores" : "Partner Program for Integrators",
+            description: lang === "es" ? "Únete al ecosistema de partners de iCommunity: integradores tecnológicos, entidades certificadoras, plataformas SaaS y administraciones públicas." : "Join the iCommunity partner ecosystem: technology integrators, certification bodies, SaaS platforms and public administrations.",
+            lang,
+            type: "WebPage",
+          }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: lang === "es" ? "Partners" : "Partners", path: "/partners" },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => openModal()} />
       <div className="hero pt-28 md:pt-36"><div className="hero-aurora" /><div className="hero-noise" /><div className="hero-content">

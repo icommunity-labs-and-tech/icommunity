@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Shield, Globe2, Scale, Send } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs } from "@/lib/structuredData";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
@@ -131,10 +132,23 @@ const Empresa = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Company"
-        description="Learn about iCommunity's mission, principles and commitment to European standards for regulated systems."
+        title={lang === "es" ? "Quiénes somos: infraestructura de confianza" : "About Us: Regulatory Trust Infrastructure"}
+        description={lang === "es" ? "Conoce a iCommunity: empresa española que desarrolla infraestructura de evidencia verificable y sellado de tiempo para sectores regulados en Europa." : "Meet iCommunity, the Spanish company building verifiable evidence and timestamping infrastructure for regulated industries across Europe."}
         path="/empresa"
-        lang="en"
+        lang={lang}
+        jsonLd={[
+          webPage({
+            path: "/empresa",
+            name: lang === "es" ? "Quiénes somos: infraestructura de confianza" : "About Us: Regulatory Trust Infrastructure",
+            description: lang === "es" ? "Conoce a iCommunity: empresa española que desarrolla infraestructura de evidencia verificable y sellado de tiempo para sectores regulados en Europa." : "Meet iCommunity, the Spanish company building verifiable evidence and timestamping infrastructure for regulated industries across Europe.",
+            lang,
+            type: "AboutPage",
+          }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: lang === "es" ? "Empresa" : "Company", path: "/empresa" },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />

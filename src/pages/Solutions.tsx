@@ -1,9 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs, productList } from "@/lib/structuredData";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import { useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import ContactModal, { type OrganizationType } from "@/components/home/ContactModal";
 
 const solutions = [
@@ -29,14 +31,43 @@ const solutions = [
 
 const Solutions = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const { lang } = useLanguage();
+  const seo =
+    lang === "es"
+      ? {
+          title: "Soluciones: CertyPass, Privaro y MusicDibs",
+          description:
+            "Pasaporte digital de producto, anonimización de datos para IA y registro de derechos musicales sobre la infraestructura de evidencia verificable de iCommunity.",
+        }
+      : {
+          title: "Solutions: CertyPass, Privaro and MusicDibs",
+          description:
+            "Digital product passport, data anonymization for AI and music rights registration, built on iCommunity's verifiable evidence infrastructure.",
+        };
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <PageSEO
-        title="Solutions"
-        description="Discover CertyPass, Privaro and MusicDibs: solutions built on iCommunity infrastructure for regulatory compliance and digital trust."
+        title={seo.title}
+        description={seo.description}
         path="/soluciones"
-        lang="en"
+        lang={lang}
+        jsonLd={[
+          webPage({ path: "/soluciones", name: seo.title, description: seo.description, lang, type: "CollectionPage" }),
+          productList(
+            solutions.map((s) => ({
+              name: s.name,
+              description: s.description,
+              url: s.url,
+              category:
+                s.name === "CertyPass" ? "Digital Product Passport" : s.name === "Privaro" ? "AI data compliance" : "Copyright registration",
+            })),
+          ),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: lang === "es" ? "Soluciones" : "Solutions", path: "/soluciones" },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 

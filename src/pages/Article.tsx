@@ -5,7 +5,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
-import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
+import { breadcrumbs, articleSchema } from "@/lib/structuredData";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { articles, getArticle } from "@/content/articles";
 
