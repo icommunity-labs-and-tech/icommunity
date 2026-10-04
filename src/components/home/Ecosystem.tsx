@@ -56,7 +56,7 @@ const texts = {
 
 const productMeta = [
   { logo: logoCertypass, href: "https://certypass.com", external: true },
-  { logo: logoPrivaro, href: "https://privaro.lovable.app/", external: true },
+  { logo: logoPrivaro, href: "https://privaro.ai", external: true },
 ];
 
 const Ecosystem = () => {
