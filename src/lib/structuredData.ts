@@ -1,7 +1,9 @@
 // Schema.org JSON-LD builders. Organization and WebSite live statically in
 // index.html; pages reference them by @id to avoid duplicated entities.
 
-export const BASE_URL = "https://www.icommunity.io";
+import { SITE_URL } from "@/seo/site";
+
+export const BASE_URL = SITE_URL;
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const WEBSITE_ID = `${BASE_URL}/#website`;
 

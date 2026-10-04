@@ -58,7 +58,7 @@ const Recursos = () => {
             itemListElement: articles.map((a, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              url: `https://www.icommunity.io/recursos/${a.slug}`,
+              url: `https://icommunity.io/recursos/${a.slug}`,
               name: a.title[lang],
             })),
           },

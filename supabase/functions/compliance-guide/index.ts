@@ -22,14 +22,14 @@ function isRateLimited(key: string): boolean {
 }
 
 const RESOURCES = `
-- Casos de uso de blockchain: https://www.icommunity.io/recursos/casos-de-uso-blockchain
-- Tokenización de pagos: https://www.icommunity.io/recursos/tokenizacion-de-pagos
-- Tokenización inmobiliaria: https://www.icommunity.io/recursos/tokenizacion-inmobiliaria
+- Casos de uso de blockchain: https://icommunity.io/recursos/casos-de-uso-blockchain
+- Tokenización de pagos: https://icommunity.io/recursos/tokenizacion-de-pagos
+- Tokenización inmobiliaria: https://icommunity.io/recursos/tokenizacion-inmobiliaria
 - CertyPass (identidad y credenciales verificables): https://certypass.io
 - Privaro (privacidad y datos): https://privaro.ai
 - iCOM (plataforma de sellado de tiempo y evidencia trazable): https://icom.icommunity.io
-- Casos de éxito: https://www.icommunity.io/#cases
-- Hablar con el equipo: https://www.icommunity.io/empresa
+- Casos de éxito: https://icommunity.io/#cases
+- Hablar con el equipo: https://icommunity.io/empresa
 `;
 
 const json = (body: unknown, status = 200) =>
