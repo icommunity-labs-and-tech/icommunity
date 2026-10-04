@@ -23,7 +23,7 @@ const ArticlePage = () => {
 
   if (!article) return <Navigate to="/recursos" replace />;
 
-  const related = articles.filter((a) => a.slug !== article.slug Sok);
+  const related = articles.filter((a) => a.slug !== article.slug);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
