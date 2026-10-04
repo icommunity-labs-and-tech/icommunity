@@ -103,7 +103,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal?: () => void }) => {
           <img src={logo} alt="iCommunity logo" className="h-7" />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-7">
           {t.navLinks.map((link, idx) => (
             <React.Fragment key={link.label}>
               {link.isRoute ? (
