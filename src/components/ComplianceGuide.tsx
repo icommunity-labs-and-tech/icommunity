@@ -102,6 +102,12 @@ const ComplianceGuide = () => {
         throw new Error(message);
       }
       if (!data?.guide) throw new Error(data?.error ?? t.error);
+      // Lead capture (Bigin + hello@icommunity.io); never blocks the guide
+      supabase.functions
+        .invoke("send-email", { body: { type: "compliance-guide", data: { email, sector, useCase } } })
+        .then(({ error: leadError }) => {
+          if (leadError) console.error("compliance-guide lead sync failed:", leadError);
+        });
       return data.guide;
     },
   });
