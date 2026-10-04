@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
-import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
 import Ecosystem from "@/components/home/Ecosystem";
@@ -32,10 +31,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="iCommunity — Independent Regulatory Trust Infrastructure"
-        description="Independent trust infrastructure for verifiable evidence and audit compliance in regulated environments. CertyPass, Privaro and MusicDibs."
+        title={
+          lang === "es"
+            ? "iCommunity | Evidencia verificable para auditorías"
+            : "iCommunity | Verifiable Evidence for Audits"
+        }
+        description={
+          lang === "es"
+            ? "Demuestra el cumplimiento con evidencia trazable y sellado de tiempo con validez legal. Infraestructura de confianza para sectores regulados. Solicita una demo."
+            : "Prove compliance with traceable, timestamped evidence that stands up to audits. Trust infrastructure for regulated industries. Request a demo."
+        }
         path="/"
-        lang="en"
+        lang={lang}
       />
       <Navbar onOpenModal={() => openModal()} />
       <main>
