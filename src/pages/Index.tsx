@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
-import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
 import Ecosystem from "@/components/home/Ecosystem";
