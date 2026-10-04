@@ -19,6 +19,8 @@
 - [Implementing the DPP](/recursos/desafios-implementacion-dpp): Supplier data, interoperability, long-term integrity, costs and access control.
 - [Environmental impact of the DPP](/recursos/impacto-ambiental-dpp): Recycling, repair, unsold-goods destruction ban and verifiable environmental claims.
 - [Verifactu and blockchain](/recursos/verifactu-blockchain): Spanish AEAT Verifactu requirements, 2027 timeline and adding verifiable evidence to invoicing records.
+- [AI Act and personal data in LLMs](/recursos/ai-act-datos-personales-llm): AI Act timeline after the Digital Omnibus, GDPR overlap and a governance-gateway architecture to keep PII out of LLMs.
+- [Document traceability](/recursos/trazabilidad-documental): Proving document integrity and date in audits with hashing, eIDAS timestamps and blockchain evidence.
 - [Funded Projects](/financiacion): European and nationally funded projects — PRTR 2025, DATIA, Cervera, NEOTEC and youth employment programs.
 
 ## Solutions

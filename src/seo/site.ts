@@ -131,6 +131,18 @@ export const LEGACY_INTERNAL_REDIRECTS: Record<string, string> = {
   // Verifactu
   "/blockchain-para-adaptar-cualquier-solucion-de-facturacion-a-verifactu/": "/recursos/verifactu-blockchain",
   "/en/blockchain-to-adapt-any-billing-solution-to-verifactu/": "/recursos/verifactu-blockchain",
+  // Document traceability / verifiable evidence
+  "/la-importancia-de-la-trazabilidad-de-documentos-en-la-era-digital/": "/recursos/trazabilidad-documental",
+  "/en/the-importance-of-document-traceability-in-the-digital-age/": "/recursos/trazabilidad-documental",
+  "/certificacion-de-documentos/": "/recursos/trazabilidad-documental",
+  "/blockchain-as-a-service/documentos/": "/recursos/trazabilidad-documental",
+  "/en/blockchain-as-a-service/documentos/": "/recursos/trazabilidad-documental",
+  "/certificacion-de-archivos-criticos-con-blockchain/": "/recursos/trazabilidad-documental",
+  "/en/certification-of-critical-files-with-blockchain/": "/recursos/trazabilidad-documental",
+  // AI + data protection (Privaro)
+  "/como-se-complementan-la-ia-y-blockchain/": "/recursos/ai-act-datos-personales-llm",
+  "/en/how-ai-and-blockchain-complement-each-other/": "/recursos/ai-act-datos-personales-llm",
+  "/en/how-can-chatgpt-benefit-from-the-use-of-blockchain/": "/recursos/ai-act-datos-personales-llm",
 };
 
 export const canonicalUrl = (path: string) =>

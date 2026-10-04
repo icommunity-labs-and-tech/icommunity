@@ -807,6 +807,246 @@ export const articles: Article[] = [
       },
     },
   },
+  {
+    slug: "ai-act-datos-personales-llm",
+    date: "2026-10-04",
+    readingMinutes: 9,
+    category: { es: "Guía regulatoria", en: "Regulatory guide" },
+    title: {
+      es: "AI Act y datos personales en LLMs: guía de cumplimiento para empresas",
+      en: "AI Act and personal data in LLMs: a compliance guide for companies",
+    },
+    description: {
+      es: "Calendario del AI Act tras el Digital Omnibus, cómo encaja con el RGPD y cómo evitar que los datos personales lleguen a los LLMs con trazabilidad auditable.",
+      en: "The AI Act timeline after the Digital Omnibus, how it fits with GDPR and how to keep personal data out of LLMs with auditable traceability.",
+    },
+    intro: {
+      es: [
+        "Las empresas europeas están conectando ChatGPT, Claude, Gemini o modelos propios a correos, contratos, tickets y bases de datos de clientes. Cada prompt puede contener nombres, DNI, IBAN o datos de salud, y una vez enviados a un proveedor externo el control sobre ellos se reduce drásticamente.",
+        "Dos marcos se aplican a la vez: el Reglamento de IA (Reglamento (UE) 2024/1689, AI Act), que regula los sistemas de IA según su riesgo, y el RGPD, que sigue rigiendo cualquier tratamiento de datos personales, también dentro de un prompt.",
+      ],
+      en: [
+        "European companies are connecting ChatGPT, Claude, Gemini or in-house models to emails, contracts, tickets and customer databases. Every prompt may contain names, ID numbers, IBANs or health data, and once sent to an external provider, control over them drops sharply.",
+        "Two frameworks apply at once: the AI Regulation (Regulation (EU) 2024/1689, the AI Act), which regulates AI systems by risk, and the GDPR, which still governs any processing of personal data, including inside a prompt.",
+      ],
+    },
+    sections: {
+      es: [
+        {
+          heading: "Calendario del AI Act tras el Digital Omnibus",
+          paragraphs: [
+            "El Digital Omnibus sobre IA, en vigor desde finales de julio de 2026, retrasó parte de las obligaciones, pero no las eliminó. El calendario vigente queda así:",
+          ],
+          bullets: [
+            "Febrero de 2025: prácticas prohibidas y obligación de alfabetización en IA.",
+            "Agosto de 2025: obligaciones para modelos de IA de uso general (GPAI).",
+            "Agosto de 2026: obligaciones de transparencia del artículo 50 (chatbots, contenido sintético).",
+            "2 de diciembre de 2027: sistemas de alto riesgo del anexo III (empleo, crédito, educación, biometría, servicios esenciales).",
+            "2 de agosto de 2028: sistemas de alto riesgo integrados en productos regulados (anexo I).",
+          ],
+        },
+        {
+          heading: "Dónde se cruzan el AI Act y el RGPD",
+          paragraphs: [
+            "Enviar datos personales a un LLM es un tratamiento: necesita base jurídica, minimización, información a los interesados y, si el proveedor está fuera del EEE, garantías para la transferencia internacional. El AI Act añade gobernanza de datos, registro de actividad y supervisión humana para los sistemas de alto riesgo.",
+            "El denominador común es la evidencia: poder demostrar a un auditor o a una autoridad qué datos salieron, hacia qué modelo, con qué protección y bajo qué política.",
+          ],
+        },
+        {
+          heading: "El riesgo real: PII en prompts",
+          paragraphs: [
+            "La mayoría de filtraciones no vienen del modelo, sino del uso: empleados que pegan documentos completos, integraciones que envían registros de CRM sin filtrar o agentes con acceso amplio a sistemas internos. Prohibir el uso de IA no funciona; el tráfico simplemente se desplaza a herramientas no controladas.",
+          ],
+        },
+        {
+          heading: "Arquitectura recomendada: una capa de gobernanza entre la empresa y el modelo",
+          paragraphs: ["El patrón que mejor funciona es un proxy o gateway que intercepta cada petición antes de que llegue al LLM:"],
+          bullets: [
+            "Detecta y anonimiza o seudonimiza datos personales en el prompt.",
+            "Restaura los valores originales en la respuesta, para que el usuario no pierda contexto.",
+            "Aplica políticas por equipo, caso de uso y proveedor de modelo.",
+            "Genera un registro auditable de cada interacción, sellado para que no pueda alterarse.",
+          ],
+        },
+        {
+          heading: "Qué preparar ya",
+          paragraphs: [
+            "Aunque el régimen de alto riesgo se aplique en diciembre de 2027, el RGPD es exigible hoy. Conviene inventariar los usos de IA, clasificar su riesgo, definir políticas de datos por caso de uso y empezar a generar evidencia de cumplimiento desde el primer día, no reconstruirla cuando llegue una auditoría.",
+          ],
+        },
+      ],
+      en: [
+        {
+          heading: "The AI Act timeline after the Digital Omnibus",
+          paragraphs: [
+            "The Digital Omnibus on AI, in force since late July 2026, postponed some obligations but did not remove them. The current timeline is:",
+          ],
+          bullets: [
+            "February 2025: prohibited practices and the AI literacy obligation.",
+            "August 2025: obligations for general-purpose AI (GPAI) models.",
+            "August 2026: Article 50 transparency obligations (chatbots, synthetic content).",
+            "2 December 2027: Annex III high-risk systems (employment, credit, education, biometrics, essential services).",
+            "2 August 2028: high-risk systems embedded in regulated products (Annex I).",
+          ],
+        },
+        {
+          heading: "Where the AI Act and GDPR intersect",
+          paragraphs: [
+            "Sending personal data to an LLM is processing: it needs a legal basis, minimisation, information to data subjects and, if the provider is outside the EEA, safeguards for the international transfer. The AI Act adds data governance, logging and human oversight for high-risk systems.",
+            "The common denominator is evidence: being able to show an auditor or authority which data left, to which model, with what protection and under which policy.",
+          ],
+        },
+        {
+          heading: "The real risk: PII in prompts",
+          paragraphs: [
+            "Most leaks come not from the model but from usage: employees pasting whole documents, integrations sending unfiltered CRM records, or agents with broad access to internal systems. Banning AI does not work; the traffic simply moves to uncontrolled tools.",
+          ],
+        },
+        {
+          heading: "Recommended architecture: a governance layer between the company and the model",
+          paragraphs: ["The pattern that works best is a proxy or gateway that intercepts every request before it reaches the LLM:"],
+          bullets: [
+            "Detects and anonymises or pseudonymises personal data in the prompt.",
+            "Restores original values in the response, so users keep context.",
+            "Applies policies per team, use case and model provider.",
+            "Produces an auditable record of every interaction, sealed so it cannot be altered.",
+          ],
+        },
+        {
+          heading: "What to prepare now",
+          paragraphs: [
+            "Even though the high-risk regime applies in December 2027, GDPR is enforceable today. Inventory AI uses, classify their risk, define data policies per use case and start generating compliance evidence from day one instead of reconstructing it when an audit arrives.",
+          ],
+        },
+      ],
+    },
+    cta: {
+      es: {
+        text: "Privaro (privaro.ai) es nuestra pasarela de gobernanza para LLMs: anonimiza datos personales en tiempo real y genera evidencia auditable de cada interacción.",
+        button: "Solicitar demo",
+      },
+      en: {
+        text: "Privaro (privaro.ai) is our LLM governance gateway: it anonymises personal data in real time and produces auditable evidence of every interaction.",
+        button: "Request demo",
+      },
+    },
+  },
+  {
+    slug: "trazabilidad-documental",
+    date: "2026-10-04",
+    readingMinutes: 7,
+    category: { es: "Evidencia verificable", en: "Verifiable evidence" },
+    title: {
+      es: "Trazabilidad documental: cómo demostrar la integridad de un documento ante una auditoría",
+      en: "Document traceability: how to prove a document's integrity in an audit",
+    },
+    description: {
+      es: "Qué es la trazabilidad documental, por qué las firmas y los logs no bastan, y cómo el sellado de tiempo y la evidencia en blockchain hacen auditable cualquier documento.",
+      en: "What document traceability is, why signatures and logs are not enough, and how timestamping and blockchain evidence make any document auditable.",
+    },
+    intro: {
+      es: [
+        "La trazabilidad documental es la capacidad de demostrar qué contenía un documento, cuándo existía, quién intervino y que no ha cambiado desde entonces. En sectores regulados —financiero, sanitario, industria, sector público— no basta con tener el documento: hay que poder probar su historia ante un auditor, un regulador o un juez.",
+      ],
+      en: [
+        "Document traceability is the ability to prove what a document contained, when it existed, who was involved and that it has not changed since. In regulated sectors —finance, healthcare, industry, the public sector— having the document is not enough: you must be able to prove its history to an auditor, a regulator or a court.",
+      ],
+    },
+    sections: {
+      es: [
+        {
+          heading: "Por qué los métodos habituales se quedan cortos",
+          paragraphs: [
+            "Los metadatos de un archivo se pueden editar. Los logs de un sistema documental dependen de que el administrador no los modifique. Una firma electrónica acredita quién firmó, pero no siempre la existencia del documento en una fecha concreta si el certificado caduca o se revoca. En todos los casos, la prueba depende de confiar en quien controla el sistema.",
+          ],
+        },
+        {
+          heading: "Los tres elementos de una evidencia sólida",
+          paragraphs: ["Para que un documento sea auditable con independencia del sistema que lo guarda se necesitan:"],
+          bullets: [
+            "Integridad: una huella criptográfica (hash) que cambia si se altera un solo bit.",
+            "Fecha cierta: un sello de tiempo emitido por un tercero o anclado en un registro público.",
+            "Verificabilidad independiente: que cualquiera pueda comprobar la prueba sin pedir permiso al emisor.",
+          ],
+        },
+        {
+          heading: "Cómo funciona el sellado en blockchain",
+          paragraphs: [
+            "El documento no se sube a ninguna red: solo se calcula su huella y se registra en una cadena de bloques junto con la fecha. Más adelante, cualquiera puede recalcular la huella del documento y compararla con la registrada. Si coinciden, queda demostrado que el documento existía en esa fecha y no ha cambiado.",
+            "Combinado con un sello de tiempo cualificado conforme a eIDAS, se obtiene una evidencia con presunción legal de exactitud de la fecha en toda la UE.",
+          ],
+        },
+        {
+          heading: "Casos de uso habituales",
+          paragraphs: ["La trazabilidad documental es especialmente útil en:"],
+          bullets: [
+            "Contratos, actas y acuerdos societarios.",
+            "Informes técnicos, certificados de calidad y documentación de auditoría.",
+            "Registros de facturación (Verifactu) y documentación fiscal.",
+            "Expedientes en administraciones públicas.",
+            "Propiedad intelectual: diseños, código fuente y obras creativas.",
+          ],
+        },
+        {
+          heading: "Integración sin cambiar tus sistemas",
+          paragraphs: [
+            "La evidencia se genera vía API desde el gestor documental, el ERP o la herramienta de firma que ya utilizas, de forma automática en cada versión. El resultado es un certificado verificable que acompaña al documento.",
+          ],
+        },
+      ],
+      en: [
+        {
+          heading: "Why the usual methods fall short",
+          paragraphs: [
+            "File metadata can be edited. Document-management logs depend on the administrator not changing them. An electronic signature proves who signed, but not always that the document existed on a given date if the certificate expires or is revoked. In every case, the proof depends on trusting whoever controls the system.",
+          ],
+        },
+        {
+          heading: "The three elements of solid evidence",
+          paragraphs: ["For a document to be auditable independently of the system that stores it, you need:"],
+          bullets: [
+            "Integrity: a cryptographic fingerprint (hash) that changes if a single bit is altered.",
+            "Certain date: a timestamp issued by a third party or anchored on a public ledger.",
+            "Independent verifiability: anyone can check the proof without asking the issuer.",
+          ],
+        },
+        {
+          heading: "How blockchain sealing works",
+          paragraphs: [
+            "The document is not uploaded to any network: only its fingerprint is computed and recorded on a blockchain together with the date. Later, anyone can recompute the document's fingerprint and compare it with the recorded one. If they match, it is proven that the document existed on that date and has not changed.",
+            "Combined with a qualified timestamp under eIDAS, the result is evidence with a legal presumption of date accuracy across the EU.",
+          ],
+        },
+        {
+          heading: "Common use cases",
+          paragraphs: ["Document traceability is especially useful for:"],
+          bullets: [
+            "Contracts, minutes and corporate resolutions.",
+            "Technical reports, quality certificates and audit documentation.",
+            "Invoicing records (Verifactu) and tax documentation.",
+            "Public administration files.",
+            "Intellectual property: designs, source code and creative works.",
+          ],
+        },
+        {
+          heading: "Integration without changing your systems",
+          paragraphs: [
+            "Evidence is generated via API from the document manager, ERP or signature tool you already use, automatically for every version. The result is a verifiable certificate that travels with the document.",
+          ],
+        },
+      ],
+    },
+    cta: {
+      es: {
+        text: "Nuestra infraestructura genera evidencia verificable para cualquier documento desde tus sistemas actuales. Te enseñamos cómo integrarla.",
+        button: "Solicitar demo",
+      },
+      en: {
+        text: "Our infrastructure produces verifiable evidence for any document from your existing systems. We'll show you how to integrate it.",
+        button: "Request demo",
+      },
+    },
+  },
 ];
 
 export const getArticle = (slug: string | undefined): Article | undefined =>
