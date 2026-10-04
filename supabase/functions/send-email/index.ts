@@ -38,7 +38,7 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 255;
 }
 
-const VALID_TYPES = ["contact", "whitepaper", "newsletter"];
+const VALID_TYPES = ["contact", "whitepaper", "newsletter", "compliance-guide"];
 const VALID_ORG_TYPES = ["administracion-publica", "proveedor-identidad", "plataforma-regulada", "partner-integrador", "otro"];
 
 // ── Zoho Bigin OAuth helpers ──
@@ -405,6 +405,32 @@ serve(async (req) => {
         // Sync newsletter subscribers to Bigin
         biginSync = { name, email, company: "Newsletter subscriber", message: "Suscripción newsletter" };
         mlSync = { email, name, source: "newsletter" };
+        break;
+      }
+      case "compliance-guide": {
+        const email = sanitize(data.email, 255);
+        const sector = sanitize(data.sector, 120);
+        const useCase = sanitize(data.useCase, 2000);
+        if (!isValidEmail(email) || useCase.length < 30) {
+          return new Response(JSON.stringify({ success: false, error: "Invalid request data." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+        }
+        const domain = email.split("@")[1] || "Desconocida";
+        subject = `[iCommunity] Lead guía de cumplimiento: ${email}`;
+        contentHtml = `
+          <h2 style="margin:0 0 20px;font-size:20px;color:#0d3bad;">Nuevo lead desde la guía de cumplimiento con IA</h2>
+          <table style="border-collapse:collapse;width:100%;">
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;width:130px;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${email}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;font-weight:600;color:#1a1f36;">Sector</td><td style="padding:10px 14px;border-bottom:1px solid #e5e7eb;color:#374151;">${sector || "—"}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;color:#1a1f36;">Caso de uso</td><td style="padding:10px 14px;color:#374151;white-space:pre-wrap;">${useCase}</td></tr>
+          </table>
+        `;
+        biginSync = {
+          name: email.split("@")[0],
+          email,
+          company: domain,
+          message: `Guía de cumplimiento IA${sector ? ` (${sector})` : ""}: ${useCase}`,
+        };
         break;
       }
       default:
