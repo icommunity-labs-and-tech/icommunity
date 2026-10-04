@@ -127,7 +127,7 @@ const ArticlePage = () => {
       </main>
 
       <Footer onOpenModal={() => setModalOpen(true)} />
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
     </div>
   );
 };
