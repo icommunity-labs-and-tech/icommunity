@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
+import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
 import Ecosystem from "@/components/home/Ecosystem";
@@ -21,6 +22,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const { lang } = useLanguage();
   const [selectedOrg, setSelectedOrg] = useState<OrganizationType | undefined>();
 
   const openModal = (orgType?: OrganizationType) => {
