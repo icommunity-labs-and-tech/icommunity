@@ -10,7 +10,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com" },
-  { label: "Privaro", href: "https://privaro.lovable.app" },
+  { label: "Privaro", href: "https://privaro.ai" },
   { label: "MusicDibs", href: "https://musicdibs.com" },
 ];
 

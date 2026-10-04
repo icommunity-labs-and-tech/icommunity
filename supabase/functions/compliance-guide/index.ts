@@ -26,7 +26,7 @@ const RESOURCES = `
 - Tokenización de pagos: https://www.icommunity.io/recursos/tokenizacion-de-pagos
 - Tokenización inmobiliaria: https://www.icommunity.io/recursos/tokenizacion-inmobiliaria
 - CertyPass (identidad y credenciales verificables): https://certypass.io
-- Privaro (privacidad y datos): https://privaro.io
+- Privaro (privacidad y datos): https://privaro.ai
 - iCOM (plataforma de sellado de tiempo y evidencia trazable): https://icom.icommunity.io
 - Casos de éxito: https://www.icommunity.io/#cases
 - Hablar con el equipo: https://www.icommunity.io/empresa

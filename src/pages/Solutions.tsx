@@ -18,7 +18,7 @@ const solutions = [
   {
     name: "Privaro",
     description: "Compliance and data anonymization gateway for regulated AI systems.",
-    url: "https://privaro.lovable.app/",
+    url: "https://privaro.ai",
     cta: "Visit Privaro",
   },
   {
