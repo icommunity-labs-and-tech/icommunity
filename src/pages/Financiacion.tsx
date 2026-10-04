@@ -2,6 +2,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logoPrtrNextgen from "@/assets/logo-prtr-nextgen.webp";
@@ -178,6 +179,13 @@ const Financiacion = () => {
         description={t.seoDesc}
         path="/financiacion"
         lang={lang}
+        jsonLd={[
+          webPage({ path: "/financiacion", name: t.seoTitle, description: t.seoDesc, lang }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: t.seoTitle, path: "/financiacion" },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />

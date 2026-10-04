@@ -5,6 +5,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { articles, getArticle } from "@/content/articles";
 
@@ -32,6 +33,22 @@ const ArticlePage = () => {
         description={article.description[lang]}
         path={`/recursos/${article.slug}`}
         lang={lang}
+        ogType="article"
+        jsonLd={[
+          articleSchema({
+            path: `/recursos/${article.slug}`,
+            headline: article.title[lang],
+            description: article.description[lang],
+            date: article.date,
+            lang,
+            section: article.category[lang],
+          }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: lang === "es" ? "Recursos" : "Resources", path: "/recursos" },
+            { name: article.title[lang], path: `/recursos/${article.slug}` },
+          ]),
+        ]}
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 

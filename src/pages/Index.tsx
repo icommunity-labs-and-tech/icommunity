@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
@@ -45,6 +46,17 @@ const Index = () => {
         }
         path="/"
         lang={lang}
+        jsonLd={[
+          webPage({
+            path: "/",
+            name: lang === "es" ? "iCommunity | Evidencia verificable para auditorías" : "iCommunity | Verifiable Evidence for Audits",
+            description:
+              lang === "es"
+                ? "Infraestructura de confianza para sectores regulados: evidencia trazable con sellado de tiempo."
+                : "Trust infrastructure for regulated industries: traceable, timestamped evidence.",
+            lang,
+          }),
+        ]}
       />
       <Navbar onOpenModal={() => openModal()} />
       <main>

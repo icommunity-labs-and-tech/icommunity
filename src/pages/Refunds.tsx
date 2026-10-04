@@ -2,6 +2,7 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
+import { webPage, breadcrumbs, articleSchema, productList } from "@/lib/structuredData";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -159,7 +160,19 @@ const Refunds = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(225,30%,6%)] text-white/80">
-      <PageSEO title={t.seoTitle} description={t.seoDesc} path="/reembolsos" lang={lang} />
+      <PageSEO
+        title={t.seoTitle}
+        description={t.seoDesc}
+        path="/reembolsos"
+        lang={lang}
+        jsonLd={[
+          webPage({ path: "/reembolsos", name: t.seoTitle, description: t.seoDesc, lang }),
+          breadcrumbs([
+            { name: lang === "es" ? "Inicio" : "Home", path: "/" },
+            { name: t.seoTitle, path: "/reembolsos" },
+          ]),
+        ]}
+      />
       <Navbar onOpenModal={() => setModalOpen(true)} />
       <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
 
