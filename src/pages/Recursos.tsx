@@ -12,20 +12,20 @@ const texts = {
   en: {
     seoTitle: "Blockchain Resources & Guides",
     seoDesc: "Practical guides on blockchain use cases, payment tokenization and real estate tokenization from the iCommunity team.",
+    kicker: "Traceable evidence",
     h1: "Resources",
     sub: "Practical guides on blockchain, tokenization and digital trust, written by the team that builds the infrastructure.",
     read: "Read article",
     min: "min read",
-    back: "All resources",
   },
   es: {
     seoTitle: "Recursos y guías blockchain",
     seoDesc: "Guías prácticas sobre casos de uso de blockchain, tokenización de pagos y tokenización inmobiliaria, por el equipo de iCommunity.",
+    kicker: "Evidencia trazable",
     h1: "Recursos",
     sub: "Guías prácticas sobre blockchain, tokenización y confianza digital, escritas por el equipo que construye la infraestructura.",
     read: "Leer artículo",
     min: "min de lectura",
-    back: "Todos los recursos",
   },
 };
 
@@ -46,14 +46,20 @@ const Recursos = () => {
       <PageSEO title={t.seoTitle} description={t.seoDesc} path="/recursos" lang={lang} />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
-      <main className="flex-1 pt-28 pb-20">
-        <div className="ic-container">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary/80 mb-3">
-            {lang === "es" ? "Evidencia trazable" : "Traceable evidence"}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">{t.h1}</h1>
-          <p className="text-muted-foreground max-w-2xl mb-14">{t.sub}</p>
+      <div className="hero pt-28 md:pt-36 pb-20 md:pb-28">
+        <div className="hero-aurora" />
+        <div className="hero-noise" />
+        <div className="hero-content relative">
+          <div className="ic-container max-w-5xl">
+            <p className="text-xs font-mono uppercase tracking-widest text-primary-foreground/50 mb-3">{t.kicker}</p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-foreground tracking-tight leading-[1.1] mb-5">{t.h1}</h1>
+            <p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed max-w-2xl">{t.sub}</p>
+          </div>
+        </div>
+      </div>
 
+      <main className="flex-1 py-20">
+        <div className="ic-container">
           <div className="grid md:grid-cols-3 gap-8">
             {articles.map((a) => (
               <article key={a.slug} className="ic-card flex flex-col gap-4">

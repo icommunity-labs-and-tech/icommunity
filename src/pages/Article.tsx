@@ -23,7 +23,7 @@ const ArticlePage = () => {
 
   if (!article) return <Navigate to="/recursos" replace />;
 
-  const related = articles.filter((a) => a.slug !== article.slug);
+  const related = articles.filter((a) => a.slug !== article.slug Sok);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -35,29 +35,37 @@ const ArticlePage = () => {
       />
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
-      <main className="flex-1 pt-28 pb-20">
-        <div className="ic-container max-w-3xl">
-          <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground/60 mb-6">
-            <Link to="/recursos" className="hover:text-foreground transition-colors">
-              {lang === "es" ? "Recursos" : "Resources"}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground/80">{article.category[lang]}</span>
-          </nav>
+      <div className="hero pt-28 md:pt-36 pb-16 md:pb-20">
+        <div className="hero-aurora" />
+        <div className="hero-noise" />
+        <div className="hero-content relative">
+          <div className="ic-container max-w-3xl">
+            <nav aria-label="Breadcrumb" className="text-xs text-primary-foreground/50 mb-6">
+              <Link to="/recursos" className="hover:text-primary-foreground transition-colors">
+                {lang === "es" ? "Recursos" : "Resources"}
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="text-primary-foreground/70">{article.category[lang]}</span>
+            </nav>
 
-          <div className="flex items-center gap-3 text-xs mb-4">
-            <span className="font-mono uppercase tracking-widest text-primary/80">{article.category[lang]}</span>
-            <span className="text-muted-foreground/60">{formatDate(article.date, lang)}</span>
-            <span className="inline-flex items-center gap-1.5 text-muted-foreground/60">
-              <Clock className="w-3.5 h-3.5" />
-              {article.readingMinutes} {lang === "es" ? "min de lectura" : "min read"}
-            </span>
+            <div className="flex items-center gap-3 text-xs mb-4">
+              <span className="font-mono uppercase tracking-widest text-primary/80">{article.category[lang]}</span>
+              <span className="text-primary-foreground/50">{formatDate(article.date, lang)}</span>
+              <span className="inline-flex items-center gap-1.5 text-primary-foreground/50">
+                <Clock className="w-3.5 h-3.5" />
+                {article.readingMinutes} {lang === "es" ? "min de lectura" : "min read"}
+              </span>
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-primary-foreground tracking-tight leading-[1.15]">
+              {article.title[lang]}
+            </h1>
           </div>
+        </div>
+      </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-8">
-            {article.title[lang]}
-          </h1>
-
+      <main className="flex-1 py-16 md:py-20">
+        <div className="ic-container max-w-3xl">
           <div className="space-y-5 mb-10">
             {article.intro[lang].map((p, i) => (
               <p key={i} className={i === 0 ? "text-lg text-foreground/90 leading-relaxed" : "text-muted-foreground leading-relaxed"}>
