@@ -21,7 +21,10 @@ export function initAnalytics() {
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(["js", new Date()]);
-  window.dataLayer.push(["config", measurementId]);
+  // Disable gtag's automatic page_view: AnalyticsTracker (below) sends page
+  // views on mount and on every route change, so auto-tracking would
+  // double-count every fresh page load.
+  window.dataLayer.push(["config", measurementId, { send_page_view: false }]);
 }
 
 export function trackPageView(path: string) {
