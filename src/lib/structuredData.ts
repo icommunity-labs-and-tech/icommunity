@@ -79,6 +79,14 @@ export const productList = (
       category: p.category,
       brand: { "@type": "Brand", name: p.name },
       manufacturer: { "@id": ORG_ID },
+      // Quote-based B2B pricing: Offer without price is valid and clears the
+      // "must specify offers, review or aggregateRating" error.
+      offers: {
+        "@type": "Offer",
+        url: p.url,
+        availability: "https://schema.org/InStock",
+        businessFunction: "https://schema.org/Sell",
+      },
     },
   })),
 });
