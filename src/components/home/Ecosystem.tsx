@@ -92,7 +92,7 @@ const productMeta = [
   { logo: logoCertypass, href: "https://certypass.com", external: true },
   { logo: logoPrivaro, href: "https://privaro.ai", external: true },
   { logo: logoMusicdibs, href: "https://musicdibs.com", external: true },
-  { logo: null, href: "https://certyfile.com", external: true },
+  { logo: logoCertyfile.url, href: "https://certyfile.com", external: true },
 ];
 
 const Ecosystem = () => {
