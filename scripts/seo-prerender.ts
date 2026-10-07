@@ -18,11 +18,12 @@ import {
   canonicalUrl,
 } from "../src/seo/site";
 import { articles } from "../src/content/articles";
+import { blogPosts } from "../src/content/blogPosts";
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const NAV = `<nav><a href="/">iCommunity</a> · <a href="/soluciones">Solutions</a> · <a href="/partners">Partners</a> · <a href="/recursos">Resources</a> · <a href="/empresa">About</a> · <a href="${NEWS_BLOG}/">News</a></nav>`;
+const NAV = `<nav><a href="/">iCommunity</a> · <a href="/soluciones">Solutions</a> · <a href="/partners">Partners</a> · <a href="/recursos">Resources</a> · <a href="/empresa">About</a> · <a href="/blog">Blog</a></nav>`;
 const FOOTER_GUIDES = `<footer><a href="/recursos/pasaporte-digital-de-producto-dpp">Digital Product Passport</a> · <a href="/recursos/ai-act-datos-personales-llm">AI Act &amp; personal data</a> · <a href="/recursos/trazabilidad-documental">Document traceability</a> · <a href="/recursos/verifactu-blockchain">Verifactu</a></footer>`;
 
 function setHead(html: string, o: { title: string; description: string; path: string; type?: string; jsonLd?: object[] }) {
@@ -80,10 +81,13 @@ export function seoPrerender(): Plugin {
         const body =
           `<h1>${esc(r.h1)}</h1><p>${esc(r.description)}</p>` +
           (r.path === "/soluciones"
-            ? `<ul><li><a href="https://certypass.com/">CertyPass</a> — <a href="/recursos/pasaporte-digital-de-producto-dpp">Digital Product Passport guide</a></li><li><a href="https://privaro.ai">Privaro</a> — <a href="/recursos/ai-act-datos-personales-llm">AI Act and personal data in LLMs</a></li><li><a href="https://musicdibs.com/">MusicDibs</a></li></ul>`
+            ? `<ul><li><a href="https://certypass.com/">CertyPass</a> — <a href="/recursos/pasaporte-digital-de-producto-dpp">Digital Product Passport guide</a></li><li><a href="https://privaro.ai">Privaro</a> — <a href="/recursos/ai-act-datos-personales-llm">AI Act and personal data in LLMs</a></li><li><a href="https://musicdibs.com/">MusicDibs</a></li><li><a href="https://certyfile.com/">CertyFile</a> — <a href="/recursos/trazabilidad-documental">Document traceability</a></li></ul>`
             : "") +
           (r.path === "/" || r.path === "/recursos"
             ? `<ul>${articles.map((a) => `<li><a href="/recursos/${a.slug}">${esc(a.title.en)}</a> — ${esc(a.description.en)}</li>`).join("")}</ul>`
+            : "") +
+          (r.path === "/blog"
+            ? `<ul>${blogPosts.map((p) => `<li><a href="/blog/${p.slug}">${esc(p.title.en)}</a> (${p.date})</li>`).join("")}</ul>`
             : "");
         write(outDir, r.path, setBody(setHead(template, r), body));
         count++;
@@ -123,6 +127,32 @@ export function seoPrerender(): Plugin {
           },
         ];
         write(outDir, path, setBody(setHead(template, { title: `${a.title.en} — iCommunity`, description: a.description.en, path, type: "article", jsonLd }), body));
+        count++;
+      }
+
+      for (const p of blogPosts) {
+        const path = `/blog/${p.slug}`;
+        const l = p.translated ? "en" : "es";
+        const body =
+          `<article><h1>${esc(p.title[l])}</h1><p><time datetime="${p.date}">${p.date}</time></p>` +
+          p.blocks[l]
+            .map((b) =>
+              b.type === "heading" ? `<h2>${esc(b.text)}</h2>` : b.type === "list" ? `<ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : `<p>${esc(b.text)}</p>`,
+            )
+            .join("") +
+          `</article><p><a href="/blog">Blog</a></p>`;
+        const jsonLd = [
+          {
+            "@context": "https://schema.org",
+            "@type": p.kind === "news" ? "NewsArticle" : "Article",
+            headline: p.title[l],
+            description: p.description[l],
+            datePublished: p.date,
+            mainEntityOfPage: canonicalUrl(path),
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          },
+        ];
+        write(outDir, path, setBody(setHead(template, { title: `${p.title[l]} — iCommunity`, description: p.description[l], path, type: "article", jsonLd }), body));
         count++;
       }
 

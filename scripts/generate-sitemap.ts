@@ -5,6 +5,7 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { SITE_URL, STATIC_ROUTES, canonicalUrl } from "../src/seo/site";
 import { articles } from "../src/content/articles";
+import { blogPosts } from "../src/content/blogPosts";
 
 const today = new Date().toISOString().slice(0, 10);
 
@@ -15,6 +16,12 @@ const entries = [
     lastmod: a.date,
     changefreq: "monthly",
     priority: "0.6",
+  })),
+  ...blogPosts.map((p) => ({
+    loc: canonicalUrl(`/blog/${p.slug}`),
+    lastmod: p.date,
+    changefreq: "yearly",
+    priority: p.kind === "news" ? "0.4" : "0.6",
   })),
 ];
 

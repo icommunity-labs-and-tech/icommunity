@@ -33,6 +33,13 @@ const solutions = [
     cta: "Visit MusicDibs",
     guides: [] as { label: string; to: string }[],
   },
+  {
+    name: "CertyFile",
+    description: "Blockchain document certification: proves the integrity and date of any file with a verifiable timestamp.",
+    url: "https://certyfile.com/",
+    cta: "Visit CertyFile",
+    guides: [{ label: "Document traceability", to: "/recursos/trazabilidad-documental" }],
+  },
 ];
 
 const Solutions = () => {
@@ -41,14 +48,14 @@ const Solutions = () => {
   const seo =
     lang === "es"
       ? {
-          title: "Soluciones: CertyPass, Privaro y MusicDibs",
+          title: "Soluciones: CertyPass, Privaro, MusicDibs y CertyFile",
           description:
-            "Pasaporte digital de producto, anonimización de datos para IA y registro de derechos musicales sobre la infraestructura de evidencia verificable de iCommunity.",
+            "Pasaporte digital de producto, anonimización de datos para IA y registro de derechos musicales y certificación de documentos sobre la infraestructura de evidencia verificable de iCommunity.",
         }
       : {
-          title: "Solutions: CertyPass, Privaro and MusicDibs",
+          title: "Solutions: CertyPass, Privaro, MusicDibs, CertyFile",
           description:
-            "Digital product passport, data anonymization for AI and music rights registration, built on iCommunity's verifiable evidence infrastructure.",
+            "Digital product passport, data anonymization for AI and music rights registration and document certification, built on iCommunity's verifiable evidence infrastructure.",
         };
 
   return (
@@ -66,7 +73,7 @@ const Solutions = () => {
               description: s.description,
               url: s.url,
               category:
-                s.name === "CertyPass" ? "Digital Product Passport" : s.name === "Privaro" ? "AI data compliance" : "Copyright registration",
+                s.name === "CertyPass" ? "Digital Product Passport" : s.name === "Privaro" ? "AI data compliance" : s.name === "CertyFile" ? "Document certification" : "Copyright registration",
             })),
           ),
           breadcrumbs([

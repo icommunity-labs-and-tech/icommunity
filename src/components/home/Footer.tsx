@@ -24,6 +24,7 @@ const texts = {
         { label: "Partners", route: "/partners" },
         { label: "Success stories", anchor: "cases" },
         { label: "Resources", route: "/recursos" },
+        { label: "Blog", route: "/blog" },
         { label: "Solutions", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Guides", links: [
@@ -48,6 +49,7 @@ const texts = {
         { label: "Partners", route: "/partners" },
         { label: "Casos de éxito", anchor: "cases" },
         { label: "Recursos", route: "/recursos" },
+        { label: "Blog", route: "/blog" },
         { label: "Soluciones", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Guías", links: [
