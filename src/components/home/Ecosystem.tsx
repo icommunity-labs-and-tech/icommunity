@@ -160,11 +160,17 @@ const Ecosystem = () => {
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
               {/* Logo */}
-              <img
-                src={productMeta[i].logo}
-                alt={`${product.eyebrow} logo`}
-                className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
-              />
+              <div className="flex h-24 w-full items-center justify-center mb-6">
+                <img
+                  src={productMeta[i].logo}
+                  alt={`${product.eyebrow} logo`}
+                  className={`max-w-full object-contain ${productMeta[i].logoClass} ${
+                    productMeta[i].badge
+                      ? "bg-ic-navy rounded px-4 py-1.5"
+                      : ""
+                  }`}
+                />
+              </div>
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
