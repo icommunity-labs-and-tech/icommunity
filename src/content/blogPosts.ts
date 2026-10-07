@@ -263,11 +263,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en AL Andalus 2025: iPASS y el futuro del Pasaporte Digital de Producto en sectores estratégicos",
-   "en": "iCommunity en AL Andalus 2025: iPASS y el futuro del Pasaporte Digital de Producto en sectores estratégicos"
+   "en": "iCommunity at AL Andalus 2025: iPass and the Future of the Digital Product Passport in Strategic Sectors"
   },
   "description": {
    "es": "Los días 24 y 25 de septiembre de 2025, Andalucía se convirtió en punto de encuentro para el talento innovador y el emprendimiento tecnológico con la celebración de Al Andalus 2025…",
-   "en": "Los días 24 y 25 de septiembre de 2025, Andalucía se convirtió en punto de encuentro para el talento innovador y el emprendimiento tecnológico con la celebración de Al Andalus 2025…"
+   "en": "On September 24 and 25, 2025, Andalusia became a meeting point for innovative talent and technology entrepreneurship as it hosted Al Andalus 2025…"
   },
   "blocks": {
    "es": [
@@ -429,161 +429,161 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Los días 24 y 25 de septiembre de 2025, Andalucía se convirtió en punto de encuentro para el talento innovador y el emprendimiento tecnológico con la celebración de Al Andalus 2025, un evento que reunió a startups, empresas consolidadas, instituciones y profesionales interesados en las nuevas tendencias digitales."
+     "text": "On September 24 and 25, 2025, Andalusia became a meeting point for innovative talent and technology entrepreneurship as it hosted Al Andalus 2025, an event that brought together startups, established companies, institutions, and professionals interested in emerging digital trends."
     },
     {
      "type": "paragraph",
-     "text": "Este encuentro puso el foco en la transformación tecnológica y la innovación sostenible, dos áreas que conectan directamente con la misión de iCommunity y con el desarrollo de iPASS, nuestro producto diseñado para dar respuesta a los retos que plantea la implantación del Pasaporte Digital de Producto (PDP) en Europa."
+     "text": "The event focused on technological transformation and sustainable innovation, two areas directly aligned with iCommunity's mission and the development of iPass, our product designed to address the challenges of implementing the Digital Product Passport (DPP) in Europe."
     },
     {
      "type": "heading",
-     "text": "El Pasaporte Digital de Producto: un reto inmediato para la industria"
+     "text": "The Digital Product Passport: An Immediate Challenge for Industry"
     },
     {
      "type": "paragraph",
-     "text": "La Unión Europea ha marcado un hito regulatorio con la introducción del PDP, que será obligatorio a partir de 2026 en varios sectores estratégicos. Su objetivo es claro: mejorar la transparencia, fomentar la sostenibilidad y avanzar hacia una economía circular, garantizando que cada producto comercializado en Europa cuente con un historial verificable a lo largo de su ciclo de vida."
+     "text": "The European Union has reached a regulatory milestone with the introduction of the DPP, which will become mandatory from 2026 in several strategic sectors. Its objective is clear: to improve transparency, promote sustainability, and advance a circular economy, ensuring that every product marketed in Europe has a verifiable record throughout its life cycle."
     },
     {
      "type": "paragraph",
-     "text": "Los sectores prioritarios en la primera fase de implantación son:"
+     "text": "The priority sectors in the first phase of implementation are:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: con información sobre materiales, procesos de fabricación y reciclabilidad.",
-      "Electrónica: detallando origen de materias primas, consumo energético y capacidad de reutilización.",
-      "Baterías: industriales y de vehículos eléctricos, con datos sobre huella de carbono y reciclaje.",
-      "Materiales de construcción: como hormigón, acero o aislantes, documentando eficiencia de recursos y emisiones."
+      "Textiles and footwear: with information on materials, manufacturing processes, and recyclability.",
+      "Electronics: detailing the origin of raw materials, energy consumption, and potential for reuse.",
+      "Batteries: industrial and electric vehicle batteries, with data on carbon footprint and recycling.",
+      "Construction materials: such as concrete, steel, and insulation, documenting resource efficiency and emissions."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Más adelante, el PDP se ampliará a otros sectores como mobiliario o envases, pero en la primera etapa estos cuatro sectores serán los protagonistas."
+     "text": "The DPP will later expand to other sectors, such as furniture and packaging, but these four sectors will take center stage in the first phase."
     },
     {
      "type": "heading",
-     "text": "La propuesta de iCommunity: iPASS como aliado estratégico"
+     "text": "iCommunity's Offering: iPass as a Strategic Ally"
     },
     {
      "type": "paragraph",
-     "text": "En AL Andalus 2025, el equipo de iCommunity mostró cómo iPASS se convierte en la solución ideal para que las empresas afronten este reto regulatorio. Nuestra plataforma permite:"
+     "text": "At AL Andalus 2025, the iCommunity team demonstrated how iPass provides the ideal solution for companies facing this regulatory challenge. Our platform enables companies to:"
     },
     {
      "type": "list",
      "items": [
-      "Emitir y gestionar pasaportes digitales de productos basados en credenciales verificables.",
-      "Conectar la cadena de valor completa, desde fabricantes hasta consumidores finales.",
-      "Asegurar la inmutabilidad de los datos mediante blockchain, garantizando la confianza en la información.",
-      "Cumplir con los estándares europeos de interoperabilidad y sostenibilidad."
+      "Issue and manage digital product passports based on verifiable credentials.",
+      "Connect the entire value chain, from manufacturers to end consumers.",
+      "Ensure data immutability through blockchain, guaranteeing trust in the information.",
+      "Comply with European interoperability and sustainability standards."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, las empresas no solo cumplen con la regulación, sino que también ganan competitividad, al ofrecer transparencia y confianza a clientes e instituciones."
+     "text": "With iPass, companies not only comply with regulations but also gain a competitive edge by providing transparency and building trust with customers and institutions."
     },
     {
      "type": "heading",
-     "text": "Casos de uso sectoriales presentados en el evento"
+     "text": "Sector-Specific Use Cases Presented at the Event"
     },
     {
      "type": "paragraph",
-     "text": "Durante nuestras charlas y reuniones en AL Andalus, presentamos ejemplos concretos de cómo iPASS responde a los desafíos de cada sector prioritario:"
+     "text": "During our talks and meetings at AL Andalus, we presented concrete examples of how iPass addresses the challenges of each priority sector:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: iPASS permite documentar el uso de fibras recicladas, procesos de confección sostenibles y la trazabilidad de la prenda. El consumidor puede acceder fácilmente a esta información a través de un código digital, generando confianza y fidelización.",
-      "Electrónica: Mostramos cómo iPASS puede certificar la procedencia de minerales críticos como litio o cobalto, así como registrar reparaciones y actualizaciones, ayudando a prolongar la vida útil de los dispositivos y fomentar la economía circular.",
-      "Baterías: En este sector clave para la transición energética, iPASS garantiza que cada batería incorpore un historial digital sobre materias primas, huella de carbono y capacidad de reciclaje, respondiendo a las exigencias regulatorias y aportando valor a fabricantes y usuarios.",
-      "Materiales de construcción: Explicamos cómo iPASS puede documentar emisiones, eficiencia energética y procedencia de recursos en productos como acero u hormigón, facilitando certificaciones medioambientales en proyectos de construcción sostenible."
+      "Textiles and footwear: iPass enables companies to document the use of recycled fibers, sustainable garment manufacturing processes, and garment traceability. Consumers can easily access this information through a digital code, building trust and loyalty.",
+      "Electronics: We demonstrated how iPass can certify the origin of critical minerals such as lithium and cobalt, as well as record repairs and upgrades, helping extend device lifespans and promote a circular economy.",
+      "Batteries: In this key sector for the energy transition, iPass ensures that every battery includes a digital record of raw materials, carbon footprint, and recyclability, meeting regulatory requirements and delivering value to manufacturers and users.",
+      "Construction materials: We explained how iPass can document emissions, energy efficiency, and the origin of resources in products such as steel and concrete, facilitating environmental certifications for sustainable construction projects."
      ]
     },
     {
      "type": "heading",
-     "text": "Networking y colaboraciones estratégicas"
+     "text": "Networking and Strategic Partnerships"
     },
     {
      "type": "paragraph",
-     "text": "AL Andalus 2025 fue un espacio privilegiado para establecer conexiones estratégicas en el ecosistema andaluz y nacional de innovación. El equipo de iCommunity mantuvo encuentros con:"
+     "text": "AL Andalus 2025 provided an outstanding setting for establishing strategic connections within the Andalusian and national innovation ecosystems. The iCommunity team met with:"
     },
     {
      "type": "list",
      "items": [
-      "Marcas de moda sostenible, interesadas en anticiparse a la regulación europea y reforzar su propuesta de valor.",
-      "Empresas de electrónica de consumo y startups de IoT, que buscan integrar pasaportes digitales en sus productos.",
-      "Fabricantes de materiales de construcción andaluces, que ven en el PDP una oportunidad para diferenciarse en proyectos internacionales.",
-      "Inversores y fondos de innovación, que detectaron en iPASS un producto con un mercado potencial creciente."
+      "Sustainable fashion brands interested in preparing for European regulations and strengthening their value proposition.",
+      "Consumer electronics companies and IoT startups seeking to integrate digital passports into their products.",
+      "Andalusian construction materials manufacturers that see the DPP as an opportunity to differentiate themselves in international projects.",
+      "Investors and innovation funds that recognized iPass as a product with a growing potential market."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estas conversaciones confirmaron que los sectores estratégicos están preparándose activamente para el PDP, y que iPASS tiene un papel esencial en ese proceso."
+     "text": "These conversations confirmed that strategic sectors are actively preparing for the DPP and that iPass has an essential role to play in that process."
     },
     {
      "type": "heading",
-     "text": "Repercusión y visibilidad"
+     "text": "Impact and Visibility"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra participación en AL Andalus también tuvo un importante impacto en términos de visibilidad mediática y reputación. Medios locales y especializados destacaron la relevancia de iPASS en el contexto del PDP, subrayando la necesidad de soluciones que combinen cumplimiento regulatorio, sostenibilidad e innovación tecnológica."
+     "text": "Our participation in AL Andalus also had a significant impact on media visibility and reputation. Local and specialist media highlighted the relevance of iPass in the context of the DPP, emphasizing the need for solutions that combine regulatory compliance, sustainability, and technological innovation."
     },
     {
      "type": "paragraph",
-     "text": "Además, la conversación en redes sociales y las menciones de asistentes reforzaron nuestro posicionamiento como líderes en el desarrollo de soluciones de identidad digital y trazabilidad para productos."
+     "text": "In addition, social media discussions and mentions by attendees reinforced our position as leaders in the development of digital identity and product traceability solutions."
     },
     {
      "type": "heading",
-     "text": "Lecciones y aprendizajes del evento"
+     "text": "Lessons and Insights from the Event"
     },
     {
      "type": "paragraph",
-     "text": "De nuestra experiencia en AL Andalus extraemos varios aprendizajes clave:"
+     "text": "Our experience at AL Andalus yielded several key insights:"
     },
     {
      "type": "list",
      "items": [
-      "Existe una alta sensibilidad hacia la sostenibilidad en el ecosistema empresarial andaluz, lo que convierte al PDP en una oportunidad de innovación.",
-      "Los sectores de textiles, electrónicos, baterías y construcción perciben el PDP no solo como una obligación, sino como una herramienta de diferenciación y confianza.",
-      "El ecosistema emprendedor andaluz está abierto a colaboraciones que permitan integrar innovación local en marcos regulatorios europeos.",
-      "La educación y divulgación serán esenciales para acompañar a las pymes en la transición hacia el PDP."
+      "There is strong awareness of sustainability within the Andalusian business ecosystem, making the DPP an opportunity for innovation.",
+      "The textile, electronics, battery, and construction sectors see the DPP not only as an obligation but also as a tool for differentiation and trust.",
+      "The Andalusian entrepreneurial ecosystem is open to partnerships that integrate local innovation into European regulatory frameworks.",
+      "Education and outreach will be essential to supporting SMEs in the transition to the DPP."
      ]
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras AL Andalus"
+     "text": "Next Steps After AL Andalus"
     },
     {
      "type": "paragraph",
-     "text": "Tras el evento, el equipo de iCommunity ha definido varias líneas de acción:"
+     "text": "Following the event, the iCommunity team defined several courses of action:"
     },
     {
      "type": "list",
      "items": [
-      "Desarrollar pilotos con empresas andaluzas de textil y construcción, que mostraron gran interés en aplicar iPASS.",
-      "Fortalecer alianzas con instituciones locales, para impulsar la adopción del PDP en Andalucía como territorio pionero.",
-      "Continuar con nuestra agenda internacional, llevando la propuesta de iPASS a otros eventos europeos centrados en identidad y sostenibilidad.",
-      "Seguir optimizando la plataforma, incorporando feedback de empresas reales para mejorar la usabilidad y escalabilidad."
+      "Develop pilot projects with Andalusian textile and construction companies that expressed strong interest in implementing iPass.",
+      "Strengthen partnerships with local institutions to promote DPP adoption in Andalusia as a pioneering region.",
+      "Continue our international program, presenting the iPass offering at other European events focused on identity and sustainability.",
+      "Continue optimizing the platform, incorporating feedback from real businesses to improve usability and scalability."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en AL Andalus 2025 ha sido una oportunidad estratégica para mostrar cómo iPASS puede convertirse en la herramienta de referencia para la implantación del Pasaporte Digital de Producto en Europa."
+     "text": "iCommunity's participation in AL Andalus 2025 provided a strategic opportunity to demonstrate how iPass can become the go-to tool for implementing the Digital Product Passport in Europe."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: interés real de empresas en los sectores prioritarios, nuevas alianzas estratégicas y una mayor visibilidad en el ecosistema de innovación andaluz."
+     "text": "The overall outcome was very positive: genuine interest from companies in priority sectors, new strategic partnerships, and greater visibility within the Andalusian innovation ecosystem."
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, desde iCommunity queremos demostrar que el PDP no es solo una obligación regulatoria, sino un catalizador de confianza, sostenibilidad y competitividad para las empresas del futuro."
+     "text": "With iPass, we at iCommunity aim to demonstrate that the DPP is not merely a regulatory obligation but a catalyst for trust, sustainability, and competitiveness for the businesses of the future."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-en-dice-2025-ipass-y-la-identidad-digital-de-productos-en-sectores-estrategicos",
@@ -592,11 +592,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en DICE 2025: iPASS y la identidad digital de productos en sectores estratégicos",
-   "en": "iCommunity en DICE 2025: iPASS y la identidad digital de productos en sectores estratégicos"
+   "en": "iCommunity at DICE 2025: iPass and Digital Product Identity in Strategic Sectors"
   },
   "description": {
    "es": "Del 2 al 4 de septiembre de 2025, la ciudad de Zúrich acogió una nueva edición de DICE – Digital Identity Conference Europe, un encuentro internacional especializado en identidad digital…",
-   "en": "Del 2 al 4 de septiembre de 2025, la ciudad de Zúrich acogió una nueva edición de DICE – Digital Identity Conference Europe, un encuentro internacional especializado en identidad digital…"
+   "en": "From September 2 to 4, 2025, Zurich hosted the latest edition of DICE – Digital Identity Conference Europe, an international event specializing in digital identity…"
   },
   "blocks": {
    "es": [
@@ -769,172 +769,172 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 2 al 4 de septiembre de 2025, la ciudad de Zúrich acogió una nueva edición de DICE – Digital Identity Conference Europe, un encuentro internacional especializado en identidad digital, confianza y estándares europeos. Durante tres días, expertos, instituciones, corporaciones y startups se reunieron para debatir sobre el futuro de la identidad en la economía digital, un tema que está en el centro de la transformación regulatoria y tecnológica que vive Europa."
+     "text": "From September 2 to 4, 2025, Zurich hosted the latest edition of DICE – Digital Identity Conference Europe, an international event specializing in digital identity, trust, and European standards. Over three days, experts, institutions, corporations, and startups gathered to discuss the future of identity in the digital economy—a topic at the heart of Europe's regulatory and technological transformation."
     },
     {
      "type": "paragraph",
-     "text": "En este escenario, iCommunity presentó iPASS, el producto que estamos desarrollando como plataforma de Pasaporte Digital de Producto (PDP). Nuestra participación en DICE 2025 tuvo un valor especial: se trata de un evento altamente especializado en identidad y credenciales digitales, lo que nos permitió dialogar con un público clave en la construcción del futuro marco europeo."
+     "text": "Against this backdrop, iCommunity presented iPass, the product we are developing as a Digital Product Passport (DPP) platform. Our participation in DICE 2025 was particularly valuable: as an event highly specialized in digital identity and credentials, it enabled us to engage with an audience playing a key role in shaping the future European framework."
     },
     {
      "type": "heading",
-     "text": "El Pasaporte Digital de Producto: una obligación inminente"
+     "text": "The Digital Product Passport: An Imminent Requirement"
     },
     {
      "type": "paragraph",
-     "text": "La Unión Europea ha definido que, a partir de 2026, será obligatorio que determinados sectores cuenten con un Pasaporte Digital de Producto. Esta medida busca garantizar la transparencia, fomentar la sostenibilidad y acelerar la economía circular en todo el mercado único europeo."
+     "text": "The European Union has stipulated that, starting in 2026, certain sectors will be required to have a Digital Product Passport. This measure aims to ensure transparency, promote sustainability, and accelerate the circular economy across the European single market."
     },
     {
      "type": "paragraph",
-     "text": "Los primeros sectores obligados son:"
+     "text": "The first sectors subject to this requirement are:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: con información sobre materiales sostenibles, procesos de producción y reciclabilidad.",
-      "Electrónica: con datos sobre el origen de materias primas críticas, consumo energético y capacidad de reparación o reutilización.",
-      "Baterías: tanto industriales como de vehículos eléctricos, incluyendo su huella de carbono y capacidad de reciclaje.",
-      "Materiales de construcción: como acero, hormigón o aislamientos, documentando emisiones y eficiencia de recursos."
+      "Textiles and footwear: with information on sustainable materials, production processes, and recyclability.",
+      "Electronics: with data on the origin of critical raw materials, energy consumption, and repairability or reusability.",
+      "Batteries: both industrial and electric vehicle batteries, including their carbon footprint and recyclability.",
+      "Construction materials: such as steel, concrete, and insulation, documenting emissions and resource efficiency."
      ]
     },
     {
      "type": "paragraph",
-     "text": "El PDP se extenderá progresivamente a otros sectores, pero estos cuatro son los que marcarán el inicio de la implementación en 2026."
+     "text": "The DPP will gradually extend to other sectors, but these four will mark the start of implementation in 2026."
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, iPASS se posiciona como la solución ideal para ayudar a las empresas a cumplir con la normativa, adaptándose a los estándares europeos de identidad digital y credenciales verificables."
+     "text": "In this context, iPass is positioned as the ideal solution to help companies comply with the regulations, aligning with European standards for digital identity and verifiable credentials."
     },
     {
      "type": "heading",
-     "text": "La propuesta de iCommunity en DICE 2025"
+     "text": "iCommunity's Offering at DICE 2025"
     },
     {
      "type": "paragraph",
-     "text": "El equipo técnico y comercial de iCommunity presentó en Zúrich cómo iPASS digitaliza el ciclo de vida completo de productos, generando credenciales verificables e interoperables que aportan confianza a lo largo de toda la cadena de valor."
+     "text": "In Zurich, iCommunity's technical and commercial team presented how iPass digitizes the entire product lifecycle, generating verifiable, interoperable credentials that build trust throughout the value chain."
     },
     {
      "type": "paragraph",
-     "text": "La propuesta despertó gran interés entre los asistentes porque combina tres elementos fundamentales:"
+     "text": "The offering attracted considerable interest among attendees because it combines three fundamental elements:"
     },
     {
      "type": "list",
      "items": [
-      "Cumplimiento normativo: iPASS asegura que las empresas puedan estructurar y reportar la información exigida por la UE de forma transparente y verificable.",
-      "Interoperabilidad: al estar alineado con estándares europeos (W3C VC, DID, JSON-LD), garantiza la compatibilidad entre países y sectores.",
-      "Experiencia de usuario: tanto para empresas como para consumidores, la solución ofrece simplicidad en la gestión y consulta de datos."
+      "Regulatory compliance: iPass ensures that companies can structure and report the information required by the EU in a transparent, verifiable manner.",
+      "Interoperability: alignment with European standards (W3C VC, DID, JSON-LD) ensures compatibility across countries and sectors.",
+      "User experience: for both companies and consumers, the solution makes data easy to manage and access."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Mostramos que el PDP no es solo un requisito legal, sino una oportunidad de innovación y diferenciación competitiva para las empresas que se adapten primero."
+     "text": "We demonstrated that the DPP is not just a legal requirement, but an opportunity for innovation and competitive differentiation for companies that adapt early."
     },
     {
      "type": "heading",
-     "text": "Casos de uso sectoriales que presentamos en Zúrich"
+     "text": "Sector-Specific Use Cases We Presented in Zurich"
     },
     {
      "type": "paragraph",
-     "text": "En DICE 2025 aterrizamos la utilidad de iPASS con ejemplos concretos de cómo se aplica en los sectores priorizados por la regulación:"
+     "text": "At DICE 2025, we demonstrated the practical value of iPass through concrete examples of its application in the sectors prioritized by the regulations:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: iPASS permite registrar el origen de fibras recicladas, procesos de producción sostenibles y la capacidad de reciclaje de cada prenda o zapato. Esto empodera al consumidor con información clara y mejora la reputación de las marcas.",
-      "Electrónica: Con iPASS, los fabricantes pueden certificar la procedencia de minerales críticos, detallar consumo energético y registrar reparaciones. Así se facilita la economía circular y se combate la obsolescencia programada.",
-      "Baterías: En un sector crítico para la movilidad eléctrica, iPASS almacena datos sobre huella de carbono, origen de materias primas y capacidad de reciclaje, aportando transparencia en un mercado cada vez más regulado.",
-      "Materiales de construcción: iPASS permite documentar emisiones, eficiencia energética y uso de recursos en acero, cemento o aislamientos, ayudando a promotoras e ingenierías a certificar sostenibilidad en proyectos inmobiliarios."
+      "Textiles and footwear: iPass enables companies to record the origin of recycled fibers, sustainable production processes, and the recyclability of each garment or shoe. This empowers consumers with clear information and enhances brand reputation.",
+      "Electronics: With iPass, manufacturers can certify the origin of critical minerals, detail energy consumption, and record repairs. This supports the circular economy and combats planned obsolescence.",
+      "Batteries: In a sector critical to electric mobility, iPass stores data on carbon footprints, raw material origins, and recyclability, bringing transparency to an increasingly regulated market.",
+      "Construction materials: iPass enables companies to document emissions, energy efficiency, and resource use for steel, cement, and insulation, helping developers and engineering firms certify sustainability in real estate projects."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos casos fueron especialmente bien recibidos en un foro tan especializado en credenciales digitales, ya que demostramos cómo la identidad digital puede aplicarse no solo a personas, sino también a productos."
+     "text": "These use cases were particularly well received at a forum so focused on digital credentials, as we demonstrated how digital identity can apply not only to people, but also to products."
     },
     {
      "type": "heading",
-     "text": "Networking con actores clave del ecosistema europeo"
+     "text": "Networking with Key Stakeholders in the European Ecosystem"
     },
     {
      "type": "paragraph",
-     "text": "El valor añadido de DICE 2025 estuvo en las conexiones estratégicas. El equipo de iCommunity se reunió con:"
+     "text": "The added value of DICE 2025 lay in its strategic connections. The iCommunity team met with:"
     },
     {
      "type": "list",
      "items": [
-      "Organismos de estandarización europeos, implicados en definir los marcos regulatorios del PDP.",
-      "Empresas tecnológicas de identidad digital, interesadas en explorar integraciones con iPASS.",
-      "Corporaciones de sectores regulados, que buscan soluciones para anticiparse a la normativa de 2026.",
-      "Administraciones y representantes institucionales, que valoran la importancia de herramientas tecnológicas para facilitar la transición."
+      "European standardization bodies involved in defining the regulatory frameworks for the DPP.",
+      "Digital identity technology companies interested in exploring integrations with iPass.",
+      "Corporations in regulated sectors seeking solutions to prepare for the 2026 regulations.",
+      "Public authorities and institutional representatives who recognize the importance of technological tools in facilitating the transition."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estas conversaciones abren la puerta a alianzas estratégicas y pilotos internacionales en los sectores prioritarios."
+     "text": "These conversations open the door to strategic partnerships and international pilot projects in priority sectors."
     },
     {
      "type": "heading",
-     "text": "Visibilidad y repercusión mediática"
+     "text": "Visibility and Media Coverage"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra presencia en Zúrich también nos dio la oportunidad de aparecer en medios especializados en identidad digital y gobernanza tecnológica. Varios periodistas destacaron a iPASS como una de las propuestas más innovadoras, precisamente por aplicar credenciales verificables a la trazabilidad de productos."
+     "text": "Our presence in Zurich also gave us the opportunity to feature in media outlets specializing in digital identity and technology governance. Several journalists highlighted iPass as one of the most innovative offerings, specifically for its application of verifiable credentials to product traceability."
     },
     {
      "type": "paragraph",
-     "text": "En redes sociales, la conversación sobre iPASS generó gran interés, consolidando a iCommunity como un actor innovador en el ecosistema europeo de identidad digital aplicada a la sostenibilidad."
+     "text": "On social media, the conversation about iPass generated considerable interest, strengthening iCommunity's position as an innovator in Europe's ecosystem for digital identity applied to sustainability."
     },
     {
      "type": "heading",
-     "text": "Aprendizajes clave de DICE 2025"
+     "text": "Key Takeaways from DICE 2025"
     },
     {
      "type": "paragraph",
-     "text": "Entre las conclusiones que nos llevamos del evento, destacamos:"
+     "text": "Among the conclusions we took away from the event, the following stand out:"
     },
     {
      "type": "list",
      "items": [
-      "La identidad digital de productos se está consolidando como una prioridad equiparable a la identidad de personas.",
-      "La colaboración internacional es esencial: ningún país ni sector puede implementar el PDP de forma aislada.",
-      "Las empresas buscan soluciones que combinen cumplimiento regulatorio, interoperabilidad y facilidad de integración.",
-      "El PDP no es solo regulación, sino también una oportunidad para ganar competitividad en mercados globales."
+      "Digital product identity is becoming a priority on a par with personal identity.",
+      "International collaboration is essential: no country or sector can implement the DPP in isolation.",
+      "Companies are seeking solutions that combine regulatory compliance, interoperability, and ease of integration.",
+      "The DPP is not just about regulation; it is also an opportunity to become more competitive in global markets."
      ]
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras Zúrich"
+     "text": "Next Steps After Zurich"
     },
     {
      "type": "paragraph",
-     "text": "Tras el evento, el equipo de iCommunity definió varias líneas de acción:"
+     "text": "Following the event, the iCommunity team defined several areas for action:"
     },
     {
      "type": "list",
      "items": [
-      "Pilotos con empresas europeas de sectores prioritarios, especialmente textiles y construcción.",
-      "Colaboración en grupos de estandarización, para contribuir al diseño del marco europeo de credenciales verificables.",
-      "Ampliación del ecosistema de partners tecnológicos, integrando iPASS con plataformas de firma digital, wallets y sistemas IAM.",
-      "Preparación de nuevos eventos internacionales, reforzando la visibilidad de iPASS en el ecosistema de identidad digital."
+      "Pilot projects with European companies in priority sectors, particularly textiles and construction.",
+      "Participation in standardization groups to help shape the European framework for verifiable credentials.",
+      "Expansion of the technology partner ecosystem, integrating iPass with digital signature platforms, wallets, and IAM systems.",
+      "Preparation for further international events, strengthening iPass's visibility within the digital identity ecosystem."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en DICE 2025 ha sido un hito estratégico en nuestra misión de convertir a iPASS en la solución de referencia para el Pasaporte Digital de Producto en Europa."
+     "text": "iCommunity's participation in DICE 2025 has been a strategic milestone in our mission to make iPass the leading Digital Product Passport solution in Europe."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: interés real de sectores obligados, nuevas alianzas estratégicas y una validación sólida en un foro internacional altamente especializado."
+     "text": "The outcome has been very positive: genuine interest from sectors subject to the requirements, new strategic partnerships, and strong validation at a highly specialized international forum."
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, demostramos que la identidad digital no se limita a las personas: también puede aplicarse a productos, generando transparencia, sostenibilidad y confianza en toda la cadena de valor."
+     "text": "With iPass, we demonstrate that digital identity is not limited to people: it can also apply to products, fostering transparency, sustainability, and trust throughout the value chain."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-en-criptolatinfest-medellin-2025-blockchain-al-servicio-del-pasaporte-digital-de-producto",
@@ -943,11 +943,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en Criptolatinfest Medellín 2025: blockchain al servicio del Pasaporte Digital de Producto",
-   "en": "iCommunity en Criptolatinfest Medellín 2025: blockchain al servicio del Pasaporte Digital de Producto"
+   "en": "iCommunity at Criptolatinfest Medellín 2025: blockchain powering the Digital Product Passport"
   },
   "description": {
    "es": "En 2025, la ciudad de Medellín volvió a consolidarse como uno de los polos más vibrantes de la innovación tecnológica en América Latina con la celebración del Criptolatinfest…",
-   "en": "En 2025, la ciudad de Medellín volvió a consolidarse como uno de los polos más vibrantes de la innovación tecnológica en América Latina con la celebración del Criptolatinfest…"
+   "en": "In 2025, the city of Medellín once again cemented its position as one of Latin America's most vibrant hubs for technological innovation by hosting Criptolatinfest…"
   },
   "blocks": {
    "es": [
@@ -1125,177 +1125,177 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "En 2025, la ciudad de Medellín volvió a consolidarse como uno de los polos más vibrantes de la innovación tecnológica en América Latina con la celebración del Criptolatinfest, un encuentro influyente e inclusivo que reúne a entusiastas, expertos y profesionales de la tecnología blockchain."
+     "text": "In 2025, the city of Medellín once again cemented its position as one of Latin America's most vibrant hubs for technological innovation by hosting Criptolatinfest, an influential and inclusive event that brings together blockchain enthusiasts, experts, and professionals."
     },
     {
      "type": "paragraph",
-     "text": "Tradicionalmente asociado a las criptomonedas, el blockchain se ha convertido en mucho más que un sistema financiero alternativo. En este contexto, iCommunity participó para mostrar cómo estamos llevando la tecnología blockchain a nuevos terrenos, con aplicaciones reales que responden a desafíos regulatorios, industriales y medioambientales."
+     "text": "Traditionally associated with cryptocurrencies, blockchain has become much more than an alternative financial system. Against this backdrop, iCommunity participated to showcase how we are taking blockchain technology into new areas, with real-world applications that address regulatory, industrial, and environmental challenges."
     },
     {
      "type": "paragraph",
-     "text": "Nuestra propuesta se materializa en iPASS, el producto que estamos desarrollando como plataforma de Pasaporte Digital de Producto (PDP). Y el Criptolatinfest fue el escenario perfecto para explicar cómo esta herramienta aprovecha la blockchain para crear confianza y transparencia en sectores estratégicos."
+     "text": "Our approach takes shape in iPass, the product we are developing as a Digital Product Passport (DPP) platform. Criptolatinfest provided the perfect setting to explain how this tool leverages blockchain to build trust and transparency in strategic sectors."
     },
     {
      "type": "heading",
-     "text": "Más allá de las criptomonedas: blockchain para resolver problemas reales"
+     "text": "Beyond cryptocurrencies: blockchain for solving real-world problems"
     },
     {
      "type": "paragraph",
-     "text": "La percepción pública sobre blockchain sigue muy ligada a Bitcoin, Ethereum y al mercado cripto. Sin embargo, el verdadero potencial de esta tecnología está en su capacidad de garantizar integridad, trazabilidad y descentralización de la información."
+     "text": "Public perceptions of blockchain remain closely tied to Bitcoin, Ethereum, and the crypto market. However, the true potential of this technology lies in its ability to ensure information integrity, traceability, and decentralization."
     },
     {
      "type": "paragraph",
-     "text": "Durante nuestras presentaciones en Medellín, el equipo de iCommunity explicó que iPASS aplica blockchain en un contexto industrial y regulatorio, con beneficios tangibles para empresas y consumidores:"
+     "text": "During our presentations in Medellín, the iCommunity team explained how iPass applies blockchain in an industrial and regulatory context, delivering tangible benefits for businesses and consumers:"
     },
     {
      "type": "list",
      "items": [
-      "Inmutabilidad de la información: cada dato registrado en iPASS queda protegido contra manipulaciones.",
-      "Confianza descentralizada: no depende de un único intermediario, lo que reduce riesgos y aumenta la transparencia.",
-      "Interoperabilidad: se adapta a estándares europeos y globales, garantizando compatibilidad con distintos sistemas.",
-      "Accesibilidad: permite a cualquier consumidor verificar el historial de un producto desde su móvil."
+      "Information immutability: every data point recorded in iPass is protected against tampering.",
+      "Decentralized trust: it does not depend on a single intermediary, reducing risks and increasing transparency.",
+      "Interoperability: it aligns with European and global standards, ensuring compatibility with different systems.",
+      "Accessibility: it allows any consumer to verify a product's history from their mobile phone."
      ]
     },
     {
      "type": "paragraph",
-     "text": "De este modo, mostramos cómo blockchain puede ser un motor de cambio más allá del universo cripto, aplicándose a la sostenibilidad, la economía circular y la regulación internacional."
+     "text": "In this way, we demonstrated how blockchain can drive change beyond the crypto world, with applications in sustainability, the circular economy, and international regulation."
     },
     {
      "type": "heading",
-     "text": "El reto regulatorio europeo: Pasaporte Digital de Producto (PDP)"
+     "text": "The European regulatory challenge: the Digital Product Passport (DPP)"
     },
     {
      "type": "paragraph",
-     "text": "El marco regulatorio de la Unión Europea establece que, a partir de 2026, será obligatorio que ciertos sectores cuenten con un Pasaporte Digital de Producto. El objetivo: mejorar la transparencia en la cadena de valor, impulsar la sostenibilidad y acelerar la economía circular."
+     "text": "The European Union's regulatory framework stipulates that, starting in 2026, Digital Product Passports will be mandatory in certain sectors. The goal: to improve transparency across the value chain, advance sustainability, and accelerate the circular economy."
     },
     {
      "type": "paragraph",
-     "text": "Los sectores priorizados en la fase inicial son:"
+     "text": "The priority sectors in the initial phase are:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: para documentar materiales, procesos de producción y reciclabilidad.",
-      "Electrónica: para detallar el origen de materias primas críticas y facilitar reparaciones y reciclaje.",
-      "Baterías: industriales y de vehículos eléctricos, con información sobre huella de carbono y capacidad de reutilización.",
-      "Materiales de construcción: cemento, acero, aislamientos y más, con datos sobre eficiencia energética y emisiones."
+      "Textiles and footwear: to document materials, production processes, and recyclability.",
+      "Electronics: to detail the origin of critical raw materials and facilitate repairs and recycling.",
+      "Batteries: industrial and electric vehicle batteries, with information on carbon footprints and reuse potential.",
+      "Construction materials: cement, steel, insulation, and more, with data on energy efficiency and emissions."
      ]
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, iPASS aprovecha la tecnología blockchain para registrar, verificar y compartir la información de manera confiable e inmutable, respondiendo exactamente a las necesidades regulatorias que marcarán la economía europea en los próximos años."
+     "text": "In this context, iPass leverages blockchain technology to record, verify, and share information reliably and immutably, directly addressing the regulatory requirements that will shape the European economy in the coming years."
     },
     {
      "type": "heading",
-     "text": "Casos de uso presentados en Medellín"
+     "text": "Use cases presented in Medellín"
     },
     {
      "type": "paragraph",
-     "text": "El Criptolatinfest fue el escenario ideal para mostrar casos de uso concretos donde iPASS y blockchain aportan valor real:"
+     "text": "Criptolatinfest provided the ideal setting to showcase specific use cases in which iPass and blockchain deliver real value:"
     },
     {
      "type": "list",
      "items": [
-      "Moda sostenible (textiles y calzado): Con iPASS, las marcas pueden documentar el origen de fibras sostenibles, procesos de confección responsables y opciones de reciclaje. El consumidor accede a esta información de forma transparente escaneando un código en la etiqueta.",
-      "Electrónica y dispositivos IoT: La plataforma registra la trazabilidad de materiales críticos, consumo energético y certifica las reparaciones, lo que prolonga la vida útil de los productos y fomenta la economía circular.",
-      "Baterías para movilidad eléctrica: En un sector estratégico para la transición energética, iPASS garantiza que cada batería lleve un historial verificable sobre materias primas, emisiones y capacidad de reciclaje.",
-      "Construcción sostenible: Los materiales de construcción cuentan con un pasaporte digital que detalla eficiencia energética, emisiones de CO₂ y procedencia de recursos, facilitando certificaciones y transparencia en proyectos inmobiliarios."
+      "Sustainable fashion (textiles and footwear): With iPass, brands can document the origin of sustainable fibers, responsible manufacturing processes, and recycling options. Consumers can access this information transparently by scanning a code on the label.",
+      "Electronics and IoT devices: The platform records traceability data for critical materials and energy consumption, and certifies repairs, extending product lifespans and fostering the circular economy.",
+      "Batteries for electric mobility: In a sector that is strategic to the energy transition, iPass ensures that every battery has a verifiable history covering raw materials, emissions, and recyclability.",
+      "Sustainable construction: Construction materials have a digital passport detailing energy efficiency, CO₂ emissions, and resource origins, facilitating certifications and transparency in real estate projects."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos ejemplos fueron especialmente valorados por la audiencia, que pudo comprobar cómo blockchain puede transformar industrias enteras más allá de la especulación financiera."
+     "text": "These examples were particularly well received by the audience, who could see how blockchain can transform entire industries beyond financial speculation."
     },
     {
      "type": "heading",
-     "text": "Networking con la comunidad blockchain latinoamericana"
+     "text": "Networking with the Latin American blockchain community"
     },
     {
      "type": "paragraph",
-     "text": "El Criptolatinfest también fue una oportunidad única para conectar con la comunidad blockchain de América Latina, donde encontramos un ecosistema dinámico y abierto a nuevas aplicaciones."
+     "text": "Criptolatinfest was also a unique opportunity to connect with Latin America's blockchain community, where we found a dynamic ecosystem open to new applications."
     },
     {
      "type": "paragraph",
-     "text": "El equipo de iCommunity mantuvo conversaciones con:"
+     "text": "The iCommunity team held discussions with:"
     },
     {
      "type": "list",
      "items": [
-      "Startups latinoamericanas de moda sostenible, interesadas en explorar cómo aplicar iPASS en sus cadenas de producción.",
-      "Fabricantes de dispositivos electrónicos locales, que ven en el PDP una oportunidad para diferenciarse en el mercado internacional.",
-      "Empresas de movilidad eléctrica y baterías, atentas al impacto de la regulación europea y al potencial de exportación hacia Europa.",
-      "Centros de investigación y universidades, que buscan alianzas para probar la integración de blockchain en proyectos de sostenibilidad."
+      "Latin American sustainable fashion startups interested in exploring how to apply iPass across their production chains.",
+      "Local electronic device manufacturers that see the DPP as an opportunity to differentiate themselves in the international market.",
+      "Electric mobility and battery companies focused on the impact of European regulation and the potential for exports to Europe.",
+      "Research centers and universities seeking partnerships to test blockchain integration in sustainability projects."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estas interacciones confirman que el PDP y la tecnología blockchain son temas globales, no limitados a Europa, y que la región latinoamericana está muy interesada en explorar su potencial."
+     "text": "These interactions confirm that the DPP and blockchain technology are global topics, not limited to Europe, and that Latin America is very interested in exploring their potential."
     },
     {
      "type": "heading",
-     "text": "Visibilidad y repercusión"
+     "text": "Visibility and impact"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra participación en Medellín generó gran interés entre medios y redes de la comunidad blockchain. Varios ponentes destacaron nuestra visión de blockchain aplicada a la identidad de productos y no únicamente a activos digitales."
+     "text": "Our participation in Medellín generated significant interest among media outlets and networks within the blockchain community. Several speakers highlighted our vision of applying blockchain to product identity, rather than solely to digital assets."
     },
     {
      "type": "paragraph",
-     "text": "La repercusión mediática nos permitió reforzar el mensaje de que iPASS no es un proyecto especulativo, sino una solución tecnológica real que responde a necesidades regulatorias y de sostenibilidad."
+     "text": "The media coverage enabled us to reinforce the message that iPass is not a speculative project, but a real technological solution that addresses regulatory and sustainability needs."
     },
     {
      "type": "heading",
-     "text": "Aprendizajes clave del Criptolatinfest"
+     "text": "Key takeaways from Criptolatinfest"
     },
     {
      "type": "paragraph",
-     "text": "De nuestra experiencia en Medellín, extraemos varias lecciones:"
+     "text": "We drew several lessons from our experience in Medellín:"
     },
     {
      "type": "list",
      "items": [
-      "Existe un gran interés en casos de uso de blockchain más allá de las criptomonedas, especialmente en trazabilidad y sostenibilidad.",
-      "Los sectores de textiles, electrónica, baterías y construcción son globales y enfrentan desafíos similares en Europa y América Latina.",
-      "La comunidad blockchain latinoamericana está abierta a la colaboración con proyectos europeos innovadores.",
-      "La educación y divulgación son esenciales para que las empresas comprendan que blockchain puede ser un aliado estratégico."
+      "There is strong interest in blockchain use cases beyond cryptocurrencies, especially in traceability and sustainability.",
+      "The textile, electronics, battery, and construction sectors are global and face similar challenges in Europe and Latin America.",
+      "The Latin American blockchain community is open to collaborating with innovative European projects.",
+      "Education and outreach are essential to helping businesses understand that blockchain can be a strategic ally."
      ]
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras Medellín"
+     "text": "Next steps after Medellín"
     },
     {
      "type": "paragraph",
-     "text": "Después del Criptolatinfest, el equipo de iCommunity ha trazado varios pasos estratégicos:"
+     "text": "Following Criptolatinfest, the iCommunity team outlined several strategic steps:"
     },
     {
      "type": "list",
      "items": [
-      "Explorar pilotos en Latinoamérica con empresas textiles y electrónicas interesadas en probar el PDP.",
-      "Ampliar la comunidad internacional de partners para acelerar la adopción de iPASS en distintos mercados.",
-      "Desarrollar nuevas integraciones tecnológicas que hagan más fácil para las empresas implementar el pasaporte digital en sus procesos.",
-      "Participar en nuevos foros internacionales que permitan seguir posicionando a iCommunity y iPASS como referentes de blockchain aplicado a la industria."
+      "Explore pilot projects in Latin America with textile and electronics companies interested in testing the DPP.",
+      "Expand the international partner community to accelerate iPass adoption across different markets.",
+      "Develop new technology integrations that make it easier for businesses to implement the digital passport in their processes.",
+      "Participate in additional international forums to continue positioning iCommunity and iPass as leaders in blockchain applications for industry."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en el Criptolatinfest Medellín 2025 fue una oportunidad única para demostrar que la blockchain es mucho más que criptomonedas. Con iPASS, mostramos cómo esta tecnología se adapta a necesidades reales de la industria y resuelve problemas críticos de trazabilidad, transparencia y cumplimiento regulatorio en sectores estratégicos."
+     "text": "iCommunity's participation in Criptolatinfest Medellín 2025 was a unique opportunity to demonstrate that blockchain is much more than cryptocurrencies. With iPass, we showed how this technology adapts to real industry needs and solves critical challenges in traceability, transparency, and regulatory compliance across strategic sectors."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: validación de la propuesta, interés en Latinoamérica, nuevas alianzas y mayor visibilidad internacional."
+     "text": "The overall outcome was highly positive: validation of our proposition, interest across Latin America, new partnerships, and greater international visibility."
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, desde iCommunity reafirmamos nuestro compromiso de situar la tecnología blockchain al servicio de la sostenibilidad, la confianza y la innovación en todo el mundo."
+     "text": "Through iPass, we at iCommunity reaffirm our commitment to putting blockchain technology at the service of sustainability, trust, and innovation worldwide."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-estara-en-al-andalus-innovation-venture-2025",
@@ -1502,11 +1502,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en DES Málaga 2025: iPASS y el Pasaporte Digital de Producto para sectores estratégicos",
-   "en": "iCommunity en DES Málaga 2025: iPASS y el Pasaporte Digital de Producto para sectores estratégicos"
+   "en": "iCommunity at DES Málaga 2025: iPass and the Digital Product Passport for Strategic Sectors"
   },
   "description": {
    "es": "Del 10 al 12 de junio de 2025, Málaga se convirtió en la capital mundial de la innovación y la empresa digital gracias a una nueva edición del Digital Enterprise Show (DES 2025). Este evento…",
-   "en": "Del 10 al 12 de junio de 2025, Málaga se convirtió en la capital mundial de la innovación y la empresa digital gracias a una nueva edición del Digital Enterprise Show (DES 2025). Este evento…"
+   "en": "From June 10 to 12, 2025, Málaga became the global capital of innovation and digital business with the latest edition of the Digital Enterprise Show (DES 2025). This event…"
   },
   "blocks": {
    "es": [
@@ -1683,176 +1683,176 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 10 al 12 de junio de 2025, Málaga se convirtió en la capital mundial de la innovación y la empresa digital gracias a una nueva edición del Digital Enterprise Show (DES 2025). Este evento, que reúne cada año a miles de profesionales y compañías de todo el mundo, volvió a ser el punto de encuentro clave para debatir sobre tecnologías exponenciales, inteligencia artificial y transformación digital."
+     "text": "From June 10 to 12, 2025, Málaga became the global capital of innovation and digital business with the latest edition of the Digital Enterprise Show (DES 2025). This event, which brings together thousands of professionals and companies from around the world every year, once again served as a key meeting point for discussions on exponential technologies, artificial intelligence, and digital transformation."
     },
     {
      "type": "paragraph",
-     "text": "En este escenario de vanguardia, iCommunity presentó iPASS, nuestro innovador producto diseñado para liderar la implantación del Pasaporte Digital de Producto (PDP) en Europa, especialmente en los sectores que serán obligatorios inicialmente: textiles, electrónicos, baterías y materiales de construcción."
+     "text": "In this cutting-edge setting, iCommunity presented iPass, our innovative product designed to lead the implementation of the Digital Product Passport (DPP) in Europe, particularly in the sectors where it will initially be mandatory: textiles, electronics, batteries, and construction materials."
     },
     {
      "type": "heading",
-     "text": "El reto regulatorio: PDP obligatorio a partir de 2026"
+     "text": "The Regulatory Challenge: Mandatory DPP from 2026"
     },
     {
      "type": "paragraph",
-     "text": "La Unión Europea ha establecido un calendario ambicioso para la implementación del Pasaporte Digital de Producto, con el objetivo de mejorar la transparencia de la cadena de valor, fomentar la sostenibilidad y avanzar hacia la economía circular."
+     "text": "The European Union has established an ambitious timeline for implementing the Digital Product Passport, with the aim of improving value chain transparency, promoting sustainability, and advancing the circular economy."
     },
     {
      "type": "paragraph",
-     "text": "Los sectores priorizados para su aplicación inicial son:"
+     "text": "The priority sectors for its initial implementation are:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: prendas y zapatos deberán detallar materiales, procesos de fabricación y opciones de reciclaje.",
-      "Electrónica: dispositivos y componentes tendrán que incluir información sobre materias primas, consumo energético y reciclabilidad.",
-      "Baterías: tanto industriales como de vehículos eléctricos, con datos de materias primas, huella de carbono y capacidad de reutilización.",
-      "Materiales de construcción: cemento, acero o aislamientos deberán documentar su impacto energético y ambiental."
+      "Textiles and footwear: clothing and shoes will need to provide details on materials, manufacturing processes, and recycling options.",
+      "Electronics: devices and components will need to include information on raw materials, energy consumption, and recyclability.",
+      "Batteries: both industrial and electric vehicle batteries will need to provide data on raw materials, carbon footprints, and reuse potential.",
+      "Construction materials: cement, steel, and insulation will need to document their energy and environmental impact."
      ]
     },
     {
      "type": "paragraph",
-     "text": "A partir de 2026, el cumplimiento será obligatorio, y en el futuro se extenderá a otros sectores como mobiliario o packaging."
+     "text": "Compliance will be mandatory from 2026 and will extend to other sectors, such as furniture and packaging, in the future."
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, iPASS ofrece una solución tecnológica robusta, interoperable y fácil de integrar, que ayuda a las empresas a convertir esta obligación regulatoria en una ventaja competitiva."
+     "text": "In this context, iPass offers a robust, interoperable, and easy-to-integrate technology solution that helps companies turn this regulatory obligation into a competitive advantage."
     },
     {
      "type": "heading",
-     "text": "La propuesta de iCommunity en el DES 2025"
+     "text": "iCommunity's Offering at DES 2025"
     },
     {
      "type": "paragraph",
-     "text": "El equipo de iCommunity mostró en Málaga cómo iPASS digitaliza el ciclo de vida completo de productos a través de un pasaporte digital seguro y transparente. Nuestra propuesta despertó un gran interés porque responde a tres necesidades urgentes:"
+     "text": "In Málaga, the iCommunity team demonstrated how iPass digitizes the entire product lifecycle through a secure and transparent digital passport. Our offering attracted significant interest because it addresses three urgent needs:"
     },
     {
      "type": "list",
      "items": [
-      "Cumplimiento regulatorio: asegurar que la información requerida por la UE está disponible, verificada y accesible.",
-      "Trazabilidad y transparencia: aportar confianza a consumidores, partners y autoridades.",
-      "Innovación competitiva: diferenciarse en el mercado ofreciendo productos con información clara y verificable sobre sostenibilidad y origen."
+      "Regulatory compliance: ensuring that the information required by the EU is available, verified, and accessible.",
+      "Traceability and transparency: building trust among consumers, partners, and authorities.",
+      "Competitive innovation: standing out in the market by offering products with clear, verifiable information on sustainability and origin."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Durante nuestras presentaciones, subrayamos que el PDP no es simplemente una carga administrativa, sino una herramienta estratégica para generar valor añadido."
+     "text": "During our presentations, we emphasized that the DPP is not simply an administrative burden, but a strategic tool for creating added value."
     },
     {
      "type": "heading",
-     "text": "Casos de uso sectoriales presentados en Málaga"
+     "text": "Industry Use Cases Presented in Málaga"
     },
     {
      "type": "paragraph",
-     "text": "En las charlas y reuniones, aterrizamos el potencial de iPASS en los sectores prioritarios de la regulación:"
+     "text": "In our talks and meetings, we demonstrated the practical potential of iPass in the sectors prioritized by the regulation:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: Mostramos cómo iPASS permite documentar fibras sostenibles, procesos de confección responsables y reciclabilidad de prendas. Un consumidor podría escanear un código y conocer todo el historial de la prenda que lleva puesta.",
-      "Electrónica: Explicamos cómo fabricantes y distribuidores pueden usar iPASS para certificar la procedencia de minerales críticos, registrar consumo energético y facilitar reparaciones y reciclaje de dispositivos.",
-      "Baterías: Presentamos cómo iPASS puede almacenar datos sobre materias primas, emisiones de CO₂ y capacidad de reciclaje, alineándose con los requisitos para la transición energética.",
-      "Materiales de construcción: Enseñamos cómo el PDP documentado con iPASS permite certificar el uso de energía, emisiones y recursos en materiales clave, lo que aporta valor en proyectos de construcción sostenible."
+      "Textiles and footwear: We showed how iPass enables companies to document sustainable fibers, responsible garment manufacturing processes, and clothing recyclability. Consumers could scan a code to discover the complete history of the garment they are wearing.",
+      "Electronics: We explained how manufacturers and distributors can use iPass to certify the origin of critical minerals, record energy consumption, and facilitate device repairs and recycling.",
+      "Batteries: We presented how iPass can store data on raw materials, CO₂ emissions, and recycling potential, aligning with energy transition requirements.",
+      "Construction materials: We showed how a DPP documented through iPass enables companies to certify energy use, emissions, and resource consumption for key materials, adding value to sustainable construction projects."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Cada uno de estos ejemplos evidenció que iPASS no solo es una herramienta de cumplimiento, sino también un motor de innovación y confianza."
+     "text": "Each of these examples demonstrated that iPass is not only a compliance tool, but also a driver of innovation and trust."
     },
     {
      "type": "heading",
-     "text": "Networking y ecosistema empresarial"
+     "text": "Networking and the Business Ecosystem"
     },
     {
      "type": "paragraph",
-     "text": "El DES es un evento que conecta startups, corporaciones, administraciones y fondos de inversión. Nuestra participación fue una oportunidad única para ampliar el ecosistema de colaboradores en torno a iPASS."
+     "text": "DES connects startups, corporations, public authorities, and investment funds. Our participation provided a unique opportunity to expand the ecosystem of partners around iPass."
     },
     {
      "type": "paragraph",
-     "text": "Durante el evento, el equipo de iCommunity mantuvo reuniones con:"
+     "text": "During the event, the iCommunity team held meetings with:"
     },
     {
      "type": "list",
      "items": [
-      "Marcas de moda y textil sostenible, que buscan transparencia para ganar confianza del consumidor.",
-      "Empresas de electrónica e IoT, interesadas en anticiparse a la normativa europea y reforzar su responsabilidad ambiental.",
-      "Fabricantes de materiales de construcción, que ven en el PDP una oportunidad para demostrar el impacto positivo de sus innovaciones.",
-      "Inversores internacionales, que identificaron en iPASS un producto con potencial de adopción masiva en los próximos años."
+      "Sustainable fashion and textile brands seeking transparency to build consumer trust.",
+      "Electronics and IoT companies interested in preparing for European regulations and strengthening their environmental responsibility.",
+      "Construction material manufacturers that see the DPP as an opportunity to demonstrate the positive impact of their innovations.",
+      "International investors who recognized iPass as a product with the potential for widespread adoption in the coming years."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Este networking refuerza nuestra convicción de que iPASS puede convertirse en un estándar transversal para múltiples industrias."
+     "text": "These networking activities reinforce our conviction that iPass can become a cross-industry standard."
     },
     {
      "type": "heading",
-     "text": "Visibilidad y repercusión mediática"
+     "text": "Visibility and Media Coverage"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra presencia en DES 2025 generó un gran impacto en medios y redes. Varios medios especializados en sostenibilidad e innovación tecnológica destacaron el papel del Pasaporte Digital de Producto como una de las grandes tendencias europeas, y señalaron a iPASS como una de las soluciones más avanzadas presentadas en el evento."
+     "text": "Our presence at DES 2025 generated significant media coverage and social media engagement. Several publications specializing in sustainability and technological innovation highlighted the Digital Product Passport as one of Europe's major trends and identified iPass as one of the most advanced solutions presented at the event."
     },
     {
      "type": "paragraph",
-     "text": "Además, la interacción en redes sociales y el interés demostrado en nuestro stand consolidaron la visibilidad de iCommunity dentro del ecosistema de innovación español e internacional."
+     "text": "In addition, social media interactions and the interest shown at our booth strengthened iCommunity's visibility within the Spanish and international innovation ecosystems."
     },
     {
      "type": "heading",
-     "text": "Aprendizajes y tendencias observadas"
+     "text": "Key Takeaways and Emerging Trends"
     },
     {
      "type": "paragraph",
-     "text": "El DES no solo fue un escaparate, sino también una fuente de inspiración y validación. Entre los aprendizajes más relevantes, destacamos:"
+     "text": "DES was not only a showcase, but also a source of inspiration and validation. Among the most relevant takeaways, we highlight:"
     },
     {
      "type": "list",
      "items": [
-      "Las empresas ven el PDP como una oportunidad de diferenciación, no solo como una obligación.",
-      "El consumidor final demanda transparencia: cada vez más compradores valoran información sobre sostenibilidad y trazabilidad.",
-      "La colaboración público-privada será esencial para garantizar una implementación exitosa.",
-      "La digitalización de la sostenibilidad es una tendencia transversal que conecta a todos los sectores."
+      "Companies see the DPP as an opportunity to differentiate themselves, not merely as an obligation.",
+      "End consumers demand transparency: more and more buyers value information on sustainability and traceability.",
+      "Public-private collaboration will be essential to ensuring successful implementation.",
+      "The digitization of sustainability is a cross-industry trend that connects all sectors."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos insights refuerzan nuestra visión de iPASS como una plataforma que une cumplimiento normativo, innovación tecnológica y valor de mercado."
+     "text": "These insights reinforce our vision of iPass as a platform that brings together regulatory compliance, technological innovation, and market value."
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras el DES 2025"
+     "text": "Next Steps After DES 2025"
     },
     {
      "type": "paragraph",
-     "text": "Tras nuestra participación en Málaga, el equipo de iCommunity ha trazado varios próximos pasos estratégicos:"
+     "text": "Following our participation in Málaga, the iCommunity team has outlined several strategic next steps:"
     },
     {
      "type": "list",
      "items": [
-      "Pilotos con empresas textiles, electrónicas y de construcción, que nos permitirán validar casos de uso en entornos reales.",
-      "Ampliar la red de partners industriales, para acelerar la adopción del PDP en distintos sectores.",
-      "Desarrollar nuevas funcionalidades de iPASS, incorporando el feedback recibido durante el evento.",
-      "Seguir presentes en foros internacionales, como Identity Week Europe y DICE 2025, reforzando nuestra visibilidad global."
+      "Run pilot projects with textile, electronics, and construction companies to validate use cases in real-world environments.",
+      "Expand our network of industry partners to accelerate DPP adoption across different sectors.",
+      "Develop new iPass features, incorporating the feedback received during the event.",
+      "Continue participating in international forums, such as Identity Week Europe and DICE 2025, to strengthen our global visibility."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en el Digital Enterprise Show 2025 ha sido un hito clave en la promoción de iPASS como solución de referencia para el Pasaporte Digital de Producto en Europa."
+     "text": "iCommunity's participation in the Digital Enterprise Show 2025 marked a key milestone in promoting iPass as a leading solution for the Digital Product Passport in Europe."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: validación de la propuesta, interés real de los sectores prioritarios, nuevas alianzas estratégicas y una mayor visibilidad nacional e internacional."
+     "text": "The outcome was highly positive: validation of our offering, genuine interest from priority sectors, new strategic partnerships, and greater national and international visibility."
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, estamos convencidos de que el PDP no será solo un instrumento regulatorio, sino un catalizador de confianza, sostenibilidad e innovación para empresas y consumidores."
+     "text": "With iPass, we are confident that the DPP will be more than a regulatory instrument: it will be a catalyst for trust, sustainability, and innovation for businesses and consumers."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-en-south-summit-madrid-2025-ipass-y-el-futuro-del-pasaporte-digital-de-producto-en-los-sectores-estrategicos",
@@ -1861,11 +1861,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en South Summit Madrid 2025: iPASS y el futuro del Pasaporte Digital de Producto en los sectores estratégicos",
-   "en": "iCommunity en South Summit Madrid 2025: iPASS y el futuro del Pasaporte Digital de Producto en los sectores estratégicos"
+   "en": "iCommunity at South Summit Madrid 2025: iPass and the Future of the Digital Product Passport in Strategic Sectors"
   },
   "description": {
    "es": "Del 4 al 6 de junio de 2025, Madrid acogió una nueva edición del South Summit, el mayor encuentro nacional y uno de los más relevantes en Europa para startups, innovación e inversión tecnológica.",
-   "en": "Del 4 al 6 de junio de 2025, Madrid acogió una nueva edición del South Summit, el mayor encuentro nacional y uno de los más relevantes en Europa para startups, innovación e inversión tecnológica."
+   "en": "From June 4 to 6, 2025, Madrid hosted another edition of South Summit, Spain's largest gathering and one of Europe's leading events for startups, innovation, and technology investment."
   },
   "blocks": {
    "es": [
@@ -2043,177 +2043,177 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 4 al 6 de junio de 2025, Madrid acogió una nueva edición del South Summit, el mayor encuentro nacional y uno de los más relevantes en Europa para startups, innovación e inversión tecnológica. Durante tres días, el espacio de La Nave se llenó de emprendedores, corporaciones, fondos de inversión y administraciones públicas, todos unidos por un mismo objetivo: impulsar proyectos que transformen la economía y la sociedad."
+     "text": "From June 4 to 6, 2025, Madrid hosted another edition of South Summit, Spain's largest gathering and one of Europe's leading events for startups, innovation, and technology investment. For three days, La Nave was filled with entrepreneurs, corporations, investment funds, and public authorities, all united by a common goal: to advance projects that transform the economy and society."
     },
     {
      "type": "paragraph",
-     "text": "En este vibrante ecosistema, iCommunity presentó iPASS, nuestro innovador producto orientado a dar respuesta a uno de los mayores retos regulatorios y empresariales de los próximos años: la implantación del Pasaporte Digital de Producto (PDP)."
+     "text": "Within this vibrant ecosystem, iCommunity presented iPass, our innovative product designed to address one of the biggest regulatory and business challenges of the coming years: implementing the Digital Product Passport (DPP)."
     },
     {
      "type": "heading",
-     "text": "El reto europeo: sectores prioritarios para el Pasaporte Digital de Producto"
+     "text": "The European Challenge: Priority Sectors for the Digital Product Passport"
     },
     {
      "type": "paragraph",
-     "text": "La Unión Europea ha establecido que, a partir de 2026, será obligatorio para determinados sectores contar con un PDP, con el objetivo de mejorar la transparencia, impulsar la sostenibilidad y acelerar la economía circular."
+     "text": "The European Union has established that, starting in 2026, certain sectors will be required to have a DPP, with the aim of improving transparency, promoting sustainability, and accelerating the circular economy."
     },
     {
      "type": "paragraph",
-     "text": "Los sectores priorizados inicialmente son:"
+     "text": "The initial priority sectors are:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: prendas y zapatos deberán contar con información sobre materiales sostenibles, procesos de producción y reciclabilidad.",
-      "Electrónica: dispositivos y componentes tendrán que detallar la procedencia de materiales críticos, el consumo energético y el potencial de reutilización.",
-      "Baterías: tanto industriales como para vehículos eléctricos, deberán aportar datos sobre materias primas, huella de carbono y capacidad de reciclaje.",
-      "Materiales de construcción: hormigón, acero y aislamientos deberán documentar su eficiencia de recursos y emisiones asociadas."
+      "Textiles and footwear: clothing and shoes will need to include information on sustainable materials, production processes, and recyclability.",
+      "Electronics: devices and components will need to detail the origin of critical materials, energy consumption, and potential for reuse.",
+      "Batteries: both industrial and electric vehicle batteries will need to provide data on raw materials, carbon footprint, and recyclability.",
+      "Construction materials: concrete, steel, and insulation will need to document their resource efficiency and associated emissions."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Más adelante, la exigencia se extenderá a sectores como el mobiliario y, progresivamente, a la mayoría de productos comercializados en la UE."
+     "text": "At a later stage, the requirement will extend to sectors such as furniture and, progressively, to most products marketed in the EU."
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, iPASS se presenta como la herramienta idónea para que empresas de estos sectores puedan cumplir con la normativa y convertirla en una oportunidad de innovación y diferenciación competitiva."
+     "text": "In this context, iPass offers an ideal tool for companies in these sectors to comply with regulations and turn compliance into an opportunity for innovation and competitive differentiation."
     },
     {
      "type": "heading",
-     "text": "La propuesta de iCommunity en el South Summit"
+     "text": "iCommunity's Offering at South Summit"
     },
     {
      "type": "paragraph",
-     "text": "El equipo técnico y comercial de iCommunity aprovechó el escenario del South Summit para mostrar cómo iPASS permite digitalizar y gestionar el ciclo de vida completo de un producto, ofreciendo transparencia y confianza a lo largo de toda la cadena de valor."
+     "text": "iCommunity's technical and sales teams used South Summit as a platform to demonstrate how iPass enables companies to digitize and manage a product's entire lifecycle, delivering transparency and trust throughout the value chain."
     },
     {
      "type": "paragraph",
-     "text": "En nuestras presentaciones y reuniones con startups, inversores y corporaciones, explicamos cómo iPASS:"
+     "text": "In our presentations and meetings with startups, investors, and corporations, we explained how iPass:"
     },
     {
      "type": "list",
      "items": [
-      "Emite pasaportes digitales interoperables basados en credenciales verificables.",
-      "Facilita la trazabilidad de productos desde su origen hasta el consumidor final.",
-      "Cumple con los estándares europeos en materia de identidad y sostenibilidad.",
-      "Se integra fácilmente con los sistemas de gestión de las empresas mediante APIs."
+      "Issues interoperable digital passports based on verifiable credentials.",
+      "Enables product traceability from origin to end consumer.",
+      "Complies with European identity and sustainability standards.",
+      "Integrates easily with companies' management systems through APIs."
      ]
     },
     {
      "type": "paragraph",
-     "text": "El mensaje clave fue claro: el PDP no debe verse como una carga regulatoria, sino como una oportunidad de innovación y ventaja competitiva."
+     "text": "The key message was clear: the DPP should not be viewed as a regulatory burden, but as an opportunity for innovation and competitive advantage."
     },
     {
      "type": "heading",
-     "text": "Casos de uso sectoriales que presentamos en Madrid"
+     "text": "Industry Use Cases We Presented in Madrid"
     },
     {
      "type": "paragraph",
-     "text": "Durante el evento, aterrizamos el potencial de iPASS en los sectores prioritarios definidos por la Comisión Europea:"
+     "text": "During the event, we demonstrated practical applications of iPass in the priority sectors identified by the European Commission:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: Mostramos cómo iPASS permite registrar información sobre fibras sostenibles, procesos de teñido y confección con menor impacto ambiental, así como opciones de reciclaje. El consumidor podrá escanear un código y conocer el historial completo de su prenda.",
-      "Electrónica: Explicamos cómo los fabricantes pueden usar iPASS para certificar la procedencia de materiales como litio o cobalto, registrar el consumo energético y facilitar la reutilización de dispositivos, combatiendo la obsolescencia programada.",
-      "Baterías: Presentamos cómo el PDP, gestionado con iPASS, ayuda a cumplir con la normativa que exige detallar materias primas, huella de carbono y capacidad de reciclaje de baterías para vehículos eléctricos e industria.",
-      "Materiales de construcción: Mostramos ejemplos de cómo iPASS puede documentar la eficiencia energética, emisiones y uso de recursos en materiales de construcción, aportando valor a promotoras e ingenierías que buscan certificaciones de sostenibilidad."
+      "Textiles and footwear: We showed how iPass can record information on sustainable fibers, dyeing and garment manufacturing processes with a lower environmental impact, and recycling options. Consumers will be able to scan a code and view their garment's complete history.",
+      "Electronics: We explained how manufacturers can use iPass to certify the origin of materials such as lithium or cobalt, record energy consumption, and facilitate device reuse, combating planned obsolescence.",
+      "Batteries: We presented how a DPP managed with iPass helps companies comply with regulations requiring details on the raw materials, carbon footprint, and recyclability of electric vehicle and industrial batteries.",
+      "Construction materials: We shared examples of how iPass can document energy efficiency, emissions, and resource use in construction materials, adding value for property developers and engineering firms seeking sustainability certifications."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos ejemplos despertaron gran interés entre los asistentes, especialmente entre startups y corporaciones que ya están preparando sus cadenas de valor para adaptarse al marco regulatorio."
+     "text": "These examples generated significant interest among attendees, particularly startups and corporations already preparing their value chains to adapt to the regulatory framework."
     },
     {
      "type": "heading",
-     "text": "Networking con startups, inversores y corporaciones"
+     "text": "Networking with Startups, Investors, and Corporations"
     },
     {
      "type": "paragraph",
-     "text": "El South Summit es reconocido por ser un gran espacio de networking, y nuestra participación con iPASS no fue la excepción. Durante el evento, el equipo de iCommunity mantuvo reuniones con:"
+     "text": "South Summit is recognized as a leading networking venue, and our participation with iPass was no exception. During the event, the iCommunity team held meetings with:"
     },
     {
      "type": "list",
      "items": [
-      "Startups de moda sostenible y reciclaje textil, interesadas en integrarse en el ecosistema de iPASS para dar mayor transparencia a sus procesos.",
-      "Corporaciones tecnológicas del sector electrónico, que buscan anticiparse a la regulación y mejorar la confianza de sus clientes.",
-      "Fondos de inversión y venture capital, que vieron en iPASS un producto con un mercado potencial enorme en los próximos años.",
-      "Entidades públicas y asociaciones empresariales, que valoran a iPASS como aliado para facilitar la transición hacia una economía circular."
+      "Sustainable fashion and textile recycling startups interested in joining the iPass ecosystem to bring greater transparency to their processes.",
+      "Technology corporations in the electronics sector seeking to get ahead of regulations and strengthen customer trust.",
+      "Investment and venture capital funds that recognized iPass as a product with enormous market potential in the coming years.",
+      "Public bodies and business associations that see iPass as a valuable ally in facilitating the transition to a circular economy."
      ]
     },
     {
      "type": "paragraph",
-     "text": "El interés demostrado confirma que los sectores priorizados están buscando activamente soluciones concretas, y que iPASS encaja perfectamente en esa necesidad."
+     "text": "The interest shown confirms that priority sectors are actively seeking practical solutions and that iPass is ideally suited to meet this need."
     },
     {
      "type": "heading",
-     "text": "Visibilidad y repercusión en el ecosistema emprendedor"
+     "text": "Visibility and Impact Within the Entrepreneurial Ecosystem"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra participación en South Summit Madrid 2025 también nos permitió reforzar el posicionamiento de iCommunity como actor clave en el ecosistema de innovación español. Varios medios especializados recogieron nuestra presencia, destacando la relevancia del PDP como uno de los temas que más atención están generando en Europa."
+     "text": "Our participation in South Summit Madrid 2025 also allowed us to strengthen iCommunity's position as a key player in Spain's innovation ecosystem. Several specialist media outlets covered our presence, highlighting the relevance of the DPP as one of the topics attracting the most attention in Europe."
     },
     {
      "type": "paragraph",
-     "text": "En redes sociales, recibimos menciones y compartidos de emprendedores, expertos en sostenibilidad y representantes institucionales, lo que amplificó nuestro alcance y visibilidad."
+     "text": "On social media, entrepreneurs, sustainability experts, and institutional representatives mentioned us and shared our content, expanding our reach and visibility."
     },
     {
      "type": "paragraph",
-     "text": "Este tipo de repercusión es esencial para consolidar a iPASS no solo como un producto tecnológico, sino como un referente en innovación regulatoria y sostenibilidad."
+     "text": "This kind of exposure is essential to establishing iPass not only as a technology product, but also as a benchmark for regulatory innovation and sustainability."
     },
     {
      "type": "heading",
-     "text": "Aprendizajes clave del South Summit"
+     "text": "Key Takeaways from South Summit"
     },
     {
      "type": "paragraph",
-     "text": "Entre las tendencias que detectamos durante el evento, destacamos:"
+     "text": "Among the trends we identified during the event, the following stood out:"
     },
     {
      "type": "list",
      "items": [
-      "El PDP es percibido como una prioridad urgente para las empresas, no como un asunto lejano.",
-      "Los inversores están atentos a startups y soluciones vinculadas a sostenibilidad e identidad digital, porque saben que el marco regulatorio europeo abre un mercado masivo.",
-      "La colaboración entre startups y grandes corporaciones será clave para escalar soluciones como iPASS.",
-      "Existe un fuerte interés en conectar innovación, sostenibilidad y rentabilidad, algo que encaja plenamente con la propuesta de valor de iPASS."
+      "Companies see the DPP as an urgent priority, not a distant concern.",
+      "Investors are closely watching startups and solutions related to sustainability and digital identity because they know the European regulatory framework is opening up a vast market.",
+      "Collaboration between startups and large corporations will be essential to scaling solutions such as iPass.",
+      "There is strong interest in connecting innovation, sustainability, and profitability, which aligns perfectly with the iPass value proposition."
      ]
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras el South Summit"
+     "text": "Next Steps After South Summit"
     },
     {
      "type": "paragraph",
-     "text": "Tras nuestra participación en Madrid, el equipo de iCommunity ha definido varios próximos pasos:"
+     "text": "Following our participation in Madrid, the iCommunity team has defined several next steps:"
     },
     {
      "type": "list",
      "items": [
-      "Impulsar pilotos con empresas de los sectores prioritarios, especialmente en textil y electrónica, donde ya hemos establecido contactos.",
-      "Ampliar la red de partners estratégicos, sumando a asociaciones y clústeres que representan a las industrias más afectadas.",
-      "Difundir casos de uso y formación, ayudando a empresas a comprender las ventajas del PDP y cómo implementarlo.",
-      "Preparar nuevas presentaciones internacionales, consolidando la visibilidad de iPASS en el ecosistema europeo."
+      "Advance pilot projects with companies in priority sectors, particularly textiles and electronics, where we have already established contacts.",
+      "Expand our network of strategic partners by bringing in associations and clusters representing the industries most affected.",
+      "Share use cases and provide training to help companies understand the benefits of the DPP and how to implement it.",
+      "Prepare new international presentations to strengthen iPass's visibility within the European ecosystem."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en el South Summit Madrid 2025 ha sido un hito estratégico en la promoción de iPASS. Hemos podido mostrar cómo el Pasaporte Digital de Producto se convertirá en una herramienta clave para los sectores prioritarios —textiles, electrónicos, baterías y materiales de construcción— y cómo nuestra solución está preparada para liderar este cambio."
+     "text": "iCommunity's participation in South Summit Madrid 2025 marked a strategic milestone in promoting iPass. We demonstrated how the Digital Product Passport will become a key tool for priority sectors—textiles, electronics, batteries, and construction materials—and how our solution is ready to lead this change."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: validación del producto, gran interés de inversores y corporaciones, nuevas alianzas y visibilidad en el ecosistema emprendedor español."
+     "text": "The overall outcome was very positive: product validation, strong interest from investors and corporations, new partnerships, and visibility within Spain's entrepreneurial ecosystem."
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS, desde iCommunity queremos no solo ayudar a las empresas a cumplir con la regulación, sino también convertir el PDP en un motor de innovación, competitividad y confianza."
+     "text": "With iPass, we at iCommunity aim not only to help companies comply with regulations, but also to turn the DPP into a driver of innovation, competitiveness, and trust."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "reguladores-auditores-y-su-rol-en-supervisar-el-cumplimiento-del-dpp",
@@ -2635,11 +2635,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 4,
   "title": {
    "es": "iCommunity en EIC 2025: iPASS como pilar de la identidad digital y la nube en Europa",
-   "en": "iCommunity en EIC 2025: iPASS como pilar de la identidad digital y la nube en Europa"
+   "en": "iCommunity at EIC 2025: iPass as a Pillar of Digital Identity and the Cloud in Europe"
   },
   "description": {
    "es": "Del 6 al 9 de mayo de 2025, Berlín acogió la European Identity & Cloud Conference (EIC 2025), el evento europeo de referencia en materia de identidad digital, gestión de accesos (IAM), gobernanza y cloud.",
-   "en": "Del 6 al 9 de mayo de 2025, Berlín acogió la European Identity & Cloud Conference (EIC 2025), el evento europeo de referencia en materia de identidad digital, gestión de accesos (IAM), gobernanza y cloud."
+   "en": "From May 6 to 9, 2025, Berlin hosted the European Identity & Cloud Conference (EIC 2025), Europe's leading event for digital identity, identity and access management (IAM), governance, and cloud computing."
   },
   "blocks": {
    "es": [
@@ -2774,134 +2774,134 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 6 al 9 de mayo de 2025, Berlín acogió la European Identity & Cloud Conference (EIC 2025), el evento europeo de referencia en materia de identidad digital, gestión de accesos (IAM), gobernanza y cloud. Durante cuatro días, más de 1.500 profesionales del sector, 300 ponentes internacionales y 60 partners tecnológicos compartieron experiencias, tendencias y soluciones en torno a uno de los mayores desafíos de la transformación digital: cómo gestionar la identidad de forma segura, interoperable y escalable en un mundo cada vez más conectado."
+     "text": "From May 6 to 9, 2025, Berlin hosted the European Identity & Cloud Conference (EIC 2025), Europe's leading event for digital identity, identity and access management (IAM), governance, and cloud computing. Over four days, more than 1,500 industry professionals, 300 international speakers, and 60 technology partners shared experiences, trends, and solutions addressing one of the greatest challenges of digital transformation: how to manage identity securely, interoperably, and at scale in an increasingly connected world."
     },
     {
      "type": "paragraph",
-     "text": "En este marco, iCommunity presentó iPASS, nuestro innovador producto diseñado para convertirse en la base de confianza digital en Europa. La presencia en EIC 2025 fue estratégica: el evento reúne a los líderes que están definiendo el futuro de la identidad digital en el continente y nos brindó una plataforma perfecta para mostrar el potencial de iPASS ante un público altamente especializado."
+     "text": "Against this backdrop, iCommunity presented iPass, our innovative product designed to become the foundation of digital trust in Europe. Our presence at EIC 2025 was strategic: the event brings together the leaders shaping the future of digital identity on the continent and provided an ideal platform to showcase the potential of iPass to a highly specialized audience."
     },
     {
      "type": "heading",
-     "text": "El contexto: identidad digital en la era de la nube"
+     "text": "The Context: Digital Identity in the Cloud Era"
     },
     {
      "type": "paragraph",
-     "text": "La digitalización de la sociedad está generando nuevos retos en torno a la identidad. Las organizaciones necesitan verificar con precisión quién accede a sus sistemas, cómo se utilizan los datos y qué garantías se ofrecen a ciudadanos y clientes. A la vez, la nube se ha consolidado como la infraestructura dominante, lo que obliga a repensar la seguridad y la gobernanza."
+     "text": "The digitalization of society is creating new identity-related challenges. Organizations need to verify precisely who accesses their systems, how data is used, and what safeguards are provided to citizens and customers. At the same time, the cloud has established itself as the dominant infrastructure, requiring a rethink of security and governance."
     },
     {
      "type": "paragraph",
-     "text": "Los principales ejes de discusión en EIC 2025 giraron en torno a:"
+     "text": "The main topics of discussion at EIC 2025 centered on:"
     },
     {
      "type": "list",
      "items": [
-      "La implementación de eIDAS 2.0 y la cartera de identidad digital europea (EUDI Wallet).",
-      "El auge de las credenciales verificables y descentralizadas como alternativa al modelo tradicional basado en contraseñas.",
-      "La necesidad de orquestar identidades en entornos multicloud, garantizando la interoperabilidad y la soberanía de los datos.",
-      "La convergencia entre identidad digital y ciberseguridad, con el usuario en el centro."
+      "The implementation of eIDAS 2.0 and the European Digital Identity Wallet (EUDI Wallet).",
+      "The rise of verifiable and decentralized credentials as an alternative to the traditional password-based model.",
+      "The need to orchestrate identities across multicloud environments while ensuring interoperability and data sovereignty.",
+      "The convergence of digital identity and cybersecurity, with the user at the center."
      ]
     },
     {
      "type": "paragraph",
-     "text": "En este escenario, iPASS se presenta como una solución alineada con estas tendencias, capaz de cubrir tanto la gestión de la identidad de personas como la trazabilidad de productos en un mismo ecosistema confiable."
+     "text": "In this landscape, iPass offers a solution aligned with these trends, capable of addressing both individual identity management and product traceability within a single trusted ecosystem."
     },
     {
      "type": "heading",
-     "text": "La propuesta de iCommunity en Berlín"
+     "text": "iCommunity's Offering in Berlin"
     },
     {
      "type": "paragraph",
-     "text": "Durante nuestras sesiones y demostraciones en el stand, el equipo técnico y comercial de iCommunity mostró cómo iPASS aborda de forma integral los retos actuales de identidad digital."
+     "text": "During our sessions and booth demonstrations, iCommunity's technical and sales teams showed how iPass comprehensively addresses today's digital identity challenges."
     },
     {
      "type": "paragraph",
-     "text": "Algunas de las funcionalidades que presentamos en EIC 2025 fueron:"
+     "text": "Some of the features we presented at EIC 2025 included:"
     },
     {
      "type": "list",
      "items": [
-      "Emisión y gestión de credenciales verificables para ciudadanos, empleados y empresas, en conformidad con estándares europeos como W3C VC Data Model y DID Core.",
-      "Pasaporte Digital de Producto, alineado con la regulación de la UE que obligará a textiles, electrónicos, baterías y materiales de construcción a contar con un PDP desde 2026.",
-      "Experiencia de usuario simplificada, donde el ciudadano puede controlar desde su móvil qué datos comparte y con quién, reforzando el principio de soberanía digital."
+      "Issuance and management of verifiable credentials for citizens, employees, and businesses, in compliance with European standards such as the W3C VC Data Model and DID Core.",
+      "A Digital Product Passport, aligned with EU regulations that will require textiles, electronics, batteries, and construction materials to have a DPP starting in 2026.",
+      "A simplified user experience that allows citizens to control which data they share and with whom from their mobile devices, reinforcing the principle of digital sovereignty."
      ]
     },
     {
      "type": "paragraph",
-     "text": "El público asistente valoró la capacidad de iPASS para combinar cumplimiento regulatorio, interoperabilidad técnica y usabilidad real, tres aspectos fundamentales que muchas veces aparecen separados en otras soluciones."
+     "text": "Attendees valued the ability of iPass to combine regulatory compliance, technical interoperability, and practical usability—three essential aspects that are often addressed separately in other solutions."
     },
     {
      "type": "heading",
-     "text": "Networking con líderes del ecosistema de identidad"
+     "text": "Networking with Leaders in the Identity Ecosystem"
     },
     {
      "type": "paragraph",
-     "text": "EIC 2025 es también el lugar donde se definen las alianzas estratégicas que marcarán la evolución de la identidad digital en Europa. El equipo de iCommunity mantuvo reuniones con:"
+     "text": "EIC 2025 is also where strategic partnerships are forged that will shape the evolution of digital identity in Europe. The iCommunity team held meetings with:"
     },
     {
      "type": "list",
      "items": [
-      "Proveedores de servicios cloud, interesados en integrar credenciales verificables en sus plataformas.",
-      "Asociaciones y organismos europeos de estandarización, que trabajan en la definición de marcos comunes para la identidad.",
-      "Empresas de consultoría en ciberseguridad e IAM, que buscan partners tecnológicos para implementar proyectos en clientes corporativos.",
-      "Representantes institucionales, involucrados en el despliegue de la identidad digital europea."
+      "Cloud service providers interested in integrating verifiable credentials into their platforms.",
+      "European associations and standards bodies working to define common identity frameworks.",
+      "Cybersecurity and IAM consulting firms seeking technology partners to implement projects for corporate clients.",
+      "Institutional representatives involved in the rollout of European digital identity."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Este networking refuerza nuestra posición y abre la puerta a colaboraciones de alto valor en los próximos meses."
+     "text": "This networking strengthens our position and opens the door to high-value collaborations in the coming months."
     },
     {
      "type": "heading",
-     "text": "Aprendizajes y tendencias recogidos en Berlín"
+     "text": "Lessons and Trends from Berlin"
     },
     {
      "type": "paragraph",
-     "text": "De las múltiples ponencias y mesas redondas, el equipo de iCommunity extrajo varias lecciones clave:"
+     "text": "The iCommunity team drew several key lessons from the many presentations and panel discussions:"
     },
     {
      "type": "list",
      "items": [
-      "El modelo passwordless ya es imparable: las contraseñas están siendo sustituidas por credenciales verificables y biometría.",
-      "La identidad digital será multisectorial: desde la banca hasta la movilidad, pasando por la salud y la educación, todos los sectores convergerán en un marco común.",
-      "La interoperabilidad global es crítica: las soluciones deben funcionar tanto dentro como fuera de la UE si quieren escalar.",
-      "El vínculo entre identidad y confianza será un diferenciador competitivo: no basta con cumplir, hay que generar credibilidad en el mercado."
+      "The shift to passwordless authentication is now unstoppable: passwords are being replaced by verifiable credentials and biometrics.",
+      "Digital identity will span multiple sectors: from banking and mobility to healthcare and education, all sectors will converge around a common framework.",
+      "Global interoperability is critical: solutions must work both within and outside the EU if they are to scale.",
+      "The link between identity and trust will be a competitive differentiator: compliance alone is not enough; organizations must build credibility in the market."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos insights confirman que la hoja de ruta de iPASS está perfectamente alineada con las necesidades del mercado y las tendencias regulatorias."
+     "text": "These insights confirm that the iPass roadmap is fully aligned with market needs and regulatory trends."
     },
     {
      "type": "heading",
-     "text": "Impacto mediático y repercusión"
+     "text": "Media Coverage and Impact"
     },
     {
      "type": "paragraph",
-     "text": "Nuestra presencia en EIC 2025 tuvo eco en medios especializados en ciberseguridad, identidad digital y cloud. Algunos periodistas destacaron la capacidad de iPASS para cubrir tanto la identidad de personas como la de productos, uniendo dos mundos que hasta ahora avanzaban en paralelo."
+     "text": "Our presence at EIC 2025 attracted coverage from media outlets specializing in cybersecurity, digital identity, and cloud computing. Some journalists highlighted the ability of iPass to address both individual and product identity, bringing together two worlds that had previously evolved in parallel."
     },
     {
      "type": "paragraph",
-     "text": "En redes sociales, varios expertos compartieron nuestras demos y charlas, multiplicando el alcance del mensaje y consolidando a iCommunity como un actor innovador en el ecosistema europeo de identidad digital."
+     "text": "On social media, several experts shared our demonstrations and talks, amplifying our message and strengthening iCommunity's position as an innovative player in the European digital identity ecosystem."
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en la European Identity & Cloud Conference 2025 nos ha permitido validar una vez más que iPASS es una solución estratégica para el futuro de la identidad digital en Europa."
+     "text": "iCommunity's participation in the European Identity & Cloud Conference 2025 has enabled us to reaffirm that iPass is a strategic solution for the future of digital identity in Europe."
     },
     {
      "type": "paragraph",
-     "text": "El balance es muy positivo: visibilidad en el ecosistema internacional, interés de actores clave, nuevas alianzas y un feedback de gran valor para seguir mejorando el producto."
+     "text": "The outcome is highly positive: visibility within the international ecosystem, interest from key stakeholders, new partnerships, and valuable feedback to help us continue improving the product."
     },
     {
      "type": "paragraph",
-     "text": "Estamos convencidos de que iPASS se consolidará como la referencia en credenciales verificables y pasaportes digitales, acompañando a ciudadanos, empresas y gobiernos en la construcción de una economía digital más segura y confiable."
+     "text": "We are confident that iPass will establish itself as the benchmark for verifiable credentials and digital passports, supporting citizens, businesses, and governments in building a more secure and trustworthy digital economy."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-y-axalpha-consulting-unen-fuerzas-para-impulsar-la-tecnologia-blockchain",
@@ -2995,11 +2995,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity en The Wave 2025: iPASS y el futuro del Pasaporte Digital de Producto en sectores clave",
-   "en": "iCommunity en The Wave 2025: iPASS y el futuro del Pasaporte Digital de Producto en sectores clave"
+   "en": "iCommunity at The Wave 2025: iPass and the Future of the Digital Product Passport in Key Sectors"
   },
   "description": {
    "es": "iCommunity presentó iPASS, en la primera edición de The Wave 2025, un encuentro que reunió a más de 100 expertos, decenas de empresas y una zona expositiva con más de 30 proyectos tecnológicos e innovadores.",
-   "en": "iCommunity presentó iPASS, en la primera edición de The Wave 2025, un encuentro que reunió a más de 100 expertos, decenas de empresas y una zona expositiva con más de 30 proyectos tecnológicos e innovadores."
+   "en": "iCommunity presented iPass at the inaugural edition of The Wave 2025, an event that brought together more than 100 experts, dozens of companies, and an exhibition area featuring over 30 innovative technology projects."
   },
   "blocks": {
    "es": [
@@ -3135,135 +3135,135 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 19 al 21 de marzo de 2025, la ciudad de Zaragoza acogió la primera edición de The Wave 2025, un encuentro que reunió a más de 100 expertos, decenas de empresas y una zona expositiva con más de 30 proyectos tecnológicos e innovadores. Concebido como un foro donde convergen tecnología, innovación y negocio, The Wave se ha consolidado desde su nacimiento como un punto de referencia para quienes quieren anticiparse a las tendencias que transformarán la economía y la sociedad en los próximos años."
+     "text": "From March 19 to 21, 2025, the city of Zaragoza hosted the inaugural edition of The Wave 2025, an event that brought together more than 100 experts, dozens of companies, and an exhibition area featuring over 30 innovative technology projects. Conceived as a forum where technology, innovation, and business converge, The Wave has established itself from the outset as a key meeting point for those seeking to anticipate the trends that will transform the economy and society in the coming years."
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, iCommunity participó para presentar iPASS, el producto que estamos desarrollando para dar respuesta a una de las grandes prioridades regulatorias y empresariales de Europa: la implantación del Pasaporte Digital de Producto (PDP)."
+     "text": "Against this backdrop, iCommunity participated to present iPass, the product we are developing to address one of Europe's major regulatory and business priorities: the implementation of the Digital Product Passport (DPP)."
     },
     {
      "type": "heading",
-     "text": "El reto europeo: transparencia y sostenibilidad en la cadena de valor"
+     "text": "The European Challenge: Transparency and Sustainability Across the Value Chain"
     },
     {
      "type": "paragraph",
-     "text": "La Unión Europea ha establecido que, a partir de 2026, determinados sectores estratégicos deberán incorporar un Pasaporte Digital de Producto obligatorio. El objetivo es claro: mejorar la transparencia, fomentar la sostenibilidad y acelerar la transición hacia una economía circular, permitiendo que consumidores, empresas y autoridades tengan acceso a información fiable sobre los productos que circulan en el mercado europeo."
+     "text": "The European Union has stipulated that, starting in 2026, certain strategic sectors will be required to introduce a Digital Product Passport. The objective is clear: to improve transparency, promote sustainability, and accelerate the transition to a circular economy, giving consumers, businesses, and authorities access to reliable information about products circulating in the European market."
     },
     {
      "type": "paragraph",
-     "text": "Los primeros sectores priorizados son:"
+     "text": "The initial priority sectors are:"
     },
     {
      "type": "list",
      "items": [
-      "Baterías: tanto industriales como de vehículos eléctricos, con exigencias sobre el suministro de materias primas y su capacidad de reciclaje.",
-      "Textiles y calzado: prendas de vestir y zapatos, con atención al uso de materiales sostenibles, procesos de producción y reducción de residuos.",
-      "Materiales de construcción: productos como hormigón, acero o aislamientos, documentando el uso de energía, emisiones y eficiencia de recursos.",
-      "Electrónica: dispositivos de consumo y componentes, con foco en el origen de materiales, consumo energético y reciclabilidad."
+      "Batteries: both industrial and electric vehicle batteries, with requirements covering raw material sourcing and recyclability.",
+      "Textiles and footwear: clothing and shoes, with a focus on sustainable materials, production processes, and waste reduction.",
+      "Construction materials: products such as concrete, steel, and insulation, documenting energy use, emissions, and resource efficiency.",
+      "Electronics: consumer devices and components, with a focus on material origins, energy consumption, and recyclability."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Más adelante, el PDP se extenderá a otros sectores como el mobiliario y, eventualmente, a la mayoría de los bienes de consumo comercializados en la Unión Europea."
+     "text": "Later, the DPP will extend to other sectors, such as furniture, and eventually to most consumer goods sold in the European Union."
     },
     {
      "type": "paragraph",
-     "text": "En este escenario, iPASS se presenta como la herramienta tecnológica idónea para que las empresas puedan cumplir con la normativa y convertir la obligación regulatoria en una ventaja competitiva."
+     "text": "In this context, iPass is positioned as the ideal technology tool to help companies comply with regulations and turn a regulatory obligation into a competitive advantage."
     },
     {
      "type": "paragraph",
-     "text": "La propuesta de iCommunity en The Wave 2025 Durante nuestra participación en The Wave, el equipo de iCommunity centró su mensaje en cómo iPASS permite gestionar el ciclo de vida completo de un producto a través de un pasaporte digital interoperable, seguro y fácil de implementar. La presentación atrajo gran interés, ya que las empresas y profesionales de los sectores mencionados buscan respuestas concretas a preguntas como:"
+     "text": "iCommunity's Offering at The Wave 2025. During our participation in The Wave, the iCommunity team focused its message on how iPass enables businesses to manage a product's entire lifecycle through an interoperable, secure, and easy-to-implement digital passport. The presentation attracted considerable interest, as companies and professionals in the sectors mentioned are looking for concrete answers to questions such as:"
     },
     {
      "type": "paragraph",
-     "text": "¿Cómo puedo recopilar y estructurar la información que exige la UE para cada producto?"
+     "text": "How can I collect and structure the information the EU requires for each product?"
     },
     {
      "type": "paragraph",
-     "text": "¿Qué tecnologías garantizan la veracidad de los datos y evitan manipulaciones?"
+     "text": "Which technologies ensure data accuracy and prevent tampering?"
     },
     {
      "type": "paragraph",
-     "text": "¿Cómo puedo integrar esta obligación en mis procesos sin encarecer costes ni frenar la innovación?"
+     "text": "How can I integrate this requirement into my processes without increasing costs or slowing innovation?"
     },
     {
      "type": "paragraph",
-     "text": "Con iPASS mostramos que la respuesta está en una plataforma que combina:"
+     "text": "With iPass, we demonstrated that the answer lies in a platform that combines:"
     },
     {
      "type": "list",
      "items": [
-      "Interoperabilidad con estándares europeos, garantizando que los pasaportes digitales puedan ser consultados y utilizados en cualquier mercado de la UE.",
-      "Facilidad de integración, con APIs que permiten conectar la plataforma con los sistemas de gestión de las empresas.",
-      "Transparencia y trazabilidad, proporcionando datos claros al consumidor final y a las autoridades competentes.",
-      "Credenciales digitales verificables, que aseguran la autenticidad de la información a lo largo de toda la cadena de valor."
+      "Interoperability with European standards, ensuring that digital passports can be accessed and used in any EU market.",
+      "Easy integration, with APIs that connect the platform to companies' management systems.",
+      "Transparency and traceability, providing clear data to end consumers and the relevant authorities.",
+      "Verifiable digital credentials, ensuring the authenticity of information throughout the value chain."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Casos de uso sectoriales presentados en Zaragoza En nuestras sesiones y conversaciones con asistentes, aterrizamos el potencial de iPASS en los sectores prioritarios definidos por la Comisión Europea:"
+     "text": "Sector-Specific Use Cases Presented in Zaragoza. In our sessions and conversations with attendees, we demonstrated the practical potential of iPass in the priority sectors identified by the European Commission:"
     },
     {
      "type": "list",
      "items": [
-      "Textiles y calzado: iPASS permite documentar el origen de las fibras, la sostenibilidad de los procesos de producción y la reciclabilidad de los materiales, ofreciendo al consumidor final información transparente sobre la prenda que compra.",
-      "Electrónica: A través del pasaporte digital, se puede certificar la procedencia de minerales críticos, el consumo energético de los dispositivos y su capacidad de reciclaje. Con ello se combate la obsolescencia programada y se facilita el reacondicionamiento de productos electrónicos.",
-      "Baterías: Uno de los sectores más sensibles por su relación con la transición energética. Con iPASS, fabricantes y distribuidores pueden cumplir con la obligación de informar sobre materias primas, huella de carbono y capacidad de reciclaje de cada batería, aportando confianza tanto a clientes como a reguladores.",
-      "Materiales de construcción: iPASS facilita la documentación sobre eficiencia energética, emisiones y uso de recursos en materiales como acero, cemento o aislantes, clave para la descarbonización del sector de la construcción."
+      "Textiles and footwear: iPass enables companies to document the origin of fibers, the sustainability of production processes, and the recyclability of materials, offering end consumers transparent information about the garments they buy.",
+      "Electronics: the digital passport can certify the origin of critical minerals, devices' energy consumption, and their recyclability. This helps combat planned obsolescence and facilitates the refurbishment of electronic products.",
+      "Batteries: one of the most sensitive sectors because of its connection to the energy transition. With iPass, manufacturers and distributors can meet their obligation to report on each battery's raw materials, carbon footprint, and recyclability, building confidence among customers and regulators alike.",
+      "Construction materials: iPass makes it easier to document energy efficiency, emissions, and resource use for materials such as steel, cement, and insulation—key factors in decarbonizing the construction sector."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Cada uno de estos ejemplos ilustra cómo el pasaporte digital, lejos de ser un simple requisito burocrático, se convierte en una herramienta estratégica para innovar, ganar competitividad y generar confianza."
+     "text": "Each of these examples illustrates how the digital passport, far from being a mere bureaucratic requirement, becomes a strategic tool for innovation, competitiveness, and trust."
     },
     {
      "type": "paragraph",
-     "text": "Networking y colaboraciones estratégicas The Wave 2025 no solo fue un espacio para mostrar tecnología, sino también para construir relaciones y explorar colaboraciones. El equipo de iCommunity mantuvo reuniones con:"
+     "text": "Networking and Strategic Partnerships. The Wave 2025 was not only a place to showcase technology, but also an opportunity to build relationships and explore partnerships. The iCommunity team held meetings with:"
     },
     {
      "type": "list",
      "items": [
-      "Fabricantes de materiales de construcción, interesados en digitalizar su documentación y demostrar el impacto positivo de sus innovaciones sostenibles.",
-      "Startups de economía circular, que buscan integrarse en plataformas como iPASS para ofrecer servicios complementarios (reciclaje, reacondicionamiento, logística inversa).",
-      "Administraciones locales y regionales, que ven en el PDP una oportunidad para impulsar la sostenibilidad en sus territorios.",
-      "Empresas textiles españolas, que están empezando a preparar sus cadenas de valor para adaptarse a la nueva normativa."
+      "Construction material manufacturers interested in digitizing their documentation and demonstrating the positive impact of their sustainable innovations.",
+      "Circular economy startups seeking to integrate with platforms such as iPass to offer complementary services, including recycling, refurbishment, and reverse logistics.",
+      "Local and regional authorities that see the DPP as an opportunity to promote sustainability in their territories.",
+      "Spanish textile companies beginning to prepare their value chains for the new regulations."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos encuentros refuerzan nuestra convicción de que iPASS puede convertirse en un estándar de facto para el cumplimiento del PDP en múltiples industrias."
+     "text": "These meetings reinforce our conviction that iPass can become a de facto standard for DPP compliance across multiple industries."
     },
     {
      "type": "paragraph",
-     "text": "Visibilidad y repercusión en el ecosistema innovador La participación en The Wave también supuso un gran impulso en términos de visibilidad. Medios locales y especializados destacaron la relevancia del pasaporte digital de producto y la oportunidad que representa para sectores clave de la economía española. El interés del público asistente se reflejó en una alta participación en nuestras charlas y en el tráfico recibido en nuestro stand, consolidando a iCommunity como un actor referente en la construcción del futuro marco digital europeo."
+     "text": "Visibility and Impact Within the Innovation Ecosystem. Participating in The Wave also significantly boosted our visibility. Local and specialist media highlighted the relevance of the Digital Product Passport and the opportunity it represents for key sectors of the Spanish economy. Attendees' interest was reflected in strong participation in our talks and high visitor traffic at our stand, reinforcing iCommunity's position as a leading player in shaping Europe's future digital framework."
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras The Wave"
+     "text": "Next Steps After The Wave"
     },
     {
      "type": "paragraph",
-     "text": "Tras nuestra experiencia en Zaragoza, el equipo de iCommunity ha definido varias líneas de acción: Pilotos sectoriales: poner en marcha pruebas de iPASS con empresas textiles, de electrónica y de materiales de construcción interesadas en adelantarse a la regulación."
+     "text": "Following our experience in Zaragoza, the iCommunity team has defined several action areas: Sector-specific pilots: launch iPass trials with textile, electronics, and construction material companies interested in getting ahead of the regulations."
     },
     {
      "type": "list",
      "items": [
-      "Alianzas estratégicas: establecer colaboraciones con asociaciones industriales y clústeres sectoriales para escalar el uso del PDP.",
-      "Divulgación y formación: participar en jornadas y programas de capacitación que ayuden a las empresas a comprender y aplicar la normativa del PDP.",
-      "Expansión internacional: reforzar nuestra presencia en foros europeos donde se discute la implementación del pasaporte digital de producto."
+      "Strategic alliances: establish partnerships with industry associations and sector-specific clusters to scale up DPP adoption.",
+      "Outreach and training: participate in events and training programs that help companies understand and apply DPP regulations.",
+      "International expansion: strengthen our presence at European forums where the implementation of the Digital Product Passport is being discussed."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La presencia de iCommunity en The Wave 2025 nos ha permitido confirmar que los sectores prioritarios definidos por la Unión Europea ya están buscando soluciones concretas para cumplir con la inminente obligatoriedad del Pasaporte Digital de Producto. Con iPASS, ofrecemos una plataforma preparada para acompañar a las empresas en este reto, combinando cumplimiento normativo, innovación tecnológica y valor añadido para el mercado y los consumidores. El balance de nuestra participación es muy positivo: validación del producto, interés real de los sectores afectados, nuevas alianzas estratégicas y visibilidad en el ecosistema innovador español."
+     "text": "iCommunity's presence at The Wave 2025 confirmed that the priority sectors identified by the European Union are already seeking practical solutions to comply with the imminent Digital Product Passport requirement. With iPass, we offer a platform ready to support companies through this challenge, combining regulatory compliance, technological innovation, and added value for the market and consumers. Our participation delivered very positive results: product validation, genuine interest from the affected sectors, new strategic alliances, and greater visibility within Spain's innovation ecosystem."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-presenta-ipass-en-el-mwc-barcelona-2025-identidad-digital-para-un-mundo-conectado",
@@ -3272,11 +3272,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 5,
   "title": {
    "es": "iCommunity presenta iPASS en el MWC Barcelona 2025: identidad digital para un mundo conectado",
-   "en": "iCommunity presenta iPASS en el MWC Barcelona 2025: identidad digital para un mundo conectado"
+   "en": "iCommunity presents iPASS at MWC Barcelona 2025: digital identity for a connected world"
   },
   "description": {
    "es": "iCommunity presentó iPASS en el MWC de Barcelona, el innovador producto que está desarrollando para revolucionar la gestión de la identidad digital de productos y personas.",
-   "en": "iCommunity presentó iPASS en el MWC de Barcelona, el innovador producto que está desarrollando para revolucionar la gestión de la identidad digital de productos y personas."
+   "en": "iCommunity presented iPASS at MWC Barcelona, the innovative product it is developing to revolutionize digital identity management for products and people."
   },
   "blocks": {
    "es": [
@@ -3406,129 +3406,129 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Del 3 al 6 de marzo de 2025, la ciudad de Barcelona volvió a convertirse en el epicentro mundial de la tecnología y la innovación con la celebración de una nueva edición del Mobile World Congress (MWC Barcelona 2025). Durante cuatro días, el recinto de Fira Gran Via reunió a más de 100.000 profesionales, 2.400 expositores y a las compañías más influyentes del sector de la conectividad, el IoT, el 5G, la inteligencia artificial y la transformación digital."
+     "text": "From March 3 to 6, 2025, Barcelona once again became the global epicenter of technology and innovation as it hosted the latest edition of Mobile World Congress (MWC Barcelona 2025). Over four days, the Fira Gran Via venue brought together more than 100,000 professionals, 2,400 exhibitors, and the most influential companies in connectivity, IoT, 5G, artificial intelligence, and digital transformation."
     },
     {
      "type": "paragraph",
-     "text": "En este entorno único, iCommunity presentó iPASS, el innovador producto que está desarrollando para revolucionar la gestión de la identidad digital de productos y personas. La participación en el MWC supuso un paso clave para dar a conocer nuestra visión de un futuro más seguro, transparente y conectado, en el que la confianza digital es la piedra angular."
+     "text": "In this unique setting, iCommunity presented iPASS, the innovative product it is developing to revolutionize digital identity management for products and people. Participating in MWC was a key step in sharing our vision of a safer, more transparent, and more connected future, with digital trust as its cornerstone."
     },
     {
      "type": "paragraph",
-     "text": "El contexto: conectividad y confianza como prioridades globales El MWC 2025 puso de manifiesto las tendencias que están marcando la agenda tecnológica internacional: La expansión del 5G y el inicio del 6G, que permitirán una conectividad ultrarrápida y nuevas aplicaciones en movilidad, smart cities y vehículos conectados."
+     "text": "The context: connectivity and trust as global priorities. MWC 2025 highlighted the trends shaping the international technology agenda: the expansion of 5G and the emergence of 6G, which will enable ultrafast connectivity and new applications in mobility, smart cities, and connected vehicles."
     },
     {
      "type": "list",
      "items": [
-      "El auge del Internet de las Cosas (IoT), con miles de millones de dispositivos generando datos en tiempo real que necesitan gestionarse de forma segura.",
-      "La transformación digital de la industria, desde la salud hasta la energía, pasando por la educación o la movilidad urbana.",
-      "La ciberseguridad y la identidad digital como ejes imprescindibles para garantizar la confianza en este nuevo ecosistema hiperconectado."
+      "The rise of the Internet of Things (IoT), with billions of devices generating real-time data that must be managed securely.",
+      "The digital transformation of industries, from healthcare and energy to education and urban mobility.",
+      "Cybersecurity and digital identity as essential pillars for ensuring trust in this new hyperconnected ecosystem."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Es precisamente en este último punto donde iPASS encaja a la perfección. En un mundo cada vez más digital, contar con un pasaporte digital verificable, interoperable y fácil de usar es esencial para que ciudadanos, empresas y administraciones puedan interactuar con confianza."
+     "text": "It is precisely in this last area that iPASS is a perfect fit. In an increasingly digital world, a verifiable, interoperable, and easy-to-use digital passport is essential for citizens, businesses, and public authorities to interact with confidence."
     },
     {
      "type": "heading",
-     "text": "La presentación de iPASS en el MWC"
+     "text": "Presenting iPASS at MWC"
     },
     {
      "type": "paragraph",
-     "text": "El equipo de iCommunity tuvo la oportunidad de mostrar en Barcelona cómo funciona iPASS y por qué se está convirtiendo en una solución estratégica para múltiples sectores. Durante nuestra presentación y en las demostraciones en el stand, ilustramos casos de uso concretos en los que un pasaporte digital marca la diferencia y será obligatorio a partir de 2026:"
+     "text": "The iCommunity team had the opportunity to demonstrate in Barcelona how iPASS works and why it is becoming a strategic solution for multiple sectors. During our presentation and booth demonstrations, we illustrated specific use cases in which a digital passport makes a difference and will be mandatory starting in 2026:"
     },
     {
      "type": "list",
      "items": [
-      "Electrónica: cubre dispositivos electrónicos de consumo y componentes, con foco en el origen de los materiales y la reciclabilidad.",
-      "Baterías: se aplica a baterías industriales y de vehículos eléctricos, exigiendo información sobre el suministro de materias primas y la capacidad de reciclaje.",
-      "Textiles y calzado: incluye prendas de vestir y calzado, centrándose en el uso de materiales sostenibles, procesos de producción y la reducción de residuos.",
-      "Materiales de construcción: abarca hormigón, acero y aislamientos, con el fin de documentar el uso de energía y la eficiencia de los recursos."
+      "Electronics: covers consumer electronic devices and components, focusing on material origins and recyclability.",
+      "Batteries: applies to industrial and electric vehicle batteries, requiring information on raw material sourcing and recycling capabilities.",
+      "Textiles and footwear: includes clothing and footwear, focusing on the use of sustainable materials, production processes, and waste reduction.",
+      "Construction materials: encompasses concrete, steel, and insulation to document energy use and resource efficiency."
      ]
     },
     {
      "type": "paragraph",
-     "text": "El público asistente valoró especialmente la capacidad de iPASS para combinar usabilidad, cumplimiento normativo y seguridad, algo que pocas soluciones logran equilibrar en el complejo entorno actual."
+     "text": "Attendees particularly valued iPASS's ability to combine usability, regulatory compliance, and security—a balance that few solutions achieve in today's complex environment."
     },
     {
      "type": "paragraph",
-     "text": "El stand de iCommunity: punto de encuentro para la innovación Más allá de la demo, el stand de iCommunity en el MWC se convirtió en un auténtico hub de interacción. Decenas de profesionales se acercaron para experimentar en primera persona el funcionamiento de iPASS y descubrir cómo podía integrarse en sus proyectos. Recibimos la visita de:"
+     "text": "The iCommunity booth: a meeting point for innovation. Beyond the demo, iCommunity's booth at MWC became a vibrant hub for interaction. Dozens of professionals stopped by to experience iPASS firsthand and discover how it could be integrated into their projects. Our visitors included:"
     },
     {
      "type": "list",
      "items": [
-      "Instituciones y administraciones públicas, conscientes de la obligatoriedad de implantar pasaportes digitales en distintos sectores a partir de 2026.",
-      "Inversores y fondos de innovación, que valoraron el potencial de escalabilidad y adopción masiva del producto.",
-      "Empresas de energías renovables y baterías, que con gran interés ven una solución rápida y de valor para cumplir la nueva norma."
+      "Institutions and public authorities aware of the requirement to implement digital passports across various sectors starting in 2026.",
+      "Investors and innovation funds that recognized the product's potential for scalability and widespread adoption.",
+      "Renewable energy and battery companies showing strong interest in a fast, valuable solution for complying with the new regulation."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Cada una de estas interacciones refuerza la idea de que iPASS no es solo un producto, sino una infraestructura de confianza digital capaz de adaptarse a distintos escenarios."
+     "text": "Each of these interactions reinforces the idea that iPASS is not just a product, but a digital trust infrastructure capable of adapting to different scenarios."
     },
     {
      "type": "paragraph",
-     "text": "Aprendizajes y tendencias detectadas en el MWC La magnitud del MWC también nos permitió captar tendencias que validan y enriquecen el desarrollo de iPASS:"
+     "text": "Lessons learned and trends identified at MWC. The scale of MWC also enabled us to identify trends that validate and enrich the development of iPASS:"
     },
     {
      "type": "list",
      "items": [
-      "El usuario exige control de sus datos: la privacidad y el consentimiento explícito se consolidan como derechos fundamentales en el entorno digital.",
-      "El vínculo entre sostenibilidad e identidad: el pasaporte digital de productos se perfila como herramienta esencial para cumplir con la normativa europea sobre trazabilidad y economía circular.",
-      "La convergencia de sectores: telecomunicaciones, finanzas, energía y transporte demandan soluciones de identidad digital que se adapten a sus necesidades específicas.",
-      "La interoperabilidad es la clave: en un ecosistema global, las soluciones que no se integren con estándares internacionales corren el riesgo de quedar obsoletas."
+      "Users demand control over their data: privacy and explicit consent are becoming firmly established as fundamental rights in the digital environment.",
+      "The link between sustainability and identity: the digital product passport is emerging as an essential tool for complying with European regulations on traceability and the circular economy.",
+      "Industry convergence: telecommunications, finance, energy, and transportation require digital identity solutions tailored to their specific needs.",
+      "Interoperability is key: in a global ecosystem, solutions that do not integrate with international standards risk becoming obsolete."
      ]
     },
     {
      "type": "paragraph",
-     "text": "Estos insights, recopilados por el equipo de iCommunity, refuerzan nuestro compromiso con un desarrollo de iPASS alineado con las necesidades reales del mercado."
+     "text": "These insights, gathered by the iCommunity team, reinforce our commitment to developing iPASS in line with real market needs."
     },
     {
      "type": "heading",
-     "text": "Impacto mediático y visibilidad internacional"
+     "text": "Media impact and international visibility"
     },
     {
      "type": "paragraph",
-     "text": "Participar en el MWC Barcelona 2025 nos permitió situar a iCommunity y a iPASS en el centro de la conversación internacional. Varios medios especializados en telecomunicaciones, fintech e innovación destacaron nuestra propuesta como una de las más disruptivas en el campo de la identidad digital. Asimismo, la actividad en redes sociales fue notable: expertos del sector compartieron nuestras presentaciones y casos de uso, ampliando el alcance del mensaje y consolidando a iCommunity como referente en el desarrollo de soluciones de pasaporte digital."
+     "text": "Participating in MWC Barcelona 2025 enabled us to place iCommunity and iPASS at the center of the international conversation. Several media outlets specializing in telecommunications, fintech, and innovation highlighted our offering as one of the most disruptive in digital identity. Social media activity was also notable: industry experts shared our presentations and use cases, extending our message's reach and strengthening iCommunity's position as a leader in the development of digital passport solutions."
     },
     {
      "type": "paragraph",
-     "text": "La repercusión mediática es un activo valioso que refuerza nuestra estrategia de branding y visibilidad global."
+     "text": "This media coverage is a valuable asset that strengthens our branding and global visibility strategy."
     },
     {
      "type": "heading",
-     "text": "Próximos pasos tras el MWC"
+     "text": "Next steps after MWC"
     },
     {
      "type": "paragraph",
-     "text": "La experiencia en el MWC Barcelona no solo nos ha dado visibilidad, sino que ha marcado nuevos retos y compromisos para los próximos meses. Entre ellos:"
+     "text": "Our experience at MWC Barcelona has not only increased our visibility but also established new challenges and commitments for the coming months. These include:"
     },
     {
      "type": "list",
      "items": [
-      "Ampliar la red de partners estratégicos, integrando el producto en plataformas de telecomunicaciones, movilidad y servicios digitales.",
-      "Refinar la experiencia de usuario, optimizando la app y la gestión de credenciales según el feedback recogido en el evento.",
-      "Participar en otros congresos internacionales en 2025, como DES Málaga o Identity Week Europe, para consolidar nuestra posición en el ecosistema global de identidad digital."
+      "Expanding our network of strategic partners by integrating the product into telecommunications, mobility, and digital service platforms.",
+      "Refining the user experience by optimizing the app and credential management based on feedback gathered at the event.",
+      "Participating in other international conferences in 2025, such as DES Málaga and Identity Week Europe, to strengthen our position in the global digital identity ecosystem."
      ]
     },
     {
      "type": "heading",
-     "text": "Conclusión"
+     "text": "Conclusion"
     },
     {
      "type": "paragraph",
-     "text": "La participación de iCommunity en el MWC Barcelona 2025 ha sido un auténtico hito en la trayectoria de nuestro producto iPASS. Hemos podido demostrar que la identidad digital de producto, interoperable y centrada en aportar valor real para los usuarios no es un concepto de futuro, sino una realidad que va a transformar la manera en que nos relacionamos con la tecnología."
+     "text": "iCommunity's participation in MWC Barcelona 2025 has been a true milestone in the journey of our iPASS product. We demonstrated that interoperable digital product identity, focused on delivering real value to users, is not a concept for the future but a reality that will transform how we interact with technology."
     },
     {
      "type": "paragraph",
-     "text": "El balance de nuestra presencia en Barcelona es inmejorable: validación de la propuesta, interés del mercado, nuevas alianzas estratégicas y una visibilidad internacional que impulsa el crecimiento de iPASS."
+     "text": "The results of our presence in Barcelona could not have been better: validation of our offering, market interest, new strategic partnerships, and international visibility that drives iPASS's growth."
     },
     {
      "type": "paragraph",
-     "text": "El camino hacia un mundo más conectado y confiable está en marcha, y desde iCommunity seguiremos trabajando para que iPASS se convierta en la referencia de los pasaportes digitales de producto a nivel europeo e internacional."
+     "text": "The journey toward a more connected and trustworthy world is underway, and at iCommunity we will continue working to make iPASS the benchmark for digital product passports across Europe and internationally."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-presenta-ipass-en-finovateeurope-2025-un-hito-en-la-evolucion-de-la-identidad-digital",
@@ -5923,11 +5923,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 3,
   "title": {
    "es": "Registros Privados de Propiedad Intelectual para el sector audiovisual",
-   "en": "Registros Privados de Propiedad Intelectual para el sector audiovisual"
+   "en": "Private Intellectual Property Registries for the Audiovisual Sector"
   },
   "description": {
    "es": "Los Registros de la Propiedad Intelectual son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras.",
-   "en": "Los Registros de la Propiedad Intelectual son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras."
+   "en": "Intellectual Property Registries are public institutions that protect the intellectual property rights of authors and their works."
   },
   "blocks": {
    "es": [
@@ -6001,73 +6001,73 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Los Registros de la Propiedad Intelectual son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras, actuaciones o producciones. Estas organizaciones registran todas las creaciones originales literarias, artísticas o científicas expresadas por cualquier medio o soporte, tangible o intangible, actualmente conocido o que se invente en el futuro. En cambio, los diseños industriales, las marcas, patentes e inventos, obtienen su protección a través de la legislación de Propiedad Industrial."
+     "text": "Intellectual Property Registries are public institutions that protect the intellectual property rights of authors and their works, performances, or productions. These organizations register all original literary, artistic, or scientific creations expressed through any medium or format, tangible or intangible, whether currently known or invented in the future. Industrial designs, trademarks, patents, and inventions, on the other hand, are protected under industrial property legislation."
     },
     {
      "type": "paragraph",
-     "text": "Como ya expusimos en el artículo sobre blockchain en los derechos de autor, hay actualmente 3 formas de registrar los derechos de autor: Registros Públicos Estatales, Registros Privados de Propiedad Intelectual y las OGC u OGI."
+     "text": "As we explained in our article on blockchain and copyright, there are currently three ways to register copyright: State Public Registries, Private Intellectual Property Registries, and Collective Management Organizations (CMOs) or Independent Management Entities (IMEs)."
     },
     {
      "type": "paragraph",
-     "text": "Respecto a los Registros Privados de Propiedad Intelectual es preciso recalcar que son empresas privadas que ejercen de terceros de confianza y acreditan la existencia de un documento a través de Internet y mediante tecnologías de registro distribuido (DLT o blockchain). Dentro de esta categoría, presentamos Davcopy: un servicio online de registro de derechos de autor para creaciones audiovisuales. Un medio alternativo, rápido y fiable para evitar el plagio de obras audiovisuales o producciones y una apuesta de futuro que facilita el proceso para registrar las obras y verificar la identidad de su creador original."
+     "text": "It is important to emphasize that Private Intellectual Property Registries are private companies that act as trusted third parties and certify the existence of a document online using distributed ledger technology (DLT or blockchain). Within this category, we introduce Davcopy: an online copyright registration service for audiovisual creations. It offers a fast, reliable alternative for preventing plagiarism of audiovisual works or productions, as well as a forward-looking solution that simplifies the process of registering works and verifying the identity of their original creator."
     },
     {
      "type": "heading",
-     "text": "¿Qué es Davcopy?"
+     "text": "What Is Davcopy?"
     },
     {
      "type": "paragraph",
-     "text": "Davcopy es la mejor alternativa para el registro de derechos de autor y se presenta como una potente e innovadora alternativa con la que poder registrar cualquier tipo de obra audiovisual. Es una forma segura y rápida de proteger estas creaciones antes de distribuirlas o publicarlas en Internet."
+     "text": "Davcopy is the best alternative for copyright registration, offering a powerful, innovative way to register any type of audiovisual work. It provides a secure, fast way to protect these creations before distributing them or publishing them online."
     },
     {
      "type": "paragraph",
-     "text": "Davcopy proporciona una certificación digitalizada y descentralizada que abarata y facilita el proceso de registro de cualquier obra audiovisual: guiones, cortometrajes, largometrajes, vídeos para RRSS, fotografías, publicidad, piezas audiovisuales de archivo…etc. Además, ofrece la posibilidad de generar NFTs de las obras de una forma sencilla, para potenciar el alcance comercial de las mismas."
+     "text": "Davcopy provides digital, decentralized certification that makes registering any audiovisual work simpler and more affordable: scripts, short films, feature films, social media videos, photographs, advertising, archival audiovisual footage, and more. It also offers an easy way to generate NFTs of these works to expand their commercial reach."
     },
     {
      "type": "paragraph",
-     "text": "Davcopy es una alternativa a las tradicionales plataformas de registro centralizado que hace uso de la tecnología blockchain, la cual permite registrar archivos de una forma fácil y segura protegiendo a la vez el contenido. Davcopy genera una huella digital y una marca o sellado de tiempo, donde están de forma encriptada los datos identificativos que vinculan de manera automática al autor con su creación. Ante una disputa legal, cualquiera podrá validar dicho código y verificar que eres el autor original. Una vez certificado, es importante no realizar ningún cambio al archivo original, para no modificar su huella digital."
+     "text": "Davcopy is an alternative to traditional centralized registration platforms that uses blockchain technology to register files easily and securely while protecting their content. Davcopy generates a digital fingerprint and a timestamp containing encrypted identifying data that automatically links the author to their creation. In the event of a legal dispute, anyone can validate this code and verify that you are the original author. Once the file has been certified, it is important not to make any changes to the original, as doing so would alter its digital fingerprint."
     },
     {
      "type": "paragraph",
-     "text": "Los registros en blockchain son permanentes y están avalados por el Convenio de Berna, siendo su vigencia y validez indefinida (aunque supeditada a las particularidades legislativas de cada país)."
+     "text": "Blockchain records are permanent and backed by the Berne Convention, remaining effective and valid indefinitely, although subject to each country's specific legislation."
     },
     {
      "type": "heading",
-     "text": "Ventajas de Davcopy:"
+     "text": "Advantages of Davcopy:"
     },
     {
      "type": "list",
      "items": [
-      "Elimina posibles plagios: la certificación en blockchain genera una huella digital asociada a tu identidad, que permite demostrar la autoría de la obra.",
-      "Validez internacional: los certificados emitidos por Davcopy tienen validez en los 179 países firmantes del Convenio de Berna.",
-      "Seguridad en todo el proceso de creación: la tecnología blockchain actúa como un notario digital automático, esto abarata mucho el proceso, por lo que puedes registrar también la sinopsis, el tratamiento…etc.",
-      "Datos privados e inmutables: gracias a la tecnología blockchain los datos de tu certificación se guardan de manera segura y privada, con una huella digital única."
+      "Eliminates potential plagiarism: blockchain certification generates a digital fingerprint linked to your identity, allowing you to prove authorship of the work.",
+      "International validity: certificates issued by Davcopy are valid in the 179 countries that are signatories to the Berne Convention.",
+      "Security throughout the creative process: blockchain technology acts as an automated digital notary, significantly reducing costs so you can also register the synopsis, treatment, and other materials.",
+      "Private, immutable data: blockchain technology keeps your certification data secure and private, with a unique digital fingerprint."
      ]
     },
     {
      "type": "heading",
-     "text": "Entonces, ¿cómo funciona Davcopy?"
+     "text": "So, How Does Davcopy Work?"
     },
     {
      "type": "list",
      "items": [
-      "Primero, hay que darse de alta. Es tan sencillo como rellenar el formulario de registro y verificar tu identidad para que tus registros tengan validez legal.",
-      "A continuación puedes subir cualquier tipo de archivo, siempre y cuando tenga un peso inferior a 17MB (en caso contrario deberás comprimirlo antes de subirlo). Para el registro de propiedad lo importante es el contenido y no su calidad audiovisual, por lo que no hay ningún problema si al comprimirlo esta es inferior. Puedes registrar cualquier contenido audiovisual o fotográfico.",
-      "Descarga tu justificante con todos los datos del registro. Puedes compartirlo donde y con quien quieras y así podrán consultar el registro y verificar que te pertenece a ti, junto con la fecha exacta gracias al sellado de tiempo.",
-      "Por último, no te olvides de guardar el archivo original para mantener la validez del registro, pues es esencial presentar exactamente el archivo registrado, sin cambios, ya que el proceso de encriptado detecta las más pequeñas modificaciones y genera una huella digital totalmente diferente."
+      "First, sign up. Simply complete the registration form and verify your identity to ensure your registrations are legally valid.",
+      "Next, you can upload any type of file, provided it is smaller than 17 MB. Otherwise, you will need to compress it before uploading. For ownership registration, what matters is the content, not its audiovisual quality, so any reduction in quality caused by compression is not an issue. You can register any audiovisual or photographic content.",
+      "Download your confirmation document containing all the registration details. You can share it wherever and with whomever you wish, allowing others to view the registration and verify that the work belongs to you, along with the exact date provided by the timestamp.",
+      "Finally, remember to save the original file to maintain the validity of the registration. It is essential to present the exact file you registered, without any changes, because the encryption process detects even the smallest modifications and generates a completely different digital fingerprint."
      ]
     },
     {
      "type": "paragraph",
-     "text": "¿Tienes algún video, foto, guión o videocreación que necesitas proteger? Prueba ahora Davcopy y aprovecha los descuentos para particulares y empresas."
+     "text": "Do you have a video, photograph, script, or video creation that you need to protect? Try Davcopy now and take advantage of discounts for individuals and businesses."
     },
     {
      "type": "heading",
-     "text": "¡Si! Quiero registrar mis derechos de autor"
+     "text": "Yes! I Want to Register My Copyright"
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "como-proteger-los-secretos-industriales-de-forma-sencilla-y-barata",
@@ -6621,11 +6621,11 @@ export const blogPosts: BlogPost[] = [
   "readingMinutes": 1,
   "title": {
    "es": "iCommunity Labs: la plataforma Blockchain que certifica la trazabilidad de Estrella Galicia",
-   "en": "iCommunity Labs: la plataforma Blockchain que certifica la trazabilidad de Estrella Galicia"
+   "en": "iCommunity Labs: the Blockchain platform certifying Estrella Galicia's traceability"
   },
   "description": {
    "es": "Gracias a la solución de trazabilidad extremo a extremo mediante tecnología Blockchain, iCommunity ha certificado las rutas de más de 120 productos.",
-   "en": "Gracias a la solución de trazabilidad extremo a extremo mediante tecnología Blockchain, iCommunity ha certificado las rutas de más de 120 productos."
+   "en": "With its end-to-end traceability solution powered by Blockchain technology, iCommunity has certified the routes of more than 120 products."
   },
   "blocks": {
    "es": [
@@ -6673,47 +6673,47 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Hace justo un año, iCommunity fue una de las startup ganadoras en los Premios The Hop, el Programa de Emprendimiento Colaborativo de Estrella Galicia. Esto nos dio acceso a trabajar mano a mano y poder validar nuestra tecnología con una de las empresas más relevantes del sector, proponiendo nuevas soluciones digitales de gran valor."
+     "text": "Exactly one year ago, iCommunity was one of the winning startups at The Hop Awards, Estrella Galicia's Collaborative Entrepreneurship Program. This gave us the opportunity to work closely with one of the industry's leading companies and validate our technology while proposing valuable new digital solutions."
     },
     {
      "type": "paragraph",
-     "text": "Un año después, las conclusiones de implentar una solución de blockchain de trazabilidad han sido inmejorables, apesar de las dificultades por el COVID, que nos obligó a evolucionar y adaptar la tecnología durante el programa para ayudar a la digitalización del canal de distribución y HORECA y apoyar así a estos colectivos, que tan impactados se han visto por la crisis."
+     "text": "One year later, the results of implementing a blockchain traceability solution have been outstanding, despite the challenges posed by COVID. These challenges required us to evolve and adapt the technology during the program to help digitalize the distribution and HORECA channels, supporting businesses that have been hit particularly hard by the crisis."
     },
     {
      "type": "heading",
-     "text": "Los beneficios para el canal de distribución engloban a todos los protagonistas de la cadena de valor:"
+     "text": "The benefits for the distribution channel extend to every stakeholder in the value chain:"
     },
     {
      "type": "list",
      "items": [
-      "Solución del comercio paralelo, ahorrando +2M€ al año a los fabricantes.",
-      "Transparencia y control de todo el proceso logístico, previniendo el fraude.",
-      "Gestión de posibles reclamaciones e incidencias al aumentar un 100% su eficacia."
+      "Addressing parallel trade, saving manufacturers more than €2 million per year.",
+      "Ensuring transparency and control throughout the logistics process to prevent fraud.",
+      "Improving the efficiency of claims and incident management by 100%."
      ]
     },
     {
      "type": "heading",
-     "text": "Vídeo presentación proyecto Trazabilidad Logística Estrella Galicia"
+     "text": "Estrella Galicia Logistics Traceability Project Presentation Video"
     },
     {
      "type": "paragraph",
-     "text": "El distribuidor pudo identificar diferentes aplicaciones colaterales y mejoras para su negocio, principalmente en todo lo relativo a la gestión de stocks, de rutas, de empleados y de la relación con sus clientes. Por otro lado, el 95% del sector HORECA manifestó su interés, valorando principalmente la incorporación de albarán digital, que mejora la relación con su distribuidor y el propio fabricante."
+     "text": "The distributor identified several additional applications and improvements for its business, primarily in inventory, route, and employee management, as well as customer relationships. Meanwhile, 95% of the HORECA sector expressed interest, particularly valuing the introduction of digital delivery notes, which improve relationships with both distributors and the manufacturer."
     },
     {
      "type": "paragraph",
-     "text": "“Con la tecnología de iCommunity, vamos un paso por delante de los demás. Nadie tiene esta tecnología en la calle”"
+     "text": "“With iCommunity's technology, we are one step ahead of everyone else. No one else has this technology in the field.”"
     },
     {
      "type": "heading",
-     "text": "Comentó Borja Pastor, distribuidor oficial de Estrella Galicia"
+     "text": "Commented Borja Pastor, official Estrella Galicia distributor"
     },
     {
      "type": "paragraph",
-     "text": "Estos resultados, con uno de los players más relevantes, demuestran el gran potencial de la tecnología Blockchian para mejorar los procesos de trazabilidad logística y materia prima, y valida nuestra plataforma como la solución más completa y eficaz que existe en la actualidad para afrontar este tipo de problematica y transformar digitalmente a todo tipo de empresas."
+     "text": "These results, achieved with one of the industry's leading players, demonstrate the significant potential of Blockchain technology to improve logistics and raw material traceability processes. They also validate our platform as the most comprehensive and effective solution currently available for addressing these challenges and driving digital transformation across businesses of all kinds."
     }
    ]
   },
-  "translated": false
+  "translated": true
  },
  {
   "slug": "icommunity-colaboradora-en-el-programa-acelera-pyme",
