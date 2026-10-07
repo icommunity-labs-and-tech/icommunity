@@ -89,10 +89,34 @@ const texts = {
 };
 
 const productMeta = [
-  { logo: logoCertypass, href: "https://certypass.com", external: true },
-  { logo: logoPrivaro, href: "https://privaro.ai", external: true },
-  { logo: logoMusicdibs, href: "https://musicdibs.com", external: true },
-  { logo: logoCertyfile.url, href: "https://certyfile.com", external: true },
+  {
+    logo: logoCertypass,
+    href: "https://certypass.com",
+    external: true,
+    logoClass: "h-10",
+    badge: false,
+  },
+  {
+    logo: logoPrivaro,
+    href: "https://privaro.ai",
+    external: true,
+    logoClass: "h-10",
+    badge: false,
+  },
+  {
+    logo: logoMusicdibs,
+    href: "https://musicdibs.com",
+    external: true,
+    logoClass: "h-16",
+    badge: true,
+  },
+  {
+    logo: logoCertyfile.url,
+    href: "https://certyfile.com",
+    external: true,
+    logoClass: "h-10",
+    badge: false,
+  },
 ];
 
 const Ecosystem = () => {
@@ -136,11 +160,17 @@ const Ecosystem = () => {
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
               {/* Logo */}
-              <img
-                src={productMeta[i].logo}
-                alt={`${product.eyebrow} logo`}
-                className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
-              />
+              <div className="flex h-24 w-full items-center justify-center mb-6">
+                <img
+                  src={productMeta[i].logo}
+                  alt={`${product.eyebrow} logo`}
+                  className={`max-w-full object-contain ${productMeta[i].logoClass} ${
+                    productMeta[i].badge
+                      ? "bg-ic-navy rounded px-4 py-1.5"
+                      : ""
+                  }`}
+                />
+              </div>
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
