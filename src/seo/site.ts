@@ -33,7 +33,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   },
   {
     path: "/soluciones",
-    title: "Solutions: CertyPass, Privaro and MusicDibs — iCommunity",
+    title: "Solutions: CertyPass, Privaro, MusicDibs, CertyFile",
     description:
       "Digital product passport, data anonymization for AI and music rights registration, built on iCommunity's verifiable evidence infrastructure.",
     h1: "Solutions: CertyPass (Digital Product Passport), Privaro (AI compliance gateway) and MusicDibs",
