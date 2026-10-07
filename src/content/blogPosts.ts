@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "ISBE nace como un “ sandbox de innovación ” que permite a empresas y startups desarrollar, testear y validar soluciones digitales en un entorno regulado y colaborativo. Su objetivo es reducir barreras tecnológicas, impulsar la adopción empresarial y acercar las innovaciones al tejido productivo."
+     "text": "ISBE nace como un “sandbox de innovación” que permite a empresas y startups desarrollar, testear y validar soluciones digitales en un entorno regulado y colaborativo. Su objetivo es reducir barreras tecnológicas, impulsar la adopción empresarial y acercar las innovaciones al tejido productivo."
     },
     {
      "type": "paragraph",
@@ -180,7 +180,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "ISBE was created as an “ innovation sandbox ” that allows companies and startups to develop, test, and validate digital solutions in a regulated and collaborative environment. Its goal is to reduce technological barriers, drive business adoption, and bring emerging innovations closer to the productive sector."
+     "text": "ISBE was created as an “innovation sandbox” that allows companies and startups to develop, test, and validate digital solutions in a regulated and collaborative environment. Its goal is to reduce technological barriers, drive business adoption, and bring emerging innovations closer to the productive sector."
     },
     {
      "type": "paragraph",
@@ -1435,11 +1435,11 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Esta alianza marca un paso decisivo para ambos equipos. Durante su fase inicial, utilizaremos la marca “ by iCommunity ” como emblema de la nueva oferta de servicios. Además, junto con Compecer pondremos en marcha un laboratorio blockchain, que será el núcleo de innovación donde desarrollaremos, testaremos y validaremos nuevos procesos de certificación digital bajo diferentes estándares internacionales."
+     "text": "Esta alianza marca un paso decisivo para ambos equipos. Durante su fase inicial, utilizaremos la marca “by iCommunity” como emblema de la nueva oferta de servicios. Además, junto con Compecer pondremos en marcha un laboratorio blockchain, que será el núcleo de innovación donde desarrollaremos, testaremos y validaremos nuevos procesos de certificación digital bajo diferentes estándares internacionales."
     },
     {
      "type": "paragraph",
-     "text": "Desde el inicio lanzaremos proyectos piloto con clientes seleccionados, lo que nos permitirá generar tracción comercial de forma inmediata. A esto se suma la creación de una identidad de marca sólid a, que combina la reputación y experiencia de Compecer con nuestra visión innovadora y tecnológica."
+     "text": "Desde el inicio lanzaremos proyectos piloto con clientes seleccionados, lo que nos permitirá generar tracción comercial de forma inmediata. A esto se suma la creación de una identidad de marca sólida, que combina la reputación y experiencia de Compecer con nuestra visión innovadora y tecnológica."
     },
     {
      "type": "paragraph",
@@ -1447,11 +1447,11 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "“Este acuerdo supone un gran paso para democratizar el acceso a certificaciones seguras y transparentes, gracias a la trazabilidad que ofrece la tecnología blockchain ”, destaca nuestro CMO, Mario García."
+     "text": "“Este acuerdo supone un gran paso para democratizar el acceso a certificaciones seguras y transparentes, gracias a la trazabilidad que ofrece la tecnología blockchain”, destaca nuestro CMO, Mario García."
     },
     {
      "type": "paragraph",
-     "text": "“ Compecer aporta su amplia experiencia en certificaciones bajo diferentes estándares internacionales como ISO y, de la mano de iCommunity, ofreceremos un servicio diferenciado que aportará mayor confianza y agilidad a las empresas”, añade Marco Delgado, VP del consejo directivo de Compecer."
+     "text": "“Compecer aporta su amplia experiencia en certificaciones bajo diferentes estándares internacionales como ISO y, de la mano de iCommunity, ofreceremos un servicio diferenciado que aportará mayor confianza y agilidad a las empresas”, añade Marco Delgado, VP del consejo directivo de Compecer."
     },
     {
      "type": "paragraph",
@@ -1469,7 +1469,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "This alliance marks a decisive step forward for both teams. In its initial phase, we will use the “ by iCommunity ” brand as the emblem of this new service offering. Together with Compecer, we will launch a blockchain lab that will serve as the innovation hub where we will develop, test, and validate new digital certification processes based on various international standards."
+     "text": "This alliance marks a decisive step forward for both teams. In its initial phase, we will use the “by iCommunity” brand as the emblem of this new service offering. Together with Compecer, we will launch a blockchain lab that will serve as the innovation hub where we will develop, test, and validate new digital certification processes based on various international standards."
     },
     {
      "type": "paragraph",
@@ -1485,11 +1485,11 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "“ Compecer brings extensive experience in certifications under various international standards such as ISO, and together with iCommunity, we will offer a differentiated service that provides greater trust and agility for companies,” adds Marco Delgado, Vice President of Compecer’s Board of Directors."
+     "text": "“Compecer brings extensive experience in certifications under various international standards such as ISO, and together with iCommunity, we will offer a differentiated service that provides greater trust and agility for companies,” adds Marco Delgado, Vice President of Compecer’s Board of Directors."
     },
     {
      "type": "paragraph",
-     "text": "With this collaboration, we are positioning ourselves alongside Compecer as leading partners in standard-based certification powered by blockchain, unlocking new opportunities in sectors such as manufacturing, energy, education, security, healthcare, and public administratio n."
+     "text": "With this collaboration, we are positioning ourselves alongside Compecer as leading partners in standard-based certification powered by blockchain, unlocking new opportunities in sectors such as manufacturing, energy, education, security, healthcare, and public administration."
     }
    ]
   },
@@ -3583,7 +3583,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Más allá del escenario, el networking fue clave. Durante los dos días del evento, el equipo técnico y comercial de i Community mantuvo reuniones estratégicas con actores clave del ecosistema: Directivos de empresas de baterías y electrónica, interesados en incorporar iPASS en sus productos."
+     "text": "Más allá del escenario, el networking fue clave. Durante los dos días del evento, el equipo técnico y comercial de iCommunity mantuvo reuniones estratégicas con actores clave del ecosistema: Directivos de empresas de baterías y electrónica, interesados en incorporar iPASS en sus productos."
     },
     {
      "type": "paragraph",
@@ -3649,7 +3649,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Para iCommunity, haber presentado iPASS en FinovateEurope 2025 s upone un hito estratégico en el camino hacia la consolidación de este producto como referencia en el ámbito de la identidad digital. El balance es muy positivo: validación del producto, interés del mercado, nuevas conexiones estratégicas y una mayor visibilidad internacional."
+     "text": "Para iCommunity, haber presentado iPASS en FinovateEurope 2025 supone un hito estratégico en el camino hacia la consolidación de este producto como referencia en el ámbito de la identidad digital. El balance es muy positivo: validación del producto, interés del mercado, nuevas conexiones estratégicas y una mayor visibilidad internacional."
     },
     {
      "type": "paragraph",
@@ -3692,7 +3692,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Beyond the stage, networking was key. During the two days of the event, the technical and commercial team of i Community held strategic meetings with key players in the ecosystem: Executives from battery and electronics companies, interested in incorporating iPASS into their products."
+     "text": "Beyond the stage, networking was key. During the two days of the event, the technical and commercial team of iCommunity held strategic meetings with key players in the ecosystem: Executives from battery and electronics companies, interested in incorporating iPASS into their products."
     },
     {
      "type": "paragraph",
@@ -3895,11 +3895,11 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "En este contexto, ambas entidades ya han colaborado en algunos de sus primeros proyectos juntos en diferentes entidades financieras. “ Gracias a la incorporación de blockchain en sus soluciones y proyectos, Sopra Steria abre puertas a nuevos mercados interesados en los beneficios de esta tecnología. Esta alianza no solo enriquece su portafolio de servicios, sino que también reafirma su compromiso con la innovación y la mejora continua ”, ha explicado Víctor Párraga, Director de Digital Platform Services en Sopra Steria España."
+     "text": "En este contexto, ambas entidades ya han colaborado en algunos de sus primeros proyectos juntos en diferentes entidades financieras. “Gracias a la incorporación de blockchain en sus soluciones y proyectos, Sopra Steria abre puertas a nuevos mercados interesados en los beneficios de esta tecnología. Esta alianza no solo enriquece su portafolio de servicios, sino que también reafirma su compromiso con la innovación y la mejora continua”, ha explicado Víctor Párraga, Director de Digital Platform Services en Sopra Steria España."
     },
     {
      "type": "paragraph",
-     "text": "En cuanto a iCommunity, “ esta colaboración estratégica con Sopra Steria nos permite expandir significativamente nuestro alcance y demostrar el poder transformador de nuestras soluciones blockchain. A través de esta alianza, llevaremos nuestras innovaciones en trazabilidad, firma electrónica e integridad de datos a un público más amplio, proporcionando a las empresas herramientas esenciales para mejorar su seguridad y cumplimiento normativo.”, ha explicado Miguel Ángel Pérez, CEO de iCommunity."
+     "text": "En cuanto a iCommunity, “esta colaboración estratégica con Sopra Steria nos permite expandir significativamente nuestro alcance y demostrar el poder transformador de nuestras soluciones blockchain. A través de esta alianza, llevaremos nuestras innovaciones en trazabilidad, firma electrónica e integridad de datos a un público más amplio, proporcionando a las empresas herramientas esenciales para mejorar su seguridad y cumplimiento normativo.”, ha explicado Miguel Ángel Pérez, CEO de iCommunity."
     },
     {
      "type": "paragraph",
@@ -3932,11 +3932,11 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "“ Thanks to the incorporation of blockchain into their solutions and projects, Sopra Steria opens doors to new markets interested in the benefits of this technology. This alliance not only enriches their service portfolio but also reaffirms their commitment to innovation and continuous improvement,” explained Victor Párraga, Director of Digital Platform Services at Sopra Steria Spain."
+     "text": "“Thanks to the incorporation of blockchain into their solutions and projects, Sopra Steria opens doors to new markets interested in the benefits of this technology. This alliance not only enriches their service portfolio but also reaffirms their commitment to innovation and continuous improvement,” explained Victor Párraga, Director of Digital Platform Services at Sopra Steria Spain."
     },
     {
      "type": "paragraph",
-     "text": "For iCommunity, “ this strategic collaboration with Sopra Steria allows us to significantly expand our reach and demonstrate the transformative power of our blockchain solutions. Through this alliance, we will bring our innovations in traceability, electronic signatures, and data integrity to a broader audience, providing companies with essential tools to improve their security and regulatory compliance,” explained Miguel Ángel Pérez, CEO of iCommunity."
+     "text": "For iCommunity, “this strategic collaboration with Sopra Steria allows us to significantly expand our reach and demonstrate the transformative power of our blockchain solutions. Through this alliance, we will bring our innovations in traceability, electronic signatures, and data integrity to a broader audience, providing companies with essential tools to improve their security and regulatory compliance,” explained Miguel Ángel Pérez, CEO of iCommunity."
     },
     {
      "type": "paragraph",
@@ -4296,7 +4296,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Blockchain is a distributed and decentralized ledger technology that allows providing reliable and immutable evidence of everything that happens in a certain process. If we add the use of a verified digital identit y to this, we have the necessary requirements to have a system that guarantees end-to-end traceability for all parties involved, eliminating the possibility of data alteration or repudiation by any of them."
+     "text": "Blockchain is a distributed and decentralized ledger technology that allows providing reliable and immutable evidence of everything that happens in a certain process. If we add the use of a verified digital identity to this, we have the necessary requirements to have a system that guarantees end-to-end traceability for all parties involved, eliminating the possibility of data alteration or repudiation by any of them."
     },
     {
      "type": "paragraph",
@@ -4449,7 +4449,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "The implementation of smart contracts in blockchain -powered ERP systems allows for the automation of processes while establishing clear and transparent rules for data access. This not only enhances operational efficiency but also reinforces security measures and minimizes vulnerabilities."
+     "text": "The implementation of smart contracts in blockchain-powered ERP systems allows for the automation of processes while establishing clear and transparent rules for data access. This not only enhances operational efficiency but also reinforces security measures and minimizes vulnerabilities."
     },
     {
      "type": "heading",
@@ -4873,13 +4873,13 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Todo ello se consigue mediante la generación de evidencias blockchain, gracias al uso de la plataforma Blockchain-as-a-Service “ iBS ”, mediante la cual cualquier empresa puede usar esta tecnología en su negocio como un servicio más, sin tener que afrontar la complejidad que la misma implica si se quiere usar de forma directa."
+     "text": "Todo ello se consigue mediante la generación de evidencias blockchain, gracias al uso de la plataforma Blockchain-as-a-Service “iBS”, mediante la cual cualquier empresa puede usar esta tecnología en su negocio como un servicio más, sin tener que afrontar la complejidad que la misma implica si se quiere usar de forma directa."
     }
    ],
    "en": [
     {
      "type": "paragraph",
-     "text": "iCommunity is expanding its presence in LATAM thanks to this strategic alliance, contributing its blockchain technology products to Proefex ‘s portfolio of services and solutions."
+     "text": "iCommunity is expanding its presence in LATAM thanks to this strategic alliance, contributing its blockchain technology products to Proefex‘s portfolio of services and solutions."
     },
     {
      "type": "paragraph",
@@ -4895,7 +4895,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "All of this is achieved through the generation of blockchain evidence, thanks to the use of the Blockchain-as-a-Service platform ‘ iBS.’ With this platform, any company can use blockchain technology in their business as an additional service, without having to face the complexity it involves when used directly."
+     "text": "All of this is achieved through the generation of blockchain evidence, thanks to the use of the Blockchain-as-a-Service platform ‘iBS.’ With this platform, any company can use blockchain technology in their business as an additional service, without having to face the complexity it involves when used directly."
     }
    ]
   },
@@ -4934,13 +4934,13 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Todo ello se consigue mediante la generación de evidencias blockchain, gracias al uso de la plataforma Blockchain-as-a-Service “ iBS ”, mediante la cual cualquier empresa puede usar esta tecnología en su negocio como un servicio más, sin tener que afrontar la complejidad que la misma implica si se quiere usar de forma directa."
+     "text": "Todo ello se consigue mediante la generación de evidencias blockchain, gracias al uso de la plataforma Blockchain-as-a-Service “iBS”, mediante la cual cualquier empresa puede usar esta tecnología en su negocio como un servicio más, sin tener que afrontar la complejidad que la misma implica si se quiere usar de forma directa."
     }
    ],
    "en": [
     {
      "type": "paragraph",
-     "text": "iCommunity strengthens its presence in the American continent through this strategic partnership, adding its blockchain technology products to Novacomp Group ‘s service portfolio."
+     "text": "iCommunity strengthens its presence in the American continent through this strategic partnership, adding its blockchain technology products to Novacomp Group‘s service portfolio."
     },
     {
      "type": "paragraph",
@@ -4948,7 +4948,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "With the signing of this agreement, iCommunity will contribute its blockchain technology solutions and expertise to Novacomp, while Novacomp brings its extensive client base, both governmental and private. They will also provide support with their staff in integration services, custom solution development, and local support. Both companies join forces to accelerate digital innovation for businesses in Latin America by incorporating blockchain -based solutions into their operations."
+     "text": "With the signing of this agreement, iCommunity will contribute its blockchain technology solutions and expertise to Novacomp, while Novacomp brings its extensive client base, both governmental and private. They will also provide support with their staff in integration services, custom solution development, and local support. Both companies join forces to accelerate digital innovation for businesses in Latin America by incorporating blockchain-based solutions into their operations."
     },
     {
      "type": "paragraph",
@@ -4956,7 +4956,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "This is achieved through the generation of blockchain evidence, utilizing the Blockchain-as-a-Service platform ‘ iBS.’ With this platform, any company can use blockchain technology as an additional service without the complexity associated with its direct implementation."
+     "text": "This is achieved through the generation of blockchain evidence, utilizing the Blockchain-as-a-Service platform ‘iBS.’ With this platform, any company can use blockchain technology as an additional service without the complexity associated with its direct implementation."
     }
    ]
   },
@@ -5009,7 +5009,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "In this second edition organized by IEBS, participants will gain an understanding of Web 3.0 ‘s characteristic technologies such as blockchain, the metaverse, and NFTs. Through experts in this concept, attendees will analyze the impact of Web 3.0 on various industries and grasp how it is changing the world we live in and how to excel in the workplace."
+     "text": "In this second edition organized by IEBS, participants will gain an understanding of Web 3.0‘s characteristic technologies such as blockchain, the metaverse, and NFTs. Through experts in this concept, attendees will analyze the impact of Web 3.0 on various industries and grasp how it is changing the world we live in and how to excel in the workplace."
     },
     {
      "type": "paragraph",
@@ -5741,7 +5741,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "The latter is very relevant for copyright disputes, as it is essential to be able to present a clear and traceable record of the design process. Blockchain -based hashing and timestamping form the best digital evidence to ensure the traceability of the creative process, be it an initial prototype, the final design or a subsequent modification of the original design. Furthermore, the main advantage of using a public blockchain network is that its records are public and accessible within a decentralised global infrastructure, which provides more concrete and real evidence in front of a jury or a local governmental entity to claim copyright."
+     "text": "The latter is very relevant for copyright disputes, as it is essential to be able to present a clear and traceable record of the design process. Blockchain-based hashing and timestamping form the best digital evidence to ensure the traceability of the creative process, be it an initial prototype, the final design or a subsequent modification of the original design. Furthermore, the main advantage of using a public blockchain network is that its records are public and accessible within a decentralised global infrastructure, which provides more concrete and real evidence in front of a jury or a local governmental entity to claim copyright."
     },
     {
      "type": "paragraph",
@@ -5753,7 +5753,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Any technical or artistic design that needs to be made in a profession can be uploaded to Certyfile ‘s general panel, both the final project and its intermediate processes, so that in just a few steps it is registered in blockchain and reduces the fear of possible copies."
+     "text": "Any technical or artistic design that needs to be made in a profession can be uploaded to Certyfile‘s general panel, both the final project and its intermediate processes, so that in just a few steps it is registered in blockchain and reduces the fear of possible copies."
     },
     {
      "type": "paragraph",
@@ -5933,7 +5933,7 @@ export const blogPosts: BlogPost[] = [
    "es": [
     {
      "type": "paragraph",
-     "text": "Los Registros de la Propiedad Intelectua l son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras, actuaciones o producciones. Estas organizaciones registran todas las creaciones originales literarias, artísticas o científicas expresadas por cualquier medio o soporte, tangible o intangible, actualmente conocido o que se invente en el futuro. En cambio, los diseños industriales, las marcas, patentes e inventos, obtienen su protección a través de la legislación de Propiedad Industrial."
+     "text": "Los Registros de la Propiedad Intelectual son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras, actuaciones o producciones. Estas organizaciones registran todas las creaciones originales literarias, artísticas o científicas expresadas por cualquier medio o soporte, tangible o intangible, actualmente conocido o que se invente en el futuro. En cambio, los diseños industriales, las marcas, patentes e inventos, obtienen su protección a través de la legislación de Propiedad Industrial."
     },
     {
      "type": "paragraph",
@@ -6001,7 +6001,7 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Los Registros de la Propiedad Intelectua l son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras, actuaciones o producciones. Estas organizaciones registran todas las creaciones originales literarias, artísticas o científicas expresadas por cualquier medio o soporte, tangible o intangible, actualmente conocido o que se invente en el futuro. En cambio, los diseños industriales, las marcas, patentes e inventos, obtienen su protección a través de la legislación de Propiedad Industrial."
+     "text": "Los Registros de la Propiedad Intelectual son instituciones públicas que protegen los derechos de propiedad intelectual de los autores y sus obras, actuaciones o producciones. Estas organizaciones registran todas las creaciones originales literarias, artísticas o científicas expresadas por cualquier medio o soporte, tangible o intangible, actualmente conocido o que se invente en el futuro. En cambio, los diseños industriales, las marcas, patentes e inventos, obtienen su protección a través de la legislación de Propiedad Industrial."
     },
     {
      "type": "paragraph",
@@ -6106,7 +6106,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "La certificación o registro digita l es un concepto moderno que ofrece protección sobre productos o servicios que necesitan confidencialidad. Certyfile es el servicio de notario digital online de iCommunity Labs con el cual puedes registrar todos los documentos relativos a secreto industrial (NDAs, acuerdos de colaboración, procedimientos de fabricación, algoritmos,…) mediante tecnología blockchain. Y todo ello de forma sencilla y muy económica."
+     "text": "La certificación o registro digital es un concepto moderno que ofrece protección sobre productos o servicios que necesitan confidencialidad. Certyfile es el servicio de notario digital online de iCommunity Labs con el cual puedes registrar todos los documentos relativos a secreto industrial (NDAs, acuerdos de colaboración, procedimientos de fabricación, algoritmos,…) mediante tecnología blockchain. Y todo ello de forma sencilla y muy económica."
     },
     {
      "type": "heading",
@@ -6148,7 +6148,7 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "A trade secret is a ny type of information that can provide a competitive advantage to a company. In other words, it is confidential information that the company does not want to be in the public domain because it has commercial value. This includes a wide variety of services and products such as the recipe for Coca-Cola or Microsoft’s source code. But what is the difference between a trade secret and a patent?"
+     "text": "A trade secret is any type of information that can provide a competitive advantage to a company. In other words, it is confidential information that the company does not want to be in the public domain because it has commercial value. This includes a wide variety of services and products such as the recipe for Coca-Cola or Microsoft’s source code. But what is the difference between a trade secret and a patent?"
     },
     {
      "type": "paragraph",
@@ -6371,7 +6371,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Siguiendo con la filosofía “ Blockchain-as-a-Service ” de iBS el uso de esta red será totalmente transparente para el usuario, ya que la plataforma hace uso de las redes con las que opera de forma automática e inteligente, en función de la disponibilidad de las mismas y de las necesidades del cliente en cada momento, recibiendo el cliente los servicios blockchain sin tener que preocuparse de nada relacionado con la gestión y configuración de las redes."
+     "text": "Siguiendo con la filosofía “Blockchain-as-a-Service” de iBS el uso de esta red será totalmente transparente para el usuario, ya que la plataforma hace uso de las redes con las que opera de forma automática e inteligente, en función de la disponibilidad de las mismas y de las necesidades del cliente en cada momento, recibiendo el cliente los servicios blockchain sin tener que preocuparse de nada relacionado con la gestión y configuración de las redes."
     },
     {
      "type": "paragraph",
@@ -6393,7 +6393,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Following iBS’s “Blockchain-as-a-Service ” philosophy, the use of this network will be totally transparent for the user, as the platform makes use of the networks with which it operates automatically and intelligently, depending on their availability and the client’s needs at any given moment, with the client receiving the blockchain services without having to worry about anything related to the management and configuration of the networks."
+     "text": "Following iBS’s “Blockchain-as-a-Service” philosophy, the use of this network will be totally transparent for the user, as the platform makes use of the networks with which it operates automatically and intelligently, depending on their availability and the client’s needs at any given moment, with the client receiving the blockchain services without having to worry about anything related to the management and configuration of the networks."
     },
     {
      "type": "paragraph",
@@ -6458,7 +6458,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Comforce uses iCommunity’s blockchain platform, iBS, to verify the identity of the signatories in its clients through a digital identity, through which the link to the documents they sign is established. Thanks to iBS, Comforce’ s contract management software offers traceability of the entire signing process, through digital evidence of each step that is recorded and chained through the iCommunity’s iBS platform."
+     "text": "Comforce uses iCommunity’s blockchain platform, iBS, to verify the identity of the signatories in its clients through a digital identity, through which the link to the documents they sign is established. Thanks to iBS, Comforce’s contract management software offers traceability of the entire signing process, through digital evidence of each step that is recorded and chained through the iCommunity’s iBS platform."
     },
     {
      "type": "paragraph",
@@ -6497,7 +6497,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
      "type": "paragraph",
-     "text": "Con CertyFile se facilita a todos los usuarios incluidos los particulares, el uso de la t ecnología blockchain para certificar su contenido digital, lo que se conoce como notarización digital, de una forma más sencilla y por menos de 1€."
+     "text": "Con CertyFile se facilita a todos los usuarios incluidos los particulares, el uso de la tecnología blockchain para certificar su contenido digital, lo que se conoce como notarización digital, de una forma más sencilla y por menos de 1€."
     },
     {
      "type": "heading",
@@ -6631,7 +6631,7 @@ export const blogPosts: BlogPost[] = [
    "es": [
     {
      "type": "paragraph",
-     "text": "Hace justo un año, iCommunity fue una de las startup ganadoras en los P remios The Hop, el Programa de Emprendimiento Colaborativo de Estrella Galicia. Esto nos dio acceso a trabajar mano a mano y poder validar nuestra tecnología con una de las empresas más relevantes del sector, proponiendo nuevas soluciones digitales de gran valor."
+     "text": "Hace justo un año, iCommunity fue una de las startup ganadoras en los Premios The Hop, el Programa de Emprendimiento Colaborativo de Estrella Galicia. Esto nos dio acceso a trabajar mano a mano y poder validar nuestra tecnología con una de las empresas más relevantes del sector, proponiendo nuevas soluciones digitales de gran valor."
     },
     {
      "type": "paragraph",
@@ -6673,7 +6673,7 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "Hace justo un año, iCommunity fue una de las startup ganadoras en los P remios The Hop, el Programa de Emprendimiento Colaborativo de Estrella Galicia. Esto nos dio acceso a trabajar mano a mano y poder validar nuestra tecnología con una de las empresas más relevantes del sector, proponiendo nuevas soluciones digitales de gran valor."
+     "text": "Hace justo un año, iCommunity fue una de las startup ganadoras en los Premios The Hop, el Programa de Emprendimiento Colaborativo de Estrella Galicia. Esto nos dio acceso a trabajar mano a mano y poder validar nuestra tecnología con una de las empresas más relevantes del sector, proponiendo nuevas soluciones digitales de gran valor."
     },
     {
      "type": "paragraph",
@@ -6732,7 +6732,7 @@ export const blogPosts: BlogPost[] = [
    "es": [
     {
      "type": "paragraph",
-     "text": "iCommunity ha sido seleccionada para ofrecer sus soluciones tecnológicas de albarán digital, trazabilidad y registro de horas de trabajo certificadas en el portal de ayuda a PYMEs y autónomos « Acelera PYME «, impulsado por Red.es."
+     "text": "iCommunity ha sido seleccionada para ofrecer sus soluciones tecnológicas de albarán digital, trazabilidad y registro de horas de trabajo certificadas en el portal de ayuda a PYMEs y autónomos «Acelera PYME«, impulsado por Red.es."
     },
     {
      "type": "paragraph",
@@ -6746,7 +6746,7 @@ export const blogPosts: BlogPost[] = [
    "en": [
     {
      "type": "paragraph",
-     "text": "iCommunity has been selected to offer its technological solutions for digital delivery note, traceability and registration of certified working hours in the help portal for SMEs and self-employed “ Acelera PYME “, powered by Red.es."
+     "text": "iCommunity has been selected to offer its technological solutions for digital delivery note, traceability and registration of certified working hours in the help portal for SMEs and self-employed “Acelera PYME“, powered by Red.es."
     },
     {
      "type": "paragraph",
@@ -6846,7 +6846,7 @@ export const blogPosts: BlogPost[] = [
       "Cloudflare, ejecuta una puerta de enlace web distribuida para acelerar y asegurar el acceso a IPFS sin necesidad de un nodo local.",
       "Microsoft ION, el sistema de identidad digital, está construido sobre Bitcoin e IPFS y su objetivo es construir una tecnología que permita crear un sistema de identidad digital seguro y escalable a nivel global.",
       "Brave, el buscador utiliza Origin Protocol e IPFS para alojar su tienda de mercancías descentralizada.",
-      "Opera para Android tiene soporte predeterminado para IPFS, lo que permite a los usuarios móviles navegar por enlaces ipfs: // para acceder a datos en la red IPFS.",
+      "Opera para Androidtiene soporte predeterminado para IPFS, lo que permite a los usuarios móviles navegar por enlaces ipfs: // para acceder a datos en la red IPFS.",
       "Wikipedia uso IPFS han desarrollado un espejo de su sitio web, que les permite acceder a Wikipedia desde jurisdicciones sitios donde está censurada.",
       "Filecoin, usa IPFS para crear una nube de almacenamiento cooperativo basada en IPFS."
      ]
@@ -7330,8 +7330,8 @@ export const blogPosts: BlogPost[] = [
      "text": "Por otro lado, una red de datos distribuidos funciona como una única red lógica de datos, instalada en una serie de computadoras (nodos) ubicadas en diferentes situaciones geográficas y que no están conectadas a una sola unidad de procesamiento, sino que están completamente conectadas entre sí para proporcionar integridad y accesibilidad a la información desde cualquier punto. En este sistema todos los nodos contienen información y todos los clientes del sistema están en igualdad de condiciones. De esta forma, las redes de datos distribuidos pueden realizar un procesamiento autónomo. El claro ejemplo es blockchain, pero existen otros como Spanner, una base de datos distribuida creada por Google."
     },
     {
-     "type": "paragraph",
-     "text": "VENTAJAS Y DESVENTAJAS DE LAS REDES DE DATOS CENTRALIZADAS, DESCENTRALIZADAS Y DISTRIBUIDAS."
+     "type": "heading",
+     "text": "Ventajas y desventajas de las redes de datos centralizadas, descentralizadas y distribuidas"
     },
     {
      "type": "paragraph",
@@ -7402,8 +7402,8 @@ export const blogPosts: BlogPost[] = [
      "text": "On the other hand, a distributed data network works as a single logical data network, installed in a series of computers (nodes) located in different geographic locations and that are not connected to a single processing unit, but are fully connected between Yes to provide integrity and accessibility to information from any point. In this system all the nodes contain information and all the clients of the system are in equal condition. In this way, distributed data networks can perform autonomous processing. The clear example is the blockchain, but there are others such as Spanner, a distributed database created by Google."
     },
     {
-     "type": "paragraph",
-     "text": "ADVANTAGES AND DISADVANTAGES OF CENTRALIZED, DECENTRALIZED AND DISTRIBUTED DATA NETWORKS."
+     "type": "heading",
+     "text": "Advantages and disadvantages of centralized, decentralized and distributed data networks"
     },
     {
      "type": "paragraph",
