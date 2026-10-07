@@ -1,7 +1,8 @@
 // Vite plugin: after `vite build`, writes static HTML per route into dist/ so
 // crawlers that don't execute JS (Bing, GPTBot, ClaudeBot, PerplexityBot, social
 // unfurlers) get route-specific <head> and real body content. React replaces
-// the #root content on mount (createRoot), so users see no difference.
+// the #root content on mount (createRoot). JS-enabled browsers show a loading
+// indicator instead of flashing the crawler text before React mounts.
 //
 // - Canonical routes   → dist/<route>/index.html with per-route meta + H1/text/nav
 // - Articles           → full article text prerendered
@@ -47,8 +48,22 @@ function setHead(html: string, o: { title: string; description: string; path: st
   return out;
 }
 
-const setBody = (html: string, body: string) =>
-  html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${NAV}<main>${body}</main>${FOOTER_GUIDES}</div>`);
+export function setPrerenderBody(html: string, body: string) {
+  // This runs in the head, before any body content can paint. Without JS,
+  // the complete crawlable content remains visible and usable.
+  const loadingHead = `<script>document.documentElement.classList.add("app-js")</script>
+<style>
+[data-app-loading]{display:none}
+.app-js [data-seo-fallback]{display:none}
+.app-js [data-app-loading]{display:grid;place-items:center;min-height:100vh;background:hsl(var(--background,0 0% 100%));color:hsl(var(--primary,225 86% 58%))}
+[data-app-loading] span{width:2rem;height:2rem;border:3px solid currentColor;border-right-color:transparent;border-radius:50%;animation:app-loading-spin 1s linear infinite}
+@keyframes app-loading-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){[data-app-loading] span{animation:none}}
+</style>`;
+  return html
+    .replace("</head>", `${loadingHead}\n</head>`)
+    .replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root"><div data-app-loading role="status" aria-label="Cargando / Loading"><span aria-hidden="true"></span></div><div data-seo-fallback>${NAV}<main>${body}</main>${FOOTER_GUIDES}</div></div>`);
+}
 
 function write(dist: string, path: string, html: string) {
   const file = path === "/" ? resolve(dist, "index.html") : resolve(dist, `.${path.replace(/\/+$/, "")}`, "index.html");
@@ -90,7 +105,7 @@ export function seoPrerender(): Plugin {
           (r.path === "/blog"
             ? `<ul>${blogPosts.map((p) => `<li><a href="/blog/${p.slug}">${esc(p.title.en)}</a> (${p.date})</li>`).join("")}</ul>`
             : "");
-        write(outDir, r.path, setBody(setHead(template, r), body));
+        write(outDir, r.path, setPrerenderBody(setHead(template, r), body));
         count++;
       }
 
@@ -127,7 +142,7 @@ export function seoPrerender(): Plugin {
             publisher: { "@id": `${SITE_URL}/#organization` },
           },
         ];
-        write(outDir, path, setBody(setHead(template, { title: `${a.title.en} — iCommunity`, description: a.description.en, path, type: "article", jsonLd }), body));
+        write(outDir, path, setPrerenderBody(setHead(template, { title: `${a.title.en} — iCommunity`, description: a.description.en, path, type: "article", jsonLd }), body));
         count++;
       }
 
@@ -153,7 +168,7 @@ export function seoPrerender(): Plugin {
             publisher: { "@id": `${SITE_URL}/#organization` },
           },
         ];
-        write(outDir, path, setBody(setHead(template, { title: `${p.title[l]} — iCommunity`, description: p.description[l], path, type: "article", jsonLd }), body));
+        write(outDir, path, setPrerenderBody(setHead(template, { title: `${p.title[l]} — iCommunity`, description: p.description[l], path, type: "article", jsonLd }), body));
         count++;
       }
 
