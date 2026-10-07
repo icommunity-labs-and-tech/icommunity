@@ -114,7 +114,7 @@ const productMeta = [
     logo: logoCertyfile.url,
     href: "https://certyfile.com",
     external: true,
-    logoClass: "h-10",
+    logoClass: "h-20",
     badge: false,
   },
 ];
