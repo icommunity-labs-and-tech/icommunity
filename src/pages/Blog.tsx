@@ -8,8 +8,8 @@ import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
 import { webPage, breadcrumbs } from "@/lib/structuredData";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { blogPosts } from "@/content/blogPosts";
-import { BLOG_KIND_LABEL, type BlogKind } from "@/content/blogTypes";
+import { BLOG_KIND_LABEL, blockText, type BlogKind } from "@/content/blogTypes";
+import { usePublishedPosts } from "@/hooks/useBlogPosts";
 import { SITE_URL } from "@/seo/site";
 
 type Filter = "all" | BlogKind;
@@ -66,6 +66,7 @@ const Blog = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [params, setParams] = useSearchParams();
   const { lang } = useLanguage();
+  const { data: blogPosts = [] } = usePublishedPosts();
   const t = texts[lang];
 
   const rawFilter = params.get("tipo");
@@ -86,11 +87,11 @@ const Blog = () => {
       if (filter !== "all" && p.kind !== filter) return false;
       if (!terms.length) return true;
       const haystack = normalize(
-        [p.title[lang], p.description[lang], ...p.blocks[lang].map((b) => (b.type === "list" ? b.items.join(" ") : b.text))].join(" "),
+        [p.title[lang], p.description[lang], ...p.blocks[lang].map(blockText)].join(" "),
       );
       return terms.every((term) => haystack.includes(term));
     });
-  }, [filter, query, lang]);
+  }, [filter, query, lang, blogPosts]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const page = Math.min(Math.max(1, Number(params.get("pagina")) || 1), totalPages);

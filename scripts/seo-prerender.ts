@@ -18,7 +18,7 @@ import {
   canonicalUrl,
 } from "../src/seo/site";
 import { articles } from "../src/content/articles";
-import { blogPosts } from "../src/content/blogPosts";
+import { loadBlogPosts } from "./loadBlogPosts";
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -73,7 +73,8 @@ export function seoPrerender(): Plugin {
     configResolved(c) {
       outDir = resolve(c.root, c.build.outDir);
     },
-    closeBundle() {
+    async closeBundle() {
+      const blogPosts = await loadBlogPosts();
       const template = readFileSync(resolve(outDir, "index.html"), "utf8");
       let count = 0;
 
@@ -137,7 +138,7 @@ export function seoPrerender(): Plugin {
           `<article><h1>${esc(p.title[l])}</h1><p><time datetime="${p.date}">${p.date}</time></p>` +
           p.blocks[l]
             .map((b) =>
-              b.type === "heading" ? `<h2>${esc(b.text)}</h2>` : b.type === "list" ? `<ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : `<p>${esc(b.text)}</p>`,
+              b.type === "heading" ? `<h2>${esc(b.text)}</h2>` : b.type === "image" ? `<img src="${esc(b.url)}" alt="${esc(b.alt)}">` : b.type === "list" ? `<ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : `<p>${esc(b.text)}</p>`,
             )
             .join("") +
           `</article><p><a href="/blog">Blog</a></p>`;
