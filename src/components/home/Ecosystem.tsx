@@ -136,11 +136,11 @@ const Ecosystem = () => {
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
               {/* Logo */}
-              {productMeta[i].logo ? <img
+              <img
                 src={productMeta[i].logo}
                 alt={`${product.eyebrow} logo`}
                 className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
-              /> : <div className="h-10 mb-6 flex items-center justify-center text-primary"><FileCheck className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" /></div>}
+              />
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
