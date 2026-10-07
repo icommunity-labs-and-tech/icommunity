@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ArrowLeft, Eye, Languages, Trash2, Upload } from "lucide-react";
+import { ArrowLeft, Eye, Languages, Sparkles, Trash2, Upload } from "lucide-react";
 import { toast } from "sonner";
 import { FunctionsHttpError } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import AdminGuard from "@/components/admin/AdminGuard";
 import AdminHeader from "@/components/admin/AdminHeader";
 import BlockEditor from "@/components/admin/BlockEditor";
+import AiArticleDialog, { invokeBlogAi, type AiArticle } from "@/components/admin/AiArticleDialog";
 import BlogBlocks from "@/components/blog/BlogBlocks";
 import { useAdminPost } from "@/hooks/useBlogPosts";
 import { supabase } from "@/integrations/supabase/client";
@@ -58,6 +59,8 @@ const AdminPostEditorContent = () => {
   const [lang, setLang] = useState<BlogLang>("es");
   const [preview, setPreview] = useState(false);
   const [translating, setTranslating] = useState(false);
+  const [coverPrompt, setCoverPrompt] = useState("");
+  const [generatingCover, setGeneratingCover] = useState(false);
   const coverRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -154,6 +157,36 @@ const AdminPostEditorContent = () => {
     }
   };
 
+  const applyAiArticle = (a: AiArticle, topic: string) => {
+    setDraft((d) => ({
+      ...d,
+      title: { ...d.title, es: a.title },
+      description: { ...d.description, es: a.description },
+      blocks: { ...d.blocks, es: a.blocks },
+      slug: slugTouched ? d.slug : slugify(a.title),
+      translated: false,
+    }));
+    setLang("es");
+    if (!coverPrompt) setCoverPrompt(topic);
+  };
+
+  const generateCover = async () => {
+    const prompt = coverPrompt.trim() || draft.title.es.trim();
+    if (prompt.length < 5) return toast.error("Describe la imagen o escribe antes el título");
+    setGeneratingCover(true);
+    try {
+      const { image, mime } = await invokeBlogAi<{ image: string; mime: string }>({ action: "cover", prompt });
+      const bytes = Uint8Array.from(atob(image), (c) => c.charCodeAt(0));
+      const file = new File([bytes], "portada-ia.png", { type: mime });
+      set("coverUrl", await uploadBlogImage(file));
+      toast.success("Portada generada");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "No se pudo generar la portada");
+    } finally {
+      setGeneratingCover(false);
+    }
+  };
+
   if (!isNew && isLoading) {
     return <div className="min-h-screen bg-background"><AdminHeader /><div className="ic-container py-10 space-y-4"><Skeleton className="h-10 w-1/2" /><Skeleton className="h-64 w-full" /></div></div>;
   }
@@ -176,6 +209,7 @@ const AdminPostEditorContent = () => {
                 <TabsTrigger value="es">Español</TabsTrigger>
                 <TabsTrigger value="en">Inglés</TabsTrigger>
               </TabsList>
+              <AiArticleDialog kind={draft.kind} hasContent={draft.blocks.es.length > 0 || !!draft.title.es.trim()} onGenerated={applyAiArticle} />
               <Button type="button" variant="outline" size="sm" onClick={translate} disabled={translating}>
                 <Languages className="w-4 h-4 mr-1" />{translating ? "Traduciendo…" : "Traducir al inglés con IA"}
               </Button>
@@ -243,6 +277,12 @@ const AdminPostEditorContent = () => {
               <div className="flex gap-2">
                 <Button type="button" size="sm" variant="outline" onClick={() => coverRef.current?.click()}><Upload className="w-4 h-4 mr-1" />{draft.coverUrl ? "Cambiar" : "Subir"}</Button>
                 {draft.coverUrl && <Button type="button" size="sm" variant="ghost" onClick={() => set("coverUrl", null)}>Quitar</Button>}
+              </div>
+              <div className="space-y-1.5 pt-1">
+                <Textarea rows={2} className="text-xs" value={coverPrompt} onChange={(e) => setCoverPrompt(e.target.value)} placeholder="Describe la imagen (si lo dejas vacío se usa el título)" />
+                <Button type="button" size="sm" variant="outline" className="w-full" onClick={generateCover} disabled={generatingCover}>
+                  <Sparkles className="w-4 h-4 mr-1" />{generatingCover ? "Generando… (hasta 1 min)" : "Generar portada con IA"}
+                </Button>
               </div>
               <input ref={coverRef} type="file" accept="image/*" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) void uploadCover(f); e.target.value = ""; }} />
             </div>
