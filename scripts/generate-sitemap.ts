@@ -5,7 +5,9 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { SITE_URL, STATIC_ROUTES, canonicalUrl } from "../src/seo/site";
 import { articles } from "../src/content/articles";
-import { blogPosts } from "../src/content/blogPosts";
+import { loadBlogPosts } from "./loadBlogPosts";
+
+const blogPosts = await loadBlogPosts();
 
 const today = new Date().toISOString().slice(0, 10);
 

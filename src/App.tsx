@@ -20,12 +20,19 @@ import ArticlePage from "./pages/Article";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import BlogPostPage from "./pages/BlogPostPage";
+import { AuthProvider } from "@/hooks/useAuth";
+import AdminLogin from "./pages/AdminLogin";
+import AdminResetPassword from "./pages/AdminResetPassword";
+import AdminBlogList from "./pages/AdminBlogList";
+import AdminPostEditor from "./pages/AdminPostEditor";
+import AdminTeam from "./pages/AdminTeam";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
+      <AuthProvider>
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
@@ -48,6 +55,12 @@ const App = () => (
               <Route path="/recursos/:slug" element={<ArticlePage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/admin" element={<Navigate to="/admin/blog" replace />} />
+              <Route path="/admin/acceso" element={<AdminLogin />} />
+              <Route path="/admin/nueva-contrasena" element={<AdminResetPassword />} />
+              <Route path="/admin/blog" element={<AdminBlogList />} />
+              <Route path="/admin/blog/:id" element={<AdminPostEditor />} />
+              <Route path="/admin/equipo" element={<AdminTeam />} />
               {/* Legacy route redirects (client-side, replace history so crawlers treat as permanent) */}
               <Route path="/privacy" element={<Navigate to="/legal" replace />} />
               <Route path="/privacy-policy" element={<Navigate to="/legal" replace />} />
@@ -69,6 +82,7 @@ const App = () => (
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
+      </AuthProvider>
     </QueryClientProvider>
   </HelmetProvider>
 );
