@@ -1,10 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, FileCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logoCertypass from "@/assets/logo-certypass.webp";
 import logoPrivaro from "@/assets/logo-privaro.png";
 import logoMusicdibs from "@/assets/logo-musicdibs.png";
+import logoCertyfile from "@/assets/logo-certyfile.png.asset.json";
 
 const texts = {
   en: {
