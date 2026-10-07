@@ -55,7 +55,7 @@ const BlogPostPage = () => {
         <div className="hero-aurora" />
         <div className="hero-noise" />
         <div className="hero-content relative">
-          <div className="ic-container max-w-3xl">
+          <div className="mx-auto w-full max-w-3xl px-6">
             <nav aria-label="Breadcrumb" className="text-xs text-primary-foreground/50 mb-6">
               <Link to="/blog" className="hover:text-primary-foreground transition-colors">Blog</Link>
               <span className="mx-2">/</span>
@@ -76,7 +76,7 @@ const BlogPostPage = () => {
       </div>
 
       <main className="flex-1 py-16 md:py-20">
-        <article className="ic-container max-w-3xl space-y-5" lang={contentLang}>
+        <article className="mx-auto w-full max-w-3xl px-6 space-y-5" lang={contentLang}>
           {lang === "en" && !post.translated && (
             <p className="text-sm text-muted-foreground border-l-2 border-primary pl-3">This post is only available in Spanish.</p>
           )}
