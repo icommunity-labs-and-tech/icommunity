@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const userId = session?.user.id;
-  const { data: roles = [], isLoading: rolesLoading } = useQuery({
+  const { data: roles = [], isPending: rolesPending, isFetching: rolesFetching } = useQuery({
     queryKey: ["user-roles", userId],
     enabled: !!userId,
     queryFn: async (): Promise<Role[]> => {
@@ -50,7 +50,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     user: session?.user ?? null,
     loading,
     roles,
-    rolesLoading: !!userId && rolesLoading,
+    // While roles are (re)fetching and none grant access yet, report loading so guards never flash "no access".
+    rolesLoading: !!userId && (rolesPending || (rolesFetching && roles.length === 0)),
     isAdmin: roles.includes("admin"),
     isEditor: roles.includes("admin") || roles.includes("editor"),
     signOut: async () => {
