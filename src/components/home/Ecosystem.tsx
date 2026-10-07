@@ -1,9 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileCheck } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logoCertypass from "@/assets/logo-certypass.webp";
 import logoPrivaro from "@/assets/logo-privaro.png";
+import logoMusicdibs from "@/assets/logo-musicdibs.png";
 
 const texts = {
   en: {
@@ -25,6 +26,22 @@ const texts = {
         desc: "Anonymization and governance of sensitive data for safe use in AI systems.",
         tag: "Powered by iCommunity",
         cta: "Go to Privaro",
+      },
+      {
+        id: "musicdibs",
+        eyebrow: "MusicDibs",
+        title: "Music Rights Registration",
+        desc: "Registration and verification of copyright for musical works with traceable evidence.",
+        tag: "Built on iCommunity",
+        cta: "Go to MusicDibs",
+      },
+      {
+        id: "certyfile",
+        eyebrow: "CertyFile",
+        title: "Document Certification",
+        desc: "Certify the integrity and date of your files with traceable evidence and a verifiable timestamp.",
+        tag: "Built on iCommunity",
+        cta: "Go to CertyFile",
       },
     ],
     bottom: "One integration. Multiple regulatory solutions.",
@@ -49,6 +66,22 @@ const texts = {
         tag: "Impulsado por iCommunity",
         cta: "Ir a Privaro",
       },
+      {
+        id: "musicdibs",
+        eyebrow: "MusicDibs",
+        title: "Registro de Derechos Musicales",
+        desc: "Registro y verificación de derechos de autor de obras musicales con evidencia trazable.",
+        tag: "Construido sobre iCommunity",
+        cta: "Ir a MusicDibs",
+      },
+      {
+        id: "certyfile",
+        eyebrow: "CertyFile",
+        title: "Certificación de Documentos",
+        desc: "Certifica la integridad y la fecha de tus archivos con evidencia trazable y sellado de tiempo verificable.",
+        tag: "Construido sobre iCommunity",
+        cta: "Ir a CertyFile",
+      },
     ],
     bottom: "Una única integración. Múltiples soluciones regulatorias.",
   },
@@ -57,6 +90,8 @@ const texts = {
 const productMeta = [
   { logo: logoCertypass, href: "https://certypass.com", external: true },
   { logo: logoPrivaro, href: "https://privaro.ai", external: true },
+  { logo: logoMusicdibs, href: "https://musicdibs.com", external: true },
+  { logo: null, href: "https://certyfile.com", external: true },
 ];
 
 const Ecosystem = () => {
@@ -88,8 +123,8 @@ const Ecosystem = () => {
           </p>
         </motion.div>
 
-        {/* Two-column cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        {/* Solution cards */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mx-auto">
           {t.products.map((product, i) => (
             <motion.div
               key={product.id}
@@ -100,11 +135,11 @@ const Ecosystem = () => {
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
               {/* Logo */}
-              <img
+              {productMeta[i].logo ? <img
                 src={productMeta[i].logo}
                 alt={`${product.eyebrow} logo`}
-                className="h-10 object-contain mb-6"
-              />
+                className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
+              /> : <div className="h-10 mb-6 flex items-center justify-center text-primary"><FileCheck className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" /></div>}
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
