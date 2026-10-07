@@ -89,10 +89,31 @@ const texts = {
 };
 
 const productMeta = [
-  { logo: logoCertypass, href: "https://certypass.com", external: true },
-  { logo: logoPrivaro, href: "https://privaro.ai", external: true },
-  { logo: logoMusicdibs, href: "https://musicdibs.com", external: true },
-  { logo: logoCertyfile.url, href: "https://certyfile.com", external: true },
+  {
+    logo: logoCertypass,
+    href: "https://certypass.com",
+    external: true,
+    logoClass: "h-10",
+  },
+  {
+    logo: logoPrivaro,
+    href: "https://privaro.ai",
+    external: true,
+    logoClass: "h-10",
+  },
+  {
+    logo: logoMusicdibs,
+    href: "https://musicdibs.com",
+    external: true,
+    logoClass: "h-20",
+    badge: true,
+  },
+  {
+    logo: logoCertyfile.url,
+    href: "https://certyfile.com",
+    external: true,
+    logoClass: "h-10",
+  },
 ];
 
 const Ecosystem = () => {
