@@ -75,10 +75,12 @@ async function getZohoAccessToken(): Promise<string> {
 const BIGIN_API = "https://www.zohoapis.eu/bigin/v2";
 
 async function createBiginCompany(accessToken: string, companyName: string): Promise<string | null> {
-  // First search if company already exists
+  // First search if company already exists. Escape Zoho criteria metacharacters
+  // so the submitted name is always a literal value, never filter syntax.
+  const literalName = companyName.replace(/[\\(),:]/g, (c) => `\\${c}`);
   try {
     const searchRes = await fetch(
-      `${BIGIN_API}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(companyName)})`,
+      `${BIGIN_API}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(literalName)})`,
       { headers: { Authorization: `Zoho-oauthtoken ${accessToken}` } }
     );
 
