@@ -1,10 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, FileCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logoCertypass from "@/assets/logo-certypass.webp";
 import logoPrivaro from "@/assets/logo-privaro.png";
 import logoMusicdibs from "@/assets/logo-musicdibs.png";
+import logoCertyfile from "@/assets/logo-certyfile.png.asset.json";
 
 const texts = {
   en: {
@@ -91,7 +92,7 @@ const productMeta = [
   { logo: logoCertypass, href: "https://certypass.com", external: true },
   { logo: logoPrivaro, href: "https://privaro.ai", external: true },
   { logo: logoMusicdibs, href: "https://musicdibs.com", external: true },
-  { logo: null, href: "https://certyfile.com", external: true },
+  { logo: logoCertyfile.url, href: "https://certyfile.com", external: true },
 ];
 
 const Ecosystem = () => {
@@ -135,11 +136,11 @@ const Ecosystem = () => {
               style={{ boxShadow: "var(--ic-shadow-card)" }}
             >
               {/* Logo */}
-              {productMeta[i].logo ? <img
+              <img
                 src={productMeta[i].logo}
                 alt={`${product.eyebrow} logo`}
                 className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
-              /> : <div className="h-10 mb-6 flex items-center justify-center text-primary"><FileCheck className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" /></div>}
+              />
 
               {/* Eyebrow */}
               <span className="text-xs font-mono font-medium text-primary tracking-wide uppercase mb-2">
