@@ -12,6 +12,7 @@ const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com" },
   { label: "Privaro", href: "https://privaro.ai" },
   { label: "MusicDibs", href: "https://musicdibs.com" },
+  { label: "CertyFile", href: "https://certyfile.com" },
 ];
 
 type FooterLink = { label: string; href?: string; external?: boolean; route?: string; anchor?: string; isSolutionsDropdown?: boolean };
@@ -24,6 +25,7 @@ const texts = {
         { label: "Partners", route: "/partners" },
         { label: "Success stories", anchor: "cases" },
         { label: "Resources", route: "/recursos" },
+        { label: "Blog", route: "/blog" },
         { label: "Solutions", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Guides", links: [
@@ -48,6 +50,7 @@ const texts = {
         { label: "Partners", route: "/partners" },
         { label: "Casos de éxito", anchor: "cases" },
         { label: "Recursos", route: "/recursos" },
+        { label: "Blog", route: "/blog" },
         { label: "Soluciones", isSolutionsDropdown: true },
       ] as FooterLink[] },
       { title: "Guías", links: [

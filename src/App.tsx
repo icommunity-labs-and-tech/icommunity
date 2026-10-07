@@ -18,6 +18,8 @@ import Refunds from "./pages/Refunds";
 import Recursos from "./pages/Recursos";
 import ArticlePage from "./pages/Article";
 import NotFound from "./pages/NotFound";
+import Blog from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPostPage";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +46,8 @@ const App = () => (
               <Route path="/refunds" element={<Refunds />} />
               <Route path="/recursos" element={<Recursos />} />
               <Route path="/recursos/:slug" element={<ArticlePage />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               {/* Legacy route redirects (client-side, replace history so crawlers treat as permanent) */}
               <Route path="/privacy" element={<Navigate to="/legal" replace />} />
               <Route path="/privacy-policy" element={<Navigate to="/legal" replace />} />

@@ -4,6 +4,8 @@
 
 // Canonical host is the apex domain: www.icommunity.io redirects here and
 // Search Console traffic is recorded on https://icommunity.io/.
+import { BLOG_LEGACY_REDIRECTS } from "../content/blogLegacyRedirects";
+
 export const SITE_URL = "https://icommunity.io";
 
 export const NEWS_BLOG = "https://noticias.icommunity.io";
@@ -31,7 +33,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   },
   {
     path: "/soluciones",
-    title: "Solutions: CertyPass, Privaro and MusicDibs — iCommunity",
+    title: "Solutions: CertyPass, Privaro, MusicDibs, CertyFile",
     description:
       "Digital product passport, data anonymization for AI and music rights registration, built on iCommunity's verifiable evidence infrastructure.",
     h1: "Solutions: CertyPass (Digital Product Passport), Privaro (AI compliance gateway) and MusicDibs",
@@ -62,6 +64,15 @@ export const STATIC_ROUTES: StaticRoute[] = [
     description:
       "Practical guides on blockchain use cases, payment tokenization and real estate tokenization from the iCommunity team.",
     h1: "Resources and guides",
+    changefreq: "weekly",
+    priority: "0.7",
+  },
+  {
+    path: "/blog",
+    title: "Blog: Blockchain, Evidence and Company News — iCommunity",
+    description:
+      "Articles on blockchain, IPFS, copyright and GDPR, success stories and iCommunity company news since 2019.",
+    h1: "Blog and news",
     changefreq: "weekly",
     priority: "0.7",
   },
@@ -104,6 +115,8 @@ export const STATIC_ROUTES: StaticRoute[] = [
 // Legacy WordPress URLs whose topic now lives on the main site: redirect here
 // (keeps authority on icommunity.io) instead of sending them to the news blog.
 export const LEGACY_INTERNAL_REDIRECTS: Record<string, string> = {
+  // Imported posts (/blog) and retired product pages (iPass → CertyPass, CertyFile → /soluciones)
+  ...BLOG_LEGACY_REDIRECTS,
   "/tokenizacion-de-pagos/": "/recursos/tokenizacion-de-pagos",
   "/tokenizacion-de-pagos-mediante-blockchain/": "/recursos/tokenizacion-de-pagos",
   "/en/tokenization-of-payments/": "/recursos/tokenizacion-de-pagos",

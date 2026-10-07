@@ -9,6 +9,7 @@ const solutionsLinks = [
   { label: "CertyPass", href: "https://certypass.com", external: true },
   { label: "Privaro", href: "https://privaro.ai", external: true },
   { label: "MusicDibs", href: "https://musicdibs.com", external: true },
+  { label: "CertyFile", href: "https://certyfile.com", external: true },
 ];
 
 const texts = {
@@ -19,6 +20,7 @@ const texts = {
 
       { label: "Success stories", href: "/#cases" },
       { label: "Resources", href: "/recursos", isRoute: true },
+      { label: "Blog", href: "/blog", isRoute: true },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Company", href: "/empresa", isRoute: true },
     ],
@@ -35,6 +37,7 @@ const texts = {
 
       { label: "Casos de éxito", href: "/#cases" },
       { label: "Recursos", href: "/recursos", isRoute: true },
+      { label: "Blog", href: "/blog", isRoute: true },
       { label: "Partners", href: "/partners", isRoute: true },
       { label: "Empresa", href: "/empresa", isRoute: true },
     ],
