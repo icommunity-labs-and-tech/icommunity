@@ -138,7 +138,7 @@ const Ecosystem = () => {
               {productMeta[i].logo ? <img
                 src={productMeta[i].logo}
                 alt={`${product.eyebrow} logo`}
-                className="h-10 max-w-full object-contain mb-6"
+                className={`h-10 max-w-full object-contain mb-6 ${product.id === "musicdibs" ? "bg-ic-navy rounded px-3 py-1" : ""}`}
               /> : <div className="h-10 mb-6 flex items-center justify-center text-primary"><FileCheck className="h-10 w-10" strokeWidth={1.5} aria-hidden="true" /></div>}
 
               {/* Eyebrow */}
