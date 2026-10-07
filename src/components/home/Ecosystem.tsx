@@ -94,12 +94,14 @@ const productMeta = [
     href: "https://certypass.com",
     external: true,
     logoClass: "h-10",
+    badge: false,
   },
   {
     logo: logoPrivaro,
     href: "https://privaro.ai",
     external: true,
     logoClass: "h-10",
+    badge: false,
   },
   {
     logo: logoMusicdibs,
@@ -113,6 +115,7 @@ const productMeta = [
     href: "https://certyfile.com",
     external: true,
     logoClass: "h-10",
+    badge: false,
   },
 ];
 
