@@ -4,7 +4,7 @@ import type { BlogPost } from "./blogTypes";
 export const blogPosts: BlogPost[] = [
  {
   "slug": "comunicado-oficial-reconocimiento-a-datia-por-su-contribucion-a-la-innovacion-en-inteligencia-artificial",
-  "kind": "news",
+  "kind": "case",
   "date": "2026-03-27",
   "readingMinutes": 1,
   "title": {
@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-presenta-ipass-en-el-demo-day-isbe",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-11-19",
   "readingMinutes": 2,
   "title": {
@@ -258,7 +258,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-al-andalus-2025-ipass-y-el-futuro-del-pasaporte-digital-de-producto-en-sectores-estrategicos",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-09-26",
   "readingMinutes": 5,
   "title": {
@@ -587,7 +587,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-dice-2025-ipass-y-la-identidad-digital-de-productos-en-sectores-estrategicos",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-09-05",
   "readingMinutes": 5,
   "title": {
@@ -1412,7 +1412,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-y-compecer-se-alian-para-digitalizar-las-certificaciones-con-tecnologia-blockchain",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-06-18",
   "readingMinutes": 1,
   "title": {
@@ -1497,7 +1497,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-des-malaga-2025-ipass-y-el-pasaporte-digital-de-producto-para-sectores-estrategicos",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-06-14",
   "readingMinutes": 5,
   "title": {
@@ -1856,7 +1856,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-south-summit-madrid-2025-ipass-y-el-futuro-del-pasaporte-digital-de-producto-en-los-sectores-estrategicos",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-06-07",
   "readingMinutes": 5,
   "title": {
@@ -2630,7 +2630,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-eic-2025-ipass-como-pilar-de-la-identidad-digital-y-la-nube-en-europa",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-05-10",
   "readingMinutes": 4,
   "title": {
@@ -2990,7 +2990,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-en-the-wave-2025-ipass-y-el-futuro-del-pasaporte-digital-de-producto-en-sectores-clave",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-03-22",
   "readingMinutes": 5,
   "title": {
@@ -3267,7 +3267,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-presenta-ipass-en-el-mwc-barcelona-2025-identidad-digital-para-un-mundo-conectado",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-03-07",
   "readingMinutes": 5,
   "title": {
@@ -3532,7 +3532,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-presenta-ipass-en-finovateeurope-2025-un-hito-en-la-evolucion-de-la-identidad-digital",
-  "kind": "news",
+  "kind": "case",
   "date": "2025-02-27",
   "readingMinutes": 4,
   "title": {
@@ -3861,7 +3861,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-y-sopra-steria-protegeran-la-identidad-y-los-activos-digitales-con-tecnologia-blockchain",
-  "kind": "news",
+  "kind": "case",
   "date": "2024-07-30",
   "readingMinutes": 3,
   "title": {
@@ -4025,7 +4025,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-y-amypro-solutions-unen-fuerzas-para-acercar-la-tecnologia-blockchain-a-la-gran-empresa",
-  "kind": "news",
+  "kind": "case",
   "date": "2024-05-23",
   "readingMinutes": 2,
   "title": {
@@ -4765,7 +4765,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-proveedor-oficial-de-blockchain-del-ayuntamiento-de-madrid",
-  "kind": "news",
+  "kind": "case",
   "date": "2023-11-28",
   "readingMinutes": 1,
   "title": {
@@ -4842,7 +4842,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-y-proefex-unen-fuerzas-para-llevar-la-tecnologia-blockchain-a-las-empresas-del-peru",
-  "kind": "news",
+  "kind": "case",
   "date": "2023-10-24",
   "readingMinutes": 2,
   "title": {
@@ -4903,7 +4903,7 @@ export const blogPosts: BlogPost[] = [
  },
  {
   "slug": "icommunity-y-el-grupo-novacomp-unen-fuerzas-para-llevar-la-tecnologia-blockchain-a-las-empresas-de-centroamerica",
-  "kind": "news",
+  "kind": "case",
   "date": "2023-10-17",
   "readingMinutes": 1,
   "title": {
