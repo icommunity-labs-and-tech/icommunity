@@ -107,7 +107,7 @@ const productMeta = [
     logo: logoMusicdibs,
     href: "https://musicdibs.com",
     external: true,
-    logoClass: "h-20",
+    logoClass: "h-16",
     badge: true,
   },
   {
