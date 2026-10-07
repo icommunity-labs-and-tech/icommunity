@@ -66,6 +66,7 @@ const Blog = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [params, setParams] = useSearchParams();
   const { lang } = useLanguage();
+  const { data: blogPosts = [] } = usePublishedPosts();
   const t = texts[lang];
 
   const rawFilter = params.get("tipo");

@@ -7,7 +7,8 @@ import ContactModal from "@/components/home/ContactModal";
 import PageSEO from "@/components/PageSEO";
 import { breadcrumbs, articleSchema } from "@/lib/structuredData";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { blogPosts } from "@/content/blogPosts";
+import { usePublishedPosts } from "@/hooks/useBlogPosts";
+import BlogBlocks from "@/components/blog/BlogBlocks";
 import { BLOG_KIND_LABEL } from "@/content/blogTypes";
 
 const formatDate = (iso: string, lang: "en" | "es") =>
@@ -17,8 +18,16 @@ const BlogPostPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { slug } = useParams<{ slug: string }>();
   const { lang } = useLanguage();
+  const { data: blogPosts = [], isLoading } = usePublishedPosts();
   const post = blogPosts.find((p) => p.slug === slug);
 
+  if (!post && isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-label="Cargando" />
+      </div>
+    );
+  }
   if (!post) return <Navigate to="/blog" replace />;
 
   const contentLang = lang === "en" && !post.translated ? "es" : lang;
@@ -80,22 +89,10 @@ const BlogPostPage = () => {
           {lang === "en" && !post.translated && (
             <p className="text-sm text-muted-foreground border-l-2 border-primary pl-3">This post is only available in Spanish.</p>
           )}
-          {post.blocks[contentLang].map((b, i) =>
-            b.type === "heading" ? (
-              <h2 key={i} className="text-xl font-semibold text-foreground pt-5">{b.text}</h2>
-            ) : b.type === "list" ? (
-              <ul key={i} className="space-y-2">
-                {b.items.map((item, j) => (
-                  <li key={j} className="flex gap-3 text-muted-foreground leading-relaxed">
-                    <span className="font-mono text-primary mt-0.5">—</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p key={i} className="text-muted-foreground leading-relaxed">{b.text}</p>
-            ),
+          {post.coverUrl && (
+            <img src={post.coverUrl} alt={post.title[contentLang]} className="w-full rounded-xl border border-border" />
           )}
+          <BlogBlocks blocks={post.blocks[contentLang]} />
 
           <div className="ic-card !mt-14 flex flex-col md:flex-row md:items-center gap-6 justify-between">
             <p className="text-foreground/90 leading-relaxed md:max-w-xl">
