@@ -3,11 +3,13 @@ import type { Tables, TablesInsert } from "@/integrations/supabase/types";
 import type { BlogBlock, BlogKind, BlogLang, BlogPost } from "@/content/blogTypes";
 
 export type BlogPostRow = Tables<"blog_posts">;
-export type BlogStatus = "draft" | "published";
+/** "scheduled" posts become public automatically once publishAt has passed. */
+export type BlogStatus = "draft" | "scheduled" | "published";
 
 export interface AdminBlogPost extends BlogPost {
   id: string;
   status: BlogStatus;
+  publishAt: string | null;
   updatedAt: string;
 }
 
@@ -23,6 +25,7 @@ export const rowToPost = (row: BlogPostRow): AdminBlogPost => ({
   slug: row.slug,
   kind: row.kind as BlogKind,
   status: row.status as BlogStatus,
+  publishAt: row.publish_at,
   date: row.date,
   readingMinutes: row.reading_minutes,
   coverUrl: row.cover_url,
@@ -37,6 +40,7 @@ export const postToRow = (post: Omit<AdminBlogPost, "id" | "updatedAt">): Tables
   slug: post.slug,
   kind: post.kind,
   status: post.status,
+  publish_at: post.status === "scheduled" ? post.publishAt : null,
   date: post.date,
   reading_minutes: post.readingMinutes,
   cover_url: post.coverUrl ?? null,
@@ -46,11 +50,17 @@ export const postToRow = (post: Omit<AdminBlogPost, "id" | "updatedAt">): Tables
   translated: post.translated,
 });
 
+/** Display status: a scheduled post whose time has passed is already live. */
+export const effectiveStatus = (p: Pick<AdminBlogPost, "status" | "publishAt">): BlogStatus =>
+  p.status === "scheduled" && p.publishAt && new Date(p.publishAt) <= new Date() ? "published" : p.status;
+
+export const STATUS_LABEL: Record<BlogStatus, string> = { draft: "Borrador", scheduled: "Programada", published: "Publicada" };
+
 export async function fetchPublishedPosts(): Promise<AdminBlogPost[]> {
   const { data, error } = await supabase
     .from("blog_posts")
     .select("*")
-    .eq("status", "published")
+    .or(`status.eq.published,and(status.eq.scheduled,publish_at.lte.${new Date().toISOString()})`)
     .order("date", { ascending: false });
   if (error) throw error;
   return (data ?? []).map(rowToPost);

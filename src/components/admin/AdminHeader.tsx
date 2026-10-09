@@ -13,6 +13,7 @@ const AdminHeader = () => {
         <Link to="/admin/blog" className="font-mono text-xs uppercase tracking-widest text-primary">Panel del blog</Link>
         <nav className="flex items-center gap-5">
           <NavLink to="/admin/blog" end className={linkCls}>Entradas</NavLink>
+          <NavLink to="/admin/planificador" className={linkCls}>Planificador</NavLink>
           {isAdmin && <NavLink to="/admin/equipo" className={linkCls}>Equipo</NavLink>}
           <a href="/blog" target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-foreground">Ver blog</a>
         </nav>

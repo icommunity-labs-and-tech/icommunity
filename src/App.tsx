@@ -26,6 +26,7 @@ import AdminResetPassword from "./pages/AdminResetPassword";
 import AdminBlogList from "./pages/AdminBlogList";
 import AdminPostEditor from "./pages/AdminPostEditor";
 import AdminTeam from "./pages/AdminTeam";
+import AdminPlanner from "./pages/AdminPlanner";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
               <Route path="/admin/blog" element={<AdminBlogList />} />
               <Route path="/admin/blog/:id" element={<AdminPostEditor />} />
               <Route path="/admin/equipo" element={<AdminTeam />} />
+              <Route path="/admin/planificador" element={<AdminPlanner />} />
               {/* Legacy route redirects (client-side, replace history so crawlers treat as permanent) */}
               <Route path="/privacy" element={<Navigate to="/legal" replace />} />
               <Route path="/privacy-policy" element={<Navigate to="/legal" replace />} />

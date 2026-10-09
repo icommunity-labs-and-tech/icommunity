@@ -22,7 +22,8 @@ interface Row {
 
 export async function loadBlogPosts(): Promise<BlogPost[]> {
   try {
-    const res = await fetch(`${URL}/rest/v1/blog_posts?select=*&status=eq.published&order=date.desc`, {
+    // Public access only returns scheduled posts whose publish time has passed.
+    const res = await fetch(`${URL}/rest/v1/blog_posts?select=*&status=in.(published,scheduled)&order=date.desc`, {
       headers: { apikey: KEY, Authorization: `Bearer ${KEY}` },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

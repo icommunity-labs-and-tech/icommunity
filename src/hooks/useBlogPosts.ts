@@ -7,7 +7,7 @@ export const usePublishedPosts = () =>
   useQuery({
     queryKey: ["blog-posts", "published"],
     queryFn: fetchPublishedPosts,
-    placeholderData: () => seedPosts.map((p) => ({ ...p, id: p.slug, status: "published" as const, updatedAt: p.date })),
+    placeholderData: () => seedPosts.map((p) => ({ ...p, id: p.slug, status: "published" as const, publishAt: null, updatedAt: p.date })),
     staleTime: 60_000,
   });
 

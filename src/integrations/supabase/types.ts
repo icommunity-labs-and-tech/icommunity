@@ -24,6 +24,7 @@ export type Database = {
           description: Json
           id: string
           kind: string
+          publish_at: string | null
           reading_minutes: number
           slug: string
           status: string
@@ -40,6 +41,7 @@ export type Database = {
           description?: Json
           id?: string
           kind?: string
+          publish_at?: string | null
           reading_minutes?: number
           slug: string
           status?: string
@@ -56,6 +58,7 @@ export type Database = {
           description?: Json
           id?: string
           kind?: string
+          publish_at?: string | null
           reading_minutes?: number
           slug?: string
           status?: string
