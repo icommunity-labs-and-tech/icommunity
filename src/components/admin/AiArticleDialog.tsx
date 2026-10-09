@@ -1,29 +1,15 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import { toast } from "sonner";
-import { FunctionsHttpError } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { supabase } from "@/integrations/supabase/client";
-import type { BlogBlock, BlogKind } from "@/content/blogTypes";
+import type { BlogKind } from "@/content/blogTypes";
+import { invokeBlogAi, type AiArticle } from "@/lib/blogAutomation";
 
-export interface AiArticle {
-  title: string;
-  description: string;
-  blocks: BlogBlock[];
-}
-
-export const invokeBlogAi = async <T,>(body: Record<string, unknown>): Promise<T> => {
-  const { data, error } = await supabase.functions.invoke("blog-ai", { body });
-  if (error) {
-    const details = error instanceof FunctionsHttpError ? await error.context.json().catch(() => null) : null;
-    throw new Error(details?.error ?? "La IA no ha podido completar la petición");
-  }
-  return data as T;
-};
+export { invokeBlogAi, type AiArticle };
 
 interface Props {
   kind: BlogKind;
