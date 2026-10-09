@@ -8,3 +8,5 @@
 
 - Blog posts live in the `blog_posts` table, edited from the private panel at `/admin/blog` (roles in `user_roles`: admin/editor, checked server-side). `src/content/blogPosts.ts` is only the seed and loading placeholder; build scripts read the table via `scripts/loadBlogPosts.ts` (falls back to the seed). Old paths stay in `src/content/blogLegacyRedirects.ts`. Why: the team publishes without the chat, while sitemap, feeds and prerender still ship static HTML (refreshed on each site publish).
 - Blog images go to the private `blog-images` bucket and are referenced by long-lived signed URLs. Why: the workspace blocks public buckets.
+- Scheduled blog posts use `status='scheduled'` + `publish_at`; they become public by derivation (RLS and queries treat `scheduled` with `publish_at <= now()` as published), with no cron job. Why: avoids a polling job and keeps publish time exact.
+- Blog AI (ideas, trend search, articles, covers) lives in the single `blog-ai` function; bulk generation runs one post at a time from the browser (`src/lib/blogAutomation.ts`). Why: avoids function time limits and keeps one AI entry point.
